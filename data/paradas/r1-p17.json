@@ -1,0 +1,392 @@
+{
+  "id": "r1-p17",
+  "regiao": 1,
+  "parada": 17,
+  "etapa": 17,
+  "formato": "cartas",
+  "titulo": "Cartas: animais e natureza",
+  "titulo_fr": "Les cartes des animaux",
+  "nivel": "A1",
+  "duracao_min": 4,
+  "cenario": {
+    "fundo": "parada/r1-p08/cena-fundo.png",
+    "frente": "parada/r1-p08/cena-frente.png",
+    "npc": {
+      "nome": "Madame Zélie",
+      "papel": "cartomante",
+      "img": "parada/r1-p08/npc.png",
+      "x": 60,
+      "y": 35,
+      "w": 18.5,
+      "voz": "zelie"
+    },
+    "brilhos": [
+      {
+        "tipo": "lanterna",
+        "x": 41,
+        "y": 67
+      },
+      {
+        "tipo": "lanterna",
+        "x": 30,
+        "y": 62
+      }
+    ]
+  },
+  "vozes": {
+    "zelie": "fr-CA-SylvieNeural",
+    "leo": "fr-CA-AntoineNeural"
+  },
+  "audios": {
+    "abertura": {
+      "voz": "zelie",
+      "texto": "Bonsoir ! Voici les animaux. Touchez une carte et dites son nom."
+    },
+    "ultima": {
+      "voz": "zelie",
+      "texto": "Encore une carte !"
+    },
+    "erro": {
+      "voz": "zelie",
+      "texto": "Non. Écoutez :"
+    },
+    "fecho": {
+      "voz": "zelie",
+      "texto": "C'est fini ! Bravo ! Au revoir !"
+    },
+    "boa1": {
+      "voz": "zelie",
+      "texto": "Très bien !"
+    },
+    "boa2": {
+      "voz": "zelie",
+      "texto": "Magnifique ! Bravo !"
+    },
+    "boa3": {
+      "voz": "zelie",
+      "texto": "Oui ! Les étoiles sont contentes."
+    },
+    "mista1": {
+      "voz": "zelie",
+      "texto": "Hmm… Encore une fois !"
+    },
+    "mista2": {
+      "voz": "zelie",
+      "texto": "Presque ! Écoutez bien."
+    },
+    "c-un-chien": {
+      "voz": "zelie",
+      "texto": "Un chien."
+    },
+    "c-un-chat": {
+      "voz": "zelie",
+      "texto": "Un chat."
+    },
+    "c-un-cheval": {
+      "voz": "zelie",
+      "texto": "Un cheval."
+    },
+    "c-un-oiseau": {
+      "voz": "zelie",
+      "texto": "Un oiseau."
+    },
+    "c-une-vache": {
+      "voz": "zelie",
+      "texto": "Une vache."
+    },
+    "c-un-arbre": {
+      "voz": "zelie",
+      "texto": "Un arbre."
+    },
+    "c-une-fleur": {
+      "voz": "zelie",
+      "texto": "Une fleur."
+    },
+    "c-le-pont": {
+      "voz": "zelie",
+      "texto": "Le pont."
+    },
+    "c-le-soleil": {
+      "voz": "zelie",
+      "texto": "Le soleil."
+    }
+  },
+  "imagens": {
+    "un-chien": {
+      "src": "parada/mapa40/icones/chien.png",
+      "fr": "un chien",
+      "pt": "um cachorro",
+      "alt": "um cachorro"
+    },
+    "un-chat": {
+      "src": "parada/mapa40/icones/chat.png",
+      "fr": "un chat",
+      "pt": "um gato",
+      "alt": "um gato"
+    },
+    "un-cheval": {
+      "src": "parada/mapa40/icones/cheval.png",
+      "fr": "un cheval",
+      "pt": "um cavalo",
+      "alt": "um cavalo"
+    },
+    "un-oiseau": {
+      "src": "parada/mapa40/icones/oiseau.png",
+      "fr": "un oiseau",
+      "pt": "um pássaro",
+      "alt": "um pássaro"
+    },
+    "une-vache": {
+      "src": "parada/mapa40/icones/vache.png",
+      "fr": "une vache",
+      "pt": "uma vaca",
+      "alt": "uma vaca"
+    },
+    "un-arbre": {
+      "src": "parada/mapa40/icones/arbre.png",
+      "fr": "un arbre",
+      "pt": "uma árvore",
+      "alt": "uma árvore"
+    },
+    "une-fleur": {
+      "src": "parada/mapa40/icones/fleur.png",
+      "fr": "une fleur",
+      "pt": "uma flor",
+      "alt": "uma flor"
+    },
+    "le-pont": {
+      "src": "parada/mapa40/icones/pont.png",
+      "fr": "le pont",
+      "pt": "a ponte",
+      "alt": "a ponte"
+    },
+    "le-soleil": {
+      "src": "parada/mapa40/icones/soleil.png",
+      "fr": "le soleil",
+      "pt": "o sol",
+      "alt": "o sol"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "un chien",
+      "pt": "um cachorro",
+      "img": "un-chien",
+      "audio": "c-un-chien"
+    },
+    {
+      "fr": "un chat",
+      "pt": "um gato",
+      "img": "un-chat",
+      "audio": "c-un-chat"
+    },
+    {
+      "fr": "un cheval",
+      "pt": "um cavalo",
+      "img": "un-cheval",
+      "audio": "c-un-cheval"
+    },
+    {
+      "fr": "un oiseau",
+      "pt": "um pássaro",
+      "img": "un-oiseau",
+      "audio": "c-un-oiseau"
+    },
+    {
+      "fr": "une vache",
+      "pt": "uma vaca",
+      "img": "une-vache",
+      "audio": "c-une-vache"
+    },
+    {
+      "fr": "un arbre",
+      "pt": "uma árvore",
+      "img": "un-arbre",
+      "audio": "c-un-arbre"
+    },
+    {
+      "fr": "une fleur",
+      "pt": "uma flor",
+      "img": "une-fleur",
+      "audio": "c-une-fleur"
+    },
+    {
+      "fr": "le pont",
+      "pt": "a ponte",
+      "img": "le-pont",
+      "audio": "c-le-pont"
+    },
+    {
+      "fr": "le soleil",
+      "pt": "o sol",
+      "img": "le-soleil",
+      "audio": "c-le-soleil"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 20,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "instrucao": "Toque numa carta e diga em voz alta o nome do objeto, em francês.",
+  "verso": "parada/r1-p08/verso.png",
+  "falas": {
+    "abertura": "abertura",
+    "boa": [
+      "boa1",
+      "boa2",
+      "boa3"
+    ],
+    "mista": [
+      "mista1",
+      "mista2"
+    ],
+    "ultima": "ultima",
+    "erro": "erro",
+    "fecho": "fecho"
+  },
+  "comentar_a_cada": 3,
+  "cartas": [
+    {
+      "id": "un-chien",
+      "fr": "un chien",
+      "pt": "um cachorro",
+      "img": "un-chien",
+      "audio": "c-un-chien",
+      "aceita": [
+        "un chien",
+        "chien"
+      ],
+      "origem": "r1-p17"
+    },
+    {
+      "id": "un-chat",
+      "fr": "un chat",
+      "pt": "um gato",
+      "img": "un-chat",
+      "audio": "c-un-chat",
+      "aceita": [
+        "un chat",
+        "chat"
+      ],
+      "origem": "r1-p17"
+    },
+    {
+      "id": "un-cheval",
+      "fr": "un cheval",
+      "pt": "um cavalo",
+      "img": "un-cheval",
+      "audio": "c-un-cheval",
+      "aceita": [
+        "un cheval",
+        "cheval"
+      ],
+      "origem": "r1-p17"
+    },
+    {
+      "id": "un-oiseau",
+      "fr": "un oiseau",
+      "pt": "um pássaro",
+      "img": "un-oiseau",
+      "audio": "c-un-oiseau",
+      "aceita": [
+        "un oiseau",
+        "oiseau",
+        "des oiseaux"
+      ],
+      "origem": "r1-p17"
+    },
+    {
+      "id": "une-vache",
+      "fr": "une vache",
+      "pt": "uma vaca",
+      "img": "une-vache",
+      "audio": "c-une-vache",
+      "aceita": [
+        "une vache",
+        "vache"
+      ],
+      "origem": "r1-p17"
+    },
+    {
+      "id": "un-arbre",
+      "fr": "un arbre",
+      "pt": "uma árvore",
+      "img": "un-arbre",
+      "audio": "c-un-arbre",
+      "aceita": [
+        "un arbre",
+        "arbre"
+      ],
+      "origem": "r1-p17"
+    },
+    {
+      "id": "une-fleur",
+      "fr": "une fleur",
+      "pt": "uma flor",
+      "img": "une-fleur",
+      "audio": "c-une-fleur",
+      "aceita": [
+        "une fleur",
+        "fleur"
+      ],
+      "origem": "r1-p17"
+    },
+    {
+      "id": "le-pont",
+      "fr": "le pont",
+      "pt": "a ponte",
+      "img": "le-pont",
+      "audio": "c-le-pont",
+      "aceita": [
+        "le pont",
+        "pont",
+        "un pont"
+      ],
+      "origem": "r1-p12"
+    },
+    {
+      "id": "le-soleil",
+      "fr": "le soleil",
+      "pt": "o sol",
+      "img": "le-soleil",
+      "audio": "c-le-soleil",
+      "aceita": [
+        "le soleil",
+        "soleil",
+        "il fait beau"
+      ],
+      "origem": "r1-p15"
+    }
+  ],
+  "novas": [
+    "un chien",
+    "un chat",
+    "un cheval",
+    "un oiseau",
+    "une vache",
+    "un arbre",
+    "une fleur"
+  ],
+  "padroes": [
+    "un / une + animal (dizer o nome)"
+  ]
+}

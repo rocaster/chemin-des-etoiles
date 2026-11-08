@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{ dados.titulo }} · Chemin des Étoiles</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='parada/motor.css') }}">
+  <style>
+    .palco { background-image: url("{{ url_for('static', filename=dados.cenario.fundo) }}"); touch-action: pan-y; cursor: grab; }
+    .hud, .legenda-praca { background-image: url("{{ url_for('static', filename='nivelamento/papel-textura.png') }}"); }
+    .pessoa { position: absolute; padding: 0; border: 3px solid transparent; background: none; cursor: pointer; }
+    .pessoa:hover, .pessoa:focus-visible { border-color: rgba(255, 242, 200, .85); background: rgba(255, 242, 200, .12); outline: none; }
+    .pessoa .bolha { position: absolute; left: 50%; top: -4px; transform: translate(-50%, -100%); padding: 0 6px; font: 700 14px/18px Georgia, serif;
+      background: #f7ecd0; border: 2px solid #2a1a0c; color: #2a1a0c; animation: bolha 2.4s steps(1, end) infinite; }
+    .pessoa.falando { border-color: #f0c46a; }
+    .pessoa.falando .bolha { background: #f0c46a; }
+    @keyframes bolha { 50% { translate: 0 -3px; } }
+    .legenda-praca {
+      position: fixed; z-index: 6; left: 50%; bottom: 14px; transform: translateX(-50%); width: min(720px, calc(100vw - 24px));
+      padding: 10px 16px 12px; background-color: #ecd9ab; background-size: 144px auto; image-rendering: pixelated;
+      border: 3px solid #784e1e; box-shadow: 0 0 0 3px #b8965c, 5px 5px 0 3px rgba(0, 0, 0, .35); color: #3a220c;
+    }
+    .legenda-praca .quem { margin: 0; font-weight: 700; color: #8a3b12; }
+    .legenda-praca .fr { margin: 4px 0 0; font-size: 1.15rem; }
+    .legenda-praca .pt { margin: 2px 0 0; font-style: italic; color: #6e4620; }
+    .legenda-praca .linha { margin-top: 8px; }
+    .sem-progresso { margin: 0; font-size: .85rem; color: #6e4620; }
+    .lado-pan { position: fixed; z-index: 5; top: 50%; transform: translateY(-50%); min-width: 40px; }
+    #pan-esq { left: 8px; } #pan-dir { right: 8px; }
+    .lado-pan[hidden], #transcricao[hidden] { display: none; }
+    @media (prefers-reduced-motion: reduce) { .pessoa .bolha { animation: none; } }
+  </style>
+</head>
+<body>
+  <h1 class="sr">{{ dados.titulo }}</h1>
+  <div class="palco" id="palco"></div>
+  {% if teste %}<div class="selo-teste" role="status">MODO TESTE · praça livre, nada é salvo</div>{% endif %}
+  <header class="hud">
+    <a class="botao sec voltar" id="voltar" href="{{ url_for('mapa', vista='regiao') }}">‹ Mapa</a>
+    <div class="hud-meio">
+      <p class="hud-titulo">{{ dados.titulo_fr }} <span>— {{ dados.titulo }}</span></p>
+      <p class="sem-progresso">Praça livre: sem pontos, sem progresso. Só ouvir a vila.</p>
+    </div>
+  </header>
+  <button type="button" class="botao sec lado-pan" id="pan-esq" aria-label="Ver mais à esquerda">‹</button>
+  <button type="button" class="botao sec lado-pan" id="pan-dir" aria-label="Ver mais à direita">›</button>
+
+  <section class="legenda-praca" aria-live="polite">
+    <p class="quem" id="quem">Toque nas pessoas da praça para ouvir o que elas dizem.</p>
+    <div id="transcricao" hidden>
+      <p class="fr" id="fala-fr" lang="fr"></p>
+      <p class="pt" id="fala-pt"></p>
+    </div>
+    <div class="linha">
+      <button type="button" class="botao sec som" id="ouvir-de-novo" disabled>Ouvir de novo</button>
+      <button type="button" class="botao sec" id="mostrar-transcricao" aria-pressed="false">Mostrar transcrição</button>
+    </div>
+  </section>
+
+  <script type="application/json" id="dados-praca">{{ dados|tojson }}</script>
+  <script type="application/json" id="cfg-praca">{{ {
+    "audio": url_for('static', filename='audio/praca/r' ~ regiao ~ '/'),
+    "transcricao": transcricao, "pessoa": pessoa
+  }|tojson }}</script>
+  <script src="{{ url_for('static', filename='parada/praca.js') }}"></script>
+<script src="{{ url_for('static', filename='audio/trilha-fundo.js') }}" data-trilha="{{ url_for('static', filename='audio/trilhas/trilha-praca.ogg', v='2') }}" data-volume="0.25"></script>
+</body>
+</html>

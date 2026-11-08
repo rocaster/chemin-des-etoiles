@@ -1,0 +1,241 @@
+{
+  "id": "r1-p14",
+  "regiao": 1,
+  "parada": 14,
+  "etapa": 14,
+  "formato": "conversa",
+  "titulo": "O lenhador da floresta",
+  "titulo_fr": "Le bûcheron",
+  "nivel": "A1",
+  "duracao_min": 4,
+  "cenario": {
+    "fundo": "batalha/floresta.png",
+    "frente": "parada/mapa40/cenas/vazio/cena-frente.png",
+    "npc": {
+      "nome": "Bastien",
+      "papel": "lenhador",
+      "img": "parada/mapa40/npc/bastien.png",
+      "x": 60,
+      "y": 30.2,
+      "w": 14.75,
+      "voz": "bastien"
+    },
+    "brilhos": []
+  },
+  "vozes": {
+    "bastien": {
+      "voz": "fr-CA-ThierryNeural",
+      "pitch": "-8Hz"
+    },
+    "leo": "fr-CA-AntoineNeural"
+  },
+  "audios": {
+    "abertura": {
+      "voz": "bastien",
+      "texto": "Bonjour, voyageur ! Venez, venez !"
+    },
+    "fecho": {
+      "voz": "bastien",
+      "texto": "Bonne route ! Au revoir !"
+    },
+    "correcao": {
+      "voz": "bastien",
+      "texto": "Écoutez. On dit :"
+    },
+    "t1-npc": {
+      "voz": "bastien",
+      "texto": "Bonjour ! Je suis Bastien, le bûcheron."
+    },
+    "t1-modelo": {
+      "voz": "leo",
+      "texto": "Bonjour, Bastien !"
+    },
+    "t2-npc": {
+      "voz": "bastien",
+      "texto": "Vous allez où ?"
+    },
+    "t2-modelo": {
+      "voz": "leo",
+      "texto": "Je vais au moulin."
+    },
+    "t3-npc": {
+      "voz": "bastien",
+      "texto": "Le moulin ? C'est loin !"
+    },
+    "t3-modelo": {
+      "voz": "leo",
+      "texto": "C'est à gauche ?"
+    },
+    "t4-npc": {
+      "voz": "bastien",
+      "texto": "Non, c'est à droite, après le pont."
+    },
+    "t4-modelo": {
+      "voz": "leo",
+      "texto": "À droite, après le pont. Merci !"
+    },
+    "t5-npc": {
+      "voz": "bastien",
+      "texto": "Bonne route !"
+    },
+    "t5-modelo": {
+      "voz": "leo",
+      "texto": "Merci ! Au revoir !"
+    },
+    "w-le-bucheron": {
+      "voz": "bastien",
+      "texto": "Le bûcheron."
+    },
+    "w-je-suis": {
+      "voz": "bastien",
+      "texto": "Je suis."
+    },
+    "w-vous-allez-ou": {
+      "voz": "bastien",
+      "texto": "Vous allez où ?"
+    },
+    "w-au-moulin": {
+      "voz": "bastien",
+      "texto": "Au moulin."
+    },
+    "w-apres": {
+      "voz": "bastien",
+      "texto": "Après."
+    },
+    "w-bonne-route": {
+      "voz": "bastien",
+      "texto": "Bonne route !"
+    }
+  },
+  "imagens": {},
+  "vocabulario": [
+    {
+      "fr": "le bûcheron",
+      "pt": "o lenhador",
+      "audio": "w-le-bucheron"
+    },
+    {
+      "fr": "je suis",
+      "pt": "eu sou",
+      "audio": "w-je-suis"
+    },
+    {
+      "fr": "vous allez où ?",
+      "pt": "aonde você vai?",
+      "audio": "w-vous-allez-ou"
+    },
+    {
+      "fr": "au moulin",
+      "pt": "ao moinho",
+      "audio": "w-au-moulin"
+    },
+    {
+      "fr": "après",
+      "pt": "depois de",
+      "audio": "w-apres"
+    },
+    {
+      "fr": "bonne route !",
+      "pt": "boa viagem!",
+      "audio": "w-bonne-route"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 20,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "instrucao": "Bastien fala primeiro. Responda em voz alta com a frase que aparece no pergaminho.",
+  "abertura": "abertura",
+  "fecho": "fecho",
+  "correcao": "correcao",
+  "turnos": [
+    {
+      "npc": "t1-npc",
+      "npc_texto": "Bonjour ! Je suis Bastien, le bûcheron.",
+      "contexto_pt": "O lenhador se apresenta.",
+      "modelo": "Bonjour, Bastien !",
+      "modelo_pt": "Olá, Bastien!",
+      "modelo_audio": "t1-modelo",
+      "chaves": [
+        "bastien"
+      ]
+    },
+    {
+      "npc": "t2-npc",
+      "npc_texto": "Vous allez où ?",
+      "contexto_pt": "Ele pergunta aonde você vai.",
+      "modelo": "Je vais au moulin.",
+      "modelo_pt": "Eu vou ao moinho.",
+      "modelo_audio": "t2-modelo",
+      "chaves": [
+        "moulin"
+      ]
+    },
+    {
+      "npc": "t3-npc",
+      "npc_texto": "Le moulin ? C'est loin !",
+      "contexto_pt": "O moinho é longe…",
+      "modelo": "C'est à gauche ?",
+      "modelo_pt": "É à esquerda?",
+      "modelo_audio": "t3-modelo",
+      "chaves": [
+        "gauche"
+      ]
+    },
+    {
+      "npc": "t4-npc",
+      "npc_texto": "Non, c'est à droite, après le pont.",
+      "contexto_pt": "Ele explica o caminho.",
+      "modelo": "À droite, après le pont. Merci !",
+      "modelo_pt": "À direita, depois da ponte. Obrigado!",
+      "modelo_audio": "t4-modelo",
+      "chaves": [
+        "droite",
+        "pont"
+      ]
+    },
+    {
+      "npc": "t5-npc",
+      "npc_texto": "Bonne route !",
+      "contexto_pt": "Ele deseja boa viagem.",
+      "modelo": "Merci ! Au revoir !",
+      "modelo_pt": "Obrigado! Tchau!",
+      "modelo_audio": "t5-modelo",
+      "chaves": [
+        "merci"
+      ]
+    }
+  ],
+  "novas": [
+    "le bûcheron",
+    "je suis",
+    "vous allez où ?",
+    "le moulin",
+    "au (à + le)",
+    "après",
+    "bonne route"
+  ],
+  "padroes": [
+    "Je vais au + lugar.",
+    "Je suis + nome."
+  ]
+}

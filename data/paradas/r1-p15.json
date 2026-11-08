@@ -1,0 +1,646 @@
+{
+  "id": "r1-p15",
+  "regiao": 1,
+  "parada": 15,
+  "etapa": 15,
+  "titulo": "O tempo",
+  "titulo_fr": "Le temps",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "parada/r1-p05/cena-fundo.png",
+    "frente": "parada/r1-p05/cena-frente.png",
+    "npc": {
+      "nome": "Capitaine Arsène",
+      "papel": "barqueiro do traversier",
+      "img": "parada/r1-p05/npc.png",
+      "x": 50,
+      "y": 39.5,
+      "w": 20,
+      "voz": "arsene"
+    },
+    "brilhos": []
+  },
+  "vozes": {
+    "arsene": {
+      "voz": "fr-CA-ThierryNeural",
+      "pitch": "-6Hz"
+    },
+    "leo": "fr-CA-AntoineNeural",
+    "bastien": {
+      "voz": "fr-CA-ThierryNeural",
+      "pitch": "-8Hz"
+    }
+  },
+  "audios": {
+    "w-il-fait-beau": {
+      "voz": "arsene",
+      "texto": "Il fait beau."
+    },
+    "w-il-fait-froid": {
+      "voz": "arsene",
+      "texto": "Il fait froid."
+    },
+    "w-il-pleut": {
+      "voz": "arsene",
+      "texto": "Il pleut."
+    },
+    "w-il-y-a-du-vent": {
+      "voz": "arsene",
+      "texto": "Il y a du vent."
+    },
+    "w-il-fait-chaud": {
+      "voz": "arsene",
+      "texto": "Il fait chaud."
+    },
+    "w-aujourd-hui": {
+      "voz": "arsene",
+      "texto": "Aujourd'hui."
+    },
+    "w-le-soleil": {
+      "voz": "arsene",
+      "texto": "Le soleil."
+    },
+    "c1-fala": {
+      "voz": "arsene",
+      "texto": "Aujourd'hui, il fait beau. Il fait chaud !"
+    },
+    "c2-fala": {
+      "voz": "arsene",
+      "texto": "Oh non ! Il pleut. Il fait froid."
+    },
+    "c3-fala": {
+      "voz": "leo",
+      "texto": "Il y a du vent aujourd'hui !"
+    },
+    "frase-b1": {
+      "voz": "arsene",
+      "texto": "Aujourd'hui, il fait beau."
+    },
+    "frase-b2": {
+      "voz": "arsene",
+      "texto": "Il fait froid."
+    },
+    "frase-b3": {
+      "voz": "arsene",
+      "texto": "Oh non ! Il pleut !"
+    },
+    "d-n1": {
+      "voz": "arsene",
+      "texto": "Bonjour ! Bienvenue sur le traversier !"
+    },
+    "d-n2": {
+      "voz": "arsene",
+      "texto": "Non, il pleut. Et il y a du vent !"
+    },
+    "d-n3": {
+      "voz": "arsene",
+      "texto": "Oui. Voilà un café chaud ! Bon voyage !"
+    },
+    "modelo": {
+      "voz": "leo",
+      "texto": "Aujourd'hui, il fait beau. Il fait chaud !"
+    },
+    "rev": {
+      "voz": "bastien",
+      "texto": "Vous allez où ?"
+    },
+    "recap": {
+      "voz": "arsene",
+      "texto": "Aujourd'hui, il pleut. Il fait froid."
+    }
+  },
+  "imagens": {
+    "beau": {
+      "src": "parada/mapa40/icones/soleil.png",
+      "fr": "il fait beau",
+      "pt": "faz tempo bom",
+      "alt": "faz tempo bom"
+    },
+    "froid": {
+      "src": "parada/mapa40/icones/froid.png",
+      "fr": "il fait froid",
+      "pt": "faz frio",
+      "alt": "faz frio"
+    },
+    "pluie": {
+      "src": "parada/mapa40/icones/pluie.png",
+      "fr": "il pleut",
+      "pt": "está chovendo",
+      "alt": "está chovendo"
+    },
+    "vent": {
+      "src": "parada/mapa40/icones/vent.png",
+      "fr": "il y a du vent",
+      "pt": "está ventando",
+      "alt": "está ventando"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "il fait beau",
+      "pt": "faz tempo bom",
+      "audio": "w-il-fait-beau",
+      "img": "beau"
+    },
+    {
+      "fr": "il fait froid",
+      "pt": "faz frio",
+      "audio": "w-il-fait-froid",
+      "img": "froid"
+    },
+    {
+      "fr": "il pleut",
+      "pt": "está chovendo",
+      "audio": "w-il-pleut",
+      "img": "pluie"
+    },
+    {
+      "fr": "il y a du vent",
+      "pt": "está ventando",
+      "audio": "w-il-y-a-du-vent",
+      "img": "vent"
+    },
+    {
+      "fr": "il fait chaud",
+      "pt": "faz calor",
+      "audio": "w-il-fait-chaud"
+    },
+    {
+      "fr": "aujourd'hui",
+      "pt": "hoje",
+      "audio": "w-aujourd-hui"
+    },
+    {
+      "fr": "le soleil",
+      "pt": "o sol",
+      "audio": "w-le-soleil"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-beau": {
+      "id": "rv-beau",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Arsène : Bienvenue sur le traversier !"
+      ],
+      "pergunta": "Você quer saber como está o tempo. O que diz?",
+      "opcoes": [
+        "Une pomme, combien ?",
+        "Je vais au moulin.",
+        "Il fait beau ?"
+      ],
+      "correta": 2,
+      "explicacao": "Il fait beau ? = O tempo está bom?"
+    },
+    "rv-pleut": {
+      "id": "rv-pleut",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Arsène : Il pleut."
+      ],
+      "pergunta": "Como está o tempo?",
+      "opcoes": [
+        "está chovendo",
+        "faz calor",
+        "faz sol"
+      ],
+      "correta": 0,
+      "explicacao": "Il pleut = está chovendo."
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "O capitão Arsène olha o céu antes de atravessar o rio. Ouça e escolha a imagem.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-il-fait-beau",
+          "texto_fr": "il fait beau",
+          "opcoes": [
+            "vent",
+            "froid",
+            "beau",
+            "pluie"
+          ],
+          "correta": "beau",
+          "explicacao": "Il fait beau = o tempo está bom (sol)."
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-il-fait-froid",
+          "texto_fr": "il fait froid",
+          "opcoes": [
+            "pluie",
+            "beau",
+            "vent",
+            "froid"
+          ],
+          "correta": "froid",
+          "explicacao": "Il fait froid = está frio."
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-il-pleut",
+          "texto_fr": "il pleut",
+          "opcoes": [
+            "beau",
+            "vent",
+            "pluie",
+            "froid"
+          ],
+          "correta": "pluie",
+          "explicacao": "Il pleut = está chovendo."
+        },
+        {
+          "id": "d4",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-il-y-a-du-vent",
+          "texto_fr": "il y a du vent",
+          "opcoes": [
+            "froid",
+            "pluie",
+            "beau",
+            "vent"
+          ],
+          "correta": "vent",
+          "explicacao": "Il y a du vent = está ventando (há vento)."
+        },
+        {
+          "id": "d5",
+          "tipo": "pares",
+          "instrucao": "Ligue cada palavra à sua imagem: toque numa palavra e depois na imagem.",
+          "pares": [
+            {
+              "fr": "il fait beau",
+              "img": "beau",
+              "audio": "w-il-fait-beau"
+            },
+            {
+              "fr": "il fait froid",
+              "img": "froid",
+              "audio": "w-il-fait-froid"
+            },
+            {
+              "fr": "il pleut",
+              "img": "pluie",
+              "audio": "w-il-pleut"
+            },
+            {
+              "fr": "il y a du vent",
+              "img": "vent",
+              "audio": "w-il-y-a-du-vent"
+            }
+          ],
+          "explicacao": "Sol, frio, chuva e vento."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Escute o capitão. O texto só aparece depois que você responder.",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Ouça o capitão.",
+          "audio": "c1-fala",
+          "pergunta": "Como está o tempo hoje?",
+          "opcoes": [
+            "vento e frio",
+            "sol e calor",
+            "chuva e frio"
+          ],
+          "correta": 1,
+          "explicacao": "Il fait beau, il fait chaud = sol e calor."
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "O tempo mudou. Ouça.",
+          "audio": "c2-fala",
+          "pergunta": "E agora?",
+          "opcoes": [
+            "chove e faz frio",
+            "faz sol",
+            "faz calor"
+          ],
+          "correta": 0,
+          "explicacao": "Il pleut = chove · il fait froid = faz frio."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Ouça Léo.",
+          "audio": "c3-fala",
+          "pergunta": "Que tempo faz?",
+          "opcoes_img": [
+            "beau",
+            "froid",
+            "pluie",
+            "vent"
+          ],
+          "correta": "vent",
+          "explicacao": "Il y a du vent = está ventando."
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia a conversa no barco.",
+          "texto_fr": [
+            "Léo : Il fait beau aujourd'hui ?",
+            "Arsène : Non, il pleut.",
+            "Léo : Il fait froid ?",
+            "Arsène : Oui, il fait froid."
+          ],
+          "pergunta": "Como está o tempo?",
+          "opcoes": [
+            "chuva e frio",
+            "sol e calor",
+            "só vento"
+          ],
+          "correta": 0,
+          "explicacao": "Il pleut, il fait froid."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "Mesma conversa.",
+          "texto_fr": [
+            "Léo : Il fait beau aujourd'hui ?",
+            "Arsène : Non, il pleut.",
+            "Léo : Il fait froid ?",
+            "Arsène : Oui, il fait froid."
+          ],
+          "pergunta": "O que quer dizer “aujourd'hui”?",
+          "opcoes": [
+            "hoje",
+            "amanhã",
+            "ontem"
+          ],
+          "correta": 0,
+          "explicacao": "Aujourd'hui = hoje."
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Monte as frases do tempo. Il fait… = está (tempo)…",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte: “Hoje faz tempo bom.”",
+          "palavras": [
+            "Aujourd'hui,",
+            "il",
+            "fait",
+            "beau."
+          ],
+          "extras": [
+            "pleut",
+            "froid"
+          ],
+          "audio": "frase-b1",
+          "explicacao": "Aujourd'hui + il fait + beau."
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete: “Está frio.”",
+          "frase": "Il ___ froid.",
+          "banco": [
+            "fait",
+            "est",
+            "pleut"
+          ],
+          "respostas": [
+            "fait"
+          ],
+          "audio": "frase-b2",
+          "explicacao": "Il fait froid / il fait chaud / il fait beau."
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Escreva a palavra que falta: “Oh não! Está chovendo!”",
+          "frase": "Oh non ! Il ___ !",
+          "respostas": [
+            "pleut"
+          ],
+          "dica": "Começa com p…",
+          "audio": "frase-b3",
+          "explicacao": "Il pleut = está chovendo."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "w-il-fait-chaud",
+          "respostas": [
+            "il fait chaud"
+          ],
+          "explicacao": "Il fait chaud = faz calor (o -d final não soa)."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez! Converse com o capitão sobre o tempo e depois grave a sua frase.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Capitaine Arsène.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Bonjour ! Bienvenue sur le traversier !",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Une pomme, combien ?",
+                  "feedback": "Aqui não é a feira! Pergunte sobre o tempo: Il fait beau ?",
+                  "erro": true,
+                  "revisao": "rv-beau"
+                },
+                {
+                  "fr": "Bonjour ! Il fait froid ?",
+                  "feedback": "Boa: perguntar sobre o tempo.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "Bonjour ! Il fait beau aujourd'hui ?",
+                  "feedback": "Boa: perguntar sobre o tempo.",
+                  "vai": "n2"
+                }
+              ]
+            },
+            "n2": {
+              "fala": "Non, il pleut. Et il y a du vent !",
+              "audio": "d-n2",
+              "opcoes": [
+                {
+                  "fr": "Oh non ! Il fait froid ?",
+                  "feedback": "Isso: continuar a conversa.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Il fait chaud !",
+                  "feedback": "Ele disse que chove e venta: não faz calor.",
+                  "erro": true,
+                  "revisao": "rv-pleut"
+                },
+                {
+                  "fr": "Il pleut ? Oh non !",
+                  "feedback": "Isso: reagir ao tempo.",
+                  "vai": "n3"
+                }
+              ]
+            },
+            "n3": {
+              "fala": "Oui. Voilà un café chaud ! Bon voyage !",
+              "audio": "d-n3",
+              "opcoes": [
+                {
+                  "fr": "Merci beaucoup ! Au revoir !",
+                  "feedback": "Perfeito: agradecer e se despedir.",
+                  "vai": "fim"
+                },
+                {
+                  "fr": "Il fait beau ?",
+                  "feedback": "Ele já disse: chove. Agradeça e se despeça.",
+                  "erro": true
+                }
+              ]
+            }
+          },
+          "explicacao": "Il fait beau ? → il pleut / il y a du vent → il fait froid → merci, au revoir."
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave em voz alta (1–2 frases): diga como está o tempo hoje.",
+          "modelo": "Aujourd'hui, il fait beau. Il fait chaud !",
+          "audio_modelo": "modelo",
+          "checklist": [
+            "Aujourd'hui",
+            "il fait beau / froid / chaud",
+            "ou: il pleut"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva como está o tempo.",
+            "palavras_chave": [
+              [
+                "fait",
+                "pleut",
+                "vent"
+              ]
+            ],
+            "explicacao": "Aujourd'hui, il fait… / il pleut."
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "intro": "Última rodada: os itens errados voltam, uma revisão e a frase da missão.",
+      "recuperar": true,
+      "itens": [
+        {
+          "id": "r2",
+          "tipo": "audio",
+          "instrucao": "Revisão da etapa 14 (lenhador): ouça a pergunta.",
+          "audio": "rev",
+          "pergunta": "O que você responde?",
+          "opcoes": [
+            "Il fait froid.",
+            "Un dollar.",
+            "Je vais au moulin."
+          ],
+          "correta": 2,
+          "explicacao": "Vous allez où ? → Je vais au… (etapa 14)."
+        },
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “Hoje está chovendo. Está frio.”",
+          "palavras": [
+            "Aujourd'hui,",
+            "il",
+            "pleut.",
+            "Il",
+            "fait",
+            "froid."
+          ],
+          "extras": [
+            "chaud"
+          ],
+          "audio": "recap",
+          "explicacao": "Aujourd'hui, il pleut. Il fait froid."
+        }
+      ]
+    }
+  ],
+  "novas": [
+    "il fait beau",
+    "il fait froid",
+    "il fait chaud",
+    "il pleut",
+    "il y a du vent",
+    "aujourd'hui",
+    "le soleil"
+  ],
+  "padroes": [
+    "Il fait + beau / froid / chaud.",
+    "Il pleut. · Il y a du vent."
+  ]
+}

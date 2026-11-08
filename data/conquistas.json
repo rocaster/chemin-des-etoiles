@@ -1,0 +1,67 @@
+{
+  "versao": 1,
+  "nota": "Critérios provisórios: os selos refletem o retrato atual do progresso salvo, não um histórico imutável.",
+  "conquistas": [
+    {
+      "id": "castelo",
+      "nome": "Chevalier? Já foi!",
+      "descricao": "Concluir a etapa 40, vencendo o Chevalier Noir.",
+      "criterio": "boss",
+      "rastreavel": true,
+      "selo": "loja/selos/castelo.png"
+    },
+    {
+      "id": "invicto",
+      "nome": "Nem um Arranhão",
+      "descricao": "Terminar as 40 etapas sem perder nenhuma batalha.",
+      "criterio": "indisponivel",
+      "rastreavel": false,
+      "selo": "loja/selos/invicto.png",
+      "motivo": "Derrotas e fugas não são gravadas. Não é possível provar uma campanha invicta."
+    },
+    {
+      "id": "primeira",
+      "nome": "Primeira Vez",
+      "descricao": "Acertar de cara, na primeira tentativa real.",
+      "criterio": "indisponivel",
+      "rastreavel": false,
+      "selo": "loja/selos/primeira.png",
+      "motivo": "Tentativas registra conclusões, não a primeira resposta nem derrotas anteriores."
+    },
+    {
+      "id": "teimoso",
+      "nome": "Teimoso",
+      "descricao": "Concluir a mesma batalha 3 vezes (não conta derrotas).",
+      "criterio": "batalha_repetida",
+      "rastreavel": true,
+      "selo": "loja/selos/teimoso.png",
+      "minimo": 3
+    },
+    {
+      "id": "falador",
+      "nome": "Falador",
+      "descricao": "Usar bastante a voz; limiar ainda a combinar.",
+      "criterio": "indisponivel",
+      "rastreavel": false,
+      "selo": "loja/selos/falador.png",
+      "motivo": "fala_pendente não prova voz real (há alternativas digitadas); faltam contador e critério combinado."
+    },
+    {
+      "id": "preciso",
+      "nome": "Não Erra Uma",
+      "descricao": "Ter uma conclusão salva com acertos e nenhum erro.",
+      "criterio": "sem_erros",
+      "rastreavel": true,
+      "selo": "loja/selos/preciso.png"
+    },
+    {
+      "id": "atrapalhado",
+      "nome": "Atrapalhado",
+      "descricao": "Somar 10 erros nas últimas conclusões salvas. Cair faz parte!",
+      "criterio": "erros",
+      "rastreavel": true,
+      "selo": "loja/selos/atrapalhado.png",
+      "minimo": 10
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+{
+ "id": "r1-praca",
+ "regiao": 1,
+ "formato": "praca",
+ "titulo": "Flanar pela vila",
+ "titulo_fr": "Flâner au village",
+ "cenario": {
+  "fundo": "parada/praca-r1/cena-fundo.png"
+ },
+ "vozes": {
+  "pommes": {
+   "voz": "fr-CA-SylvieNeural",
+   "pitch": "+6Hz"
+  },
+  "enfant": {
+   "voz": "fr-CA-SylvieNeural",
+   "pitch": "+45Hz",
+   "rate": "+5%"
+  },
+  "chien": {
+   "voz": "fr-CA-AntoineNeural",
+   "pitch": "+30Hz"
+  },
+  "vieux": {
+   "voz": "fr-CA-JeanNeural",
+   "pitch": "-14Hz",
+   "rate": "-20%"
+  },
+  "crieur": {
+   "voz": "fr-CA-ThierryNeural",
+   "pitch": "+2Hz",
+   "rate": "+0%"
+  },
+  "boulanger": {
+   "voz": "fr-CA-AntoineNeural",
+   "pitch": "-8Hz"
+  },
+  "fleurs": {
+   "voz": "fr-CA-SylvieNeural",
+   "pitch": "-12Hz"
+  }
+ },
+ "audios": {
+  "pommes1": {
+   "voz": "pommes",
+   "texto": "Des pommes ! Des belles pommes rouges !"
+  },
+  "pommes2": {
+   "voz": "pommes",
+   "texto": "Une pomme, un dollar !"
+  },
+  "pommes3": {
+   "voz": "pommes",
+   "texto": "Bonjour, madame ! Vous voulez une pomme ?"
+  },
+  "enfant1": {
+   "voz": "enfant",
+   "texto": "Regarde ! Je cours vite !"
+  },
+  "enfant2": {
+   "voz": "enfant",
+   "texto": "Maman, je vais à la fontaine !"
+  },
+  "enfant3": {
+   "voz": "enfant",
+   "texto": "Salut ! Tu veux jouer ?"
+  },
+  "chien1": {
+   "voz": "chien",
+   "texto": "Ouaf ! Ouaf !"
+  },
+  "chien2": {
+   "voz": "chien",
+   "texto": "Ouaf… ouaf ouaf !"
+  },
+  "vieux1": {
+   "voz": "vieux",
+   "texto": "Ah, le soleil est bon aujourd'hui."
+  },
+  "vieux2": {
+   "voz": "vieux",
+   "texto": "Il y a des nouvelles dans le journal."
+  },
+  "vieux3": {
+   "voz": "vieux",
+   "texto": "Bonjour, jeune homme. Ça va ?"
+  },
+  "crieur1": {
+   "voz": "crieur",
+   "texto": "Oyez, oyez ! Le marché est samedi !"
+  },
+  "crieur2": {
+   "voz": "crieur",
+   "texto": "Oyez ! Le traversier part à midi !"
+  },
+  "crieur3": {
+   "voz": "crieur",
+   "texto": "Le château cherche un boulanger !"
+  },
+  "boulanger1": {
+   "voz": "boulanger",
+   "texto": "Du pain chaud ! Des baguettes !"
+  },
+  "boulanger2": {
+   "voz": "boulanger",
+   "texto": "Un croissant ? C'est tout ?"
+  },
+  "boulanger3": {
+   "voz": "boulanger",
+   "texto": "Bonne journée !"
+  },
+  "fleurs1": {
+   "voz": "fleurs",
+   "texto": "Des fleurs pour votre maison ?"
+  },
+  "fleurs2": {
+   "voz": "fleurs",
+   "texto": "Les fleurs sont belles aujourd'hui."
+  },
+  "fleurs3": {
+   "voz": "fleurs",
+   "texto": "Merci, et à bientôt !"
+  }
+ },
+ "pessoas": [
+  {
+   "id": "pommes",
+   "nome": "A vendedora de maçãs",
+   "x": 8,
+   "y": 50,
+   "w": 17,
+   "h": 38,
+   "falas": [
+    {
+     "audio": "pommes1",
+     "fr": "Des pommes ! Des belles pommes rouges !",
+     "pt": "Maçãs! Lindas maçãs vermelhas!"
+    },
+    {
+     "audio": "pommes2",
+     "fr": "Une pomme, un dollar !",
+     "pt": "Uma maçã, um dólar!"
+    },
+    {
+     "audio": "pommes3",
+     "fr": "Bonjour, madame ! Vous voulez une pomme ?",
+     "pt": "Bom dia, senhora! Quer uma maçã?"
+    }
+   ]
+  },
+  {
+   "id": "enfant",
+   "nome": "O menino do aro",
+   "x": 23,
+   "y": 50,
+   "w": 12,
+   "h": 22,
+   "falas": [
+    {
+     "audio": "enfant1",
+     "fr": "Regarde ! Je cours vite !",
+     "pt": "Olha! Eu corro rápido!"
+    },
+    {
+     "audio": "enfant2",
+     "fr": "Maman, je vais à la fontaine !",
+     "pt": "Mãe, eu vou à fonte!"
+    },
+    {
+     "audio": "enfant3",
+     "fr": "Salut ! Tu veux jouer ?",
+     "pt": "Oi! Quer brincar?"
+    }
+   ]
+  },
+  {
+   "id": "chien",
+   "nome": "O cachorro",
+   "x": 36,
+   "y": 63,
+   "w": 9,
+   "h": 13,
+   "falas": [
+    {
+     "audio": "chien1",
+     "fr": "Ouaf ! Ouaf !",
+     "pt": "Au! Au!"
+    },
+    {
+     "audio": "chien2",
+     "fr": "Ouaf… ouaf ouaf !",
+     "pt": "Au… au au!"
+    }
+   ]
+  },
+  {
+   "id": "vieux",
+   "nome": "O senhor do banco",
+   "x": 49,
+   "y": 55,
+   "w": 13,
+   "h": 25,
+   "falas": [
+    {
+     "audio": "vieux1",
+     "fr": "Ah, le soleil est bon aujourd'hui.",
+     "pt": "Ah, o sol está bom hoje."
+    },
+    {
+     "audio": "vieux2",
+     "fr": "Il y a des nouvelles dans le journal.",
+     "pt": "Tem notícias no jornal."
+    },
+    {
+     "audio": "vieux3",
+     "fr": "Bonjour, jeune homme. Ça va ?",
+     "pt": "Bom dia, rapaz. Tudo bem?"
+    }
+   ]
+  },
+  {
+   "id": "crieur",
+   "nome": "O pregoeiro",
+   "x": 62,
+   "y": 38,
+   "w": 10,
+   "h": 27,
+   "falas": [
+    {
+     "audio": "crieur1",
+     "fr": "Oyez, oyez ! Le marché est samedi !",
+     "pt": "Ouçam, ouçam! A feira é no sábado!"
+    },
+    {
+     "audio": "crieur2",
+     "fr": "Oyez ! Le traversier part à midi !",
+     "pt": "Ouçam! A balsa sai ao meio-dia!"
+    },
+    {
+     "audio": "crieur3",
+     "fr": "Le château cherche un boulanger !",
+     "pt": "O castelo procura um padeiro!"
+    }
+   ]
+  },
+  {
+   "id": "boulanger",
+   "nome": "O padeiro",
+   "x": 73,
+   "y": 47,
+   "w": 10,
+   "h": 31,
+   "falas": [
+    {
+     "audio": "boulanger1",
+     "fr": "Du pain chaud ! Des baguettes !",
+     "pt": "Pão quentinho! Baguetes!"
+    },
+    {
+     "audio": "boulanger2",
+     "fr": "Un croissant ? C'est tout ?",
+     "pt": "Um croissant? É só isso?"
+    },
+    {
+     "audio": "boulanger3",
+     "fr": "Bonne journée !",
+     "pt": "Tenha um bom dia!"
+    }
+   ]
+  },
+  {
+   "id": "fleurs",
+   "nome": "A florista",
+   "x": 84,
+   "y": 52,
+   "w": 12,
+   "h": 36,
+   "falas": [
+    {
+     "audio": "fleurs1",
+     "fr": "Des fleurs pour votre maison ?",
+     "pt": "Flores para a sua casa?"
+    },
+    {
+     "audio": "fleurs2",
+     "fr": "Les fleurs sont belles aujourd'hui.",
+     "pt": "As flores estão lindas hoje."
+    },
+    {
+     "audio": "fleurs3",
+     "fr": "Merci, et à bientôt !",
+     "pt": "Obrigada, e até logo!"
+    }
+   ]
+  }
+ ]
+}

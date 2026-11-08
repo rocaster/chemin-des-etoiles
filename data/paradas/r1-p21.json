@@ -1,0 +1,686 @@
+{
+  "id": "r1-p21",
+  "regiao": 1,
+  "parada": 21,
+  "etapa": 21,
+  "titulo": "Dias e horas na pousada",
+  "titulo_fr": "Une chambre à la taverne",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "parada/taverna-fundo.png",
+    "frente": "parada/taverna-balcao.png",
+    "npc": {
+      "nome": "Odile",
+      "papel": "taberneira",
+      "img": "parada/taverneira.png",
+      "x": 45,
+      "y": 25.8,
+      "w": 13.75,
+      "voz": "odile"
+    }
+  },
+  "vozes": {
+    "odile": "fr-CA-SylvieNeural",
+    "leo": "fr-CA-AntoineNeural",
+    "mathilde": {
+      "voz": "fr-CA-SylvieNeural",
+      "pitch": "+3Hz"
+    }
+  },
+  "audios": {
+    "w-une-chambre": {
+      "voz": "odile",
+      "texto": "Une chambre."
+    },
+    "w-il-est-trois-heures": {
+      "voz": "odile",
+      "texto": "Il est trois heures."
+    },
+    "w-lundi": {
+      "voz": "odile",
+      "texto": "Lundi."
+    },
+    "w-le-soir": {
+      "voz": "odile",
+      "texto": "Le soir."
+    },
+    "w-samedi": {
+      "voz": "odile",
+      "texto": "Samedi."
+    },
+    "w-dimanche": {
+      "voz": "odile",
+      "texto": "Dimanche."
+    },
+    "w-demain": {
+      "voz": "odile",
+      "texto": "Demain."
+    },
+    "w-trente": {
+      "voz": "odile",
+      "texto": "Trente."
+    },
+    "w-quarante": {
+      "voz": "odile",
+      "texto": "Quarante."
+    },
+    "w-cinquante": {
+      "voz": "odile",
+      "texto": "Cinquante."
+    },
+    "w-soixante": {
+      "voz": "odile",
+      "texto": "Soixante."
+    },
+    "c1-fala": {
+      "voz": "odile",
+      "texto": "Une chambre ? Trente dollars."
+    },
+    "c2-fala": {
+      "voz": "odile",
+      "texto": "Samedi et dimanche ? Soixante dollars."
+    },
+    "c3-fala": {
+      "voz": "leo",
+      "texto": "Il est quelle heure ?"
+    },
+    "frase-b1": {
+      "voz": "odile",
+      "texto": "Il est trois heures."
+    },
+    "frase-b2": {
+      "voz": "odile",
+      "texto": "Une chambre : trente dollars."
+    },
+    "frase-b3": {
+      "voz": "odile",
+      "texto": "À demain ! Bonne nuit !"
+    },
+    "d-n1": {
+      "voz": "odile",
+      "texto": "Bonsoir ! Vous voulez une chambre ?"
+    },
+    "d-n2": {
+      "voz": "odile",
+      "texto": "Cinquante dollars. Pour lundi ?"
+    },
+    "d-n3": {
+      "voz": "odile",
+      "texto": "Il est neuf heures. Voici la clé. Bonne nuit !"
+    },
+    "modelo": {
+      "voz": "leo",
+      "texto": "Bonsoir ! Je voudrais une chambre pour samedi, s'il vous plaît."
+    },
+    "rev": {
+      "voz": "mathilde",
+      "texto": "Voici mon frère."
+    },
+    "recap": {
+      "voz": "odile",
+      "texto": "Une chambre pour samedi. Il est neuf heures."
+    }
+  },
+  "imagens": {
+    "chambre": {
+      "src": "parada/mapa40/icones/lit.png",
+      "fr": "une chambre",
+      "pt": "um quarto",
+      "alt": "um quarto"
+    },
+    "heures": {
+      "src": "parada/mapa40/icones/horloge.png",
+      "fr": "il est trois heures",
+      "pt": "são três horas",
+      "alt": "são três horas"
+    },
+    "lundi": {
+      "src": "parada/mapa40/icones/calendrier.png",
+      "fr": "lundi",
+      "pt": "segunda-feira",
+      "alt": "segunda-feira"
+    },
+    "soir": {
+      "src": "parada/mapa40/icones/lune.png",
+      "fr": "le soir",
+      "pt": "a noite (o fim do dia)",
+      "alt": "a noite (o fim do dia)"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "une chambre",
+      "pt": "um quarto",
+      "audio": "w-une-chambre",
+      "img": "chambre"
+    },
+    {
+      "fr": "il est trois heures",
+      "pt": "são três horas",
+      "audio": "w-il-est-trois-heures",
+      "img": "heures"
+    },
+    {
+      "fr": "lundi",
+      "pt": "segunda-feira",
+      "audio": "w-lundi",
+      "img": "lundi"
+    },
+    {
+      "fr": "le soir",
+      "pt": "a noite (o fim do dia)",
+      "audio": "w-le-soir",
+      "img": "soir"
+    },
+    {
+      "fr": "samedi",
+      "pt": "sábado",
+      "audio": "w-samedi"
+    },
+    {
+      "fr": "dimanche",
+      "pt": "domingo",
+      "audio": "w-dimanche"
+    },
+    {
+      "fr": "demain",
+      "pt": "amanhã",
+      "audio": "w-demain"
+    },
+    {
+      "fr": "trente",
+      "pt": "trinta",
+      "audio": "w-trente"
+    },
+    {
+      "fr": "quarante",
+      "pt": "quarenta",
+      "audio": "w-quarante"
+    },
+    {
+      "fr": "cinquante",
+      "pt": "cinquenta",
+      "audio": "w-cinquante"
+    },
+    {
+      "fr": "soixante",
+      "pt": "sessenta",
+      "audio": "w-soixante"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-chambre": {
+      "id": "rv-chambre",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Odile : Vous voulez une chambre ?"
+      ],
+      "pergunta": "O que você responde?",
+      "opcoes": [
+        "Voici mon père.",
+        "Oui, une chambre, combien ?",
+        "Il pleut !"
+      ],
+      "correta": 1,
+      "explicacao": "Oui, une chambre… = Sim, um quarto…"
+    },
+    "rv-cinquante": {
+      "id": "rv-cinquante",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Odile : Cinquante dollars."
+      ],
+      "pergunta": "Quanto custa?",
+      "opcoes": [
+        "5 dólares",
+        "50 dólares",
+        "15 dólares"
+      ],
+      "correta": 1,
+      "explicacao": "Cinquante = 50 · quinze = 15 · cinq = 5."
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "A noite chega e você para na taverna de Odile. Ouça e escolha a imagem.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-une-chambre",
+          "texto_fr": "une chambre",
+          "opcoes": [
+            "soir",
+            "chambre",
+            "heures",
+            "lundi"
+          ],
+          "correta": "chambre",
+          "explicacao": "Une chambre = um quarto."
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-il-est-trois-heures",
+          "texto_fr": "il est trois heures",
+          "opcoes": [
+            "heures",
+            "chambre",
+            "soir",
+            "lundi"
+          ],
+          "correta": "heures",
+          "explicacao": "Il est trois heures = são três horas."
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-lundi",
+          "texto_fr": "lundi",
+          "opcoes": [
+            "heures",
+            "chambre",
+            "soir",
+            "lundi"
+          ],
+          "correta": "lundi",
+          "explicacao": "Lundi = segunda-feira."
+        },
+        {
+          "id": "d4",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-le-soir",
+          "texto_fr": "le soir",
+          "opcoes": [
+            "soir",
+            "heures",
+            "lundi",
+            "chambre"
+          ],
+          "correta": "soir",
+          "explicacao": "Le soir = a noite, o fim do dia."
+        },
+        {
+          "id": "d5",
+          "tipo": "pares",
+          "instrucao": "Ligue cada palavra à sua imagem: toque numa palavra e depois na imagem.",
+          "pares": [
+            {
+              "fr": "une chambre",
+              "img": "chambre",
+              "audio": "w-une-chambre"
+            },
+            {
+              "fr": "il est trois heures",
+              "img": "heures",
+              "audio": "w-il-est-trois-heures"
+            },
+            {
+              "fr": "lundi",
+              "img": "lundi",
+              "audio": "w-lundi"
+            },
+            {
+              "fr": "le soir",
+              "img": "soir",
+              "audio": "w-le-soir"
+            }
+          ],
+          "explicacao": "Quarto, hora, dia e noite."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Escute Odile. Números grandes: trente (30), quarante (40), cinquante (50), soixante (60).",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Léo quer um quarto. Ouça Odile.",
+          "audio": "c1-fala",
+          "pergunta": "Quanto custa o quarto?",
+          "opcoes": [
+            "30 dólares",
+            "13 dólares",
+            "3 dólares"
+          ],
+          "correta": 0,
+          "explicacao": "Trente = 30 (treize = 13)."
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "Sábado e domingo. Ouça.",
+          "audio": "c2-fala",
+          "pergunta": "Quanto custa?",
+          "opcoes": [
+            "16 dólares",
+            "60 dólares",
+            "50 dólares"
+          ],
+          "correta": 1,
+          "explicacao": "Soixante = 60 (seize = 16)."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Ouça a pergunta de Léo.",
+          "audio": "c3-fala",
+          "pergunta": "O que Léo quer saber?",
+          "opcoes_img": [
+            "chambre",
+            "heures",
+            "lundi",
+            "soir"
+          ],
+          "correta": "heures",
+          "explicacao": "Il est quelle heure ? = Que horas são?"
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia a conversa na taverna.",
+          "texto_fr": [
+            "Léo : Bonsoir ! Une chambre, combien ?",
+            "Odile : Quarante dollars.",
+            "Léo : Pour samedi et dimanche ?",
+            "Odile : Oui. Ça fait cinquante dollars."
+          ],
+          "pergunta": "Quanto custa um quarto?",
+          "opcoes": [
+            "14 dólares",
+            "4 dólares",
+            "40 dólares"
+          ],
+          "correta": 2,
+          "explicacao": "Quarante = 40."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "Mesma conversa.",
+          "texto_fr": [
+            "Léo : Bonsoir ! Une chambre, combien ?",
+            "Odile : Quarante dollars.",
+            "Léo : Pour samedi et dimanche ?",
+            "Odile : Oui. Ça fait cinquante dollars."
+          ],
+          "pergunta": "Para que dias Léo quer o quarto?",
+          "opcoes": [
+            "sábado e domingo",
+            "segunda e terça",
+            "só segunda"
+          ],
+          "correta": 0,
+          "explicacao": "Samedi = sábado · dimanche = domingo."
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Monte as frases da pousada. Il est … heures = são … horas.",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte: “São três horas.”",
+          "palavras": [
+            "Il",
+            "est",
+            "trois",
+            "heures."
+          ],
+          "extras": [
+            "lundi",
+            "soir"
+          ],
+          "audio": "frase-b1",
+          "explicacao": "Il est + número + heures."
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete: “Um quarto: trinta dólares.”",
+          "frase": "Une chambre : ___ dollars.",
+          "banco": [
+            "trente",
+            "treize",
+            "trois"
+          ],
+          "respostas": [
+            "trente"
+          ],
+          "audio": "frase-b2",
+          "explicacao": "Trente = 30 · treize = 13 · trois = 3."
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Escreva: “Até amanhã! Boa noite!”",
+          "frase": "À ___ ! Bonne nuit !",
+          "respostas": [
+            "demain"
+          ],
+          "dica": "Começa com d…",
+          "audio": "frase-b3",
+          "explicacao": "À demain = até amanhã."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "w-dimanche",
+          "respostas": [
+            "dimanche"
+          ],
+          "explicacao": "Dimanche = domingo."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez! Peça um quarto a Odile e grave a sua frase.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Odile.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Bonsoir ! Vous voulez une chambre ?",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Bonsoir ! Oui, une chambre, combien ?",
+                  "feedback": "Isso: pedir e perguntar o preço.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "Oui, je voudrais une chambre, s'il vous plaît.",
+                  "feedback": "Perfeito: pedido educado.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "Il pleut !",
+                  "feedback": "Ela perguntou sobre o quarto. Responda: oui, une chambre…",
+                  "erro": true,
+                  "revisao": "rv-chambre"
+                }
+              ]
+            },
+            "n2": {
+              "fala": "Cinquante dollars. Pour lundi ?",
+              "audio": "d-n2",
+              "opcoes": [
+                {
+                  "fr": "Quinze dollars ?",
+                  "feedback": "Cinquante = 50, não 15.",
+                  "erro": true,
+                  "revisao": "rv-cinquante"
+                },
+                {
+                  "fr": "Non, pour samedi.",
+                  "feedback": "Isso: dizer o dia.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Oui, pour lundi. Il est quelle heure ?",
+                  "feedback": "Boa: confirmar e perguntar a hora.",
+                  "vai": "n3"
+                }
+              ]
+            },
+            "n3": {
+              "fala": "Il est neuf heures. Voici la clé. Bonne nuit !",
+              "audio": "d-n3",
+              "opcoes": [
+                {
+                  "fr": "Bonjour !",
+                  "feedback": "É noite: diga bonne nuit!",
+                  "erro": true
+                },
+                {
+                  "fr": "Merci ! Bonne nuit !",
+                  "feedback": "Perfeito: agradecer e dar boa-noite.",
+                  "vai": "fim"
+                }
+              ]
+            }
+          },
+          "explicacao": "une chambre, combien ? → cinquante dollars → pour samedi → il est … heures → bonne nuit."
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave em voz alta (1–2 frases): peça um quarto e diga o dia.",
+          "modelo": "Bonsoir ! Je voudrais une chambre pour samedi, s'il vous plaît.",
+          "audio_modelo": "modelo",
+          "checklist": [
+            "Bonsoir",
+            "une chambre",
+            "pour samedi / dimanche / lundi",
+            "s'il vous plaît"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva o seu pedido.",
+            "palavras_chave": [
+              [
+                "chambre"
+              ],
+              [
+                "lundi",
+                "samedi",
+                "dimanche",
+                "demain"
+              ]
+            ],
+            "explicacao": "Une chambre pour + dia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "intro": "Última rodada: os itens errados voltam, uma revisão e a frase da missão.",
+      "recuperar": true,
+      "itens": [
+        {
+          "id": "r2",
+          "tipo": "audio",
+          "instrucao": "Revisão da etapa 18 (família): ouça Mathilde.",
+          "audio": "rev",
+          "pergunta": "Quem ela apresenta?",
+          "opcoes": [
+            "o pai",
+            "o irmão",
+            "a irmã"
+          ],
+          "correta": 1,
+          "explicacao": "Mon frère = meu irmão (etapa 18)."
+        },
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “Um quarto para sábado. São nove horas.”",
+          "palavras": [
+            "Une",
+            "chambre",
+            "pour",
+            "samedi.",
+            "Il",
+            "est",
+            "neuf",
+            "heures."
+          ],
+          "extras": [
+            "lundi"
+          ],
+          "audio": "recap",
+          "explicacao": "Une chambre pour samedi. Il est neuf heures."
+        }
+      ]
+    }
+  ],
+  "novas": [
+    "une chambre",
+    "il est … heures",
+    "lundi",
+    "samedi",
+    "dimanche",
+    "le soir",
+    "demain",
+    "(números: trente, quarante, cinquante, soixante — série fechada)"
+  ],
+  "padroes": [
+    "Il est + número + heures. · Il est quelle heure ?",
+    "pour + dia (pour samedi)"
+  ]
+}

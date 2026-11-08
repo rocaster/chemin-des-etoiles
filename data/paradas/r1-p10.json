@@ -1,0 +1,39 @@
+{
+  "id": "r1-p10",
+  "regiao": 1,
+  "etapa": 4,
+  "formato": "batalha",
+  "batalha": "r1-b02",
+  "titulo": "A gansa do caminho",
+  "titulo_fr": "L'oie du chemin",
+  "nivel": "A1",
+  "duracao_min": 5,
+  "revisa": [
+    "r1-p01",
+    "r1-p05",
+    "r1-p02"
+  ],
+  "recompensa": {
+    "xp_base": 0,
+    "xp_por_estrela": 0,
+    "xp_pausado": true,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 3,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 4,
+        "max_erros": 1000,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  }
+}

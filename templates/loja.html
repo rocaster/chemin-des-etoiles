@@ -1,0 +1,22 @@
+{% extends 'loja-base.html' %}
+{% block titulo %}Loja de cosméticos{% endblock %}
+{% block conteudo %}
+<div class="abertura"><p class="sobretitulo">LE COMPTOIR DES ÉTOILES</p><h1>Loja de cosméticos</h1><p>Um toque de magia. A sua aventura, do seu jeito.</p></div>
+<div class="aviso">◆ Use <strong>cristais</strong>, nunca XP. {{ 'Você está no modo teste: o saldo inicial de demonstração é 1.000 cristais e some ao reiniciar o servidor.' if estado.cristais is defined and perfil.get('teste') else 'Contas reais começam com zero cristais. Conclua etapas para ganhar cristais; repetições não dão créditos de etapa.' }}</div>
+<nav class="abas" aria-label="Categorias da loja">{% for cat,n in categorias.items() %}<a href="{{ url_for('loja.inicio',categoria=cat) }}" {% if cat==categoria %}aria-current="page"{% endif %}>{{ n }}</a>{% endfor %}</nav>
+<section aria-label="{{ categorias[categoria] }}">
+<div class="prateleira-topo"><h2>{{ categorias[categoria] }}</h2>{% if equipados.get(categoria) %}<form method="post" action="{{ url_for('loja.retirar') }}"><input type="hidden" name="csrf" value="{{ csrf }}"><input type="hidden" name="categoria" value="{{ categoria }}"><button class="botao secundario" type="submit">Restaurar {{ 'cor original' if categoria=='personagem' else 'padrão' }}</button></form>{% endif %}</div>
+{% include 'perfil-resumo.html' %}
+{% if categoria=='personagem' %}<p class="nota">Somente a cor do tecido muda, sobre a arte existente. Rosto, cabelo, pele e equipamentos mantêm a paleta original.</p>{% elif categoria=='cenarios' %}<p class="nota">Seu cenário pessoal aparece somente no refúgio /heroi. O Refúgio original é gratuito e sempre seu.</p>{% elif categoria=='pets' %}<p class="nota">Companheiros em novas poses articuladas: oito quadros leves no refúgio e na ficha do mapa; ficam parados com movimento reduzido.</p>{% elif categoria=='particulas' %}<p class="nota">Partículas aparecem somente no cenário do personagem (/heroi) e nas prévias da loja. Não aparecem no mapa, batalhas ou HUD. Sem efeitos com movimento reduzido.</p>{% endif %}
+<div class="produtos">{% for item in itens %}{% set comprado = item.get('padrao') or item.id in estado.comprados %}{% set equipado = equipados.get(categoria,{}).get('id') == item.id %}
+<article class="produto pergaminho" data-item="{{ item.id }}">
+<div class="amostra amostra-{{ categoria }}">
+{% if categoria=='cenarios' %}<img class="preview-cenario" src="{{ url_for('static',filename=item.sprite) }}" width="224" height="192" alt="Cenário {{ item.nome }}">{% elif categoria=='personagem' %}<span class="heroi-pose sprite-oito" role="img" data-quadros="8" aria-label="Prévia da roupa na paleta {{ item.nome }}" style="background-image:url('{{ url_for('static',filename=previews_paletas[item.paleta]) }}')"></span>{% elif categoria=='pets' %}<span class="pet pet-idle sprite-oito" data-quadros="8" role="img" aria-label="{{ item.nome }}" style="background-image:url('{{ url_for('static',filename=item.sprite) }}')"></span>{% elif categoria=='titulos' %}<span class="preview-titulo"><small>{{ nome }}</small><span lang="fr">{{ item.nome_fr_exibicao }}</span></span>{% else %}{% set efeito = item.efeito %}{% include 'loja-efeito.html' %}<span class="rotulo-efeito">{{ item.nome }}</span>{% endif %}
+</div>
+<div class="produto-texto"><h3>{{ item.nome_pt_exibicao if categoria=='titulos' else item.nome }}</h3><p>{% if categoria=='titulos' %}Tradução de <span lang="fr">{{ item.nome_fr_exibicao }}</span>. {% endif %}{{ item.descricao }}</p><div class="produto-rodape"><strong class="preco">{% if item.get('padrao') %}Grátis · sempre seu{% else %}◆ {{ item.preco }} <small>cristais</small>{% endif %}</strong>
+{% if equipado %}<span class="em-uso">Equipado ✓</span>{% else %}<form method="post" action="{{ url_for('loja.equipar' if comprado else 'loja.comprar') }}"><input type="hidden" name="csrf" value="{{ csrf }}"><input type="hidden" name="item" value="{{ item.id }}"><button class="botao" type="submit" {% if not comprado and estado.cristais < item.preco %}disabled{% endif %}>{{ 'Equipar' if comprado else 'Comprar' }}</button></form>{% endif %}
+</div>{% if comprado %}<p class="nota propriedade">{{ 'Seu cenário padrão · sempre disponível' if item.get('padrao') else 'No seu inventário · compra única' }}</p>{% elif estado.cristais < item.preco %}<p class="nota">Faltam {{ item.preco-estado.cristais }} cristais.</p>{% endif %}</div>
+</article>{% endfor %}</div>
+</section>
+{% include 'loja-molduras.html' %}
+{% endblock %}

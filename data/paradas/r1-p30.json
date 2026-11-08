@@ -1,0 +1,677 @@
+{
+  "id": "r1-p30",
+  "regiao": 1,
+  "parada": 30,
+  "etapa": 30,
+  "titulo": "Compras na cidade",
+  "titulo_fr": "Les achats en ville",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "parada/mapa40/cenas/cidade/cena-fundo.png",
+    "frente": "parada/mapa40/cenas/cidade/cena-frente.png",
+    "npc": {
+      "nome": "Camille",
+      "papel": "vendedora da cidade",
+      "img": "parada/mapa40/npc/camille.png",
+      "x": 52,
+      "y": 33.8,
+      "w": 10.5,
+      "voz": "camille"
+    },
+    "brilhos": []
+  },
+  "vozes": {
+    "camille": {
+      "voz": "fr-CA-SylvieNeural",
+      "pitch": "+6Hz"
+    },
+    "leo": "fr-CA-AntoineNeural",
+    "fanfan": {
+      "voz": "fr-CA-AntoineNeural",
+      "pitch": "+4Hz"
+    }
+  },
+  "audios": {
+    "w-un-manteau": {
+      "voz": "camille",
+      "texto": "Un manteau."
+    },
+    "w-une-echarpe": {
+      "voz": "camille",
+      "texto": "Une écharpe."
+    },
+    "w-des-gants": {
+      "voz": "camille",
+      "texto": "Des gants."
+    },
+    "w-cent-dollars": {
+      "voz": "camille",
+      "texto": "Cent dollars."
+    },
+    "w-c-est-combien": {
+      "voz": "camille",
+      "texto": "C'est combien ?"
+    },
+    "w-c-est-cher": {
+      "voz": "camille",
+      "texto": "C'est cher."
+    },
+    "w-je-prends": {
+      "voz": "camille",
+      "texto": "Je prends."
+    },
+    "w-soixante-dix": {
+      "voz": "camille",
+      "texto": "Soixante-dix."
+    },
+    "w-quatre-vingts": {
+      "voz": "camille",
+      "texto": "Quatre-vingts."
+    },
+    "w-quatre-vingt-dix": {
+      "voz": "camille",
+      "texto": "Quatre-vingt-dix."
+    },
+    "c1-fala": {
+      "voz": "camille",
+      "texto": "Le manteau ? Quatre-vingts dollars."
+    },
+    "c2-fala": {
+      "voz": "camille",
+      "texto": "L'écharpe : soixante-dix dollars. C'est cher !"
+    },
+    "c3-fala": {
+      "voz": "leo",
+      "texto": "Des gants, c'est combien ?"
+    },
+    "frase-b1": {
+      "voz": "camille",
+      "texto": "Le manteau, c'est combien ?"
+    },
+    "frase-b2": {
+      "voz": "camille",
+      "texto": "C'est cher ! Je prends les gants."
+    },
+    "frase-b3": {
+      "voz": "camille",
+      "texto": "Je prends l'écharpe."
+    },
+    "d-n1": {
+      "voz": "camille",
+      "texto": "Bonjour ! Il fait froid, hein ? Un manteau ?"
+    },
+    "d-n2": {
+      "voz": "camille",
+      "texto": "Quatre-vingts dollars."
+    },
+    "d-n3": {
+      "voz": "camille",
+      "texto": "Voilà ! Merci et bonne journée !"
+    },
+    "modelo": {
+      "voz": "leo",
+      "texto": "L'écharpe, c'est combien ? Je prends l'écharpe, merci."
+    },
+    "rev": {
+      "voz": "fanfan",
+      "texto": "Tu aimes la musique ?"
+    },
+    "recap": {
+      "voz": "camille",
+      "texto": "C'est cher ! Je prends les gants."
+    }
+  },
+  "imagens": {
+    "manteau": {
+      "src": "parada/mapa40/icones/manteau-gris.png",
+      "fr": "un manteau",
+      "pt": "um casaco",
+      "alt": "um casaco"
+    },
+    "echarpe": {
+      "src": "parada/mapa40/icones/echarpe.png",
+      "fr": "une écharpe",
+      "pt": "um cachecol",
+      "alt": "um cachecol"
+    },
+    "gants": {
+      "src": "parada/mapa40/icones/gants.png",
+      "fr": "des gants",
+      "pt": "luvas",
+      "alt": "luvas"
+    },
+    "cent": {
+      "src": "parada/mapa40/icones/pieces.png",
+      "fr": "cent dollars",
+      "pt": "cem dólares",
+      "alt": "cem dólares"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "un manteau",
+      "pt": "um casaco",
+      "audio": "w-un-manteau",
+      "img": "manteau"
+    },
+    {
+      "fr": "une écharpe",
+      "pt": "um cachecol",
+      "audio": "w-une-echarpe",
+      "img": "echarpe"
+    },
+    {
+      "fr": "des gants",
+      "pt": "luvas",
+      "audio": "w-des-gants",
+      "img": "gants"
+    },
+    {
+      "fr": "cent dollars",
+      "pt": "cem dólares",
+      "audio": "w-cent-dollars",
+      "img": "cent"
+    },
+    {
+      "fr": "c'est combien ?",
+      "pt": "quanto custa?",
+      "audio": "w-c-est-combien"
+    },
+    {
+      "fr": "c'est cher",
+      "pt": "é caro",
+      "audio": "w-c-est-cher"
+    },
+    {
+      "fr": "je prends",
+      "pt": "eu levo / eu fico com",
+      "audio": "w-je-prends"
+    },
+    {
+      "fr": "soixante-dix",
+      "pt": "setenta",
+      "audio": "w-soixante-dix"
+    },
+    {
+      "fr": "quatre-vingts",
+      "pt": "oitenta",
+      "audio": "w-quatre-vingts"
+    },
+    {
+      "fr": "quatre-vingt-dix",
+      "pt": "noventa",
+      "audio": "w-quatre-vingt-dix"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-combien": {
+      "id": "rv-combien",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Camille : Un manteau ?"
+      ],
+      "pergunta": "Pergunte o preço.",
+      "opcoes": [
+        "Bonne nuit !",
+        "Oui, c'est combien ?",
+        "J'aime danser !"
+      ],
+      "correta": 1,
+      "explicacao": "C'est combien ? = quanto custa?"
+    },
+    "rv-quatrevingts": {
+      "id": "rv-quatrevingts",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Camille : Quatre-vingts dollars."
+      ],
+      "pergunta": "Quanto custa?",
+      "opcoes": [
+        "24 dólares",
+        "80 dólares",
+        "18 dólares"
+      ],
+      "correta": 1,
+      "explicacao": "Quatre-vingts = 4 × 20 = 80."
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "Na loja de roupas da cidade, Camille vende roupas de frio. Ouça e escolha a imagem.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-un-manteau",
+          "texto_fr": "un manteau",
+          "opcoes": [
+            "gants",
+            "manteau",
+            "cent",
+            "echarpe"
+          ],
+          "correta": "manteau",
+          "explicacao": "Un manteau = um casaco."
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-une-echarpe",
+          "texto_fr": "une écharpe",
+          "opcoes": [
+            "manteau",
+            "echarpe",
+            "cent",
+            "gants"
+          ],
+          "correta": "echarpe",
+          "explicacao": "Une écharpe = um cachecol."
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-des-gants",
+          "texto_fr": "des gants",
+          "opcoes": [
+            "manteau",
+            "cent",
+            "gants",
+            "echarpe"
+          ],
+          "correta": "gants",
+          "explicacao": "Des gants = luvas."
+        },
+        {
+          "id": "d4",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-cent-dollars",
+          "texto_fr": "cent dollars",
+          "opcoes": [
+            "echarpe",
+            "manteau",
+            "gants",
+            "cent"
+          ],
+          "correta": "cent",
+          "explicacao": "Cent dollars = cem dólares."
+        },
+        {
+          "id": "d5",
+          "tipo": "pares",
+          "instrucao": "Ligue cada palavra à sua imagem: toque numa palavra e depois na imagem.",
+          "pares": [
+            {
+              "fr": "un manteau",
+              "img": "manteau",
+              "audio": "w-un-manteau"
+            },
+            {
+              "fr": "une écharpe",
+              "img": "echarpe",
+              "audio": "w-une-echarpe"
+            },
+            {
+              "fr": "des gants",
+              "img": "gants",
+              "audio": "w-des-gants"
+            },
+            {
+              "fr": "cent dollars",
+              "img": "cent",
+              "audio": "w-cent-dollars"
+            }
+          ],
+          "explicacao": "Casaco, cachecol, luvas e o dinheiro."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Escute Camille. Números: soixante-dix (70), quatre-vingts (80), quatre-vingt-dix (90), cent (100).",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Léo perguntou o preço do casaco. Ouça.",
+          "audio": "c1-fala",
+          "pergunta": "Quanto custa o casaco?",
+          "opcoes": [
+            "20 dólares",
+            "18 dólares",
+            "80 dólares"
+          ],
+          "correta": 2,
+          "explicacao": "Quatre-vingts = 80 (4 × 20)."
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "Ouça Camille.",
+          "audio": "c2-fala",
+          "pergunta": "Quanto custa o cachecol?",
+          "opcoes": [
+            "70 dólares",
+            "60 dólares",
+            "17 dólares"
+          ],
+          "correta": 0,
+          "explicacao": "Soixante-dix = 70 (60 + 10)."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Ouça Léo.",
+          "audio": "c3-fala",
+          "pergunta": "O que Léo quer comprar?",
+          "opcoes_img": [
+            "manteau",
+            "echarpe",
+            "gants",
+            "cent"
+          ],
+          "correta": "gants",
+          "explicacao": "Des gants = luvas."
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia a conversa na loja.",
+          "texto_fr": [
+            "Léo : Le manteau, c'est combien ?",
+            "Camille : Cent dollars.",
+            "Léo : Oh ! C'est cher.",
+            "Camille : Les gants ? Trente dollars."
+          ],
+          "pergunta": "Quanto custa o casaco?",
+          "opcoes": [
+            "30 dólares",
+            "10 dólares",
+            "100 dólares"
+          ],
+          "correta": 2,
+          "explicacao": "Cent = 100."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "Mesma conversa.",
+          "texto_fr": [
+            "Léo : Le manteau, c'est combien ?",
+            "Camille : Cent dollars.",
+            "Léo : Oh ! C'est cher.",
+            "Camille : Les gants ? Trente dollars."
+          ],
+          "pergunta": "Quanto custam as luvas?",
+          "opcoes": [
+            "30 dólares",
+            "13 dólares",
+            "3 dólares"
+          ],
+          "correta": 0,
+          "explicacao": "Trente = 30 (treize = 13)."
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Monte as frases da loja. C'est combien ? = quanto custa?",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte: “O casaco, quanto custa?”",
+          "palavras": [
+            "Le",
+            "manteau,",
+            "c'est",
+            "combien ?"
+          ],
+          "extras": [
+            "cher",
+            "gants"
+          ],
+          "audio": "frase-b1",
+          "explicacao": "Coisa + c'est combien ?"
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete: “É caro! Eu levo as luvas.”",
+          "frase": "C'est ___ ! Je prends les gants.",
+          "banco": [
+            "cher",
+            "cent",
+            "chaud"
+          ],
+          "respostas": [
+            "cher"
+          ],
+          "audio": "frase-b2",
+          "explicacao": "C'est cher = é caro."
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Escreva: “Eu levo o cachecol.”",
+          "frase": "Je ___ l'écharpe.",
+          "respostas": [
+            "prends"
+          ],
+          "dica": "Começa com p…",
+          "audio": "frase-b3",
+          "explicacao": "Je prends = eu levo / eu fico com."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "w-cent-dollars",
+          "respostas": [
+            "cent dollars"
+          ],
+          "explicacao": "Cent dollars = cem dólares (o t de cent não soa aqui)."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez! Compre algo de Camille e grave a sua frase.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Camille.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Bonjour ! Il fait froid, hein ? Un manteau ?",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Bonjour ! Une écharpe, c'est combien ?",
+                  "feedback": "Isso: outra peça, mesmo padrão.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "Bonjour ! Oui, c'est combien ?",
+                  "feedback": "Isso: c'est combien ?",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "J'aime danser !",
+                  "feedback": "Ela está vendendo roupas! Pergunte o preço.",
+                  "erro": true,
+                  "revisao": "rv-combien"
+                }
+              ]
+            },
+            "n2": {
+              "fala": "Quatre-vingts dollars.",
+              "audio": "d-n2",
+              "opcoes": [
+                {
+                  "fr": "Quatre-vingts ? Je prends le manteau.",
+                  "feedback": "Isso: comprar.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Dix-huit dollars ?",
+                  "feedback": "Quatre-vingts = 80, não 18.",
+                  "erro": true,
+                  "revisao": "rv-quatrevingts"
+                },
+                {
+                  "fr": "C'est cher ! Et les gants ?",
+                  "feedback": "Boa: reagir e perguntar outro preço.",
+                  "vai": "n3"
+                }
+              ]
+            },
+            "n3": {
+              "fala": "Voilà ! Merci et bonne journée !",
+              "audio": "d-n3",
+              "opcoes": [
+                {
+                  "fr": "Merci ! Au revoir !",
+                  "feedback": "Perfeito: agradecer e se despedir.",
+                  "vai": "fim"
+                },
+                {
+                  "fr": "C'est combien ?",
+                  "feedback": "Você já comprou! Agradeça: merci, au revoir.",
+                  "erro": true
+                }
+              ]
+            }
+          },
+          "explicacao": "C'est combien ? → quatre-vingts dollars → c'est cher / je prends… → merci, au revoir."
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave em voz alta (1–2 frases): pergunte o preço de uma roupa e compre.",
+          "modelo": "L'écharpe, c'est combien ? Je prends l'écharpe, merci.",
+          "audio_modelo": "modelo",
+          "checklist": [
+            "… c'est combien ?",
+            "un manteau / une écharpe / des gants",
+            "Je prends…"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva a sua pergunta e a sua compra.",
+            "palavras_chave": [
+              [
+                "combien"
+              ],
+              [
+                "manteau",
+                "écharpe",
+                "echarpe",
+                "gants"
+              ]
+            ],
+            "explicacao": "Roupa + c'est combien ? e je prends…"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "intro": "Última rodada: os itens errados voltam, uma revisão e a frase da missão.",
+      "recuperar": true,
+      "itens": [
+        {
+          "id": "r2",
+          "tipo": "audio",
+          "instrucao": "Revisão da etapa 28 (gostos): ouça Fanfan.",
+          "audio": "rev",
+          "pergunta": "Você não gosta. O que responde?",
+          "opcoes": [
+            "Non, je n'aime pas la musique.",
+            "C'est cher !",
+            "Cent dollars."
+          ],
+          "correta": 0,
+          "explicacao": "Je n'aime pas… (etapa 28)."
+        },
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “É caro! Eu levo as luvas.”",
+          "palavras": [
+            "C'est",
+            "cher !",
+            "Je",
+            "prends",
+            "les",
+            "gants."
+          ],
+          "extras": [
+            "manteau"
+          ],
+          "audio": "recap",
+          "explicacao": "C'est cher ! Je prends les gants."
+        }
+      ]
+    }
+  ],
+  "novas": [
+    "un manteau",
+    "une écharpe",
+    "des gants",
+    "c'est combien ?",
+    "c'est cher",
+    "je prends",
+    "(números: soixante-dix, quatre-vingts, quatre-vingt-dix, cent — série fechada)"
+  ],
+  "padroes": [
+    "Coisa + c'est combien ?",
+    "Je prends + coisa."
+  ]
+}

@@ -1,0 +1,57 @@
+--- a/static/parada/motor.js
++++ b/static/parada/motor.js
+@@ -581,7 +581,20 @@
+     return fetch(CFG.concluir, {
+       method: "POST", headers: { "Content-Type": "application/json" }, credentials: "same-origin",
+       body: JSON.stringify({ acertos: registro.acertos, erros: registro.erros, fala_pendente: registro.fala_pendente, duracao_s: registro.duracao_s })
+-    }).then(r => r.ok).catch(() => false);
++    }).then(async r => {
++      if (!r.ok) return false;
++      const resposta = await r.json();
++      if (resposta.ok !== true || !Number.isFinite(resposta.xp_ganho) || !Number.isFinite(resposta.xp_total)) return false;
++      registro.xp = Number.isFinite(resposta.xp_creditado_etapa) ? resposta.xp_creditado_etapa : registro.xp;
++      registro.xp_ganho = resposta.xp_ganho; registro.xp_confirmado = true; registro.xp_versao = 6;
++      try {
++        const pre = CFG.prefixo || "chemin_";
++        const todas = JSON.parse(localStorage.getItem(pre + "paradas") || "{}");
++        todas[CFG.pid] = registro;
++        localStorage.setItem(pre + "paradas", JSON.stringify(todas));
++      } catch (_) { /* progresso continua salvo no servidor */ }
++      return resposta;
++    }).catch(() => false);
+   }
+   function concluir(demo) {
+     calar();
+@@ -591,15 +604,17 @@
+       fala_pendente: E.falaPendente, duracao_s: Math.round((Date.now() - E.inicio) / 1000)
+     };
+     const n = estrelas(reg.erros);
+-    const xp = (D.recompensa.xp_base || 10) + (D.recompensa.xp_por_estrela || 5) * n;
+-    reg.estrelas = n; reg.xp = xp;
++    const rec = D.recompensa || {};
++    const xp = rec.xp_pausado ? 0 : Math.max(0, (rec.xp_base ?? 0) + (rec.xp_por_estrela ?? 0) * n);
++    reg.estrelas = n; reg.xp = xp; reg.xp_versao = 6; reg.xp_confirmado = false;
++    const xpLinha = h("p", { class: "xp", text: EM_PREVIA ? `+${xp} XP · prévia` : "Confirmando XP…" });
+     const nota = h("p", { class: "sub", text: EM_PREVIA ? "Prévia: nada foi salvo." : "Salvando…" });
+     trocar(conteudo, h("div", { class: "recompensa" },
+       h("p", { class: "sub", text: `Étape ${CFG.n} concluída` }),
+       h("h2", { text: "Mission accomplie !" }),
+       h("div", { class: "estrelas", role: "img", "aria-label": `${n} de 3 estrelas` },
+         [1, 2, 3].map(i => h("img", { src: CFG.estatico + (i <= n ? "parada/estrela-cheia.png" : "parada/estrela-vazia.png"), alt: "", class: i <= n ? "cheia" : "" }))),
+-      h("p", { class: "xp", text: `+${xp} XP` }),
++      xpLinha,
+       h("p", { text: `${reg.acertos} acertos · ${reg.erros} ${reg.erros === 1 ? "erro" : "erros"} · ${Math.max(1, Math.round(reg.duracao_s / 60))} min` }),
+       reg.fala_pendente ? h("p", { class: "pendente", text: "Fala pendente: grave a sua fala numa próxima visita a esta parada." }) : null,
+       h("p", { class: "instr", style: "margin:10px 0 0;font-weight:700", text: "Você aprendeu:" }),
+@@ -615,7 +630,10 @@
+     retorno.hidden = true;
+     focar("#ir-mapa");
+     if (EM_PREVIA) return;
+-    salvar(reg).then(ok => { nota.textContent = CFG.teste ? "Modo teste: progresso separado, só neste aparelho." : ok ? "Progresso salvo." : "Progresso salvo neste aparelho (servidor indisponível agora)."; });
++    salvar(reg).then(resposta => {
++      xpLinha.textContent = resposta ? `+${resposta.xp_ganho} XP` + (xp > 0 && resposta.xp_ganho === 0 ? " · etapa já concluída" : "") : "XP pendente · confirme quando o servidor voltar";
++      nota.textContent = resposta ? (CFG.teste ? "Modo teste: progresso salvo só nesta sessão de teste." : "Progresso salvo.") : "Progresso salvo neste aparelho (servidor indisponível agora).";
++    });
+   }
+ 
+   /* Estado exposto só para testes/depuração (somente leitura na prática) */

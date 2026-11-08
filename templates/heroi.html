@@ -1,0 +1,38 @@
+{% extends 'loja-base.html' %}
+{% block titulo %}Meu personagem{% endblock %}
+{% block estilos_extras %}<link rel="stylesheet" href="{{ url_for('static',filename='loja/heroi-v2.css') }}">{% endblock %}
+{% block conteudo %}
+<div class="abertura"><p class="sobretitulo">O REFÚGIO</p><h1>Meu personagem</h1><p>Um descanso para celebrar quem você está se tornando.</p></div>
+<section class="heroi-painel" aria-label="Personagem e progresso">
+<div class="retrato-area">
+ <div class="retrato diorama" aria-label="Cenário pessoal: {{ equipados.cenarios.nome }}" style="background-image:url('{{ url_for('static',filename=equipados.cenarios.sprite) }}')">
+  {% include 'loja-particulas-cena.html' %}
+  <div class="dupla">
+   <span class="heroi-idle heroi-pose sprite-oito" role="img" aria-label="{{ nome }}, personagem de corpo inteiro{{ ' com espada' if avatar.startswith('cavaleiro-') else '' }}" data-quadros="8" style="background-image:url('{{ url_for('static',filename=sprite) }}')"></span>
+   {% if equipados.get('pets') %}<div class="pet-companheiro"><span class="pet pet-idle sprite-oito" data-quadros="8" role="img" aria-label="{{ equipados.pets.nome }}" style="background-image:url('{{ url_for('static',filename=equipados.pets.sprite) }}')"></span><small>{{ equipados.pets.nome }}</small></div>{% else %}<div class="pet-companheiro pet-vazio"><img src="{{ url_for('static',filename='loja/cenario/almofada.png') }}" alt="Almofada reservada para um futuro companheiro"><small>Um lugar para um amigo</small></div>{% endif %}
+  </div>
+ </div>
+ <h2 class="nome-heroi">{{ nome }}</h2>
+ <p class="titulo-heroi" lang="fr">{{ titulo_equipado }}</p>
+</div>
+<div class="pergaminho ficha">
+ <p class="sobretitulo">SUA JORNADA</p><h2>Pequenos passos,<br>grandes histórias.</h2>
+ <dl class="estatisticas"><div><dt>Nível visual</dt><dd>{{ nivel }}</dd></div><div><dt>XP acumulado</dt><dd>{{ xp }}</dd></div><div><dt><span class="cristal" aria-hidden="true">◆</span> Cristais</dt><dd>{{ estado.cristais }}</dd></div></dl>
+ <p class="nota">O nível visual acompanha as seis molduras por XP já existentes. Não é o nível de francês.</p>
+ <hr><h3>Seu estilo</h3>
+ <ul class="inventario">{% for cat, rotulo in categorias.items() %}<li><span>{{ rotulo }}</span><strong>{% if cat=='titulos' %}<span lang="fr">{{ titulo_equipado }}</span>{% else %}{{ equipados.get(cat,{}).get('nome','Padrão' if cat=='personagem' else 'Nenhum') }}{% endif %}</strong></li>{% endfor %}</ul>
+ <a class="botao" href="{{ url_for('loja.inicio') }}">Visitar a loja ›</a>
+ <p class="nota">Seu companheiro também aparece na ficha do mapa e nas batalhas: é só companhia, sem alterar o combate.</p>
+</div>
+</section>
+{% if equipados.get('pets') %}<section id="nome-pet" class="pergaminho nome-pet-painel" aria-labelledby="titulo-nome-pet"><h2 id="titulo-nome-pet">O nome do seu companheiro</h2><p>{{ equipados.pets.nome_padrao }} · renomear é grátis, sem gastar cristais.</p>
+<form method="post" action="{{ url_for('loja.nome_pet') }}"><input type="hidden" name="csrf" value="{{ csrf }}"><input type="hidden" name="item" value="{{ equipados.pets.id }}"><label for="pet-nome">Nome (até 16 caracteres)</label><input id="pet-nome" name="nome" maxlength="16" value="{{ equipados.pets.nome }}" autocomplete="off"><button class="botao" type="submit">Salvar nome</button><button class="botao secundario" name="resetar" value="1" type="submit">Restaurar nome original</button></form><p class="nota">Letras, números, espaços, hífen e apóstrofo. Filtro básico de linguagem PT/FR/EN.</p></section>{% endif %}
+{% include 'loja-molduras.html' %}
+<section id="conquistas" class="bau" aria-labelledby="titulo-bau">
+<div class="abertura"><p class="sobretitulo">MEMÓRIAS DO CAMINHO</p><h2 id="titulo-bau">Baú de conquistas</h2><p>Seus selos, das grandes vitórias aos tropeços que viram história.</p></div>
+<p class="nota">{{ nota_conquistas }} Os critérios abaixo são provisórios.</p>
+<div class="selos">{% for selo in conquistas %}<article class="selo pergaminho {{ 'desbloqueado' if selo.desbloqueada else 'bloqueado' }}" data-conquista="{{ selo.id }}">
+<img src="{{ url_for('static',filename=selo.selo) }}" alt="" width="64" height="72"><div><h3>{{ selo.nome }}</h3><strong class="estado-selo">{{ 'Desbloqueado' if selo.desbloqueada else ('Bloqueado' if selo.rastreavel else 'Ainda não rastreável') }}</strong><p>{{ selo.descricao }}</p>{% if not selo.rastreavel %}<p class="nota">{{ selo.motivo }}</p>{% endif %}</div>
+</article>{% endfor %}</div>
+</section>
+{% endblock %}

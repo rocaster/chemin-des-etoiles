@@ -1,0 +1,2 @@
+{% set efeito = equipados.get('particulas',{}).get('efeito','') %}
+{% if efeito %}<div class="particulas-cena" aria-hidden="true">{% include 'loja-efeito.html' %}</div>{% endif %}

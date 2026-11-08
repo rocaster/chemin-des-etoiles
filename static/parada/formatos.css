@@ -1,0 +1,116 @@
+/* Formatos 2–5 (conversa, história, biblioteca, cartas) — usa a base de motor.css (hud, palco, balão, botão, cartão). */
+.etapas { margin-top: 5px; }
+.etapas li { min-width: 0; }
+
+/* resposta por voz */
+.resposta-voz { margin-top: 8px; }
+.botao.mic { gap: 8px; }
+.icone-mic { display: inline-block; width: 10px; height: 14px; background: currentColor; border-radius: 5px 5px 4px 4px; position: relative; margin-right: 2px; }
+.icone-mic::after { content: ""; position: absolute; left: 3px; top: 15px; width: 4px; height: 4px; background: currentColor; }
+.ouvindo .botao.mic { background: #a3201a; border-color: #1d1812; color: #fff4dc; animation: pisca 1s steps(1, end) infinite; }
+.status-voz { margin: 6px 0 0; font-size: .95rem; color: #6e4620; min-height: 1.2em; }
+.linha-texto { flex-wrap: nowrap; }
+.linha-texto .campo { flex: 1; }
+.fala-modelo { font-size: 1.35rem; font-weight: 700; color: #2a1a0c; margin: 4px 0 8px; }
+.dizer { margin: 4px 0 2px; padding: 8px 12px; border: 3px dashed #9c7240; background: rgba(255, 250, 235, .7); }
+.dizer .fala-modelo { margin: 0; }
+.dizer .pt { margin: 2px 0 0; font-size: .9rem; color: #6e4620; font-style: italic; }
+.ouvido { font-style: italic; color: #6e4620; }
+.botao.mini { padding: 3px 9px; font-size: .88rem; min-height: 0; }
+
+/* história: caixa de diálogo do bardo */
+.dialogo-bardo { padding: 8px 12px; border: 3px solid #784e1e; background: rgba(255, 250, 235, .75); font-size: 1.12rem; line-height: 1.4; }
+.dialogo-bardo .pt { display: block; margin-top: 4px; font-size: .9rem; color: #6e4620; font-style: italic; }
+.simnao { display: flex; gap: 12px; }
+.simnao .opcao { flex: 1; font-size: 1.15rem; text-align: center; font-weight: 700; }
+.opcoes.lista { display: grid; gap: 8px; }
+.ordem-alvo { display: grid; gap: 6px; margin: 6px 0; min-height: 40px; padding: 6px; border: 3px dashed #9c7240; counter-reset: ev; }
+.ordem-alvo .opcao { counter-increment: ev; }
+.ordem-alvo .opcao::before { content: counter(ev) ". "; font-weight: 700; color: #8a3b12; }
+.ordem-banco { display: grid; gap: 6px; }
+
+/* biblioteca: pergaminho com termos tocáveis */
+.pergaminho { padding: 10px 14px; border: 3px solid #784e1e; background-color: #f3e3b8; background-size: 144px auto; image-rendering: pixelated; box-shadow: inset 0 0 0 3px #e2c88e; }
+.pergaminho h3 { margin: 0 0 6px; color: #8a3b12; font-size: 1.1rem; }
+.pergaminho h3 span { font-weight: 400; font-style: italic; color: #6e4620; font-size: .9rem; }
+.frase { display: flex; gap: 8px; align-items: baseline; margin: 4px 0; font-size: 1.15rem; line-height: 1.55; }
+.frase .botao.som { flex: none; padding: 2px 8px; min-height: 0; }
+.frase.lendo { background: rgba(240, 196, 106, .45); }
+.termo { font: inherit; color: inherit; background: none; border: 0; padding: 0 1px; margin: 0; cursor: pointer; position: relative;
+  border-bottom: 3px dotted #2f5f9a; line-height: 1.2; }
+.termo:focus-visible { outline: 3px solid #8a3b12; outline-offset: 1px; }
+.termo.aprendendo { border-bottom: 3px solid #b07a12; background: rgba(240, 196, 106, calc(.18 * var(--selos, 1))); }
+.termo.conhecida { border-bottom: 3px solid rgba(63, 107, 28, .45); }
+.termo.ativo { background: #f0c46a; }
+.termo .marca { position: absolute; right: -2px; top: -9px; font-size: .58rem; line-height: 1; font-weight: 700; color: #fff4dc; background: #8a3b12; padding: 1px 2px; pointer-events: none; }
+.termo.conhecida .marca { background: #3f6b1c; }
+.glosa { margin-top: 10px; padding: 8px 12px; border: 3px solid #1d1812; background: #fffaf0; box-shadow: 3px 3px 0 rgba(0, 0, 0, .3); }
+.glosa .fr { font-size: 1.2rem; font-weight: 700; color: #2a1a0c; }
+.glosa .pt { color: #6e4620; }
+.glosa .ex { margin: 6px 0; font-size: .98rem; }
+.glosa .ex i { color: #6e4620; }
+.selos { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+.selo { width: 26px; height: 26px; padding: 0; border: 3px solid #784e1e; background: #f4e8c8; cursor: pointer; font-weight: 700; color: #784e1e; font-family: inherit; }
+.selo.on { background: #b07a12; border-color: #1d1812; color: #fff4dc; }
+.legenda { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 8px 0 0; padding: 0; list-style: none; font-size: .82rem; color: #6e4620; }
+.legenda .termo { cursor: default; font-size: .9rem; }
+.grimorio-cont { font-size: .9rem; color: #6e4620; }
+
+/* Forja da Memória */
+.forja { text-align: center; }
+.bau { position: relative; width: 120px; height: 72px; margin: 4px auto 10px; image-rendering: pixelated; }
+.bau i { position: absolute; display: block; }
+.bau .tampa { left: 0; right: 0; top: 0; height: 26px; background: #7a4a1c; border: 4px solid #2a1a0c; border-bottom-width: 2px; }
+.bau .corpo { left: 0; right: 0; top: 26px; bottom: 0; background: #8f5a24; border: 4px solid #2a1a0c; }
+.bau .fecho { left: 52px; top: 20px; width: 16px; height: 18px; background: #e8be5a; border: 3px solid #2a1a0c; z-index: 1; }
+.bau .faixa { top: 0; bottom: 0; width: 8px; background: #c9963c; }
+.bau .faixa.e { left: 18px; } .bau .faixa.d { right: 18px; }
+.bau.aberto .tampa { transform: translateY(-14px); }
+.ficha-forja { display: inline-block; min-width: 230px; max-width: 100%; padding: 12px 16px; border: 3px solid #1d1812; background: #fffaf0; box-shadow: 4px 4px 0 rgba(0, 0, 0, .3); }
+.ficha-forja .fr { font-size: 1.4rem; font-weight: 700; }
+.ficha-forja.volta { animation: volta .45s steps(4, end) forwards; }
+@keyframes volta { to { transform: translateY(40px) scale(.4); opacity: 0; } }
+.forja .linha { justify-content: center; }
+
+/* cartas */
+.mesa { display: grid; grid-template-columns: repeat(3, minmax(0, 92px)); gap: 10px; justify-content: center; margin: 6px 0 4px; }
+.carta { position: relative; aspect-ratio: 3 / 4; padding: 0; border: 0; background: none; cursor: pointer; perspective: 600px; font: inherit; }
+.carta .lado { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border: 3px solid #784e1e; box-shadow: 3px 3px 0 rgba(0, 0, 0, .35); backface-visibility: hidden; transition: transform .36s steps(4, end); image-rendering: pixelated; }
+.carta .face { background-color: #f3e3b8; background-size: 96px auto; }
+.carta .face img { width: 76%; image-rendering: pixelated; }
+.carta .tras { transform: rotateY(180deg); background: #dff0c0; border-color: #3f6b1c; font-weight: 700; font-size: .9rem; padding: 4px; text-align: center; color: #2a1a0c; }
+.carta .tras b { font-size: 1.6rem; line-height: 1; }
+.carta.errada .tras { background: #f4cdbc; border-color: #9a2a12; }
+.carta .verso { background-size: 100% 100%; background-color: #4a2a6a; transform: rotateY(180deg); }
+.carta.virada .face { transform: rotateY(180deg); }
+.carta.virada .tras { transform: rotateY(360deg); }
+.carta.espera .face { transform: rotateY(180deg); }
+.carta.espera .verso { transform: rotateY(360deg); }
+.carta.espera { cursor: default; }
+.carta.sel .lado { border-color: #1d1812; box-shadow: 0 0 0 3px #f0c46a, 3px 3px 0 3px rgba(0, 0, 0, .35); }
+.carta.saiu { display: none; }
+.carta.saindo { animation: some .5s steps(4, end) forwards; }
+@keyframes some { to { transform: translateY(-16px); opacity: 0; } }
+.carta:focus-visible { outline: 3px solid #8a3b12; outline-offset: 3px; }
+.carta[disabled] { cursor: default; }
+.formato-cartas .cartao { max-height: min(66vh, 620px); }
+
+@media (max-width: 560px) {
+  .mesa { grid-template-columns: repeat(3, minmax(0, 80px)); gap: 8px; }
+  .frase { font-size: 1.05rem; }
+  .linha-texto { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carta .lado { transition: none; }
+  .carta.saindo, .ficha-forja.volta { animation: none; opacity: 0; }
+  .ouvindo .botao.mic { animation: none; }
+}
+
+/* [hidden] vence qualquer display dos componentes (tradução, dica, glosa) */
+[hidden] { display: none !important; }
+/* telas largas: as 9 cartas numa fileira só, para a cartomante continuar à vista */
+@media (min-width: 900px) and (min-height: 600px) {
+  .mesa { grid-template-columns: repeat(9, 72px); gap: 8px; }
+  .formato-cartas .cartao { max-height: min(52vh, 520px); }
+}

@@ -1,0 +1,635 @@
+{
+  "id": "r1-p38",
+  "regiao": 1,
+  "parada": 38,
+  "etapa": 38,
+  "titulo": "Contar o seu dia",
+  "titulo_fr": "Ma journée",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "parada/r1-p03/cena-fundo.png",
+    "frente": "parada/r1-p03/cena-frente.png",
+    "npc": {
+      "nome": "Margot",
+      "papel": "feirante",
+      "img": "parada/r1-p03/npc.png",
+      "x": 50,
+      "y": 32.9,
+      "w": 15,
+      "voz": "margot"
+    },
+    "brilhos": []
+  },
+  "vozes": {
+    "margot": "fr-CA-SylvieNeural",
+    "leo": "fr-CA-AntoineNeural",
+    "isaure": {
+      "voz": "fr-CA-SylvieNeural",
+      "pitch": "-5Hz"
+    }
+  },
+  "audios": {
+    "w-d-abord": {
+      "voz": "margot",
+      "texto": "D'abord."
+    },
+    "w-ensuite": {
+      "voz": "margot",
+      "texto": "Ensuite."
+    },
+    "w-je-lis": {
+      "voz": "margot",
+      "texto": "Je lis."
+    },
+    "w-enfin": {
+      "voz": "margot",
+      "texto": "Enfin."
+    },
+    "w-ma-journee": {
+      "voz": "margot",
+      "texto": "Ma journée."
+    },
+    "w-je-rentre": {
+      "voz": "margot",
+      "texto": "Je rentre."
+    },
+    "c1-fala": {
+      "voz": "margot",
+      "texto": "D'abord, je me lève à six heures. Ensuite, je travaille."
+    },
+    "c2-fala": {
+      "voz": "margot",
+      "texto": "Le soir, je rentre à la maison et je lis."
+    },
+    "c3-fala": {
+      "voz": "leo",
+      "texto": "Enfin, je dors !"
+    },
+    "frase-b1": {
+      "voz": "margot",
+      "texto": "D'abord, je me lève."
+    },
+    "frase-b2": {
+      "voz": "margot",
+      "texto": "Enfin, je dors."
+    },
+    "frase-b3": {
+      "voz": "margot",
+      "texto": "Le soir, je lis un livre."
+    },
+    "d-n1": {
+      "voz": "margot",
+      "texto": "Bonjour, Léo ! Ça va ? Raconte ta journée !"
+    },
+    "d-n2": {
+      "voz": "margot",
+      "texto": "Et ensuite ?"
+    },
+    "d-n3": {
+      "voz": "margot",
+      "texto": "Et le soir ?"
+    },
+    "modelo": {
+      "voz": "leo",
+      "texto": "D'abord, je me lève. Ensuite, je travaille. Enfin, je rentre et je lis."
+    },
+    "rev": {
+      "voz": "isaure",
+      "texto": "Vous êtes prêt ?"
+    },
+    "recap": {
+      "voz": "margot",
+      "texto": "D'abord, je travaille. Enfin, je rentre."
+    }
+  },
+  "imagens": {
+    "dabord": {
+      "src": "parada/mapa40/icones/soleil.png",
+      "fr": "d'abord",
+      "pt": "primeiro",
+      "alt": "primeiro"
+    },
+    "ensuite": {
+      "src": "parada/mapa40/icones/soupe.png",
+      "fr": "ensuite",
+      "pt": "em seguida",
+      "alt": "em seguida"
+    },
+    "lis": {
+      "src": "parada/mapa40/icones/livre.png",
+      "fr": "je lis",
+      "pt": "eu leio",
+      "alt": "eu leio"
+    },
+    "enfin": {
+      "src": "parada/mapa40/icones/lit.png",
+      "fr": "enfin",
+      "pt": "por fim",
+      "alt": "por fim"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "d'abord",
+      "pt": "primeiro",
+      "audio": "w-d-abord",
+      "img": "dabord"
+    },
+    {
+      "fr": "ensuite",
+      "pt": "em seguida",
+      "audio": "w-ensuite",
+      "img": "ensuite"
+    },
+    {
+      "fr": "je lis",
+      "pt": "eu leio",
+      "audio": "w-je-lis",
+      "img": "lis"
+    },
+    {
+      "fr": "enfin",
+      "pt": "por fim",
+      "audio": "w-enfin",
+      "img": "enfin"
+    },
+    {
+      "fr": "ma journée",
+      "pt": "o meu dia",
+      "audio": "w-ma-journee"
+    },
+    {
+      "fr": "je rentre",
+      "pt": "eu volto (para casa)",
+      "audio": "w-je-rentre"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-dabord": {
+      "id": "rv-dabord",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Margot : Raconte ta journée !"
+      ],
+      "pergunta": "Comece o seu dia.",
+      "opcoes": [
+        "À samedi !",
+        "C'est cher !",
+        "D'abord, je me lève."
+      ],
+      "correta": 2,
+      "explicacao": "D'abord = primeiro."
+    },
+    "rv-enfin": {
+      "id": "rv-enfin",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Margot : Et ensuite ?"
+      ],
+      "pergunta": "O que você diz?",
+      "opcoes": [
+        "Ensuite, je travaille.",
+        "Enfin, je me lève.",
+        "Bonne nuit !"
+      ],
+      "correta": 0,
+      "explicacao": "Ensuite para o meio do dia; enfin para o fim."
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "De volta à feira, Margot pergunta do seu dia. Ouça e escolha a imagem.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-d-abord",
+          "texto_fr": "d'abord",
+          "opcoes": [
+            "dabord",
+            "ensuite",
+            "enfin",
+            "lis"
+          ],
+          "correta": "dabord",
+          "explicacao": "D'abord = primeiro (de manhã: o sol)."
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-ensuite",
+          "texto_fr": "ensuite",
+          "opcoes": [
+            "dabord",
+            "lis",
+            "enfin",
+            "ensuite"
+          ],
+          "correta": "ensuite",
+          "explicacao": "Ensuite = em seguida (ao meio-dia: a sopa)."
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-je-lis",
+          "texto_fr": "je lis",
+          "opcoes": [
+            "enfin",
+            "ensuite",
+            "lis",
+            "dabord"
+          ],
+          "correta": "lis",
+          "explicacao": "Je lis = eu leio."
+        },
+        {
+          "id": "d4",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-enfin",
+          "texto_fr": "enfin",
+          "opcoes": [
+            "ensuite",
+            "lis",
+            "dabord",
+            "enfin"
+          ],
+          "correta": "enfin",
+          "explicacao": "Enfin = por fim (a cama)."
+        },
+        {
+          "id": "d5",
+          "tipo": "pares",
+          "instrucao": "Ligue cada palavra à sua imagem: toque numa palavra e depois na imagem.",
+          "pares": [
+            {
+              "fr": "d'abord",
+              "img": "dabord",
+              "audio": "w-d-abord"
+            },
+            {
+              "fr": "ensuite",
+              "img": "ensuite",
+              "audio": "w-ensuite"
+            },
+            {
+              "fr": "je lis",
+              "img": "lis",
+              "audio": "w-je-lis"
+            },
+            {
+              "fr": "enfin",
+              "img": "enfin",
+              "audio": "w-enfin"
+            }
+          ],
+          "explicacao": "Primeiro, depois, ler e por fim."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Escute Margot. O texto só aparece depois que você responder.",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Ouça Margot.",
+          "audio": "c1-fala",
+          "pergunta": "O que Margot faz primeiro?",
+          "opcoes": [
+            "se levanta",
+            "trabalha",
+            "lê"
+          ],
+          "correta": 0,
+          "explicacao": "D'abord, je me lève."
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "Ouça Margot.",
+          "audio": "c2-fala",
+          "pergunta": "O que ela faz à noite?",
+          "opcoes": [
+            "dança na festa",
+            "trabalha na feira",
+            "volta para casa e lê"
+          ],
+          "correta": 2,
+          "explicacao": "Je rentre… et je lis."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Ouça Léo.",
+          "audio": "c3-fala",
+          "pergunta": "O que Léo faz por fim?",
+          "opcoes_img": [
+            "dabord",
+            "ensuite",
+            "lis",
+            "enfin"
+          ],
+          "correta": "enfin",
+          "explicacao": "Enfin, je dors = por fim, eu durmo."
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia o dia de Léo.",
+          "texto_fr": [
+            "D'abord, je mange une pomme.",
+            "Ensuite, je vais au château.",
+            "À midi, je mange avec Camille.",
+            "Enfin, je rentre et je lis."
+          ],
+          "pergunta": "O que Léo come primeiro?",
+          "opcoes": [
+            "uma maçã",
+            "sopa",
+            "chocolate"
+          ],
+          "correta": 0,
+          "explicacao": "D'abord, je mange une pomme."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "O mesmo dia.",
+          "texto_fr": [
+            "D'abord, je mange une pomme.",
+            "Ensuite, je vais au château.",
+            "À midi, je mange avec Camille.",
+            "Enfin, je rentre et je lis."
+          ],
+          "pergunta": "Com quem Léo almoça?",
+          "opcoes": [
+            "Hugo",
+            "o rei",
+            "Camille"
+          ],
+          "correta": 2,
+          "explicacao": "Je mange avec Camille."
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Monte as frases do dia. D'abord… ensuite… enfin… = primeiro… depois… por fim…",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte: “Primeiro, eu me levanto.”",
+          "palavras": [
+            "D'abord,",
+            "je",
+            "me",
+            "lève."
+          ],
+          "extras": [
+            "enfin",
+            "lis"
+          ],
+          "audio": "frase-b1",
+          "explicacao": "D'abord + frase."
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete: “Por fim, eu durmo.”",
+          "frase": "___, je dors.",
+          "banco": [
+            "Enfin",
+            "D'abord",
+            "Ensuite"
+          ],
+          "respostas": [
+            "Enfin"
+          ],
+          "audio": "frase-b2",
+          "explicacao": "Enfin = por fim (a última coisa)."
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Escreva: “À noite, eu leio um livro.”",
+          "frase": "Le soir, je ___ un livre.",
+          "respostas": [
+            "lis"
+          ],
+          "dica": "Três letras: l…",
+          "audio": "frase-b3",
+          "explicacao": "Je lis = eu leio."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "w-ensuite",
+          "respostas": [
+            "ensuite"
+          ],
+          "explicacao": "Ensuite = em seguida."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez! Conte o seu dia a Margot e grave.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Margot.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Bonjour, Léo ! Ça va ? Raconte ta journée !",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Le matin, je mange une pomme.",
+                  "feedback": "Isso: começar pela manhã.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "D'abord, je me lève à sept heures.",
+                  "feedback": "Isso: d'abord.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "À samedi !",
+                  "feedback": "Ela pediu para contar o seu dia.",
+                  "erro": true,
+                  "revisao": "rv-dabord"
+                }
+              ]
+            },
+            "n2": {
+              "fala": "Et ensuite ?",
+              "audio": "d-n2",
+              "opcoes": [
+                {
+                  "fr": "Ensuite, je travaille.",
+                  "feedback": "Isso: ensuite.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Enfin, je me lève.",
+                  "feedback": "Enfin é para o fim do dia!",
+                  "erro": true,
+                  "revisao": "rv-enfin"
+                },
+                {
+                  "fr": "Ensuite, je vais au château.",
+                  "feedback": "Isso: ensuite.",
+                  "vai": "n3"
+                }
+              ]
+            },
+            "n3": {
+              "fala": "Et le soir ?",
+              "audio": "d-n3",
+              "opcoes": [
+                {
+                  "fr": "D'abord, il est quelle heure ?",
+                  "feedback": "Conte a noite: je rentre, je lis, je dors.",
+                  "erro": true
+                },
+                {
+                  "fr": "Le soir, je rentre et je lis. Enfin, je dors !",
+                  "feedback": "Perfeito: o dia inteiro!",
+                  "vai": "fim"
+                }
+              ]
+            }
+          },
+          "explicacao": "D'abord… → ensuite… → le soir… enfin, je dors."
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave em voz alta (2–3 frases): conte o seu dia.",
+          "modelo": "D'abord, je me lève. Ensuite, je travaille. Enfin, je rentre et je lis.",
+          "audio_modelo": "modelo",
+          "checklist": [
+            "D'abord…",
+            "Ensuite…",
+            "Enfin…"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva o seu dia.",
+            "palavras_chave": [
+              [
+                "d'abord",
+                "dabord",
+                "ensuite",
+                "enfin"
+              ]
+            ],
+            "explicacao": "D'abord… ensuite… enfin…"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "intro": "Última rodada: os itens errados voltam, uma revisão e a frase da missão.",
+      "recuperar": true,
+      "itens": [
+        {
+          "id": "r2",
+          "tipo": "audio",
+          "instrucao": "Revisão da etapa 37 (conselheira): ouça Isaure.",
+          "audio": "rev",
+          "pergunta": "O que você responde?",
+          "opcoes": [
+            "Je lis.",
+            "Un manteau.",
+            "Oui, je suis prêt."
+          ],
+          "correta": 2,
+          "explicacao": "Je suis prêt = estou pronto (etapa 37)."
+        },
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “Primeiro eu trabalho. Por fim, eu volto para casa.”",
+          "palavras": [
+            "D'abord,",
+            "je",
+            "travaille.",
+            "Enfin,",
+            "je",
+            "rentre."
+          ],
+          "extras": [
+            "lis"
+          ],
+          "audio": "recap",
+          "explicacao": "D'abord, je travaille. Enfin, je rentre."
+        }
+      ]
+    }
+  ],
+  "novas": [
+    "ma journée",
+    "d'abord",
+    "ensuite",
+    "enfin",
+    "je lis",
+    "je rentre",
+    "raconte"
+  ],
+  "padroes": [
+    "D'abord… Ensuite… Enfin… (sequência)",
+    "Je + verbo no presente (revisão)."
+  ]
+}

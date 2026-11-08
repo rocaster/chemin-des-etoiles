@@ -1,0 +1,78 @@
+{
+  "versao": 6,
+  "xp_primeira_conclusao": {
+    "missao": 25,
+    "conversa": 20,
+    "historia": 20,
+    "biblioteca": 15,
+    "cartas": 20,
+    "batalha": 0,
+    "simulado": 0
+  },
+  "xp_repeticao": 0,
+  "xp_total_mapa_novo": 640,
+  "cristais_mapa": [
+    1000,
+    1020
+  ],
+  "precos_inalterados": true,
+  "testes": {
+    "pytest": 420,
+    "novos_pytest": 121,
+    "loja_dom": 47,
+    "xp_dom_vm": 93,
+    "http_local": 30,
+    "simulados_python": 91,
+    "simulados_js": 29,
+    "simulados_dom": 43,
+    "onboarding_python": 124,
+    "onboarding_js": 72,
+    "rotas": 57,
+    "mapa_5077": 9,
+    "mapa_5090": 9,
+    "mapa40_python": 21,
+    "batalha_python": 51,
+    "missoes_dom": 209,
+    "formatos_e2e": 4,
+    "batalhas_e2e": 2,
+    "integridade": 758
+  },
+  "falhas_finais": 0,
+  "motor_diff": {
+    "hunks": 3,
+    "adicionadas": 23,
+    "removidas": 5,
+    "escopo": "somente cálculo/exibição/registro de XP na conclusão"
+  },
+  "screenshots_png": [],
+  "evidencias_http": "/workspace/ncl/prints-loja/v6",
+  "pendencias": [
+    "captura/inspeção visual desktop/mobile em navegador real",
+    "telemetria de Invicto, Primeira Vez, Falador",
+    "monitorar preços/durações em uso real"
+  ],
+  "seguranca": {
+    "dotenv_preservado": true,
+    "env_lido": false,
+    "azure_acoes": false,
+    "deploy": false,
+    "cosmos_real": false,
+    "smtp_real": false
+  },
+  "instalacao_cumulativa": {
+    "paginas_http_200": 1600,
+    "assets_unicos_http_200": 153,
+    "sheets_novos_http_200": 42,
+    "combinacoes": 320,
+    "patches": [
+      "v1",
+      "v6"
+    ],
+    "v2_v3_v4_v5_desnecessarios": true,
+    "xp_mapa": 640,
+    "cristais_ganhos": 1020,
+    "compras_equipamentos_categorias": 4,
+    "falhas": 0
+  },
+  "preservacao_magos": "Cabeça/cabelo/chapéu/magia originais; somente tecido livre inferior recolorido no ator de combate."
+}

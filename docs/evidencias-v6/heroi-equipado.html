@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meu personagem · Chemin des Étoiles</title>
+<link rel="stylesheet" href="/static/loja/loja.css">
+<link rel="stylesheet" href="/static/loja/animacoes-v5.css">
+<link rel="stylesheet" href="/static/loja/efeitos.css">
+<link rel="stylesheet" href="/static/loja/perfil-v6.css">
+<link rel="stylesheet" href="/static/loja/heroi-v2.css">
+</head>
+<body class="cosmeticos">
+<a class="pular" href="#principal">Pular para o conteúdo</a>
+
+<div class="fx fx-inverno" aria-hidden="true">
+<i style="--i:0;left:7%;--atraso:-0.0s"></i><i style="--i:1;left:44%;--atraso:-0.7s"></i><i style="--i:2;left:81%;--atraso:-1.4s"></i><i style="--i:3;left:18%;--atraso:-2.0999999999999996s"></i><i style="--i:4;left:55%;--atraso:-2.8s"></i><i style="--i:5;left:92%;--atraso:-3.5s"></i><i style="--i:6;left:29%;--atraso:-4.199999999999999s"></i><i style="--i:7;left:66%;--atraso:-4.8999999999999995s"></i><i style="--i:8;left:3%;--atraso:-5.6s"></i><i style="--i:9;left:40%;--atraso:-6.3s"></i><i style="--i:10;left:77%;--atraso:-7.0s"></i><i style="--i:11;left:14%;--atraso:-7.699999999999999s"></i><i style="--i:12;left:51%;--atraso:-8.399999999999999s"></i><i style="--i:13;left:88%;--atraso:-9.1s"></i>
+</div>
+<header class="cabecalho">
+<a class="placa voltar" href="/mapa">‹ Voltar ao mapa</a>
+<a class="marca" href="/heroi">Chemin des Étoiles<small>Seu refúgio entre as aventuras</small></a>
+<div class="saldo" aria-label="Saldo de cristais"><span class="cristal" aria-hidden="true">◆</span> <strong>390</strong> cristais</div>
+</header>
+<nav class="atalhos" aria-label="Áreas do refúgio">
+<a href="/heroi" aria-current="page">Personagem</a>
+<a href="/loja" >Loja de cosméticos</a>
+<a href="/conquistas">Baú de conquistas</a>
+</nav>
+<main id="principal" tabindex="-1">
+
+
+<div class="abertura"><p class="sobretitulo">O REFÚGIO</p><h1>Meu personagem</h1><p>Um descanso para celebrar quem você está se tornando.</p></div>
+<section class="heroi-painel" aria-label="Personagem e progresso">
+<div class="retrato-area">
+ <div class="retrato diorama" aria-label="Refúgio do herói, sobre um pequeno estrado de pedra">
+  <div class="dupla">
+   <span class="heroi-idle heroi-pose sprite-oito" role="img" aria-label="Teste, personagem de corpo inteiro" data-quadros="8" style="background-image:url('/static/loja/herois/poses-v5/arqueiro-f-ametista.png')"></span>
+   <div class="pet-companheiro"><span class="pet pet-idle sprite-oito" data-quadros="8" role="img" aria-label="Fênix" style="background-image:url('/static/loja/pets/fenix.png')"></span><small>Fênix</small></div>
+  </div>
+ </div>
+ <h2 class="nome-heroi">Teste</h2>
+ <p class="titulo-heroi">Voz do Vilarejo</p>
+</div>
+<div class="pergaminho ficha">
+ <p class="sobretitulo">SUA JORNADA</p><h2>Pequenos passos,<br>grandes histórias.</h2>
+ <dl class="estatisticas"><div><dt>Nível visual</dt><dd>1</dd></div><div><dt>XP acumulado</dt><dd>0</dd></div><div><dt><span class="cristal" aria-hidden="true">◆</span> Cristais</dt><dd>390</dd></div></dl>
+ <p class="nota">O nível visual acompanha as seis molduras por XP já existentes. Não é o nível de francês.</p>
+ <hr><h3>Seu estilo</h3>
+ <ul class="inventario"><li><span>Personagem</span><strong>Traje Ametista</strong></li><li><span>Partículas</span><strong>Inverno sereno</strong></li><li><span>Títulos</span><strong>Voz do Vilarejo</strong></li><li><span>Pets</span><strong>Fênix</strong></li></ul>
+ <a class="botao" href="/loja">Visitar a loja ›</a>
+ <p class="nota">Seu companheiro também aparece na ficha do mapa e nas batalhas: é só companhia, sem alterar o combate.</p>
+</div>
+</section>
+<section id="conquistas" class="bau" aria-labelledby="titulo-bau">
+<div class="abertura"><p class="sobretitulo">MEMÓRIAS DO CAMINHO</p><h2 id="titulo-bau">Baú de conquistas</h2><p>Seus selos, das grandes vitórias aos tropeços que viram história.</p></div>
+<p class="nota">Critérios provisórios: os selos refletem o retrato atual do progresso salvo, não um histórico imutável. Os critérios abaixo são provisórios.</p>
+<div class="selos"><article class="selo pergaminho bloqueado" data-conquista="castelo">
+<img src="/static/loja/selos/castelo.png" alt="" width="64" height="72"><div><h3>Chevalier? Já foi!</h3><strong class="estado-selo">Bloqueado</strong><p>Concluir a etapa 40, vencendo o Chevalier Noir.</p></div>
+</article><article class="selo pergaminho bloqueado" data-conquista="invicto">
+<img src="/static/loja/selos/invicto.png" alt="" width="64" height="72"><div><h3>Nem um Arranhão</h3><strong class="estado-selo">Ainda não rastreável</strong><p>Terminar as 40 etapas sem perder nenhuma batalha.</p><p class="nota">Derrotas e fugas não são gravadas. Não é possível provar uma campanha invicta.</p></div>
+</article><article class="selo pergaminho bloqueado" data-conquista="primeira">
+<img src="/static/loja/selos/primeira.png" alt="" width="64" height="72"><div><h3>Primeira Vez</h3><strong class="estado-selo">Ainda não rastreável</strong><p>Acertar de cara, na primeira tentativa real.</p><p class="nota">Tentativas registra conclusões, não a primeira resposta nem derrotas anteriores.</p></div>
+</article><article class="selo pergaminho bloqueado" data-conquista="teimoso">
+<img src="/static/loja/selos/teimoso.png" alt="" width="64" height="72"><div><h3>Teimoso</h3><strong class="estado-selo">Bloqueado</strong><p>Concluir a mesma batalha 3 vezes (não conta derrotas).</p></div>
+</article><article class="selo pergaminho bloqueado" data-conquista="falador">
+<img src="/static/loja/selos/falador.png" alt="" width="64" height="72"><div><h3>Falador</h3><strong class="estado-selo">Ainda não rastreável</strong><p>Usar bastante a voz; limiar ainda a combinar.</p><p class="nota">fala_pendente não prova voz real (há alternativas digitadas); faltam contador e critério combinado.</p></div>
+</article><article class="selo pergaminho bloqueado" data-conquista="preciso">
+<img src="/static/loja/selos/preciso.png" alt="" width="64" height="72"><div><h3>Não Erra Uma</h3><strong class="estado-selo">Bloqueado</strong><p>Ter uma conclusão salva com acertos e nenhum erro.</p></div>
+</article><article class="selo pergaminho bloqueado" data-conquista="atrapalhado">
+<img src="/static/loja/selos/atrapalhado.png" alt="" width="64" height="72"><div><h3>Atrapalhado</h3><strong class="estado-selo">Bloqueado</strong><p>Somar 10 erros nas últimas conclusões salvas. Cair faz parte!</p></div>
+</article></div>
+</section>
+
+</main>
+<footer>Cosméticos não dão vantagens nas lições. Seu XP nunca é gasto.<br>Cristais por primeira conclusão; repetições não dão créditos de etapa. Preços provisórios.</footer>
+</body></html>

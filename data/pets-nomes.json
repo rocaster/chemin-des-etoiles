@@ -1,0 +1,31 @@
+{
+  "maximo": 16,
+  "nota": "Filtro básico PT/FR/EN; não substitui moderação contextual.",
+  "bloqueados": [
+    "puta",
+    "puto",
+    "merda",
+    "caralho",
+    "porra",
+    "buceta",
+    "foder",
+    "foda",
+    "cacete",
+    "putain",
+    "merde",
+    "connard",
+    "connasse",
+    "salope",
+    "salaud",
+    "encule",
+    "bite",
+    "nique",
+    "fuck",
+    "shit",
+    "bitch",
+    "asshole",
+    "cunt",
+    "dick",
+    "bastard"
+  ]
+}

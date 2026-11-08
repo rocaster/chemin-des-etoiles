@@ -1,0 +1,42 @@
+{
+  "id": "r1-p11",
+  "regiao": 1,
+  "etapa": 8,
+  "formato": "batalha",
+  "batalha": "r1-b03",
+  "titulo": "O rato do bosque",
+  "titulo_fr": "Le rat des bois",
+  "nivel": "A1",
+  "duracao_min": 5,
+  "revisa": [
+    "r1-p03",
+    "r1-p08",
+    "r1-p04",
+    "r1-p01",
+    "r1-p05",
+    "r1-p02"
+  ],
+  "recompensa": {
+    "xp_base": 0,
+    "xp_por_estrela": 0,
+    "xp_pausado": true,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 3,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 4,
+        "max_erros": 1000,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  }
+}

@@ -1,0 +1,441 @@
+{
+  "id": "r1-p35",
+  "regiao": 1,
+  "parada": 35,
+  "etapa": 35,
+  "formato": "biblioteca",
+  "titulo": "Biblioteca: o pergaminho do rei",
+  "titulo_fr": "Le parchemin du roi",
+  "nivel": "A1",
+  "duracao_min": 5,
+  "cenario": {
+    "fundo": "parada/r1-p07/cena-fundo.png",
+    "frente": "parada/r1-p07/cena-frente.png",
+    "npc": {
+      "nome": "Frère Anselme",
+      "papel": "monge bibliotecário",
+      "img": "parada/r1-p07/npc.png",
+      "x": 25,
+      "y": 38.7,
+      "w": 18.25,
+      "voz": "anselme"
+    },
+    "brilhos": [
+      {
+        "tipo": "lanterna",
+        "x": 46,
+        "y": 23
+      },
+      {
+        "tipo": "lanterna",
+        "x": 8,
+        "y": 61
+      }
+    ]
+  },
+  "vozes": {
+    "anselme": {
+      "voz": "fr-CA-JeanNeural",
+      "pitch": "-4Hz"
+    },
+    "leo": "fr-CA-AntoineNeural"
+  },
+  "audios": {
+    "abertura": {
+      "voz": "anselme",
+      "texto": "Bienvenue ! Voici le parchemin du roi. Écoutez, et touchez les mots."
+    },
+    "fecho": {
+      "voz": "anselme",
+      "texto": "Très bien ! Le roi vous attend."
+    },
+    "w-la-reine": {
+      "voz": "anselme",
+      "texto": "La reine."
+    },
+    "x-la-reine": {
+      "voz": "anselme",
+      "texto": "La reine aime les fleurs."
+    },
+    "w-ils-habitent": {
+      "voz": "anselme",
+      "texto": "Ils habitent."
+    },
+    "x-ils-habitent": {
+      "voz": "anselme",
+      "texto": "Ils habitent au château."
+    },
+    "w-une-fete": {
+      "voz": "anselme",
+      "texto": "Une fête."
+    },
+    "x-une-fete": {
+      "voz": "anselme",
+      "texto": "Samedi, il y a une fête."
+    },
+    "w-la-salle": {
+      "voz": "anselme",
+      "texto": "La salle."
+    },
+    "x-la-salle": {
+      "voz": "anselme",
+      "texto": "La fête est dans la grande salle."
+    },
+    "w-commence": {
+      "voz": "anselme",
+      "texto": "Commence."
+    },
+    "x-commence": {
+      "voz": "anselme",
+      "texto": "La fête commence à huit heures."
+    },
+    "w-tout-le-monde": {
+      "voz": "anselme",
+      "texto": "Tout le monde."
+    },
+    "x-tout-le-monde": {
+      "voz": "anselme",
+      "texto": "Tout le monde aime la fête."
+    },
+    "w-un-repas": {
+      "voz": "anselme",
+      "texto": "Un repas."
+    },
+    "x-un-repas": {
+      "voz": "anselme",
+      "texto": "Il y a un grand repas."
+    },
+    "w-belle": {
+      "voz": "anselme",
+      "texto": "Belle."
+    },
+    "x-belle": {
+      "voz": "anselme",
+      "texto": "C'est une belle fête !"
+    },
+    "p1-f1": {
+      "voz": "anselme",
+      "texto": "Voici le roi et la reine."
+    },
+    "p1-f2": {
+      "voz": "anselme",
+      "texto": "Ils habitent au château."
+    },
+    "p1-f3": {
+      "voz": "anselme",
+      "texto": "La reine aime les fleurs."
+    },
+    "p1-f4": {
+      "voz": "anselme",
+      "texto": "Le roi aime le chocolat."
+    },
+    "p1-q": {
+      "voz": "anselme",
+      "texto": "Qu'est-ce que la reine aime ?"
+    },
+    "p2-f1": {
+      "voz": "anselme",
+      "texto": "Samedi, il y a une fête."
+    },
+    "p2-f2": {
+      "voz": "anselme",
+      "texto": "La fête est dans la grande salle."
+    },
+    "p2-f3": {
+      "voz": "anselme",
+      "texto": "Elle commence à huit heures."
+    },
+    "p2-f4": {
+      "voz": "anselme",
+      "texto": "Tout le monde aime la fête."
+    },
+    "p2-q": {
+      "voz": "anselme",
+      "texto": "La fête, c'est quand ?"
+    },
+    "p3-f1": {
+      "voz": "anselme",
+      "texto": "À la fête, il y a de la musique."
+    },
+    "p3-f2": {
+      "voz": "anselme",
+      "texto": "Il y a un grand repas."
+    },
+    "p3-f3": {
+      "voz": "anselme",
+      "texto": "Le roi et la reine dansent."
+    },
+    "p3-f4": {
+      "voz": "anselme",
+      "texto": "C'est une belle fête !"
+    },
+    "p3-q": {
+      "voz": "anselme",
+      "texto": "Qui danse ?"
+    }
+  },
+  "imagens": {},
+  "vocabulario": [
+    {
+      "fr": "la reine",
+      "pt": "a rainha",
+      "audio": "w-la-reine"
+    },
+    {
+      "fr": "ils habitent",
+      "pt": "eles moram",
+      "audio": "w-ils-habitent"
+    },
+    {
+      "fr": "une fête",
+      "pt": "uma festa",
+      "audio": "w-une-fete"
+    },
+    {
+      "fr": "la salle",
+      "pt": "o salão / a sala",
+      "audio": "w-la-salle"
+    },
+    {
+      "fr": "commence",
+      "pt": "começa",
+      "audio": "w-commence"
+    },
+    {
+      "fr": "tout le monde",
+      "pt": "todo mundo",
+      "audio": "w-tout-le-monde"
+    },
+    {
+      "fr": "un repas",
+      "pt": "uma refeição",
+      "audio": "w-un-repas"
+    },
+    {
+      "fr": "belle",
+      "pt": "bonita",
+      "audio": "w-belle"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 15,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "instrucao": "Frère Anselme lê os pergaminhos. Toque nas palavras sublinhadas para ver a tradução e guardar no grimório.",
+  "abertura": "abertura",
+  "fecho": "fecho",
+  "glossario": {
+    "la-reine": {
+      "fr": "la reine",
+      "pt": "a rainha",
+      "audio": "w-la-reine",
+      "exemplo": "La reine aime les fleurs.",
+      "exemplo_pt": "A rainha gosta de flores.",
+      "exemplo_audio": "x-la-reine"
+    },
+    "ils-habitent": {
+      "fr": "ils habitent",
+      "pt": "eles moram",
+      "audio": "w-ils-habitent",
+      "exemplo": "Ils habitent au château.",
+      "exemplo_pt": "Eles moram no castelo.",
+      "exemplo_audio": "x-ils-habitent"
+    },
+    "une-fete": {
+      "fr": "une fête",
+      "pt": "uma festa",
+      "audio": "w-une-fete",
+      "exemplo": "Samedi, il y a une fête.",
+      "exemplo_pt": "No sábado, há uma festa.",
+      "exemplo_audio": "x-une-fete"
+    },
+    "la-salle": {
+      "fr": "la salle",
+      "pt": "o salão / a sala",
+      "audio": "w-la-salle",
+      "exemplo": "La fête est dans la grande salle.",
+      "exemplo_pt": "A festa é no salão grande.",
+      "exemplo_audio": "x-la-salle"
+    },
+    "commence": {
+      "fr": "commence",
+      "pt": "começa",
+      "audio": "w-commence",
+      "exemplo": "La fête commence à huit heures.",
+      "exemplo_pt": "A festa começa às oito.",
+      "exemplo_audio": "x-commence"
+    },
+    "tout-le-monde": {
+      "fr": "tout le monde",
+      "pt": "todo mundo",
+      "audio": "w-tout-le-monde",
+      "exemplo": "Tout le monde aime la fête.",
+      "exemplo_pt": "Todo mundo gosta da festa.",
+      "exemplo_audio": "x-tout-le-monde"
+    },
+    "un-repas": {
+      "fr": "un repas",
+      "pt": "uma refeição",
+      "audio": "w-un-repas",
+      "exemplo": "Il y a un grand repas.",
+      "exemplo_pt": "Há uma grande refeição.",
+      "exemplo_audio": "x-un-repas"
+    },
+    "belle": {
+      "fr": "belle",
+      "pt": "bonita",
+      "audio": "w-belle",
+      "exemplo": "C'est une belle fête !",
+      "exemplo_pt": "É uma festa bonita!",
+      "exemplo_audio": "x-belle"
+    }
+  },
+  "pergaminhos": [
+    {
+      "titulo": "Le roi et la reine",
+      "titulo_pt": "O rei e a rainha",
+      "frases": [
+        {
+          "fr": "Voici le roi et la reine.",
+          "audio": "p1-f1"
+        },
+        {
+          "fr": "Ils habitent au château.",
+          "audio": "p1-f2"
+        },
+        {
+          "fr": "La reine aime les fleurs.",
+          "audio": "p1-f3"
+        },
+        {
+          "fr": "Le roi aime le chocolat.",
+          "audio": "p1-f4"
+        }
+      ],
+      "termos": [
+        "la-reine",
+        "ils-habitent"
+      ],
+      "pergunta": {
+        "fr": "Qu'est-ce que la reine aime ?",
+        "pt": "Do que a rainha gosta?",
+        "opcoes": [
+          "les fleurs",
+          "le chocolat",
+          "le soccer"
+        ],
+        "correta": 0,
+        "audio": "p1-q"
+      }
+    },
+    {
+      "titulo": "La fête",
+      "titulo_pt": "A festa",
+      "frases": [
+        {
+          "fr": "Samedi, il y a une fête.",
+          "audio": "p2-f1"
+        },
+        {
+          "fr": "La fête est dans la grande salle.",
+          "audio": "p2-f2"
+        },
+        {
+          "fr": "Elle commence à huit heures.",
+          "audio": "p2-f3"
+        },
+        {
+          "fr": "Tout le monde aime la fête.",
+          "audio": "p2-f4"
+        }
+      ],
+      "termos": [
+        "une-fete",
+        "la-salle",
+        "commence",
+        "tout-le-monde"
+      ],
+      "pergunta": {
+        "fr": "La fête, c'est quand ?",
+        "pt": "Quando é a festa?",
+        "opcoes": [
+          "samedi, à huit heures",
+          "lundi, à midi",
+          "dimanche, le matin"
+        ],
+        "correta": 0,
+        "audio": "p2-q"
+      }
+    },
+    {
+      "titulo": "Le repas",
+      "titulo_pt": "A refeição",
+      "frases": [
+        {
+          "fr": "À la fête, il y a de la musique.",
+          "audio": "p3-f1"
+        },
+        {
+          "fr": "Il y a un grand repas.",
+          "audio": "p3-f2"
+        },
+        {
+          "fr": "Le roi et la reine dansent.",
+          "audio": "p3-f3"
+        },
+        {
+          "fr": "C'est une belle fête !",
+          "audio": "p3-f4"
+        }
+      ],
+      "termos": [
+        "un-repas",
+        "belle"
+      ],
+      "pergunta": {
+        "fr": "Qui danse ?",
+        "pt": "Quem dança?",
+        "opcoes": [
+          "le roi et la reine",
+          "le chevalier Bleu",
+          "Hugo et Camille"
+        ],
+        "correta": 0,
+        "audio": "p3-q"
+      }
+    }
+  ],
+  "novas": [
+    "la reine",
+    "ils habitent",
+    "une fête",
+    "la salle",
+    "commence",
+    "tout le monde",
+    "un repas",
+    "belle"
+  ],
+  "padroes": [
+    "Ils + verbo (ils habitent).",
+    "Coisa + commence à + hora."
+  ]
+}

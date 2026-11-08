@@ -1,0 +1,9 @@
+<section id="molduras" class="molduras-vitrine" aria-labelledby="titulo-molduras">
+<div class="abertura"><p class="sobretitulo">CONQUISTAS DE NÍVEL</p><h2 id="titulo-molduras">Molduras da jornada</h2><p>Conquistadas apenas por LVL, nunca por cristais. A maior desbloqueada aparece automaticamente na sua ficha do mapa.</p></div>
+<p class="nota">Seu LVL visual: <strong>{{ nivel }}</strong>. O LVL acompanha o XP acumulado, não o nível de francês.</p>
+<div class="molduras-grade">{% for borda in molduras_nivel %}
+<article class="moldura-premio pergaminho {{ 'conquistada' if borda.conquistada else 'bloqueada' }}" data-moldura="{{ borda.id }}" data-nivel="{{ borda.nivel }}" data-estado="{{ 'ativa' if borda.ativa else ('conquistada' if borda.conquistada else 'bloqueada') }}">
+<img src="{{ url_for('static',filename=borda.sprite) }}" width="96" height="96" alt="Moldura de {{ borda.nome }}" loading="lazy">
+<h3>{{ borda.nome }}</h3><p class="moldura-lvl">LVL {{ borda.nivel }} · {{ borda.xp }} XP</p><strong>{{ 'Em uso no mapa' if borda.ativa else ('Conquistada' if borda.conquistada else 'Bloqueada') }}</strong>
+</article>{% endfor %}</div>
+</section>

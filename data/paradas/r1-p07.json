@@ -1,0 +1,461 @@
+{
+  "id": "r1-p07",
+  "regiao": 1,
+  "parada": 7,
+  "formato": "biblioteca",
+  "titulo": "Biblioteca do castelo",
+  "titulo_fr": "La bibliothèque du château",
+  "nivel": "A1",
+  "duracao_min": 6,
+  "cenario": {
+    "fundo": "parada/r1-p07/cena-fundo.png",
+    "frente": "parada/r1-p07/cena-frente.png",
+    "npc": {
+      "nome": "Frère Anselme",
+      "papel": "monge bibliotecário",
+      "img": "parada/r1-p07/npc.png",
+      "x": 25,
+      "y": 38.7,
+      "w": 18.25,
+      "voz": "anselme"
+    },
+    "brilhos": [
+      {
+        "tipo": "lanterna",
+        "x": 46,
+        "y": 23
+      },
+      {
+        "tipo": "lanterna",
+        "x": 8,
+        "y": 61
+      }
+    ]
+  },
+  "vozes": {
+    "anselme": {
+      "voz": "fr-CA-JeanNeural",
+      "pitch": "-5Hz"
+    }
+  },
+  "audios": {
+    "abertura": {
+      "voz": "anselme",
+      "texto": "Bienvenue à la bibliothèque. Écoutez, et touchez les mots."
+    },
+    "fecho": {
+      "voz": "anselme",
+      "texto": "Très bien ! Revenez demain."
+    },
+    "p1-f1": {
+      "voz": "anselme",
+      "texto": "Voici le village."
+    },
+    "p1-f2": {
+      "voz": "anselme",
+      "texto": "Il y a une place et une fontaine."
+    },
+    "p1-f3": {
+      "voz": "anselme",
+      "texto": "Il y a aussi une boulangerie."
+    },
+    "p1-f4": {
+      "voz": "anselme",
+      "texto": "Les enfants disent bonjour."
+    },
+    "w-voici": {
+      "voz": "anselme",
+      "texto": "Voici."
+    },
+    "x-voici": {
+      "voz": "anselme",
+      "texto": "Voici mon billet."
+    },
+    "w-il-y-a": {
+      "voz": "anselme",
+      "texto": "Il y a."
+    },
+    "x-il-y-a": {
+      "voz": "anselme",
+      "texto": "Il y a du fromage."
+    },
+    "w-une-fontaine": {
+      "voz": "anselme",
+      "texto": "Une fontaine."
+    },
+    "x-une-fontaine": {
+      "voz": "anselme",
+      "texto": "La fontaine est sur la place."
+    },
+    "w-aussi": {
+      "voz": "anselme",
+      "texto": "Aussi."
+    },
+    "x-aussi": {
+      "voz": "anselme",
+      "texto": "Je voudrais aussi un café."
+    },
+    "p1-q": {
+      "voz": "anselme",
+      "texto": "Qu'est-ce qu'il y a sur la place ?"
+    },
+    "p2-f1": {
+      "voz": "anselme",
+      "texto": "Il y a un marché."
+    },
+    "p2-f2": {
+      "voz": "anselme",
+      "texto": "Il y a des pommes et du fromage."
+    },
+    "p2-f3": {
+      "voz": "anselme",
+      "texto": "Les pommes coûtent un dollar."
+    },
+    "p2-f4": {
+      "voz": "anselme",
+      "texto": "Les enfants aiment le marché."
+    },
+    "w-coutent": {
+      "voz": "anselme",
+      "texto": "Coûtent."
+    },
+    "x-coutent": {
+      "voz": "anselme",
+      "texto": "Les poires coûtent deux dollars."
+    },
+    "w-les-enfants": {
+      "voz": "anselme",
+      "texto": "Les enfants."
+    },
+    "x-les-enfants": {
+      "voz": "anselme",
+      "texto": "Les enfants aiment les pommes."
+    },
+    "w-aiment": {
+      "voz": "anselme",
+      "texto": "Aiment."
+    },
+    "x-aiment": {
+      "voz": "anselme",
+      "texto": "Les enfants aiment l'histoire du barde."
+    },
+    "p2-q": {
+      "voz": "anselme",
+      "texto": "Combien coûtent les pommes ?"
+    },
+    "p3-f1": {
+      "voz": "anselme",
+      "texto": "Voici le château."
+    },
+    "p3-f2": {
+      "voz": "anselme",
+      "texto": "Dans le château, il y a une bibliothèque."
+    },
+    "p3-f3": {
+      "voz": "anselme",
+      "texto": "Le moine lit des livres."
+    },
+    "p3-f4": {
+      "voz": "anselme",
+      "texto": "Il aime les histoires."
+    },
+    "w-le-chateau": {
+      "voz": "anselme",
+      "texto": "Le château."
+    },
+    "x-le-chateau": {
+      "voz": "anselme",
+      "texto": "Le château est grand."
+    },
+    "w-une-bibliotheque": {
+      "voz": "anselme",
+      "texto": "Une bibliothèque."
+    },
+    "x-une-bibliotheque": {
+      "voz": "anselme",
+      "texto": "Voici la bibliothèque."
+    },
+    "w-lit": {
+      "voz": "anselme",
+      "texto": "Lit."
+    },
+    "x-lit": {
+      "voz": "anselme",
+      "texto": "Rose lit une histoire."
+    },
+    "p3-q": {
+      "voz": "anselme",
+      "texto": "Que fait le moine ?"
+    }
+  },
+  "imagens": {},
+  "vocabulario": [
+    {
+      "fr": "voici",
+      "pt": "aqui está / eis",
+      "audio": "w-voici"
+    },
+    {
+      "fr": "il y a",
+      "pt": "há / tem",
+      "audio": "w-il-y-a"
+    },
+    {
+      "fr": "une fontaine",
+      "pt": "uma fonte",
+      "audio": "w-une-fontaine"
+    },
+    {
+      "fr": "aussi",
+      "pt": "também",
+      "audio": "w-aussi"
+    },
+    {
+      "fr": "les enfants",
+      "pt": "as crianças",
+      "audio": "w-les-enfants"
+    },
+    {
+      "fr": "aiment",
+      "pt": "gostam (de) / amam",
+      "audio": "w-aiment"
+    },
+    {
+      "fr": "coûtent",
+      "pt": "custam",
+      "audio": "w-coutent"
+    },
+    {
+      "fr": "lit",
+      "pt": "lê",
+      "audio": "w-lit"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 15,
+    "xp_por_estrela": 0,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 1000,
+        "estrelas": 1
+      }
+    ],
+    "xp_pausado": false,
+    "xp_versao": 6
+  },
+  "instrucao": "Frère Anselme lê os pergaminhos. Toque nas palavras sublinhadas para ver a tradução e guardar no grimório.",
+  "abertura": "abertura",
+  "fecho": "fecho",
+  "pergaminhos": [
+    {
+      "titulo": "Le village",
+      "titulo_pt": "A vila",
+      "frases": [
+        {
+          "fr": "Voici le village.",
+          "audio": "p1-f1"
+        },
+        {
+          "fr": "Il y a une place et une fontaine.",
+          "audio": "p1-f2"
+        },
+        {
+          "fr": "Il y a aussi une boulangerie.",
+          "audio": "p1-f3"
+        },
+        {
+          "fr": "Les enfants disent bonjour.",
+          "audio": "p1-f4"
+        }
+      ],
+      "termos": [
+        "voici",
+        "il-y-a",
+        "une-fontaine",
+        "aussi",
+        "les-enfants"
+      ],
+      "pergunta": {
+        "fr": "Qu'est-ce qu'il y a sur la place ?",
+        "pt": "O que há na praça?",
+        "opcoes": [
+          "une fontaine",
+          "un château",
+          "un traversier"
+        ],
+        "correta": 0,
+        "audio": "p1-q"
+      }
+    },
+    {
+      "titulo": "Le marché",
+      "titulo_pt": "A feira",
+      "frases": [
+        {
+          "fr": "Il y a un marché.",
+          "audio": "p2-f1"
+        },
+        {
+          "fr": "Il y a des pommes et du fromage.",
+          "audio": "p2-f2"
+        },
+        {
+          "fr": "Les pommes coûtent un dollar.",
+          "audio": "p2-f3"
+        },
+        {
+          "fr": "Les enfants aiment le marché.",
+          "audio": "p2-f4"
+        }
+      ],
+      "termos": [
+        "il-y-a",
+        "coutent",
+        "les-enfants",
+        "aiment"
+      ],
+      "pergunta": {
+        "fr": "Combien coûtent les pommes ?",
+        "pt": "Quanto custam as maçãs?",
+        "opcoes": [
+          "un dollar",
+          "deux dollars",
+          "cinq dollars"
+        ],
+        "correta": 0,
+        "audio": "p2-q"
+      }
+    },
+    {
+      "titulo": "Le château",
+      "titulo_pt": "O castelo",
+      "frases": [
+        {
+          "fr": "Voici le château.",
+          "audio": "p3-f1"
+        },
+        {
+          "fr": "Dans le château, il y a une bibliothèque.",
+          "audio": "p3-f2"
+        },
+        {
+          "fr": "Le moine lit des livres.",
+          "audio": "p3-f3"
+        },
+        {
+          "fr": "Il aime les histoires.",
+          "audio": "p3-f4"
+        }
+      ],
+      "termos": [
+        "le-chateau",
+        "une-bibliotheque",
+        "lit"
+      ],
+      "pergunta": {
+        "fr": "Que fait le moine ?",
+        "pt": "O que o monge faz?",
+        "opcoes": [
+          "Il lit des livres.",
+          "Il vend des pommes.",
+          "Il prend le traversier."
+        ],
+        "correta": 0,
+        "audio": "p3-q"
+      }
+    }
+  ],
+  "glossario": {
+    "voici": {
+      "fr": "voici",
+      "pt": "aqui está / eis",
+      "audio": "w-voici",
+      "exemplo": "Voici mon billet.",
+      "exemplo_pt": "Aqui está a minha passagem.",
+      "exemplo_audio": "x-voici"
+    },
+    "il-y-a": {
+      "fr": "il y a",
+      "pt": "há / tem",
+      "audio": "w-il-y-a",
+      "exemplo": "Il y a du fromage.",
+      "exemplo_pt": "Tem queijo.",
+      "exemplo_audio": "x-il-y-a"
+    },
+    "une-fontaine": {
+      "fr": "une fontaine",
+      "pt": "uma fonte",
+      "audio": "w-une-fontaine",
+      "exemplo": "La fontaine est sur la place.",
+      "exemplo_pt": "A fonte fica na praça.",
+      "exemplo_audio": "x-une-fontaine"
+    },
+    "aussi": {
+      "fr": "aussi",
+      "pt": "também",
+      "audio": "w-aussi",
+      "exemplo": "Je voudrais aussi un café.",
+      "exemplo_pt": "Eu queria também um café.",
+      "exemplo_audio": "x-aussi"
+    },
+    "coutent": {
+      "fr": "coûtent",
+      "pt": "custam",
+      "audio": "w-coutent",
+      "exemplo": "Les poires coûtent deux dollars.",
+      "exemplo_pt": "As peras custam dois dólares.",
+      "exemplo_audio": "x-coutent"
+    },
+    "les-enfants": {
+      "fr": "les enfants",
+      "pt": "as crianças",
+      "audio": "w-les-enfants",
+      "exemplo": "Les enfants aiment les pommes.",
+      "exemplo_pt": "As crianças gostam de maçãs.",
+      "exemplo_audio": "x-les-enfants"
+    },
+    "aiment": {
+      "fr": "aiment",
+      "pt": "gostam (de) / amam",
+      "audio": "w-aiment",
+      "exemplo": "Les enfants aiment l'histoire du barde.",
+      "exemplo_pt": "As crianças gostam da história do bardo.",
+      "exemplo_audio": "x-aiment"
+    },
+    "le-chateau": {
+      "fr": "le château",
+      "pt": "o castelo",
+      "audio": "w-le-chateau",
+      "exemplo": "Le château est grand.",
+      "exemplo_pt": "O castelo é grande.",
+      "exemplo_audio": "x-le-chateau"
+    },
+    "une-bibliotheque": {
+      "fr": "une bibliothèque",
+      "pt": "uma biblioteca",
+      "audio": "w-une-bibliotheque",
+      "exemplo": "Voici la bibliothèque.",
+      "exemplo_pt": "Aqui está a biblioteca.",
+      "exemplo_audio": "x-une-bibliotheque"
+    },
+    "lit": {
+      "fr": "lit",
+      "pt": "lê",
+      "audio": "w-lit",
+      "exemplo": "Rose lit une histoire.",
+      "exemplo_pt": "Rose lê uma história.",
+      "exemplo_audio": "x-lit"
+    }
+  }
+}

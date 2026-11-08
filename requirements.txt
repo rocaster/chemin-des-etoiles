@@ -1,0 +1,4 @@
+flask
+azure-cosmos
+python-dotenv
+gunicorn

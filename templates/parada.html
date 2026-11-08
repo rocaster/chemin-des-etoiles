@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{ dados.titulo }} · Chemin des Étoiles</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='parada/motor.css') }}">
+  <style>
+    .palco { background-image: url("{{ url_for('static', filename=dados.cenario.fundo) }}"); }
+    .frente { background-image: url("{{ url_for('static', filename=dados.cenario.frente) }}"); }
+    .papel, .cartao, .hud { background-image: url("{{ url_for('static', filename='nivelamento/papel-textura.png') }}"); }
+  </style>
+</head>
+<body>
+  <h1 class="sr">{{ dados.titulo }}</h1>
+  <div class="palco" id="palco" aria-hidden="true">
+    <img class="npc" id="npc" src="{{ url_for('static', filename=dados.cenario.npc.img) }}" alt=""
+         style="left:{{ dados.cenario.npc.x }}%;top:{{ dados.cenario.npc.y }}%;width:{{ dados.cenario.npc.w }}%">
+    <div class="frente"></div>
+    {% set brilhos = dados.cenario.brilhos if dados.cenario.brilhos is defined else [{"tipo": "fogo"}, {"tipo": "lanterna", "x": 28}, {"tipo": "lanterna", "x": 74.5}] %}
+    {% for g in brilhos %}<i class="brilho-{{ g.tipo }}"{% if g.x is defined or g.y is defined %} style="{% if g.x is defined %}left:{{ g.x }}%;{% endif %}{% if g.y is defined %}top:{{ g.y }}%;{% endif %}"{% endif %}></i>{% endfor %}
+  </div>
+  <div class="balao" id="balao" hidden aria-hidden="true"><b>{{ dados.cenario.npc.nome }}</b><span id="balao-texto"></span></div>
+
+  {% if teste %}<div class="selo-teste" role="status">MODO TESTE · progresso separado, nada é salvo no servidor</div>{% endif %}
+  <header class="hud">
+    <a class="botao sec voltar" href="{{ url_for('mapa', vista='regiao') }}">‹ Mapa</a>
+    <div class="hud-meio">
+      <p class="hud-titulo">Étape {{ n }} · {{ dados.titulo_fr }} <span>— {{ dados.titulo }}</span></p>
+      <div class="barra" role="progressbar" aria-label="Progresso da parada" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barra"><i id="barra-fill"></i></div>
+      <div class="trilha-etapas">
+        <ol class="etapas" id="etapas" aria-label="Etapas da parada">
+          {% for b in dados.blocos %}<li data-i="{{ loop.index0 }}">{{ loop.index }}. {{ b.nome }}</li>{% endfor %}
+        </ol>
+        <i class="marcador-etapa" id="marcador-etapa" aria-hidden="true"><b id="etapa-cont"></b></i>
+      </div>
+    </div>
+  </header>
+
+  <main class="cartao" id="cartao" aria-live="polite">
+    <div id="conteudo"></div>
+    <div id="retorno" class="retorno" hidden></div>
+  </main>
+
+  <script type="application/json" id="dados-parada">{{ dados|tojson }}</script>
+  <script type="application/json" id="cfg-parada">{{ {
+    "pid": pid, "regiao": regiao, "n": n, "total": total, "prefixo": prefixo, "teste": teste,
+    "estatico": url_for('static', filename=''),
+    "audio": url_for('static', filename='audio/paradas/' ~ pid ~ '/'),
+    "concluir": url_for('parada_concluir', regiao=regiao, n=n),
+    "mapa": url_for('mapa', vista='regiao', de=n),
+    "refazer": url_for('parada', regiao=regiao, n=n),
+    "previa": previa
+  }|tojson }}</script>
+  <script src="{{ url_for('static', filename='parada/motor.js') }}"></script>
+<script src="{{ url_for('static', filename='audio/trilha-fundo.js') }}" data-trilha="{{ url_for('static', filename='audio/trilhas/trilha-' ~ (dados.trilha or 'missao') ~ '.ogg', v='2') }}" data-volume="0.25"></script>
+</body>
+</html>

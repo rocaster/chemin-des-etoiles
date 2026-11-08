@@ -1,0 +1,732 @@
+{
+  "id": "r1-p01",
+  "regiao": 1,
+  "parada": 1,
+  "titulo": "Pedir algo na taverna",
+  "titulo_fr": "À la taverne",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "parada/taverna-fundo.png",
+    "frente": "parada/taverna-balcao.png",
+    "npc": {
+      "nome": "Odile",
+      "papel": "taberneira",
+      "img": "parada/taverneira.png",
+      "x": 45,
+      "y": 25.8,
+      "w": 13.75,
+      "voz": "odile"
+    }
+  },
+  "vozes": {
+    "odile": "fr-CA-SylvieNeural",
+    "leo": "fr-CA-AntoineNeural"
+  },
+  "audios": {
+    "un-cafe": {
+      "voz": "odile",
+      "texto": "Un café."
+    },
+    "un-the": {
+      "voz": "odile",
+      "texto": "Un thé."
+    },
+    "de-leau": {
+      "voz": "odile",
+      "texto": "De l'eau."
+    },
+    "un-jus": {
+      "voz": "odile",
+      "texto": "Un jus d'orange."
+    },
+    "bonjour": {
+      "voz": "odile",
+      "texto": "Bonjour !"
+    },
+    "merci": {
+      "voz": "odile",
+      "texto": "Merci !"
+    },
+    "je-voudrais": {
+      "voz": "leo",
+      "texto": "Je voudrais..."
+    },
+    "svp": {
+      "voz": "leo",
+      "texto": "S'il vous plaît."
+    },
+    "odile-oferta": {
+      "voz": "odile",
+      "texto": "Bonjour ! Un café, un thé ou de l'eau ?"
+    },
+    "leo-the": {
+      "voz": "leo",
+      "texto": "Bonjour ! Je voudrais un thé, s'il vous plaît."
+    },
+    "leo-jus": {
+      "voz": "leo",
+      "texto": "Bonjour ! Je voudrais un jus d'orange, s'il vous plaît."
+    },
+    "leo-cafe": {
+      "voz": "leo",
+      "texto": "Bonjour ! Je voudrais un café, s'il vous plaît."
+    },
+    "frase-the": {
+      "voz": "leo",
+      "texto": "Je voudrais un thé, s'il vous plaît."
+    },
+    "frase-cafe": {
+      "voz": "leo",
+      "texto": "Je voudrais un café, s'il vous plaît."
+    },
+    "frase-eau": {
+      "voz": "leo",
+      "texto": "Je voudrais de l'eau, s'il vous plaît."
+    },
+    "d-n1": {
+      "voz": "odile",
+      "texto": "Bonjour ! Un café ? Un thé ?"
+    },
+    "d-n1b": {
+      "voz": "odile",
+      "texto": "Un thé... s'il vous plaît ?"
+    },
+    "d-n2t": {
+      "voz": "odile",
+      "texto": "Un thé. Et de l'eau ?"
+    },
+    "d-n2c": {
+      "voz": "odile",
+      "texto": "Un café. Et de l'eau ?"
+    },
+    "d-n3ta": {
+      "voz": "odile",
+      "texto": "Un thé et de l'eau !"
+    },
+    "d-n3t": {
+      "voz": "odile",
+      "texto": "Un thé !"
+    },
+    "d-n3ca": {
+      "voz": "odile",
+      "texto": "Un café et de l'eau !"
+    },
+    "d-n3c": {
+      "voz": "odile",
+      "texto": "Un café !"
+    }
+  },
+  "imagens": {
+    "cafe": {
+      "src": "parada/bebida-cafe.png",
+      "fr": "un café",
+      "pt": "um café"
+    },
+    "the": {
+      "src": "parada/bebida-the.png",
+      "fr": "un thé",
+      "pt": "um chá"
+    },
+    "eau": {
+      "src": "parada/bebida-eau.png",
+      "fr": "de l'eau",
+      "pt": "água"
+    },
+    "jus": {
+      "src": "parada/bebida-jus.png",
+      "fr": "un jus d'orange",
+      "pt": "um suco de laranja"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "un café",
+      "pt": "um café",
+      "audio": "un-cafe",
+      "img": "cafe"
+    },
+    {
+      "fr": "un thé",
+      "pt": "um chá",
+      "audio": "un-the",
+      "img": "the"
+    },
+    {
+      "fr": "de l'eau",
+      "pt": "água",
+      "audio": "de-leau",
+      "img": "eau"
+    },
+    {
+      "fr": "un jus d'orange",
+      "pt": "um suco de laranja",
+      "audio": "un-jus",
+      "img": "jus"
+    },
+    {
+      "fr": "je voudrais",
+      "pt": "eu gostaria / eu queria",
+      "audio": "je-voudrais"
+    },
+    {
+      "fr": "s'il vous plaît",
+      "pt": "por favor",
+      "audio": "svp"
+    },
+    {
+      "fr": "bonjour · merci",
+      "pt": "olá / bom dia · obrigado(a)",
+      "audio": "merci",
+      "revisao": true
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_pausado": false,
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-agradecer": {
+      "id": "rv-agradecer",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Odile : Un thé !"
+      ],
+      "pergunta": "Odile te serviu. O que você diz?",
+      "opcoes": [
+        "Merci !",
+        "S'il vous plaît !",
+        "Je voudrais !"
+      ],
+      "correta": 0,
+      "explicacao": "Depois de ser servido(a), agradeça: merci !"
+    },
+    "rv-pedir": {
+      "id": "rv-pedir",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Odile : Bonjour ! Un café ? Un thé ?"
+      ],
+      "pergunta": "Como você começa o pedido?",
+      "opcoes": [
+        "Je voudrais un thé, s'il vous plaît.",
+        "Merci !",
+        "Un thé."
+      ],
+      "correta": 0,
+      "explicacao": "Para pedir com educação: Je voudrais… s'il vous plaît."
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "Odile, a taberneira, vai te mostrar as bebidas da casa. Ouça e escolha a imagem certa.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "un-cafe",
+          "texto_fr": "un café",
+          "opcoes": [
+            "cafe",
+            "the",
+            "eau",
+            "jus"
+          ],
+          "correta": "cafe",
+          "explicacao": "Un café = um café. Quase igual ao português!"
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "un-the",
+          "texto_fr": "un thé",
+          "opcoes": [
+            "eau",
+            "the",
+            "jus",
+            "cafe"
+          ],
+          "correta": "the",
+          "explicacao": "Un thé = um chá. O h não soa: fala-se “tê”."
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "de-leau",
+          "texto_fr": "de l'eau",
+          "opcoes": [
+            "jus",
+            "cafe",
+            "eau",
+            "the"
+          ],
+          "correta": "eau",
+          "explicacao": "De l'eau = água. Eau soa “ô”."
+        },
+        {
+          "id": "d4",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "un-jus",
+          "texto_fr": "un jus d'orange",
+          "opcoes": [
+            "the",
+            "jus",
+            "eau",
+            "cafe"
+          ],
+          "correta": "jus",
+          "explicacao": "Un jus d'orange = um suco de laranja."
+        },
+        {
+          "id": "d5",
+          "tipo": "pares",
+          "instrucao": "Ligue cada palavra à sua imagem: toque numa palavra e depois na imagem.",
+          "pares": [
+            {
+              "fr": "un café",
+              "img": "cafe",
+              "audio": "un-cafe"
+            },
+            {
+              "fr": "un thé",
+              "img": "the",
+              "audio": "un-the"
+            },
+            {
+              "fr": "de l'eau",
+              "img": "eau",
+              "audio": "de-leau"
+            },
+            {
+              "fr": "un jus d'orange",
+              "img": "jus",
+              "audio": "un-jus"
+            }
+          ],
+          "explicacao": "Café, thé, eau, jus d'orange: as quatro bebidas da taverna."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Agora escute conversas na taverna. O texto só aparece depois que você responder.",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Ouça Odile.",
+          "audio": "odile-oferta",
+          "pergunta": "O que Odile oferece?",
+          "opcoes": [
+            "café, chá ou água",
+            "café, suco ou água",
+            "chá, suco ou café"
+          ],
+          "correta": 0,
+          "explicacao": "Bonjour = olá/bom dia. Ou = ou. Ela oferece café, chá ou água."
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "Ouça o viajante Léo fazendo o pedido.",
+          "audio": "leo-the",
+          "pergunta": "O que Léo pede?",
+          "opcoes_img": [
+            "cafe",
+            "the",
+            "eau",
+            "jus"
+          ],
+          "correta": "the",
+          "explicacao": "Je voudrais = eu gostaria. S'il vous plaît = por favor."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Outro pedido. Ouça com atenção.",
+          "audio": "leo-jus",
+          "pergunta": "E agora, o que Léo pede?",
+          "opcoes_img": [
+            "cafe",
+            "eau",
+            "jus",
+            "the"
+          ],
+          "correta": "jus",
+          "explicacao": "Un jus d'orange, s'il vous plaît = um suco de laranja, por favor."
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia a conversa no balcão.",
+          "texto_fr": [
+            "Odile : Bonjour !",
+            "Léo : Bonjour. Je voudrais de l'eau, s'il vous plaît.",
+            "Odile : De l'eau !",
+            "Léo : Merci !"
+          ],
+          "pergunta": "O que Léo pediu?",
+          "opcoes": [
+            "água",
+            "chá",
+            "café"
+          ],
+          "correta": 0,
+          "explicacao": "De l'eau = água."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "Mesma conversa.",
+          "texto_fr": [
+            "Odile : Bonjour !",
+            "Léo : Bonjour. Je voudrais de l'eau, s'il vous plaît.",
+            "Odile : De l'eau !",
+            "Léo : Merci !"
+          ],
+          "pergunta": "Como Léo agradece?",
+          "opcoes": [
+            "Bonjour !",
+            "Merci !",
+            "S'il vous plaît."
+          ],
+          "correta": 1,
+          "explicacao": "Merci = obrigado(a). S'il vous plaît = por favor."
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Hora de montar o seu pedido. Je voudrais = eu gostaria · s'il vous plaît = por favor.",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte a frase: “Eu gostaria de um chá, por favor.”",
+          "palavras": [
+            "Je",
+            "voudrais",
+            "un",
+            "thé,",
+            "s'il",
+            "vous",
+            "plaît."
+          ],
+          "extras": [
+            "merci"
+          ],
+          "audio": "frase-the",
+          "explicacao": "Je voudrais + bebida + s'il vous plaît."
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete o pedido de um café.",
+          "frase": "Je voudrais ___ café, s'il vous plaît.",
+          "banco": [
+            "un",
+            "de",
+            "merci"
+          ],
+          "respostas": [
+            "un"
+          ],
+          "audio": "frase-cafe",
+          "explicacao": "Un café: café é masculino, por isso un."
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Agora sem banco: escreva a palavra que falta (“Eu gostaria de água, por favor”).",
+          "frase": "Je ___ de l'eau, s'il vous plaît.",
+          "respostas": [
+            "voudrais"
+          ],
+          "dica": "Começa com v…",
+          "audio": "frase-eau",
+          "explicacao": "Je voudrais = eu gostaria."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "un-the",
+          "respostas": [
+            "un thé"
+          ],
+          "explicacao": "Un thé — com acento no é: thé."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez no balcão! Converse com Odile escolhendo as respostas e depois grave o seu pedido.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Odile.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Bonjour ! Un café ? Un thé ?",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Bonjour ! Je voudrais un thé, s'il vous plaît.",
+                  "vai": "n2t",
+                  "feedback": "Perfeito: cumprimento + pedido + por favor."
+                },
+                {
+                  "fr": "Bonjour ! Je voudrais un café, s'il vous plaît.",
+                  "vai": "n2c",
+                  "feedback": "Perfeito: cumprimento + pedido + por favor."
+                },
+                {
+                  "fr": "Un thé.",
+                  "vai": "n1b",
+                  "aviso": true,
+                  "feedback": "Dá para entender, mas soa seco. Com s'il vous plaît fica educado."
+                },
+                {
+                  "fr": "Merci !",
+                  "erro": true,
+                  "revisao": "rv-pedir",
+                  "feedback": "Merci = obrigado(a). Ela ainda não te serviu: primeiro peça com Je voudrais…"
+                }
+              ]
+            },
+            "n1b": {
+              "fala": "Un thé... s'il vous plaît ?",
+              "audio": "d-n1b",
+              "opcoes": [
+                {
+                  "fr": "S'il vous plaît !",
+                  "vai": "n2t",
+                  "feedback": "Isso! Agora ficou educado."
+                },
+                {
+                  "fr": "Bonjour !",
+                  "erro": true,
+                  "feedback": "Bonjour é cumprimento. Ela espera o “por favor”: s'il vous plaît."
+                }
+              ]
+            },
+            "n2t": {
+              "fala": "Un thé. Et de l'eau ?",
+              "audio": "d-n2t",
+              "opcoes": [
+                {
+                  "fr": "De l'eau, s'il vous plaît.",
+                  "vai": "n3ta",
+                  "feedback": "Ótimo: água, por favor."
+                },
+                {
+                  "fr": "Merci.",
+                  "vai": "n3t",
+                  "feedback": "Aqui, merci sozinho quer dizer “não, obrigado”."
+                },
+                {
+                  "fr": "Je voudrais !",
+                  "erro": true,
+                  "feedback": "Faltou dizer o quê: Je voudrais de l'eau…"
+                }
+              ]
+            },
+            "n2c": {
+              "fala": "Un café. Et de l'eau ?",
+              "audio": "d-n2c",
+              "opcoes": [
+                {
+                  "fr": "De l'eau, s'il vous plaît.",
+                  "vai": "n3ca",
+                  "feedback": "Ótimo: água, por favor."
+                },
+                {
+                  "fr": "Merci.",
+                  "vai": "n3c",
+                  "feedback": "Aqui, merci sozinho quer dizer “não, obrigado”."
+                },
+                {
+                  "fr": "Je voudrais !",
+                  "erro": true,
+                  "feedback": "Faltou dizer o quê: Je voudrais de l'eau…"
+                }
+              ]
+            },
+            "n3ta": {
+              "fala": "Un thé et de l'eau !",
+              "audio": "d-n3ta",
+              "opcoes": [
+                {
+                  "fr": "Merci !",
+                  "vai": "fim",
+                  "feedback": "Isso: depois de servido(a), merci!"
+                },
+                {
+                  "fr": "S'il vous plaît !",
+                  "erro": true,
+                  "revisao": "rv-agradecer",
+                  "feedback": "Ela já te serviu: agora é hora de agradecer — merci !"
+                }
+              ]
+            },
+            "n3t": {
+              "fala": "Un thé !",
+              "audio": "d-n3t",
+              "opcoes": [
+                {
+                  "fr": "Merci !",
+                  "vai": "fim",
+                  "feedback": "Isso: depois de servido(a), merci!"
+                },
+                {
+                  "fr": "S'il vous plaît !",
+                  "erro": true,
+                  "revisao": "rv-agradecer",
+                  "feedback": "Ela já te serviu: agora é hora de agradecer — merci !"
+                }
+              ]
+            },
+            "n3ca": {
+              "fala": "Un café et de l'eau !",
+              "audio": "d-n3ca",
+              "opcoes": [
+                {
+                  "fr": "Merci !",
+                  "vai": "fim",
+                  "feedback": "Isso: depois de servido(a), merci!"
+                },
+                {
+                  "fr": "S'il vous plaît !",
+                  "erro": true,
+                  "revisao": "rv-agradecer",
+                  "feedback": "Ela já te serviu: agora é hora de agradecer — merci !"
+                }
+              ]
+            },
+            "n3c": {
+              "fala": "Un café !",
+              "audio": "d-n3c",
+              "opcoes": [
+                {
+                  "fr": "Merci !",
+                  "vai": "fim",
+                  "feedback": "Isso: depois de servido(a), merci!"
+                },
+                {
+                  "fr": "S'il vous plaît !",
+                  "erro": true,
+                  "revisao": "rv-agradecer",
+                  "feedback": "Ela já te serviu: agora é hora de agradecer — merci !"
+                }
+              ]
+            }
+          },
+          "explicacao": "Bonjour → Je voudrais… s'il vous plaît → merci."
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave o seu pedido em voz alta (1–2 frases), como se Odile estivesse na sua frente.",
+          "modelo": "Bonjour ! Je voudrais un café, s'il vous plaît.",
+          "audio_modelo": "leo-cafe",
+          "checklist": [
+            "Bonjour",
+            "Je voudrais…",
+            "un café / un thé / de l'eau / un jus d'orange",
+            "s'il vous plaît"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva o seu pedido.",
+            "palavras_chave": [
+              [
+                "je voudrais"
+              ],
+              [
+                "cafe",
+                "the",
+                "eau",
+                "jus"
+              ],
+              [
+                "s'il vous plait",
+                "sil vous plait"
+              ]
+            ],
+            "explicacao": "Um pedido completo: Je voudrais + bebida + s'il vous plaît.",
+            "placeholder": "Bonjour ! Je voudrais…"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "recuperar": true,
+      "intro": "Última rodada: os itens em que você errou voltam, e fechamos com a frase da missão.",
+      "itens": [
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “Olá! Eu gostaria de um café, por favor.”",
+          "palavras": [
+            "Bonjour !",
+            "Je",
+            "voudrais",
+            "un",
+            "café,",
+            "s'il",
+            "vous",
+            "plaît."
+          ],
+          "extras": [
+            "merci"
+          ],
+          "audio": "leo-cafe",
+          "explicacao": "Bonjour ! Je voudrais un café, s'il vous plaît."
+        }
+      ]
+    }
+  ]
+}

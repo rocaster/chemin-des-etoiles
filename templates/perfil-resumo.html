@@ -1,0 +1,6 @@
+<section class="perfil-resumo" aria-label="Seu visual equipado">
+{% include 'loja-particulas-cena.html' %}
+<span class="heroi-pose sprite-oito" role="img" aria-label="{{ nome }} com a roupa equipada" style="background-image:url('{{ url_for('static',filename=sprite) }}')"></span>
+<div><strong>{{ nome }}</strong><p lang="fr">{{ titulo_equipado }}</p><small>Seu visual equipado · comprar guarda no inventário; depois clique em Equipar.</small></div>
+{% if equipados.get('pets') %}<span class="perfil-pet sprite-oito" role="img" aria-label="{{ equipados.pets.nome }}" style="background-image:url('{{ url_for('static',filename=equipados.pets.sprite) }}')"></span>{% endif %}
+</section>

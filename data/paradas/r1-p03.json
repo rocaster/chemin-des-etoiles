@@ -1,0 +1,666 @@
+{
+  "id": "r1-p03",
+  "regiao": 1,
+  "parada": 3,
+  "titulo": "Na feira",
+  "titulo_fr": "Au marché",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "parada/r1-p03/cena-fundo.png",
+    "frente": "parada/r1-p03/cena-frente.png",
+    "npc": {
+      "nome": "Margot",
+      "papel": "feirante",
+      "img": "parada/r1-p03/npc.png",
+      "x": 50,
+      "y": 32.9,
+      "w": 15,
+      "voz": "margot"
+    },
+    "brilhos": []
+  },
+  "vozes": {
+    "margot": "fr-CA-SylvieNeural",
+    "leo": "fr-CA-AntoineNeural",
+    "gaston": "fr-CA-JeanNeural"
+  },
+  "audios": {
+    "une-pomme": {
+      "voz": "margot",
+      "texto": "Une pomme."
+    },
+    "une-poire": {
+      "voz": "margot",
+      "texto": "Une poire."
+    },
+    "du-fromage": {
+      "voz": "margot",
+      "texto": "Du fromage."
+    },
+    "un-dollar": {
+      "voz": "margot",
+      "texto": "Un dollar."
+    },
+    "deux-dollars": {
+      "voz": "margot",
+      "texto": "Deux dollars."
+    },
+    "combien": {
+      "voz": "leo",
+      "texto": "Combien ?"
+    },
+    "margot-oferta": {
+      "voz": "margot",
+      "texto": "Bonjour ! Une pomme ? Une poire ? Du fromage ?"
+    },
+    "margot-poire": {
+      "voz": "margot",
+      "texto": "Une poire : un dollar."
+    },
+    "leo-fromage": {
+      "voz": "leo",
+      "texto": "Bonjour ! Je voudrais du fromage, s'il vous plaît. Combien ?"
+    },
+    "frase-pomme": {
+      "voz": "leo",
+      "texto": "Bonjour ! Une pomme, combien ?"
+    },
+    "frase-fromage": {
+      "voz": "leo",
+      "texto": "Je voudrais du fromage, s'il vous plaît."
+    },
+    "frase-dollar": {
+      "voz": "margot",
+      "texto": "Une pomme : un dollar."
+    },
+    "modelo": {
+      "voz": "leo",
+      "texto": "Bonjour ! Une pomme, combien ? Je voudrais une pomme, s'il vous plaît."
+    },
+    "recap": {
+      "voz": "leo",
+      "texto": "Je voudrais une poire, s'il vous plaît. Combien ?"
+    },
+    "rev-comment": {
+      "voz": "gaston",
+      "texto": "Comment vous appelez-vous ?"
+    },
+    "d-n1": {
+      "voz": "margot",
+      "texto": "Bonjour ! Une pomme ? Une poire ?"
+    },
+    "d-n2p": {
+      "voz": "margot",
+      "texto": "Une poire : un dollar."
+    },
+    "d-n2m": {
+      "voz": "margot",
+      "texto": "Une pomme : un dollar."
+    },
+    "d-n2f": {
+      "voz": "margot",
+      "texto": "Du fromage : deux dollars."
+    },
+    "d-n3": {
+      "voz": "margot",
+      "texto": "Merci !"
+    }
+  },
+  "imagens": {
+    "pomme": {
+      "src": "parada/r1-p03/pomme.png",
+      "fr": "une pomme",
+      "pt": "uma maçã"
+    },
+    "poire": {
+      "src": "parada/r1-p03/poire.png",
+      "fr": "une poire",
+      "pt": "uma pera"
+    },
+    "fromage": {
+      "src": "parada/r1-p03/fromage.png",
+      "fr": "du fromage",
+      "pt": "queijo"
+    },
+    "dollars": {
+      "src": "parada/r1-p03/dollars.png",
+      "fr": "deux dollars",
+      "pt": "dois dólares"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "une pomme",
+      "pt": "uma maçã",
+      "audio": "une-pomme",
+      "img": "pomme"
+    },
+    {
+      "fr": "une poire",
+      "pt": "uma pera",
+      "audio": "une-poire",
+      "img": "poire"
+    },
+    {
+      "fr": "du fromage",
+      "pt": "queijo (um pouco de)",
+      "audio": "du-fromage",
+      "img": "fromage"
+    },
+    {
+      "fr": "combien ?",
+      "pt": "quanto (custa)?",
+      "audio": "combien"
+    },
+    {
+      "fr": "un dollar",
+      "pt": "um dólar",
+      "audio": "un-dollar"
+    },
+    {
+      "fr": "deux dollars",
+      "pt": "dois dólares",
+      "audio": "deux-dollars",
+      "img": "dollars"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_pausado": false,
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-despedir": {
+      "id": "rv-despedir",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Margot : Merci !"
+      ],
+      "pergunta": "A compra acabou. O que você diz?",
+      "opcoes": [
+        "Merci ! Au revoir !",
+        "Combien ?",
+        "Une pomme ?"
+      ],
+      "correta": 0,
+      "explicacao": "Fim da compra: merci + au revoir."
+    },
+    "rv-preco": {
+      "id": "rv-preco",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Margot : Une poire : un dollar."
+      ],
+      "pergunta": "Quanto custa a pera?",
+      "opcoes": [
+        "um dólar",
+        "dois dólares",
+        "três dólares"
+      ],
+      "correta": 0,
+      "explicacao": "Un dollar = um dólar. Deux dollars = dois dólares."
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "Margot, a feirante, mostra o que tem na banca. Ouça e escolha a imagem certa.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "une-pomme",
+          "texto_fr": "une pomme",
+          "opcoes": [
+            "pomme",
+            "poire",
+            "fromage",
+            "dollars"
+          ],
+          "correta": "pomme",
+          "explicacao": "Une pomme = uma maçã."
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "une-poire",
+          "texto_fr": "une poire",
+          "opcoes": [
+            "fromage",
+            "pomme",
+            "dollars",
+            "poire"
+          ],
+          "correta": "poire",
+          "explicacao": "Une poire = uma pera (parece “pom” × “poar”)."
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "du-fromage",
+          "texto_fr": "du fromage",
+          "opcoes": [
+            "poire",
+            "fromage",
+            "pomme",
+            "dollars"
+          ],
+          "correta": "fromage",
+          "explicacao": "Du fromage = queijo (um pedaço)."
+        },
+        {
+          "id": "d4",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "deux-dollars",
+          "texto_fr": "deux dollars",
+          "opcoes": [
+            "dollars",
+            "pomme",
+            "fromage",
+            "poire"
+          ],
+          "correta": "dollars",
+          "explicacao": "Deux dollars = dois dólares (no Canadá se usa o dólar)."
+        },
+        {
+          "id": "d5",
+          "tipo": "pares",
+          "instrucao": "Ligue cada palavra à sua imagem: toque numa palavra e depois na imagem.",
+          "pares": [
+            {
+              "fr": "une pomme",
+              "img": "pomme",
+              "audio": "une-pomme"
+            },
+            {
+              "fr": "une poire",
+              "img": "poire",
+              "audio": "une-poire"
+            },
+            {
+              "fr": "du fromage",
+              "img": "fromage",
+              "audio": "du-fromage"
+            },
+            {
+              "fr": "deux dollars",
+              "img": "dollars",
+              "audio": "deux-dollars"
+            }
+          ],
+          "explicacao": "Maçã, pera, queijo e o dinheiro para pagar."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Escute as conversas na feira. O texto só aparece depois que você responder.",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Ouça Margot.",
+          "audio": "margot-oferta",
+          "pergunta": "O que Margot vende?",
+          "opcoes": [
+            "maçã, pera e queijo",
+            "maçã, pão e queijo",
+            "pera, café e queijo"
+          ],
+          "correta": 0,
+          "explicacao": "Une pomme, une poire, du fromage."
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "Léo perguntou o preço. Ouça a resposta.",
+          "audio": "margot-poire",
+          "pergunta": "Quanto custa a pera?",
+          "opcoes": [
+            "um dólar",
+            "dois dólares",
+            "três dólares"
+          ],
+          "correta": 0,
+          "explicacao": "Une poire : un dollar = uma pera: um dólar."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Ouça o pedido de Léo.",
+          "audio": "leo-fromage",
+          "pergunta": "O que Léo quer comprar?",
+          "opcoes_img": [
+            "pomme",
+            "poire",
+            "fromage",
+            "dollars"
+          ],
+          "correta": "fromage",
+          "explicacao": "Je voudrais du fromage… Combien ? = Eu gostaria de queijo… Quanto é?"
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia a conversa na banca.",
+          "texto_fr": [
+            "Léo : Bonjour ! Une pomme, combien ?",
+            "Margot : Un dollar.",
+            "Léo : Et du fromage ?",
+            "Margot : Deux dollars."
+          ],
+          "pergunta": "Quanto custa o queijo?",
+          "opcoes": [
+            "dois dólares",
+            "um dólar",
+            "é de graça"
+          ],
+          "correta": 0,
+          "explicacao": "Du fromage : deux dollars."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "Mesma conversa.",
+          "texto_fr": [
+            "Léo : Bonjour ! Une pomme, combien ?",
+            "Margot : Un dollar.",
+            "Léo : Et du fromage ?",
+            "Margot : Deux dollars."
+          ],
+          "pergunta": "Que palavra Léo usa para perguntar o preço?",
+          "opcoes": [
+            "Combien ?",
+            "Merci !",
+            "Bonjour !"
+          ],
+          "correta": 0,
+          "explicacao": "Combien ? = quanto (custa)?"
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Monte as frases da feira. Combien ? = quanto custa? · un dollar = um dólar.",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte: “Olá! Uma maçã, quanto custa?”",
+          "palavras": [
+            "Bonjour !",
+            "Une",
+            "pomme,",
+            "combien ?"
+          ],
+          "extras": [
+            "dollar",
+            "poire"
+          ],
+          "audio": "frase-pomme",
+          "explicacao": "Bebida ou fruta + combien ? para perguntar o preço."
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete o pedido de queijo.",
+          "frase": "Je voudrais ___ fromage, s'il vous plaît.",
+          "banco": [
+            "du",
+            "une",
+            "un"
+          ],
+          "respostas": [
+            "du"
+          ],
+          "audio": "frase-fromage",
+          "explicacao": "Du fromage: um pouco de queijo (como de l'eau na taverna)."
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Agora sem banco: escreva a palavra que falta (“Uma maçã: um dólar”).",
+          "frase": "Une pomme : un ___.",
+          "respostas": [
+            "dollar"
+          ],
+          "dica": "Começa com d…",
+          "audio": "frase-dollar",
+          "explicacao": "Un dollar, deux dollars (com s)."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "deux-dollars",
+          "respostas": [
+            "deux dollars"
+          ],
+          "explicacao": "Deux dollars = dois dólares (o x e o s finais não soam)."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez na banca! Pergunte preços a Margot, compre algo e depois grave o seu pedido.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Margot.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Bonjour ! Une pomme ? Une poire ?",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Bonjour ! Une poire, combien ?",
+                  "feedback": "Isso: fruta + combien ?",
+                  "vai": "n2p"
+                },
+                {
+                  "fr": "Bonjour ! Une pomme, combien ?",
+                  "feedback": "Isso: fruta + combien ?",
+                  "vai": "n2m"
+                },
+                {
+                  "fr": "Au revoir !",
+                  "feedback": "Você acabou de chegar! Primeiro pergunte o preço: … combien ?",
+                  "erro": true
+                }
+              ]
+            },
+            "n2p": {
+              "fala": "Une poire : un dollar.",
+              "audio": "d-n2p",
+              "opcoes": [
+                {
+                  "fr": "Je voudrais une poire, s'il vous plaît.",
+                  "feedback": "Perfeito: pedido educado.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Et du fromage, combien ?",
+                  "feedback": "Boa: perguntar outro preço também vale.",
+                  "vai": "n2f"
+                },
+                {
+                  "fr": "Deux dollars ?",
+                  "feedback": "Ela disse un dollar = um dólar, não dois.",
+                  "erro": true,
+                  "revisao": "rv-preco"
+                }
+              ]
+            },
+            "n2m": {
+              "fala": "Une pomme : un dollar.",
+              "audio": "d-n2m",
+              "opcoes": [
+                {
+                  "fr": "Je voudrais une pomme, s'il vous plaît.",
+                  "feedback": "Perfeito: pedido educado.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Et du fromage, combien ?",
+                  "feedback": "Boa: perguntar outro preço também vale.",
+                  "vai": "n2f"
+                },
+                {
+                  "fr": "Deux dollars ?",
+                  "feedback": "Ela disse un dollar = um dólar, não dois.",
+                  "erro": true,
+                  "revisao": "rv-preco"
+                }
+              ]
+            },
+            "n2f": {
+              "fala": "Du fromage : deux dollars.",
+              "audio": "d-n2f",
+              "opcoes": [
+                {
+                  "fr": "Je voudrais du fromage, s'il vous plaît.",
+                  "feedback": "Perfeito: du fromage, s'il vous plaît.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Un dollar ?",
+                  "feedback": "O queijo custa deux dollars = dois dólares.",
+                  "erro": true,
+                  "revisao": "rv-preco"
+                }
+              ]
+            },
+            "n3": {
+              "fala": "Merci !",
+              "audio": "d-n3",
+              "opcoes": [
+                {
+                  "fr": "Merci ! Au revoir !",
+                  "feedback": "Isso: agradecer e se despedir.",
+                  "vai": "fim"
+                },
+                {
+                  "fr": "Combien ?",
+                  "feedback": "Você já sabe o preço. Agora agradeça e se despeça: merci, au revoir!",
+                  "erro": true,
+                  "revisao": "rv-despedir"
+                }
+              ]
+            }
+          },
+          "explicacao": "… combien ? → je voudrais… s'il vous plaît → merci, au revoir."
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave em voz alta (1–2 frases): pergunte o preço de uma fruta e peça uma.",
+          "modelo": "Bonjour ! Une pomme, combien ? Je voudrais une pomme, s'il vous plaît.",
+          "audio_modelo": "modelo",
+          "checklist": [
+            "Bonjour",
+            "une pomme / une poire / du fromage",
+            "combien ?",
+            "Je voudrais… s'il vous plaît"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva a sua pergunta e o seu pedido.",
+            "palavras_chave": [
+              [
+                "combien"
+              ],
+              [
+                "pomme",
+                "poire",
+                "fromage"
+              ]
+            ],
+            "explicacao": "Fruta ou queijo + combien ? e depois je voudrais…"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "intro": "Última rodada: os itens errados voltam, uma revisão da praça e a frase da missão.",
+      "itens": [
+        {
+          "id": "r2",
+          "tipo": "audio",
+          "instrucao": "Revisão da parada 2 (praça): ouça a pergunta.",
+          "audio": "rev-comment",
+          "pergunta": "O que você responde?",
+          "opcoes": [
+            "Je m'appelle Léo.",
+            "Deux dollars.",
+            "Une poire."
+          ],
+          "correta": 0,
+          "explicacao": "Comment vous appelez-vous ? → Je m'appelle… (parada 2)."
+        },
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “Eu gostaria de uma pera, por favor. Quanto custa?”",
+          "palavras": [
+            "Je",
+            "voudrais",
+            "une",
+            "poire,",
+            "s'il",
+            "vous",
+            "plaît.",
+            "Combien ?"
+          ],
+          "extras": [
+            "fromage"
+          ],
+          "audio": "recap",
+          "explicacao": "Je voudrais une poire, s'il vous plaît. Combien ?"
+        }
+      ],
+      "recuperar": true
+    }
+  ]
+}

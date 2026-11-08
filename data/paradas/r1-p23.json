@@ -1,0 +1,648 @@
+{
+  "id": "r1-p23",
+  "regiao": 1,
+  "parada": 23,
+  "etapa": 23,
+  "titulo": "Montar acampamento",
+  "titulo_fr": "Le campement",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "batalha/floresta.png",
+    "frente": "parada/mapa40/cenas/vazio/cena-frente.png",
+    "npc": {
+      "nome": "Bastien",
+      "papel": "lenhador",
+      "img": "parada/mapa40/npc/bastien.png",
+      "x": 60,
+      "y": 30.2,
+      "w": 14.75,
+      "voz": "bastien"
+    },
+    "brilhos": []
+  },
+  "vozes": {
+    "bastien": {
+      "voz": "fr-CA-ThierryNeural",
+      "pitch": "-8Hz"
+    },
+    "leo": "fr-CA-AntoineNeural",
+    "odile": "fr-CA-SylvieNeural"
+  },
+  "audios": {
+    "w-une-tente": {
+      "voz": "bastien",
+      "texto": "Une tente."
+    },
+    "w-un-feu": {
+      "voz": "bastien",
+      "texto": "Un feu."
+    },
+    "w-une-couverture": {
+      "voz": "bastien",
+      "texto": "Une couverture."
+    },
+    "w-un-sac-a-dos": {
+      "voz": "bastien",
+      "texto": "Un sac à dos."
+    },
+    "w-j-ai-froid": {
+      "voz": "bastien",
+      "texto": "J'ai froid."
+    },
+    "w-la-nuit": {
+      "voz": "bastien",
+      "texto": "La nuit."
+    },
+    "w-bonne-nuit": {
+      "voz": "bastien",
+      "texto": "Bonne nuit."
+    },
+    "c1-fala": {
+      "voz": "bastien",
+      "texto": "Voilà ! Il y a une tente et un feu."
+    },
+    "c2-fala": {
+      "voz": "bastien",
+      "texto": "La nuit, il fait froid. Voici une couverture."
+    },
+    "c3-fala": {
+      "voz": "leo",
+      "texto": "Où est mon sac à dos ?"
+    },
+    "frase-b1": {
+      "voz": "bastien",
+      "texto": "Il y a une tente."
+    },
+    "frase-b2": {
+      "voz": "bastien",
+      "texto": "J'ai froid !"
+    },
+    "frase-b3": {
+      "voz": "bastien",
+      "texto": "Voici une couverture."
+    },
+    "d-n1": {
+      "voz": "bastien",
+      "texto": "Bonsoir ! Il fait nuit. On monte la tente ?"
+    },
+    "d-n2": {
+      "voz": "bastien",
+      "texto": "La tente est ici. Il y a un feu et de la soupe."
+    },
+    "d-n3": {
+      "voz": "bastien",
+      "texto": "Voici une couverture. Bonne nuit !"
+    },
+    "modelo": {
+      "voz": "leo",
+      "texto": "Il y a une tente et un feu. J'ai froid !"
+    },
+    "rev": {
+      "voz": "odile",
+      "texto": "Il est quelle heure ?"
+    },
+    "recap": {
+      "voz": "bastien",
+      "texto": "La nuit, il y a un feu. Bonne nuit !"
+    }
+  },
+  "imagens": {
+    "tente": {
+      "src": "parada/mapa40/icones/tente.png",
+      "fr": "une tente",
+      "pt": "uma barraca",
+      "alt": "uma barraca"
+    },
+    "feu": {
+      "src": "parada/mapa40/icones/feu.png",
+      "fr": "un feu",
+      "pt": "uma fogueira",
+      "alt": "uma fogueira"
+    },
+    "couverture": {
+      "src": "parada/mapa40/icones/couverture.png",
+      "fr": "une couverture",
+      "pt": "um cobertor",
+      "alt": "um cobertor"
+    },
+    "sacados": {
+      "src": "parada/mapa40/icones/sac-a-dos.png",
+      "fr": "un sac à dos",
+      "pt": "uma mochila",
+      "alt": "uma mochila"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "une tente",
+      "pt": "uma barraca",
+      "audio": "w-une-tente",
+      "img": "tente"
+    },
+    {
+      "fr": "un feu",
+      "pt": "uma fogueira",
+      "audio": "w-un-feu",
+      "img": "feu"
+    },
+    {
+      "fr": "une couverture",
+      "pt": "um cobertor",
+      "audio": "w-une-couverture",
+      "img": "couverture"
+    },
+    {
+      "fr": "un sac à dos",
+      "pt": "uma mochila",
+      "audio": "w-un-sac-a-dos",
+      "img": "sacados"
+    },
+    {
+      "fr": "j'ai froid",
+      "pt": "estou com frio",
+      "audio": "w-j-ai-froid"
+    },
+    {
+      "fr": "la nuit",
+      "pt": "a noite",
+      "audio": "w-la-nuit"
+    },
+    {
+      "fr": "bonne nuit",
+      "pt": "boa noite",
+      "audio": "w-bonne-nuit"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-tente": {
+      "id": "rv-tente",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Bastien : On monte la tente ?"
+      ],
+      "pergunta": "O que você responde?",
+      "opcoes": [
+        "Un café, combien ?",
+        "Oui ! Où est la tente ?",
+        "Il est trois heures."
+      ],
+      "correta": 1,
+      "explicacao": "Oui ! Où est la tente ?"
+    },
+    "rv-ilya": {
+      "id": "rv-ilya",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Bastien : Il y a un feu et de la soupe."
+      ],
+      "pergunta": "O que há no acampamento?",
+      "opcoes": [
+        "um castelo",
+        "um cavalo",
+        "fogueira e sopa"
+      ],
+      "correta": 2,
+      "explicacao": "Il y a un feu et de la soupe."
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "A noite chega na floresta. Bastien ajuda a montar o acampamento. Ouça e escolha a imagem.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-une-tente",
+          "texto_fr": "une tente",
+          "opcoes": [
+            "tente",
+            "couverture",
+            "feu",
+            "sacados"
+          ],
+          "correta": "tente",
+          "explicacao": "Une tente = uma barraca."
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-un-feu",
+          "texto_fr": "un feu",
+          "opcoes": [
+            "sacados",
+            "feu",
+            "tente",
+            "couverture"
+          ],
+          "correta": "feu",
+          "explicacao": "Un feu = um fogo, uma fogueira."
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-une-couverture",
+          "texto_fr": "une couverture",
+          "opcoes": [
+            "feu",
+            "sacados",
+            "couverture",
+            "tente"
+          ],
+          "correta": "couverture",
+          "explicacao": "Une couverture = um cobertor."
+        },
+        {
+          "id": "d4",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-un-sac-a-dos",
+          "texto_fr": "un sac à dos",
+          "opcoes": [
+            "couverture",
+            "feu",
+            "sacados",
+            "tente"
+          ],
+          "correta": "sacados",
+          "explicacao": "Un sac à dos = uma mochila."
+        },
+        {
+          "id": "d5",
+          "tipo": "pares",
+          "instrucao": "Ligue cada palavra à sua imagem: toque numa palavra e depois na imagem.",
+          "pares": [
+            {
+              "fr": "une tente",
+              "img": "tente",
+              "audio": "w-une-tente"
+            },
+            {
+              "fr": "un feu",
+              "img": "feu",
+              "audio": "w-un-feu"
+            },
+            {
+              "fr": "une couverture",
+              "img": "couverture",
+              "audio": "w-une-couverture"
+            },
+            {
+              "fr": "un sac à dos",
+              "img": "sacados",
+              "audio": "w-un-sac-a-dos"
+            }
+          ],
+          "explicacao": "Barraca, fogueira, cobertor e mochila."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Escute Bastien. O texto só aparece depois que você responder.",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Ouça Bastien.",
+          "audio": "c1-fala",
+          "pergunta": "O que há no acampamento?",
+          "opcoes": [
+            "um castelo",
+            "uma barraca e uma fogueira",
+            "um cavalo e uma barraca"
+          ],
+          "correta": 1,
+          "explicacao": "Il y a une tente et un feu."
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "Ouça Bastien.",
+          "audio": "c2-fala",
+          "pergunta": "O que Bastien dá?",
+          "opcoes": [
+            "um cobertor",
+            "uma mochila",
+            "sopa"
+          ],
+          "correta": 0,
+          "explicacao": "Une couverture = um cobertor."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Ouça Léo.",
+          "audio": "c3-fala",
+          "pergunta": "O que Léo procura?",
+          "opcoes_img": [
+            "tente",
+            "feu",
+            "couverture",
+            "sacados"
+          ],
+          "correta": "sacados",
+          "explicacao": "Mon sac à dos = minha mochila."
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia a conversa no acampamento.",
+          "texto_fr": [
+            "Léo : J'ai froid !",
+            "Bastien : Voici le feu.",
+            "Léo : Et j'ai faim !",
+            "Bastien : Il y a de la soupe."
+          ],
+          "pergunta": "O que há para comer?",
+          "opcoes": [
+            "pão",
+            "queijo",
+            "sopa"
+          ],
+          "correta": 2,
+          "explicacao": "Il y a de la soupe = tem sopa."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "Mesma conversa.",
+          "texto_fr": [
+            "Léo : J'ai froid !",
+            "Bastien : Voici le feu.",
+            "Léo : Et j'ai faim !",
+            "Bastien : Il y a de la soupe."
+          ],
+          "pergunta": "O que quer dizer “j'ai froid”?",
+          "opcoes": [
+            "está frio lá fora",
+            "estou com fome",
+            "estou com frio"
+          ],
+          "correta": 2,
+          "explicacao": "J'ai froid = estou com frio (eu tenho frio)."
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Monte as frases do acampamento. Il y a… = há / tem…",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte: “Tem uma barraca.”",
+          "palavras": [
+            "Il",
+            "y",
+            "a",
+            "une",
+            "tente."
+          ],
+          "extras": [
+            "feu",
+            "froid"
+          ],
+          "audio": "frase-b1",
+          "explicacao": "Il y a + coisa."
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete: “Estou com frio!”",
+          "frase": "J'ai ___ !",
+          "banco": [
+            "froid",
+            "tente",
+            "nuit"
+          ],
+          "respostas": [
+            "froid"
+          ],
+          "audio": "frase-b2",
+          "explicacao": "J'ai froid / j'ai faim (com avoir)."
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Escreva: “Aqui está um cobertor.”",
+          "frase": "Voici une ___.",
+          "respostas": [
+            "couverture"
+          ],
+          "dica": "Começa com c…",
+          "audio": "frase-b3",
+          "explicacao": "Une couverture = um cobertor."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "w-un-feu",
+          "respostas": [
+            "un feu"
+          ],
+          "explicacao": "Un feu = uma fogueira."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez! Fale com Bastien no acampamento e grave a sua frase.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Bastien.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Bonsoir ! Il fait nuit. On monte la tente ?",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Il est trois heures.",
+                  "feedback": "É noite! Responda sobre a barraca.",
+                  "erro": true,
+                  "revisao": "rv-tente"
+                },
+                {
+                  "fr": "Oui ! J'ai froid.",
+                  "feedback": "Isso: dizer como você está.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "Oui ! Où est la tente ?",
+                  "feedback": "Isso: Où est…?",
+                  "vai": "n2"
+                }
+              ]
+            },
+            "n2": {
+              "fala": "La tente est ici. Il y a un feu et de la soupe.",
+              "audio": "d-n2",
+              "opcoes": [
+                {
+                  "fr": "Super ! J'ai faim.",
+                  "feedback": "Isso: reagir.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Merci ! Voici mon sac à dos.",
+                  "feedback": "Isso!",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Il y a un château ?",
+                  "feedback": "Ele disse barraca, fogueira e sopa.",
+                  "erro": true,
+                  "revisao": "rv-ilya"
+                }
+              ]
+            },
+            "n3": {
+              "fala": "Voici une couverture. Bonne nuit !",
+              "audio": "d-n3",
+              "opcoes": [
+                {
+                  "fr": "Bonjour !",
+                  "feedback": "É noite: diga bonne nuit!",
+                  "erro": true
+                },
+                {
+                  "fr": "Merci ! Bonne nuit !",
+                  "feedback": "Perfeito: agradecer e dar boa-noite.",
+                  "vai": "fim"
+                }
+              ]
+            }
+          },
+          "explicacao": "Où est la tente ? → il y a un feu → j'ai froid / j'ai faim → bonne nuit."
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave em voz alta (1–2 frases): diga o que há no acampamento e como você está.",
+          "modelo": "Il y a une tente et un feu. J'ai froid !",
+          "audio_modelo": "modelo",
+          "checklist": [
+            "Il y a…",
+            "une tente / un feu / une couverture",
+            "J'ai froid / j'ai faim"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva a sua frase.",
+            "palavras_chave": [
+              [
+                "tente",
+                "feu",
+                "couverture",
+                "sac"
+              ]
+            ],
+            "explicacao": "Il y a + coisa · j'ai froid / j'ai faim."
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "intro": "Última rodada: os itens errados voltam, uma revisão e a frase da missão.",
+      "recuperar": true,
+      "itens": [
+        {
+          "id": "r2",
+          "tipo": "audio",
+          "instrucao": "Revisão da etapa 21 (pousada): ouça a pergunta.",
+          "audio": "rev",
+          "pergunta": "São 3 horas. O que você responde?",
+          "opcoes": [
+            "Bonne route !",
+            "Il est trois heures.",
+            "Trente dollars."
+          ],
+          "correta": 1,
+          "explicacao": "Il est trois heures (etapa 21)."
+        },
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “À noite tem uma fogueira. Boa noite!”",
+          "palavras": [
+            "La",
+            "nuit,",
+            "il",
+            "y",
+            "a",
+            "un",
+            "feu.",
+            "Bonne",
+            "nuit !"
+          ],
+          "extras": [
+            "tente"
+          ],
+          "audio": "recap",
+          "explicacao": "La nuit, il y a un feu. Bonne nuit !"
+        }
+      ]
+    }
+  ],
+  "novas": [
+    "une tente",
+    "un feu",
+    "une couverture",
+    "un sac à dos",
+    "j'ai froid",
+    "la nuit",
+    "bonne nuit"
+  ],
+  "padroes": [
+    "Il y a + coisa.",
+    "J'ai froid / J'ai faim."
+  ]
+}

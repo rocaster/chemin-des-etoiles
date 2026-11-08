@@ -1,0 +1,47 @@
+{
+  "id": "r1-p16",
+  "regiao": 1,
+  "etapa": 16,
+  "formato": "batalha",
+  "batalha": "r1-b05",
+  "titulo": "A gansa do rio",
+  "titulo_fr": "L'oie de la rivière",
+  "nivel": "A1",
+  "duracao_min": 5,
+  "revisa": [
+    "r1-p14",
+    "r1-p15",
+    "r1-p01",
+    "r1-p05",
+    "r1-p02",
+    "r1-p03",
+    "r1-p08",
+    "r1-p04",
+    "r1-p06",
+    "r1-p07",
+    "r1-p12"
+  ],
+  "recompensa": {
+    "xp_base": 0,
+    "xp_por_estrela": 0,
+    "xp_pausado": true,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  }
+}

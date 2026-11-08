@@ -1,0 +1,640 @@
+{
+  "id": "r1-p33",
+  "regiao": 1,
+  "parada": 33,
+  "etapa": 33,
+  "titulo": "Perguntas simples",
+  "titulo_fr": "Qui ? Où ? Quand ?",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "parada/mapa40/cenas/cidade/cena-fundo.png",
+    "frente": "parada/mapa40/cenas/cidade/cena-frente.png",
+    "npc": {
+      "nome": "Hugo",
+      "papel": "guarda do portão",
+      "img": "parada/mapa40/npc/hugo.png",
+      "x": 52,
+      "y": 33.8,
+      "w": 11.0,
+      "voz": "hugo"
+    },
+    "brilhos": []
+  },
+  "vozes": {
+    "hugo": {
+      "voz": "fr-CA-JeanNeural",
+      "pitch": "+2Hz"
+    },
+    "leo": "fr-CA-AntoineNeural",
+    "camille": {
+      "voz": "fr-CA-SylvieNeural",
+      "pitch": "+6Hz"
+    }
+  },
+  "audios": {
+    "w-c-est-qui": {
+      "voz": "hugo",
+      "texto": "C'est qui ?"
+    },
+    "w-qu-est-ce-que-c-est": {
+      "voz": "hugo",
+      "texto": "Qu'est-ce que c'est ?"
+    },
+    "w-c-est-quand": {
+      "voz": "hugo",
+      "texto": "C'est quand ?"
+    },
+    "w-une-carte": {
+      "voz": "hugo",
+      "texto": "Une carte."
+    },
+    "w-un-coffre": {
+      "voz": "hugo",
+      "texto": "Un coffre."
+    },
+    "w-le-tresor": {
+      "voz": "hugo",
+      "texto": "Le trésor."
+    },
+    "c1-fala": {
+      "voz": "hugo",
+      "texto": "Qu'est-ce que c'est ? C'est un coffre !"
+    },
+    "c2-fala": {
+      "voz": "hugo",
+      "texto": "Dans le coffre, il y a une carte du trésor."
+    },
+    "c3-fala": {
+      "voz": "leo",
+      "texto": "C'est quand ? Demain ?"
+    },
+    "frase-b1": {
+      "voz": "hugo",
+      "texto": "Qu'est-ce que c'est ?"
+    },
+    "frase-b2": {
+      "voz": "hugo",
+      "texto": "C'est qui ? C'est le roi."
+    },
+    "frase-b3": {
+      "voz": "hugo",
+      "texto": "où est le trésor ?"
+    },
+    "d-n1": {
+      "voz": "hugo",
+      "texto": "Regardez ! Un coffre !"
+    },
+    "d-n2": {
+      "voz": "hugo",
+      "texto": "Il y a une carte du trésor. Le trésor est au château."
+    },
+    "d-n3": {
+      "voz": "hugo",
+      "texto": "Demain, à huit heures ! C'est un secret !"
+    },
+    "modelo": {
+      "voz": "leo",
+      "texto": "Qu'est-ce que c'est ? Où est le trésor ?"
+    },
+    "rev": {
+      "voz": "camille",
+      "texto": "Le manteau, c'est cent dollars."
+    },
+    "recap": {
+      "voz": "hugo",
+      "texto": "Où est le trésor ? C'est quand ?"
+    }
+  },
+  "imagens": {
+    "qui": {
+      "src": "parada/mapa40/icones/qui.png",
+      "fr": "c'est qui ?",
+      "pt": "quem é?",
+      "alt": "quem é?"
+    },
+    "quoi": {
+      "src": "parada/mapa40/icones/coffre.png",
+      "fr": "qu'est-ce que c'est ?",
+      "pt": "o que é isso?",
+      "alt": "o que é isso?"
+    },
+    "quand": {
+      "src": "parada/mapa40/icones/sablier.png",
+      "fr": "c'est quand ?",
+      "pt": "quando é?",
+      "alt": "quando é?"
+    },
+    "carte": {
+      "src": "parada/mapa40/icones/carte.png",
+      "fr": "une carte",
+      "pt": "um mapa",
+      "alt": "um mapa"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "c'est qui ?",
+      "pt": "quem é?",
+      "audio": "w-c-est-qui",
+      "img": "qui"
+    },
+    {
+      "fr": "qu'est-ce que c'est ?",
+      "pt": "o que é isso?",
+      "audio": "w-qu-est-ce-que-c-est",
+      "img": "quoi"
+    },
+    {
+      "fr": "c'est quand ?",
+      "pt": "quando é?",
+      "audio": "w-c-est-quand",
+      "img": "quand"
+    },
+    {
+      "fr": "une carte",
+      "pt": "um mapa",
+      "audio": "w-une-carte",
+      "img": "carte"
+    },
+    {
+      "fr": "un coffre",
+      "pt": "um baú",
+      "audio": "w-un-coffre"
+    },
+    {
+      "fr": "le trésor",
+      "pt": "o tesouro",
+      "audio": "w-le-tresor"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-quoi": {
+      "id": "rv-quoi",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Hugo : Regardez ! Un coffre !"
+      ],
+      "pergunta": "Pergunte o que é.",
+      "opcoes": [
+        "Je prends le manteau.",
+        "Bonne nuit !",
+        "Qu'est-ce que c'est ?"
+      ],
+      "correta": 2,
+      "explicacao": "Qu'est-ce que c'est ? = o que é isso?"
+    },
+    "rv-quand": {
+      "id": "rv-quand",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Hugo : Demain, à huit heures."
+      ],
+      "pergunta": "Que pergunta isso responde?",
+      "opcoes": [
+        "C'est qui ?",
+        "Qu'est-ce que c'est ?",
+        "C'est quand ?"
+      ],
+      "correta": 2,
+      "explicacao": "Quand = quando (tempo)."
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "Hugo encontrou um baú misterioso na cidade. Ouça e escolha a imagem.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-c-est-qui",
+          "texto_fr": "c'est qui ?",
+          "opcoes": [
+            "quoi",
+            "qui",
+            "quand",
+            "carte"
+          ],
+          "correta": "qui",
+          "explicacao": "C'est qui ? = quem é?"
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-qu-est-ce-que-c-est",
+          "texto_fr": "qu'est-ce que c'est ?",
+          "opcoes": [
+            "carte",
+            "quand",
+            "qui",
+            "quoi"
+          ],
+          "correta": "quoi",
+          "explicacao": "Qu'est-ce que c'est ? = o que é isso?"
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-c-est-quand",
+          "texto_fr": "c'est quand ?",
+          "opcoes": [
+            "quoi",
+            "carte",
+            "quand",
+            "qui"
+          ],
+          "correta": "quand",
+          "explicacao": "C'est quand ? = quando é?"
+        },
+        {
+          "id": "d4",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-une-carte",
+          "texto_fr": "une carte",
+          "opcoes": [
+            "quand",
+            "qui",
+            "carte",
+            "quoi"
+          ],
+          "correta": "carte",
+          "explicacao": "Une carte = um mapa (e também uma carta de jogo)."
+        },
+        {
+          "id": "d5",
+          "tipo": "pares",
+          "instrucao": "Ligue cada palavra à sua imagem: toque numa palavra e depois na imagem.",
+          "pares": [
+            {
+              "fr": "c'est qui ?",
+              "img": "qui",
+              "audio": "w-c-est-qui"
+            },
+            {
+              "fr": "qu'est-ce que c'est ?",
+              "img": "quoi",
+              "audio": "w-qu-est-ce-que-c-est"
+            },
+            {
+              "fr": "c'est quand ?",
+              "img": "quand",
+              "audio": "w-c-est-quand"
+            },
+            {
+              "fr": "une carte",
+              "img": "carte",
+              "audio": "w-une-carte"
+            }
+          ],
+          "explicacao": "Quem? O quê? Quando? e o mapa."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Escute Hugo. O texto só aparece depois que você responder.",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Ouça Hugo.",
+          "audio": "c1-fala",
+          "pergunta": "O que Hugo encontrou?",
+          "opcoes": [
+            "um chapéu",
+            "um baú",
+            "um mapa"
+          ],
+          "correta": 1,
+          "explicacao": "Un coffre = um baú."
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "Ouça Hugo.",
+          "audio": "c2-fala",
+          "pergunta": "O que há no baú?",
+          "opcoes": [
+            "um mapa do tesouro",
+            "um chocolate",
+            "luvas"
+          ],
+          "correta": 0,
+          "explicacao": "Une carte du trésor = um mapa do tesouro."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Ouça Léo.",
+          "audio": "c3-fala",
+          "pergunta": "O que Léo pergunta?",
+          "opcoes_img": [
+            "qui",
+            "quoi",
+            "quand",
+            "carte"
+          ],
+          "correta": "quand",
+          "explicacao": "C'est quand ? = quando é?"
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia a conversa.",
+          "texto_fr": [
+            "Léo : C'est qui ?",
+            "Hugo : C'est le roi, sur la carte.",
+            "Léo : Où est le trésor ?",
+            "Hugo : Au château !"
+          ],
+          "pergunta": "Onde está o tesouro?",
+          "opcoes": [
+            "no moinho",
+            "na ponte",
+            "no castelo"
+          ],
+          "correta": 2,
+          "explicacao": "Au château = no castelo."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "Mesma conversa.",
+          "texto_fr": [
+            "Léo : C'est qui ?",
+            "Hugo : C'est le roi, sur la carte.",
+            "Léo : Où est le trésor ?",
+            "Hugo : Au château !"
+          ],
+          "pergunta": "Quem está no mapa?",
+          "opcoes": [
+            "o padeiro",
+            "o lenhador",
+            "o rei"
+          ],
+          "correta": 2,
+          "explicacao": "C'est le roi = é o rei."
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Monte as perguntas. Qui = quem · où = onde · quand = quando.",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte: “O que é isso?”",
+          "palavras": [
+            "Qu'est-ce",
+            "que",
+            "c'est ?"
+          ],
+          "extras": [
+            "qui",
+            "où"
+          ],
+          "audio": "frase-b1",
+          "explicacao": "Qu'est-ce que c'est ? (pergunta fixa)"
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete: “Quem é? É o rei.”",
+          "frase": "C'est ___ ? C'est le roi.",
+          "banco": [
+            "qui",
+            "quand",
+            "où"
+          ],
+          "respostas": [
+            "qui"
+          ],
+          "audio": "frase-b2",
+          "explicacao": "Qui = quem (para pessoas)."
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Escreva: “Onde está o tesouro?”",
+          "frase": "___ est le trésor ?",
+          "respostas": [
+            "où",
+            "ou",
+            "Où"
+          ],
+          "dica": "Duas letras: o…",
+          "audio": "frase-b3",
+          "explicacao": "Où = onde."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "w-une-carte",
+          "respostas": [
+            "une carte"
+          ],
+          "explicacao": "Une carte = um mapa."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez! Faça perguntas a Hugo e grave a sua pergunta.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Hugo.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Regardez ! Un coffre !",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Qu'est-ce que c'est ?",
+                  "feedback": "Isso: perguntar o que é.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "Je prends le manteau.",
+                  "feedback": "Aqui não é a loja! Pergunte sobre o baú.",
+                  "erro": true,
+                  "revisao": "rv-quoi"
+                },
+                {
+                  "fr": "Un coffre ? C'est à qui ?",
+                  "feedback": "Boa pergunta!",
+                  "vai": "n2"
+                }
+              ]
+            },
+            "n2": {
+              "fala": "Il y a une carte du trésor. Le trésor est au château.",
+              "audio": "d-n2",
+              "opcoes": [
+                {
+                  "fr": "Où est le château ?",
+                  "feedback": "Boa: perguntar onde.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "C'est quand ? Demain ?",
+                  "feedback": "Boa: perguntar quando.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "C'est qui ? Un coffre.",
+                  "feedback": "Qui é para pessoas. Para o tempo: quand.",
+                  "erro": true,
+                  "revisao": "rv-quand"
+                }
+              ]
+            },
+            "n3": {
+              "fala": "Demain, à huit heures ! C'est un secret !",
+              "audio": "d-n3",
+              "opcoes": [
+                {
+                  "fr": "Il est qui ?",
+                  "feedback": "Ele disse quando: demain. Agradeça!",
+                  "erro": true
+                },
+                {
+                  "fr": "Super ! Merci, Hugo !",
+                  "feedback": "Perfeito!",
+                  "vai": "fim"
+                }
+              ]
+            }
+          },
+          "explicacao": "Qu'est-ce que c'est ? → où ? → c'est quand ? → merci."
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave em voz alta (1–2 perguntas): pergunte o que é e onde está o tesouro.",
+          "modelo": "Qu'est-ce que c'est ? Où est le trésor ?",
+          "audio_modelo": "modelo",
+          "checklist": [
+            "Qu'est-ce que c'est ?",
+            "Où est… ?",
+            "C'est quand ? / C'est qui ?"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva as suas perguntas.",
+            "palavras_chave": [
+              [
+                "qui",
+                "où",
+                "ou",
+                "quand",
+                "qu'est-ce",
+                "quest"
+              ]
+            ],
+            "explicacao": "Qui ? Où ? Quand ? Qu'est-ce que c'est ?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "intro": "Última rodada: os itens errados voltam, uma revisão e a frase da missão.",
+      "recuperar": true,
+      "itens": [
+        {
+          "id": "r2",
+          "tipo": "audio",
+          "instrucao": "Revisão da etapa 30 (compras): ouça Camille.",
+          "audio": "rev",
+          "pergunta": "Quanto custa o casaco?",
+          "opcoes": [
+            "10 dólares",
+            "80 dólares",
+            "100 dólares"
+          ],
+          "correta": 2,
+          "explicacao": "Cent = 100 (etapa 30)."
+        },
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “Onde está o tesouro? Quando é?”",
+          "palavras": [
+            "Où",
+            "est",
+            "le",
+            "trésor ?",
+            "C'est",
+            "quand ?"
+          ],
+          "extras": [
+            "qui"
+          ],
+          "audio": "recap",
+          "explicacao": "Où est le trésor ? C'est quand ?"
+        }
+      ]
+    }
+  ],
+  "novas": [
+    "c'est qui ?",
+    "qu'est-ce que c'est ?",
+    "c'est quand ?",
+    "une carte",
+    "un coffre",
+    "le trésor"
+  ],
+  "padroes": [
+    "C'est qui ? · C'est quand ?",
+    "Qu'est-ce que c'est ? (fórmula fixa)"
+  ]
+}

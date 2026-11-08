@@ -1,0 +1,10 @@
+/* Entrada aditiva no mapa: mesma placa de simulado, espelhada à direita.
+   Região: esconder placas, assim nenhuma cobre a trilha. Mobile: placas
+   compactas na borda direita; sem mexer na geometria/câmera dos estágios. */
+.heroi-placas.sim-placas{left:auto;right:16px;bottom:100px;flex-direction:column;gap:20px;max-width:none}
+.vista-regiao .heroi-placas,.transicao .heroi-placas{display:none}
+@media(max-width:600px){
+ .heroi-placas.sim-placas{right:8px;bottom:calc(104px + env(safe-area-inset-bottom));gap:17px;max-width:none}
+ .heroi-placas.sim-placas a{width:90px;min-height:45px;font-size:12px;padding:7px 4px}
+ .heroi-placas.sim-placas small{font-size:9px}
+}

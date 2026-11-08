@@ -1,0 +1,768 @@
+{
+ "id": "r1-b06",
+ "regiao": 1,
+ "etapa": 19,
+ "formato": "batalha",
+ "titulo": "O rato do moinho",
+ "titulo_fr": "Le rat du moulin",
+ "nivel_perguntas": "palavras e blocos curtos (até 4 palavras) + 3 frases curtas",
+ "cenario": {
+  "fundo": "batalha/floresta.png",
+  "nativo": [
+   400,
+   225
+  ],
+  "heroi": {
+   "pe": [
+    95,
+    127
+   ]
+  },
+  "inimigo": {
+   "pe": [
+    296,
+    96
+   ]
+  }
+ },
+ "regras": {
+  "vida_heroi": 5,
+  "vida_inimigo": 5,
+  "combo": {
+   "leger": 1,
+   "fort": 2,
+   "special": 3
+  },
+  "dano": {
+   "leger": 1,
+   "fort": 2,
+   "special": 3
+  },
+  "dano_erro": 1,
+  "combo_zera_apos_especial": true,
+  "contra_ataque": true,
+  "contra_apos_erro": true,
+  "dano_defesa": 1,
+  "timer_defesa_s": 5,
+  "timer_graca_s": 0.7,
+  "xp": 0
+ },
+ "especiais": {
+  "cavaleiro": {
+   "nome": "Lame radieuse",
+   "pt": "Lâmina radiante",
+   "img": "batalha/especial-cavaleiro.png",
+   "som": "batalha/som-especial-cavaleiro.wav",
+   "cor": "#ffd76a"
+  },
+  "arqueiro": {
+   "nome": "Pluie de flèches",
+   "pt": "Chuva de flechas",
+   "img": "batalha/especial-arqueiro.png",
+   "som": "batalha/som-especial-arqueiro.wav",
+   "cor": "#9be07a"
+  },
+  "mago": {
+   "nome": "Orbe arcanique",
+   "pt": "Orbe arcano",
+   "img": "batalha/especial-mago.png",
+   "som": "batalha/som-especial-mago.wav",
+   "cor": "#c07af0"
+  },
+  "bardo": {
+   "nome": "Onde mélodique",
+   "pt": "Onda melódica",
+   "img": "batalha/especial-bardo.png",
+   "som": "batalha/som-especial-bardo.wav",
+   "cor": "#7ae0f0"
+  }
+ },
+ "inimigo_padrao": "rat",
+ "inimigos": {
+  "rat": {
+   "nome": "Rat des bois",
+   "pt": "Rato do bosque",
+   "img": "batalha/inimigo-rat.png",
+   "intro": "intro-rat"
+  }
+ },
+ "mensagens": {
+  "vitoria": {
+   "fr": "Victoire !",
+   "pt": "Vitória! O caminho do moinho está livre.",
+   "audio": "vitoria"
+  },
+  "derrota": {
+   "fr": "Tu reprendras ton souffle… Reviens quand tu seras prêt.",
+   "pt": "Você vai recuperar o fôlego… Volte quando estiver pronto.",
+   "audio": "derrota"
+  }
+ },
+ "vozes": {
+  "sylvie": "fr-CA-SylvieNeural",
+  "thierry": "fr-CA-ThierryNeural",
+  "jean": "fr-CA-JeanNeural",
+  "antoine": "fr-CA-AntoineNeural"
+ },
+ "audios": {
+  "intro-rat": {
+   "voz": "jean",
+   "texto": "Un rat des bois bloque le chemin !"
+  },
+  "vitoria": {
+   "voz": "antoine",
+   "texto": "Victoire ! Bravo !"
+  },
+  "derrota": {
+   "voz": "sylvie",
+   "texto": "Tu reprendras ton souffle… Reviens quand tu seras prêt."
+  },
+  "bloque": {
+   "voz": "antoine",
+   "texto": "Bloqué !"
+  }
+ },
+ "perguntas": [
+  {
+   "fr": "voici",
+   "pt": "aqui está / este é",
+   "audio": "paradas/r1-p18/w-voici.mp3",
+   "origem": "r1-p18",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "un chien",
+   "pt": "um cachorro",
+   "audio": "paradas/r1-p17/c-un-chien.mp3",
+   "origem": "r1-p17",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "un cheval",
+   "pt": "um cavalo",
+   "audio": "paradas/r1-p17/c-un-cheval.mp3",
+   "origem": "r1-p17",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "mon père",
+   "pt": "meu pai",
+   "audio": "paradas/r1-p18/w-mon-pere.mp3",
+   "origem": "r1-p18",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "une fleur",
+   "pt": "uma flor",
+   "audio": "paradas/r1-p17/c-une-fleur.mp3",
+   "origem": "r1-p17",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "une vache",
+   "pt": "uma vaca",
+   "audio": "paradas/r1-p17/c-une-vache.mp3",
+   "origem": "r1-p17",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "mon frère",
+   "pt": "meu irmão",
+   "audio": "paradas/r1-p18/w-mon-frere.mp3",
+   "origem": "r1-p18",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "un oiseau",
+   "pt": "um pássaro",
+   "audio": "paradas/r1-p17/c-un-oiseau.mp3",
+   "origem": "r1-p17",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "un chat",
+   "pt": "um gato",
+   "audio": "paradas/r1-p17/c-un-chat.mp3",
+   "origem": "r1-p17",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "un arbre",
+   "pt": "uma árvore",
+   "audio": "paradas/r1-p17/c-un-arbre.mp3",
+   "origem": "r1-p17",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "la famille",
+   "pt": "a família",
+   "audio": "paradas/r1-p18/w-la-famille.mp3",
+   "origem": "r1-p18",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "le pont",
+   "pt": "a ponte",
+   "audio": "paradas/r1-p17/c-le-pont.mp3",
+   "origem": "r1-p17",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "ma sœur",
+   "pt": "minha irmã",
+   "audio": "paradas/r1-p18/w-ma-s-ur.mp3",
+   "origem": "r1-p18",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "s'il vous plaît",
+   "pt": "por favor",
+   "audio": "paradas/r1-p01/svp.mp3",
+   "origem": "r1-p01",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "aussi",
+   "pt": "também",
+   "audio": "paradas/r1-p07/w-aussi.mp3",
+   "origem": "r1-p07",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "il était une fois",
+   "pt": "era uma vez",
+   "audio": "batalhas/r1-b01/v-il-etait-une-fois.mp3",
+   "origem": "r1-p06",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "les enfants",
+   "pt": "as crianças",
+   "audio": "paradas/r1-p07/w-les-enfants.mp3",
+   "origem": "r1-p07",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "le soleil",
+   "pt": "o sol",
+   "audio": "paradas/r1-p15/w-le-soleil.mp3",
+   "origem": "r1-p15",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "merci beaucoup",
+   "pt": "muito obrigado",
+   "audio": "batalhas/r1-b01/v-merci-beaucoup.mp3",
+   "origem": "r1-p05",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "aujourd'hui",
+   "pt": "hoje",
+   "audio": "paradas/r1-p15/w-aujourd-hui.mp3",
+   "origem": "r1-p15",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "voilà",
+   "pt": "aqui está / pronto",
+   "audio": "paradas/r1-p04/voila.mp3",
+   "origem": "r1-p04",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "une lanterne",
+   "pt": "uma lanterna",
+   "audio": "paradas/r1-p08/c-lanterne.mp3",
+   "origem": "r1-p08",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "Voici ma famille. J'ai une sœur.",
+   "pt": "Esta é a minha família. Eu tenho uma irmã.",
+   "audio": "paradas/r1-p18/recap.mp3",
+   "origem": "r1-p18",
+   "tipo": "frase"
+  },
+  {
+   "fr": "Voici mon père.",
+   "pt": "Este é o meu pai.",
+   "audio": "paradas/r1-p18/frase-b1.mp3",
+   "origem": "r1-p18",
+   "tipo": "frase"
+  },
+  {
+   "fr": "Aujourd'hui, il fait beau.",
+   "pt": "Hoje faz tempo bom.",
+   "audio": "paradas/r1-p15/frase-b1.mp3",
+   "origem": "r1-p15",
+   "tipo": "frase"
+  }
+ ],
+ "defesa": [
+  {
+   "fr": "un",
+   "pt": "1",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-01.mp3",
+   "aceitos": [
+    "un",
+    "1",
+    "une"
+   ],
+   "parecidos": [
+    "onze",
+    "neuf"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "deux",
+   "pt": "2",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-02.mp3",
+   "aceitos": [
+    "deux",
+    "2"
+   ],
+   "parecidos": [
+    "douze",
+    "dix"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "trois",
+   "pt": "3",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-03.mp3",
+   "aceitos": [
+    "trois",
+    "3"
+   ],
+   "parecidos": [
+    "treize",
+    "quatre"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "quatre",
+   "pt": "4",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-04.mp3",
+   "aceitos": [
+    "quatre",
+    "4",
+    "catre"
+   ],
+   "parecidos": [
+    "quatorze",
+    "trois"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "cinq",
+   "pt": "5",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-05.mp3",
+   "aceitos": [
+    "cinq",
+    "5"
+   ],
+   "parecidos": [
+    "quinze",
+    "vingt"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "six",
+   "pt": "6",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-06.mp3",
+   "aceitos": [
+    "six",
+    "6"
+   ],
+   "parecidos": [
+    "seize",
+    "dix"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "sept",
+   "pt": "7",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-07.mp3",
+   "aceitos": [
+    "sept",
+    "7"
+   ],
+   "parecidos": [
+    "dix-sept",
+    "six"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "huit",
+   "pt": "8",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-08.mp3",
+   "aceitos": [
+    "huit",
+    "8"
+   ],
+   "parecidos": [
+    "dix-huit",
+    "sept"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "neuf",
+   "pt": "9",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-09.mp3",
+   "aceitos": [
+    "neuf",
+    "9"
+   ],
+   "parecidos": [
+    "dix-neuf",
+    "cinq"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "dix",
+   "pt": "10",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-10.mp3",
+   "aceitos": [
+    "dix",
+    "10"
+   ],
+   "parecidos": [
+    "six",
+    "deux"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "onze",
+   "pt": "11",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-11.mp3",
+   "aceitos": [
+    "onze",
+    "11"
+   ],
+   "parecidos": [
+    "un",
+    "douze"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "douze",
+   "pt": "12",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-12.mp3",
+   "aceitos": [
+    "douze",
+    "12"
+   ],
+   "parecidos": [
+    "deux",
+    "onze"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "treize",
+   "pt": "13",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-13.mp3",
+   "aceitos": [
+    "treize",
+    "13"
+   ],
+   "parecidos": [
+    "trois",
+    "seize"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "quatorze",
+   "pt": "14",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-14.mp3",
+   "aceitos": [
+    "quatorze",
+    "14",
+    "catorze",
+    "quatorze"
+   ],
+   "parecidos": [
+    "quatre",
+    "quinze"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "quinze",
+   "pt": "15",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-15.mp3",
+   "aceitos": [
+    "quinze",
+    "15"
+   ],
+   "parecidos": [
+    "cinq",
+    "quatorze"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "seize",
+   "pt": "16",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-16.mp3",
+   "aceitos": [
+    "seize",
+    "16"
+   ],
+   "parecidos": [
+    "six",
+    "treize"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "dix-sept",
+   "pt": "17",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-17.mp3",
+   "aceitos": [
+    "dix-sept",
+    "17",
+    "dix sept"
+   ],
+   "parecidos": [
+    "sept",
+    "dix-neuf"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "dix-huit",
+   "pt": "18",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-18.mp3",
+   "aceitos": [
+    "dix-huit",
+    "18",
+    "dix huit"
+   ],
+   "parecidos": [
+    "huit",
+    "dix-sept"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "dix-neuf",
+   "pt": "19",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-19.mp3",
+   "aceitos": [
+    "dix-neuf",
+    "19",
+    "dix neuf"
+   ],
+   "parecidos": [
+    "neuf",
+    "dix-huit"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "vingt",
+   "pt": "20",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-20.mp3",
+   "aceitos": [
+    "vingt",
+    "20",
+    "vin",
+    "vain"
+   ],
+   "parecidos": [
+    "cinq",
+    "un"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "une vache",
+   "pt": "uma vaca",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p17/c-une-vache.mp3",
+   "aceitos": [
+    "une vache"
+   ],
+   "parecidos": [],
+   "origem": "r1-p17"
+  },
+  {
+   "fr": "un cheval",
+   "pt": "um cavalo",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p17/c-un-cheval.mp3",
+   "aceitos": [
+    "un cheval"
+   ],
+   "parecidos": [],
+   "origem": "r1-p17"
+  },
+  {
+   "fr": "mon père",
+   "pt": "meu pai",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p18/w-mon-pere.mp3",
+   "aceitos": [
+    "mon père"
+   ],
+   "parecidos": [],
+   "origem": "r1-p18"
+  },
+  {
+   "fr": "une fleur",
+   "pt": "uma flor",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p17/c-une-fleur.mp3",
+   "aceitos": [
+    "une fleur"
+   ],
+   "parecidos": [],
+   "origem": "r1-p17"
+  },
+  {
+   "fr": "un oiseau",
+   "pt": "um pássaro",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p17/c-un-oiseau.mp3",
+   "aceitos": [
+    "un oiseau"
+   ],
+   "parecidos": [],
+   "origem": "r1-p17"
+  },
+  {
+   "fr": "un chien",
+   "pt": "um cachorro",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p17/c-un-chien.mp3",
+   "aceitos": [
+    "un chien"
+   ],
+   "parecidos": [],
+   "origem": "r1-p17"
+  },
+  {
+   "fr": "une lanterne",
+   "pt": "uma lanterna",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p08/c-lanterne.mp3",
+   "aceitos": [
+    "une lanterne"
+   ],
+   "parecidos": [],
+   "origem": "r1-p08"
+  },
+  {
+   "fr": "merci beaucoup",
+   "pt": "muito obrigado",
+   "tipo": "palavra",
+   "audio": "batalhas/r1-b01/v-merci-beaucoup.mp3",
+   "aceitos": [
+    "merci beaucoup"
+   ],
+   "parecidos": [],
+   "origem": "r1-p05"
+  },
+  {
+   "fr": "voilà",
+   "pt": "aqui está / pronto",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p04/voila.mp3",
+   "aceitos": [
+    "voilà"
+   ],
+   "parecidos": [],
+   "origem": "r1-p04"
+  },
+  {
+   "fr": "aussi",
+   "pt": "também",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p07/w-aussi.mp3",
+   "aceitos": [
+    "aussi"
+   ],
+   "parecidos": [],
+   "origem": "r1-p07"
+  },
+  {
+   "fr": "un chat",
+   "pt": "um gato",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p17/c-un-chat.mp3",
+   "aceitos": [
+    "un chat"
+   ],
+   "parecidos": [],
+   "origem": "r1-p17"
+  },
+  {
+   "fr": "le pont",
+   "pt": "a ponte",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p17/c-le-pont.mp3",
+   "aceitos": [
+    "le pont"
+   ],
+   "parecidos": [],
+   "origem": "r1-p17"
+  }
+ ],
+ "ataques_inimigo": {
+  "rat": {
+   "fr": "Le rat mord !",
+   "pt": "O rato morde!"
+  }
+ },
+ "revisa_recentes": [
+  "r1-p17",
+  "r1-p18"
+ ],
+ "revisa_antigas": [
+  "r1-p01",
+  "r1-p05",
+  "r1-p02",
+  "r1-p03",
+  "r1-p08",
+  "r1-p04",
+  "r1-p06",
+  "r1-p07",
+  "r1-p12",
+  "r1-p14",
+  "r1-p15"
+ ]
+}

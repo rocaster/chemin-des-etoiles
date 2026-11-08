@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Étape 4 · L&#39;oie du chemin · Chemin des Étoiles</title>
+  <link rel="stylesheet" href="/static/parada/batalha.css">
+  <link rel="stylesheet" href="/static/loja/animacoes-v5.css">
+  <link rel="stylesheet" href="/static/loja/efeitos.css">
+  <link rel="stylesheet" href="/static/loja/perfil-v6.css">
+  <style>
+    .arena { background-image: url("/static/batalha/floresta.png"); }
+    .heroi { background-image: url("/static/loja/batalha/arqueiro-f-ametista.png"); }
+    .placa, .pergunta, .legenda, .mensagem, .combo, .fuga { background-image: url("/static/nivelamento/papel-textura.png"); }
+    .efeito.corte { background-image: url("/static/batalha/efeito-corte.png"); }
+    .efeito.golpe { background-image: url("/static/batalha/efeito-golpe.png"); }
+    .efeito.estrela { background-image: url("/static/batalha/efeito-estrela.png"); }
+    .efeito.dano { background-image: url("/static/batalha/efeito-dano.png"); }
+    .ic.corte { background-image: url("/static/batalha/efeito-corte.png"); }
+    .ic.golpe { background-image: url("/static/batalha/efeito-golpe.png"); }
+    
+    .especial { background-image: url("/static/batalha/especial-arqueiro.png"); --cor-esp: #9be07a; }
+    .faixa-especial { --cor-esp: #9be07a; }
+    .efeito.escudo { background-image: url("/static/batalha/efeito-escudo.png"); }
+    .ic-escudo { background-image: url("/static/batalha/escudo-icone.png"); }
+    .ic.estrela { background-image: url("/static/batalha/efeito-estrela.png"); }
+  </style>
+</head>
+<body data-parada="r1-p10" data-heroi="arqueiro-f" data-classe="arqueiro">
+  <h1 class="sr">Étape 4 · L&#39;oie du chemin — A gansa do caminho</h1>
+  <div class="tela">
+    <div class="arena" id="arena">
+      <a class="fuga" id="fuga" href="/mapa?vista=regiao" title="Fugir e voltar ao mapa (sem perder nada)">‹ Mapa</a>
+      <p class="selo-teste" role="status">MODO TESTE · progresso separado</p>
+
+      <div class="placa placa-heroi" id="placa-heroi">
+        <span class="perfil-batalha-retrato sprite-oito" role="img" aria-label="Perfil equipado de Teste" style="background-image:url('/static/loja/herois/poses-v5/arqueiro-f-ametista.png')"></span>
+        <p class="nome" id="nome-heroi">Teste</p>
+        <p class="perfil-titulo-batalha">Voix du village</p>
+        <div class="barra" id="barra-heroi" role="meter" aria-label="Vida de Teste" aria-valuemin="0" aria-valuemax="5" aria-valuenow="5" style="--seg: 5"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="placa placa-inimigo" id="placa-inimigo">
+        <p class="nome" id="nome-inimigo"></p>
+        <div class="barra" id="barra-inimigo" role="meter" aria-label="Vida do inimigo" aria-valuemin="0" aria-valuemax="5" aria-valuenow="5" style="--seg: 5"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      
+      <span class="perfil-pet sprite-oito companheiro-batalha" role="img" aria-label="Étoile de Feu, companheiro decorativo" style="background-image:url('/static/loja/pets/fenix.png')"></span>
+      <div class="heroi" id="heroi" aria-hidden="true"></div>
+      <div class="inimigo" id="inimigo" aria-hidden="true"></div>
+      <div class="combo" id="combo" aria-live="polite" hidden><b id="combo-n">×1</b><span id="combo-tipo">Léger</span></div>
+      <div class="efeito" id="efeito" aria-hidden="true" hidden></div>
+      <div class="efeito dano" id="efeito-heroi" aria-hidden="true" hidden></div>
+      <div class="efeito escudo" id="efeito-bloqueio" aria-hidden="true" hidden></div>
+      <p class="bloqueado" id="bloqueado" aria-hidden="true" hidden>Bloqué !</p>
+      <p class="numero" id="numero" aria-hidden="true" hidden>-1</p>
+
+      <ul class="legenda" id="legenda" aria-label="Combo: o tipo de ataque vem sozinho">
+        <li data-tipo="leger"><i class="ic corte" aria-hidden="true"></i><span>Léger</span><small>×1 · −1</small></li>
+        <li data-tipo="fort"><i class="ic golpe" aria-hidden="true"></i><span>Fort</span><small>×2 · −2</small></li>
+        <li data-tipo="special"><i class="ic estrela" aria-hidden="true"></i><span>Spécial</span><small>×3+ · −3</small></li>
+      </ul>
+      <div class="especial" id="especial" aria-hidden="true" hidden></div>
+      <p class="faixa-especial" id="faixa-especial" role="status" hidden><b id="faixa-nome"></b><span id="faixa-pt"></span></p>
+      <div class="flash" id="flash" aria-hidden="true"></div>
+      <div class="escuro" id="escuro" aria-hidden="true"></div>
+      <div class="mensagem" id="mensagem" role="dialog" aria-modal="false" aria-labelledby="msg-titulo" hidden>
+        <h2 id="msg-titulo"></h2>
+        <p class="pt" id="msg-pt"></p>
+        <p class="sub" id="msg-sub"></p>
+        <a class="botao" id="voltar-mapa" href="/mapa?vista=regiao">Voltar ao mapa</a>
+      </div>
+    </div>
+
+    <section class="pergunta" id="pergunta" aria-live="polite">
+      <div id="conteudo"></div>
+    </section>
+  </div>
+
+  <script type="application/json" id="dados-batalha">{"ataques_inimigo": {"oie": {"fr": "L\u0027oie donne un coup de bec !", "pt": "A gansa d\u00e1 uma bicada!"}}, "audios": {"bloque": {"texto": "Bloqu\u00e9 !", "voz": "antoine"}, "derrota": {"texto": "Tu reprendras ton souffle\u2026 Reviens quand tu seras pr\u00eat.", "voz": "sylvie"}, "intro-oie": {"texto": "Une oie grincheuse bloque le chemin !", "voz": "sylvie"}, "v-non": {"texto": "Non.", "voz": "sylvie"}, "v-oui": {"texto": "Oui.", "voz": "antoine"}, "vitoria": {"texto": "Victoire ! Bravo !", "voz": "antoine"}}, "cenario": {"fundo": "batalha/floresta.png", "heroi": {"pe": [95, 127]}, "inimigo": {"pe": [296, 96]}, "nativo": [400, 225]}, "defesa": [{"aceitos": ["un", "1", "une"], "audio": "batalhas/r1-b01/n-01.mp3", "fr": "un", "origem": "numeros", "parecidos": ["neuf", "deux"], "pt": "1", "tipo": "numero"}, {"aceitos": ["deux", "2"], "audio": "batalhas/r1-b01/n-02.mp3", "fr": "deux", "origem": "numeros", "parecidos": ["dix", "trois"], "pt": "2", "tipo": "numero"}, {"aceitos": ["trois", "3"], "audio": "batalhas/r1-b01/n-03.mp3", "fr": "trois", "origem": "numeros", "parecidos": ["quatre", "deux"], "pt": "3", "tipo": "numero"}, {"aceitos": ["quatre", "4", "catre"], "audio": "batalhas/r1-b01/n-04.mp3", "fr": "quatre", "origem": "numeros", "parecidos": ["trois", "cinq"], "pt": "4", "tipo": "numero"}, {"aceitos": ["cinq", "5"], "audio": "batalhas/r1-b01/n-05.mp3", "fr": "cinq", "origem": "numeros", "parecidos": ["neuf", "quatre"], "pt": "5", "tipo": "numero"}, {"aceitos": ["six", "6"], "audio": "batalhas/r1-b01/n-06.mp3", "fr": "six", "origem": "numeros", "parecidos": ["dix", "sept"], "pt": "6", "tipo": "numero"}, {"aceitos": ["sept", "7"], "audio": "batalhas/r1-b01/n-07.mp3", "fr": "sept", "origem": "numeros", "parecidos": ["six", "huit"], "pt": "7", "tipo": "numero"}, {"aceitos": ["huit", "8"], "audio": "batalhas/r1-b01/n-08.mp3", "fr": "huit", "origem": "numeros", "parecidos": ["sept", "neuf"], "pt": "8", "tipo": "numero"}, {"aceitos": ["neuf", "9"], "audio": "batalhas/r1-b01/n-09.mp3", "fr": "neuf", "origem": "numeros", "parecidos": ["cinq", "un"], "pt": "9", "tipo": "numero"}, {"aceitos": ["dix", "10"], "audio": "batalhas/r1-b01/n-10.mp3", "fr": "dix", "origem": "numeros", "parecidos": ["six", "deux"], "pt": "10", "tipo": "numero"}, {"aceitos": ["un caf\u00e9"], "audio": "paradas/r1-p01/un-cafe.mp3", "fr": "un caf\u00e9", "origem": "r1-p01", "parecidos": [], "pt": "um caf\u00e9", "tipo": "palavra"}, {"aceitos": ["un th\u00e9"], "audio": "paradas/r1-p01/un-the.mp3", "fr": "un th\u00e9", "origem": "r1-p01", "parecidos": [], "pt": "um ch\u00e1", "tipo": "palavra"}, {"aceitos": ["de l\u0027eau"], "audio": "paradas/r1-p01/de-leau.mp3", "fr": "de l\u0027eau", "origem": "r1-p01", "parecidos": [], "pt": "\u00e1gua", "tipo": "palavra"}, {"aceitos": ["bonjour"], "audio": "paradas/r1-p01/bonjour.mp3", "fr": "bonjour", "origem": "r1-p01", "parecidos": [], "pt": "ol\u00e1 / bom dia", "tipo": "palavra"}, {"aceitos": ["merci"], "audio": "paradas/r1-p01/merci.mp3", "fr": "merci", "origem": "r1-p01", "parecidos": [], "pt": "obrigado(a)", "tipo": "palavra"}, {"aceitos": ["oui"], "audio": "batalhas/r1-b02/v-oui.mp3", "fr": "oui", "origem": "r1-p05", "parecidos": [], "pt": "sim", "tipo": "palavra"}, {"aceitos": ["non"], "audio": "batalhas/r1-b02/v-non.mp3", "fr": "non", "origem": "r1-p05", "parecidos": [], "pt": "n\u00e3o", "tipo": "palavra"}, {"aceitos": ["un billet"], "audio": "batalhas/r1-b01/v-un-billet.mp3", "fr": "un billet", "origem": "r1-p05", "parecidos": [], "pt": "um bilhete / passagem", "tipo": "palavra"}, {"aceitos": ["au revoir"], "audio": "paradas/r1-p02/au-revoir.mp3", "fr": "au revoir", "origem": "r1-p02", "parecidos": [], "pt": "tchau / at\u00e9 logo", "tipo": "palavra"}, {"aceitos": ["enchant\u00e9"], "audio": "paradas/r1-p02/enchante.mp3", "fr": "enchant\u00e9", "origem": "r1-p02", "parecidos": [], "pt": "muito prazer", "tipo": "palavra"}, {"aceitos": ["et vous ?"], "audio": "paradas/r1-p02/et-vous.mp3", "fr": "et vous ?", "origem": "r1-p02", "parecidos": [], "pt": "e voc\u00ea?", "tipo": "palavra"}], "especiais": {"arqueiro": {"cor": "#9be07a", "img": "batalha/especial-arqueiro.png", "nome": "Pluie de fl\u00e8ches", "pt": "Chuva de flechas", "som": "batalha/som-especial-arqueiro.wav"}, "bardo": {"cor": "#7ae0f0", "img": "batalha/especial-bardo.png", "nome": "Onde m\u00e9lodique", "pt": "Onda mel\u00f3dica", "som": "batalha/som-especial-bardo.wav"}, "cavaleiro": {"cor": "#ffd76a", "img": "batalha/especial-cavaleiro.png", "nome": "Lame radieuse", "pt": "L\u00e2mina radiante", "som": "batalha/som-especial-cavaleiro.wav"}, "mago": {"cor": "#c07af0", "img": "batalha/especial-mago.png", "nome": "Orbe arcanique", "pt": "Orbe arcano", "som": "batalha/som-especial-mago.wav"}}, "formato": "batalha", "id": "r1-b02", "inimigo_padrao": "oie", "inimigos": {"oie": {"img": "batalha/inimigo-oie.png", "intro": "intro-oie", "nome": "Oie grincheuse", "pt": "Gansa rabugenta"}}, "mensagens": {"derrota": {"audio": "derrota", "fr": "Tu reprendras ton souffle\u2026 Reviens quand tu seras pr\u00eat.", "pt": "Voc\u00ea vai recuperar o f\u00f4lego\u2026 Volte quando estiver pronto."}, "vitoria": {"audio": "vitoria", "fr": "Victoire !", "pt": "Vit\u00f3ria! O caminho est\u00e1 livre."}}, "nivel_perguntas": "palavras (at\u00e9 3 palavras), reconhecer e pt\u2192fr com 3 op\u00e7\u00f5es", "perguntas": [{"audio": "paradas/r1-p01/un-cafe.mp3", "fr": "un caf\u00e9", "origem": "r1-p01", "pt": "um caf\u00e9", "tipo": "palavra"}, {"audio": "paradas/r1-p01/un-the.mp3", "fr": "un th\u00e9", "origem": "r1-p01", "pt": "um ch\u00e1", "tipo": "palavra"}, {"audio": "paradas/r1-p01/de-leau.mp3", "fr": "de l\u0027eau", "origem": "r1-p01", "pt": "\u00e1gua", "tipo": "palavra"}, {"audio": "paradas/r1-p01/un-jus.mp3", "fr": "un jus d\u0027orange", "origem": "r1-p01", "pt": "um suco de laranja", "tipo": "palavra"}, {"audio": "paradas/r1-p01/je-voudrais.mp3", "fr": "je voudrais", "origem": "r1-p01", "pt": "eu gostaria / eu queria", "tipo": "palavra"}, {"audio": "paradas/r1-p01/svp.mp3", "fr": "s\u0027il vous pla\u00eet", "origem": "r1-p01", "pt": "por favor", "tipo": "palavra"}, {"audio": "paradas/r1-p01/bonjour.mp3", "fr": "bonjour", "origem": "r1-p01", "pt": "ol\u00e1 / bom dia", "tipo": "palavra"}, {"audio": "paradas/r1-p01/merci.mp3", "fr": "merci", "origem": "r1-p01", "pt": "obrigado(a)", "tipo": "palavra"}, {"audio": "batalhas/r1-b01/v-le-traversier.mp3", "fr": "le traversier", "origem": "r1-p05", "pt": "a balsa", "tipo": "palavra"}, {"audio": "batalhas/r1-b01/v-un-billet.mp3", "fr": "un billet", "origem": "r1-p05", "pt": "um bilhete / passagem", "tipo": "palavra"}, {"audio": "batalhas/r1-b01/v-ou-allez-vous.mp3", "fr": "O\u00f9 allez-vous ?", "origem": "r1-p05", "pt": "Aonde o senhor vai?", "tipo": "palavra"}, {"audio": "batalhas/r1-b01/v-je-vais-a.mp3", "fr": "je vais \u00e0", "origem": "r1-p05", "pt": "eu vou a/para\u2026", "tipo": "palavra"}, {"audio": "batalhas/r1-b02/v-oui.mp3", "fr": "oui", "origem": "r1-p05", "pt": "sim", "tipo": "palavra"}, {"audio": "batalhas/r1-b02/v-non.mp3", "fr": "non", "origem": "r1-p05", "pt": "n\u00e3o", "tipo": "palavra"}, {"audio": "batalhas/r1-b01/v-cinq-dollars.mp3", "fr": "cinq dollars", "origem": "r1-p05", "pt": "cinco d\u00f3lares", "tipo": "palavra"}, {"audio": "batalhas/r1-b01/v-merci-beaucoup.mp3", "fr": "merci beaucoup", "origem": "r1-p05", "pt": "muito obrigado", "tipo": "palavra"}, {"audio": "paradas/r1-p02/je-mappelle.mp3", "fr": "je m\u0027appelle", "origem": "r1-p02", "pt": "eu me chamo\u2026", "tipo": "palavra"}, {"audio": "paradas/r1-p02/comment.mp3", "fr": "comment vous appelez-vous ?", "origem": "r1-p02", "pt": "como voc\u00ea se chama?", "tipo": "palavra"}, {"audio": "paradas/r1-p02/enchante.mp3", "fr": "enchant\u00e9", "origem": "r1-p02", "pt": "muito prazer", "tipo": "palavra"}, {"audio": "paradas/r1-p02/jhabite.mp3", "fr": "j\u0027habite \u00e0", "origem": "r1-p02", "pt": "eu moro em\u2026", "tipo": "palavra"}, {"audio": "paradas/r1-p02/et-vous.mp3", "fr": "et vous ?", "origem": "r1-p02", "pt": "e voc\u00ea?", "tipo": "palavra"}, {"audio": "paradas/r1-p02/au-revoir.mp3", "fr": "au revoir", "origem": "r1-p02", "pt": "tchau / at\u00e9 logo", "tipo": "palavra"}], "regiao": 1, "regras": {"combo": {"fort": 2, "leger": 1, "special": 3}, "combo_zera_apos_especial": true, "contra_apos_erro": true, "contra_ataque": true, "dano": {"fort": 2, "leger": 1, "special": 3}, "dano_defesa": 1, "dano_erro": 1, "timer_defesa_s": 5, "timer_graca_s": 0.7, "vida_heroi": 5, "vida_inimigo": 5, "xp": 0}, "titulo": "A gansa do caminho", "titulo_fr": "L\u0027oie du chemin", "vozes": {"antoine": "fr-CA-AntoineNeural", "jean": "fr-CA-JeanNeural", "sylvie": "fr-CA-SylvieNeural", "thierry": "fr-CA-ThierryNeural"}}</script>
+  <script type="application/json" id="cfg-batalha">{"audio": "/static/audio/", "audio_batalha": "/static/audio/batalhas/r1-b02/", "concluir": "/parada/1/4/concluir", "estatico": "/static/", "heroi": "arqueiro-f", "inimigo": "", "mapa": "/mapa?vista=regiao", "mapa_vitoria": "/mapa?vista=regiao\u0026de=4", "n": 4, "nome": "Teste", "pid": "r1-p10", "prefixo": "chemin_teste_", "recompensa": {"estrelas": [{"estrelas": 3, "max_erros": 1, "min_erros": 0}, {"estrelas": 2, "max_erros": 3, "min_erros": 2}, {"estrelas": 1, "max_erros": 1000, "min_erros": 4}], "xp_base": 0, "xp_pausado": true, "xp_por_estrela": 0, "xp_versao": 6}, "refazer": "/parada/1/4", "regiao": 1, "tela": "", "teste": true}</script>
+  <script src="/static/parada/voz.js"></script>
+  <script src="/static/parada/batalha.js"></script>
+
+<script src="/static/audio/trilha-fundo.js" data-trilha="/static/audio/trilhas/trilha-batalha.ogg?v=2" data-volume="0.25"></script>
+
+</body>
+</html>

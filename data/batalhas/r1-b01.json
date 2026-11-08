@@ -1,0 +1,1228 @@
+{
+ "id": "r1-b01",
+ "regiao": 1,
+ "formato": "batalha",
+ "titulo": "Batalha final da vila",
+ "titulo_fr": "Le grand combat du village",
+ "nivel_perguntas": "palavras + frases curtas no presente (até 6 palavras)",
+ "cenario": {
+  "fundo": "batalha/floresta.png",
+  "nativo": [
+   400,
+   225
+  ],
+  "heroi": {
+   "pe": [
+    95,
+    127
+   ]
+  },
+  "inimigo": {
+   "pe": [
+    296,
+    96
+   ]
+  }
+ },
+ "regras": {
+  "vida_heroi": 5,
+  "vida_inimigo": 5,
+  "combo": {
+   "leger": 1,
+   "fort": 2,
+   "special": 3
+  },
+  "dano": {
+   "leger": 1,
+   "fort": 2,
+   "special": 3
+  },
+  "dano_erro": 1,
+  "combo_zera_apos_especial": true,
+  "contra_ataque": true,
+  "contra_apos_erro": true,
+  "dano_defesa": 1,
+  "timer_defesa_s": 5,
+  "timer_graca_s": 0.7,
+  "xp": 0
+ },
+ "especiais": {
+  "cavaleiro": {
+   "nome": "Lame radieuse",
+   "pt": "Lâmina radiante",
+   "img": "batalha/especial-cavaleiro.png",
+   "som": "batalha/som-especial-cavaleiro.wav",
+   "cor": "#ffd76a"
+  },
+  "arqueiro": {
+   "nome": "Pluie de flèches",
+   "pt": "Chuva de flechas",
+   "img": "batalha/especial-arqueiro.png",
+   "som": "batalha/som-especial-arqueiro.wav",
+   "cor": "#9be07a"
+  },
+  "mago": {
+   "nome": "Orbe arcanique",
+   "pt": "Orbe arcano",
+   "img": "batalha/especial-mago.png",
+   "som": "batalha/som-especial-mago.wav",
+   "cor": "#c07af0"
+  },
+  "bardo": {
+   "nome": "Onde mélodique",
+   "pt": "Onda melódica",
+   "img": "batalha/especial-bardo.png",
+   "som": "batalha/som-especial-bardo.wav",
+   "cor": "#7ae0f0"
+  }
+ },
+ "inimigo_padrao": "renard",
+ "inimigos": {
+  "renard": {
+   "nome": "Renard rusé",
+   "pt": "Raposa astuta",
+   "img": "batalha/inimigo-renard.png",
+   "intro": "intro-renard"
+  },
+  "oie": {
+   "nome": "Oie grincheuse",
+   "pt": "Gansa rabugenta",
+   "img": "batalha/inimigo-oie.png",
+   "intro": "intro-oie"
+  },
+  "rat": {
+   "nome": "Rat des bois",
+   "pt": "Rato do bosque",
+   "img": "batalha/inimigo-rat.png",
+   "intro": "intro-rat"
+  }
+ },
+ "mensagens": {
+  "vitoria": {
+   "fr": "Victoire !",
+   "pt": "Vitória! O caminho está livre.",
+   "audio": "vitoria"
+  },
+  "derrota": {
+   "fr": "Tu reprendras ton souffle… Reviens quand tu seras prêt.",
+   "pt": "Você vai recuperar o fôlego… Volte quando estiver pronto.",
+   "audio": "derrota"
+  }
+ },
+ "vozes": {
+  "sylvie": "fr-CA-SylvieNeural",
+  "thierry": "fr-CA-ThierryNeural",
+  "jean": "fr-CA-JeanNeural",
+  "antoine": "fr-CA-AntoineNeural"
+ },
+ "audios": {
+  "intro-renard": {
+   "voz": "thierry",
+   "texto": "Un renard rusé bloque le chemin !"
+  },
+  "intro-oie": {
+   "voz": "sylvie",
+   "texto": "Une oie grincheuse bloque le chemin !"
+  },
+  "intro-rat": {
+   "voz": "jean",
+   "texto": "Un rat des bois bloque le chemin !"
+  },
+  "vitoria": {
+   "voz": "antoine",
+   "texto": "Victoire ! Bravo !"
+  },
+  "derrota": {
+   "voz": "sylvie",
+   "texto": "Tu reprendras ton souffle… Reviens quand tu seras prêt."
+  },
+  "bloque": {
+   "voz": "antoine",
+   "texto": "Bloqué !"
+  },
+  "v-le-traversier": {
+   "voz": "sylvie",
+   "texto": "Le traversier."
+  },
+  "v-un-billet": {
+   "voz": "sylvie",
+   "texto": "Un billet."
+  },
+  "v-ou-allez-vous": {
+   "voz": "sylvie",
+   "texto": "Où allez-vous ?"
+  },
+  "v-je-vais-a": {
+   "voz": "sylvie",
+   "texto": "Je vais à."
+  },
+  "v-cinq-dollars": {
+   "voz": "sylvie",
+   "texto": "Cinq dollars."
+  },
+  "v-merci-beaucoup": {
+   "voz": "sylvie",
+   "texto": "Merci beaucoup."
+  },
+  "v-il-etait-une-fois": {
+   "voz": "sylvie",
+   "texto": "Il était une fois."
+  },
+  "v-une-petite-fille": {
+   "voz": "sylvie",
+   "texto": "Une petite fille."
+  },
+  "v-le-matin": {
+   "voz": "sylvie",
+   "texto": "Le matin."
+  },
+  "v-mais": {
+   "voz": "sylvie",
+   "texto": "Mais."
+  },
+  "v-l-argent": {
+   "voz": "sylvie",
+   "texto": "L'argent."
+  },
+  "v-un-cadeau": {
+   "voz": "sylvie",
+   "texto": "Un cadeau."
+  },
+  "v-contente": {
+   "voz": "sylvie",
+   "texto": "Contente."
+  },
+  "n-01": {
+   "voz": "antoine",
+   "texto": "Un."
+  },
+  "n-02": {
+   "voz": "sylvie",
+   "texto": "Deux."
+  },
+  "n-03": {
+   "voz": "antoine",
+   "texto": "Trois."
+  },
+  "n-04": {
+   "voz": "sylvie",
+   "texto": "Quatre."
+  },
+  "n-05": {
+   "voz": "antoine",
+   "texto": "Cinq."
+  },
+  "n-06": {
+   "voz": "sylvie",
+   "texto": "Six."
+  },
+  "n-07": {
+   "voz": "antoine",
+   "texto": "Sept."
+  },
+  "n-08": {
+   "voz": "sylvie",
+   "texto": "Huit."
+  },
+  "n-09": {
+   "voz": "antoine",
+   "texto": "Neuf."
+  },
+  "n-10": {
+   "voz": "sylvie",
+   "texto": "Dix."
+  },
+  "n-11": {
+   "voz": "antoine",
+   "texto": "Onze."
+  },
+  "n-12": {
+   "voz": "sylvie",
+   "texto": "Douze."
+  },
+  "n-13": {
+   "voz": "antoine",
+   "texto": "Treize."
+  },
+  "n-14": {
+   "voz": "sylvie",
+   "texto": "Quatorze."
+  },
+  "n-15": {
+   "voz": "antoine",
+   "texto": "Quinze."
+  },
+  "n-16": {
+   "voz": "sylvie",
+   "texto": "Seize."
+  },
+  "n-17": {
+   "voz": "antoine",
+   "texto": "Dix-sept."
+  },
+  "n-18": {
+   "voz": "sylvie",
+   "texto": "Dix-huit."
+  },
+  "n-19": {
+   "voz": "antoine",
+   "texto": "Dix-neuf."
+  },
+  "n-20": {
+   "voz": "sylvie",
+   "texto": "Vingt."
+  }
+ },
+ "perguntas": [
+  {
+   "fr": "un café",
+   "pt": "um café",
+   "audio": "paradas/r1-p01/un-cafe.mp3",
+   "origem": "r1-p01",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "un thé",
+   "pt": "um chá",
+   "audio": "paradas/r1-p01/un-the.mp3",
+   "origem": "r1-p01",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "de l'eau",
+   "pt": "água",
+   "audio": "paradas/r1-p01/de-leau.mp3",
+   "origem": "r1-p01",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "un jus d'orange",
+   "pt": "um suco de laranja",
+   "audio": "paradas/r1-p01/un-jus.mp3",
+   "origem": "r1-p01",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "je voudrais",
+   "pt": "eu gostaria / eu queria",
+   "audio": "paradas/r1-p01/je-voudrais.mp3",
+   "origem": "r1-p01",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "s'il vous plaît",
+   "pt": "por favor",
+   "audio": "paradas/r1-p01/svp.mp3",
+   "origem": "r1-p01",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "bonjour",
+   "pt": "olá / bom dia",
+   "audio": "paradas/r1-p01/bonjour.mp3",
+   "origem": "r1-p01",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "merci",
+   "pt": "obrigado(a)",
+   "audio": "paradas/r1-p01/merci.mp3",
+   "origem": "r1-p01",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "le traversier",
+   "pt": "a balsa",
+   "audio": "batalhas/r1-b01/v-le-traversier.mp3",
+   "origem": "r1-p05",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "un billet",
+   "pt": "um bilhete / passagem",
+   "audio": "batalhas/r1-b01/v-un-billet.mp3",
+   "origem": "r1-p05",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "Où allez-vous ?",
+   "pt": "Aonde o senhor vai?",
+   "audio": "batalhas/r1-b01/v-ou-allez-vous.mp3",
+   "origem": "r1-p05",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "je vais à",
+   "pt": "eu vou a/para…",
+   "audio": "batalhas/r1-b01/v-je-vais-a.mp3",
+   "origem": "r1-p05",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "oui",
+   "pt": "sim",
+   "audio": "batalhas/r1-b02/v-oui.mp3",
+   "origem": "r1-p05",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "non",
+   "pt": "não",
+   "audio": "batalhas/r1-b02/v-non.mp3",
+   "origem": "r1-p05",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "cinq dollars",
+   "pt": "cinco dólares",
+   "audio": "batalhas/r1-b01/v-cinq-dollars.mp3",
+   "origem": "r1-p05",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "merci beaucoup",
+   "pt": "muito obrigado",
+   "audio": "batalhas/r1-b01/v-merci-beaucoup.mp3",
+   "origem": "r1-p05",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "je m'appelle",
+   "pt": "eu me chamo…",
+   "audio": "paradas/r1-p02/je-mappelle.mp3",
+   "origem": "r1-p02",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "comment vous appelez-vous ?",
+   "pt": "como você se chama?",
+   "audio": "paradas/r1-p02/comment.mp3",
+   "origem": "r1-p02",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "enchanté",
+   "pt": "muito prazer",
+   "audio": "paradas/r1-p02/enchante.mp3",
+   "origem": "r1-p02",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "j'habite à",
+   "pt": "eu moro em…",
+   "audio": "paradas/r1-p02/jhabite.mp3",
+   "origem": "r1-p02",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "et vous ?",
+   "pt": "e você?",
+   "audio": "paradas/r1-p02/et-vous.mp3",
+   "origem": "r1-p02",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "au revoir",
+   "pt": "tchau / até logo",
+   "audio": "paradas/r1-p02/au-revoir.mp3",
+   "origem": "r1-p02",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "une pomme",
+   "pt": "uma maçã",
+   "audio": "paradas/r1-p03/une-pomme.mp3",
+   "origem": "r1-p03",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "une poire",
+   "pt": "uma pera",
+   "audio": "paradas/r1-p03/une-poire.mp3",
+   "origem": "r1-p03",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "du fromage",
+   "pt": "queijo",
+   "audio": "paradas/r1-p03/du-fromage.mp3",
+   "origem": "r1-p03",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "combien ?",
+   "pt": "quanto custa?",
+   "audio": "paradas/r1-p03/combien.mp3",
+   "origem": "r1-p03",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "un dollar",
+   "pt": "um dólar",
+   "audio": "paradas/r1-p03/un-dollar.mp3",
+   "origem": "r1-p03",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "deux dollars",
+   "pt": "dois dólares",
+   "audio": "paradas/r1-p03/deux-dollars.mp3",
+   "origem": "r1-p03",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "une lanterne",
+   "pt": "uma lanterna",
+   "audio": "paradas/r1-p08/c-lanterne.mp3",
+   "origem": "r1-p08",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "une clé",
+   "pt": "uma chave",
+   "audio": "paradas/r1-p08/c-cle.mp3",
+   "origem": "r1-p08",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "un panier",
+   "pt": "um cesto",
+   "audio": "paradas/r1-p08/c-panier.mp3",
+   "origem": "r1-p08",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "un croissant",
+   "pt": "um croissant",
+   "audio": "paradas/r1-p04/croissant.mp3",
+   "origem": "r1-p04",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "une baguette",
+   "pt": "uma baguete",
+   "audio": "paradas/r1-p04/baguette.mp3",
+   "origem": "r1-p04",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "un pain au chocolat",
+   "pt": "um pão de chocolate",
+   "audio": "paradas/r1-p04/pain-choc.mp3",
+   "origem": "r1-p04",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "c'est tout",
+   "pt": "é só isso",
+   "audio": "paradas/r1-p04/cest-tout.mp3",
+   "origem": "r1-p04",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "voilà",
+   "pt": "aqui está / pronto",
+   "audio": "paradas/r1-p04/voila.mp3",
+   "origem": "r1-p04",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "ça fait",
+   "pt": "dá… / fica…",
+   "audio": "paradas/r1-p04/ca-fait.mp3",
+   "origem": "r1-p04",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "il était une fois",
+   "pt": "era uma vez",
+   "audio": "batalhas/r1-b01/v-il-etait-une-fois.mp3",
+   "origem": "r1-p06",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "une petite fille",
+   "pt": "uma menina",
+   "audio": "batalhas/r1-b01/v-une-petite-fille.mp3",
+   "origem": "r1-p06",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "le matin",
+   "pt": "de manhã",
+   "audio": "batalhas/r1-b01/v-le-matin.mp3",
+   "origem": "r1-p06",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "mais",
+   "pt": "mas",
+   "audio": "batalhas/r1-b01/v-mais.mp3",
+   "origem": "r1-p06",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "l'argent",
+   "pt": "o dinheiro",
+   "audio": "batalhas/r1-b01/v-l-argent.mp3",
+   "origem": "r1-p06",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "un cadeau",
+   "pt": "um presente",
+   "audio": "batalhas/r1-b01/v-un-cadeau.mp3",
+   "origem": "r1-p06",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "contente",
+   "pt": "contente, feliz",
+   "audio": "batalhas/r1-b01/v-contente.mp3",
+   "origem": "r1-p06",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "voici",
+   "pt": "aqui está / eis",
+   "audio": "paradas/r1-p07/w-voici.mp3",
+   "origem": "r1-p07",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "il y a",
+   "pt": "há / tem",
+   "audio": "paradas/r1-p07/w-il-y-a.mp3",
+   "origem": "r1-p07",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "une fontaine",
+   "pt": "uma fonte",
+   "audio": "paradas/r1-p07/w-une-fontaine.mp3",
+   "origem": "r1-p07",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "aussi",
+   "pt": "também",
+   "audio": "paradas/r1-p07/w-aussi.mp3",
+   "origem": "r1-p07",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "les enfants",
+   "pt": "as crianças",
+   "audio": "paradas/r1-p07/w-les-enfants.mp3",
+   "origem": "r1-p07",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "aiment",
+   "pt": "gostam",
+   "audio": "paradas/r1-p07/w-aiment.mp3",
+   "origem": "r1-p07",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "coûtent",
+   "pt": "custam",
+   "audio": "paradas/r1-p07/w-coutent.mp3",
+   "origem": "r1-p07",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "lit",
+   "pt": "lê",
+   "audio": "paradas/r1-p07/w-lit.mp3",
+   "origem": "r1-p07",
+   "tipo": "palavra"
+  },
+  {
+   "fr": "Je voudrais un thé, s'il vous plaît.",
+   "pt": "Eu queria um chá, por favor.",
+   "audio": "paradas/r1-p01/frase-the.mp3",
+   "origem": "r1-p01",
+   "tipo": "frase"
+  },
+  {
+   "fr": "Je vais à Québec.",
+   "pt": "Eu vou para Quebec.",
+   "audio": "paradas/r1-p05/t3-modelo.mp3",
+   "origem": "r1-p05",
+   "tipo": "frase"
+  },
+  {
+   "fr": "J'habite à Québec.",
+   "pt": "Eu moro em Quebec.",
+   "audio": "paradas/r1-p02/frase-quebec.mp3",
+   "origem": "r1-p02",
+   "tipo": "frase"
+  },
+  {
+   "fr": "Une pomme : un dollar.",
+   "pt": "Uma maçã: um dólar.",
+   "audio": "paradas/r1-p03/frase-dollar.mp3",
+   "origem": "r1-p03",
+   "tipo": "frase"
+  },
+  {
+   "fr": "Ça fait deux dollars.",
+   "pt": "Dá dois dólares.",
+   "audio": "paradas/r1-p04/frase-cafait.mp3",
+   "origem": "r1-p04",
+   "tipo": "frase"
+  },
+  {
+   "fr": "C'est tout, merci.",
+   "pt": "É só isso, obrigado.",
+   "audio": "paradas/r1-p04/frase-tout.mp3",
+   "origem": "r1-p04",
+   "tipo": "frase"
+  },
+  {
+   "fr": "Il y a du fromage.",
+   "pt": "Tem queijo.",
+   "audio": "paradas/r1-p07/x-il-y-a.mp3",
+   "origem": "r1-p07",
+   "tipo": "frase"
+  },
+  {
+   "fr": "Le château est grand.",
+   "pt": "O castelo é grande.",
+   "audio": "paradas/r1-p07/x-le-chateau.mp3",
+   "origem": "r1-p07",
+   "tipo": "frase"
+  },
+  {
+   "fr": "Rose lit une histoire.",
+   "pt": "Rose lê uma história.",
+   "audio": "paradas/r1-p07/x-lit.mp3",
+   "origem": "r1-p07",
+   "tipo": "frase"
+  }
+ ],
+ "defesa": [
+  {
+   "fr": "un",
+   "pt": "1",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-01.mp3",
+   "aceitos": [
+    "un",
+    "1",
+    "une"
+   ],
+   "parecidos": [
+    "onze",
+    "neuf"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "deux",
+   "pt": "2",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-02.mp3",
+   "aceitos": [
+    "deux",
+    "2"
+   ],
+   "parecidos": [
+    "douze",
+    "dix"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "trois",
+   "pt": "3",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-03.mp3",
+   "aceitos": [
+    "trois",
+    "3"
+   ],
+   "parecidos": [
+    "treize",
+    "quatre"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "quatre",
+   "pt": "4",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-04.mp3",
+   "aceitos": [
+    "quatre",
+    "4",
+    "catre"
+   ],
+   "parecidos": [
+    "quatorze",
+    "trois"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "cinq",
+   "pt": "5",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-05.mp3",
+   "aceitos": [
+    "cinq",
+    "5"
+   ],
+   "parecidos": [
+    "quinze",
+    "vingt"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "six",
+   "pt": "6",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-06.mp3",
+   "aceitos": [
+    "six",
+    "6"
+   ],
+   "parecidos": [
+    "seize",
+    "dix"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "sept",
+   "pt": "7",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-07.mp3",
+   "aceitos": [
+    "sept",
+    "7"
+   ],
+   "parecidos": [
+    "dix-sept",
+    "six"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "huit",
+   "pt": "8",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-08.mp3",
+   "aceitos": [
+    "huit",
+    "8"
+   ],
+   "parecidos": [
+    "dix-huit",
+    "sept"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "neuf",
+   "pt": "9",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-09.mp3",
+   "aceitos": [
+    "neuf",
+    "9"
+   ],
+   "parecidos": [
+    "dix-neuf",
+    "cinq"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "dix",
+   "pt": "10",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-10.mp3",
+   "aceitos": [
+    "dix",
+    "10"
+   ],
+   "parecidos": [
+    "six",
+    "deux"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "onze",
+   "pt": "11",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-11.mp3",
+   "aceitos": [
+    "onze",
+    "11"
+   ],
+   "parecidos": [
+    "un",
+    "douze"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "douze",
+   "pt": "12",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-12.mp3",
+   "aceitos": [
+    "douze",
+    "12"
+   ],
+   "parecidos": [
+    "deux",
+    "onze"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "treize",
+   "pt": "13",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-13.mp3",
+   "aceitos": [
+    "treize",
+    "13"
+   ],
+   "parecidos": [
+    "trois",
+    "seize"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "quatorze",
+   "pt": "14",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-14.mp3",
+   "aceitos": [
+    "quatorze",
+    "14",
+    "catorze",
+    "quatorze"
+   ],
+   "parecidos": [
+    "quatre",
+    "quinze"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "quinze",
+   "pt": "15",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-15.mp3",
+   "aceitos": [
+    "quinze",
+    "15"
+   ],
+   "parecidos": [
+    "cinq",
+    "quatorze"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "seize",
+   "pt": "16",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-16.mp3",
+   "aceitos": [
+    "seize",
+    "16"
+   ],
+   "parecidos": [
+    "six",
+    "treize"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "dix-sept",
+   "pt": "17",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-17.mp3",
+   "aceitos": [
+    "dix-sept",
+    "17",
+    "dix sept"
+   ],
+   "parecidos": [
+    "sept",
+    "dix-neuf"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "dix-huit",
+   "pt": "18",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-18.mp3",
+   "aceitos": [
+    "dix-huit",
+    "18",
+    "dix huit"
+   ],
+   "parecidos": [
+    "huit",
+    "dix-sept"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "dix-neuf",
+   "pt": "19",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-19.mp3",
+   "aceitos": [
+    "dix-neuf",
+    "19",
+    "dix neuf"
+   ],
+   "parecidos": [
+    "neuf",
+    "dix-huit"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "vingt",
+   "pt": "20",
+   "tipo": "numero",
+   "audio": "batalhas/r1-b01/n-20.mp3",
+   "aceitos": [
+    "vingt",
+    "20",
+    "vin",
+    "vain"
+   ],
+   "parecidos": [
+    "cinq",
+    "un"
+   ],
+   "origem": "numeros"
+  },
+  {
+   "fr": "une pomme",
+   "pt": "uma maçã",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p03/une-pomme.mp3",
+   "aceitos": [
+    "une pomme"
+   ],
+   "parecidos": [],
+   "origem": "r1-p03"
+  },
+  {
+   "fr": "une poire",
+   "pt": "uma pera",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p03/une-poire.mp3",
+   "aceitos": [
+    "une poire"
+   ],
+   "parecidos": [],
+   "origem": "r1-p03"
+  },
+  {
+   "fr": "du fromage",
+   "pt": "queijo",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p03/du-fromage.mp3",
+   "aceitos": [
+    "du fromage"
+   ],
+   "parecidos": [],
+   "origem": "r1-p03"
+  },
+  {
+   "fr": "une baguette",
+   "pt": "uma baguete",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p04/baguette.mp3",
+   "aceitos": [
+    "une baguette"
+   ],
+   "parecidos": [],
+   "origem": "r1-p04"
+  },
+  {
+   "fr": "un café",
+   "pt": "um café",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p01/un-cafe.mp3",
+   "aceitos": [
+    "un café"
+   ],
+   "parecidos": [],
+   "origem": "r1-p01"
+  },
+  {
+   "fr": "une lanterne",
+   "pt": "uma lanterna",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p08/c-lanterne.mp3",
+   "aceitos": [
+    "une lanterne"
+   ],
+   "parecidos": [],
+   "origem": "r1-p08"
+  },
+  {
+   "fr": "une clé",
+   "pt": "uma chave",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p08/c-cle.mp3",
+   "aceitos": [
+    "une clé"
+   ],
+   "parecidos": [],
+   "origem": "r1-p08"
+  },
+  {
+   "fr": "un panier",
+   "pt": "um cesto",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p08/c-panier.mp3",
+   "aceitos": [
+    "un panier"
+   ],
+   "parecidos": [],
+   "origem": "r1-p08"
+  },
+  {
+   "fr": "un cadeau",
+   "pt": "um presente",
+   "tipo": "palavra",
+   "audio": "batalhas/r1-b01/v-un-cadeau.mp3",
+   "aceitos": [
+    "un cadeau"
+   ],
+   "parecidos": [],
+   "origem": "r1-p06"
+  },
+  {
+   "fr": "le matin",
+   "pt": "de manhã",
+   "tipo": "palavra",
+   "audio": "batalhas/r1-b01/v-le-matin.mp3",
+   "aceitos": [
+    "le matin"
+   ],
+   "parecidos": [],
+   "origem": "r1-p06"
+  },
+  {
+   "fr": "contente",
+   "pt": "contente, feliz",
+   "tipo": "palavra",
+   "audio": "batalhas/r1-b01/v-contente.mp3",
+   "aceitos": [
+    "contente"
+   ],
+   "parecidos": [],
+   "origem": "r1-p06"
+  },
+  {
+   "fr": "aussi",
+   "pt": "também",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p07/w-aussi.mp3",
+   "aceitos": [
+    "aussi"
+   ],
+   "parecidos": [],
+   "origem": "r1-p07"
+  },
+  {
+   "fr": "voici",
+   "pt": "aqui está / eis",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p07/w-voici.mp3",
+   "aceitos": [
+    "voici"
+   ],
+   "parecidos": [],
+   "origem": "r1-p07"
+  },
+  {
+   "fr": "l'argent",
+   "pt": "o dinheiro",
+   "tipo": "palavra",
+   "audio": "batalhas/r1-b01/v-l-argent.mp3",
+   "aceitos": [
+    "l'argent"
+   ],
+   "parecidos": [],
+   "origem": "r1-p06"
+  },
+  {
+   "fr": "mais",
+   "pt": "mas",
+   "tipo": "palavra",
+   "audio": "batalhas/r1-b01/v-mais.mp3",
+   "aceitos": [
+    "mais"
+   ],
+   "parecidos": [],
+   "origem": "r1-p06"
+  },
+  {
+   "fr": "les enfants",
+   "pt": "as crianças",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p07/w-les-enfants.mp3",
+   "aceitos": [
+    "les enfants"
+   ],
+   "parecidos": [],
+   "origem": "r1-p07"
+  },
+  {
+   "fr": "une fontaine",
+   "pt": "uma fonte",
+   "tipo": "palavra",
+   "audio": "paradas/r1-p07/w-une-fontaine.mp3",
+   "aceitos": [
+    "une fontaine"
+   ],
+   "parecidos": [],
+   "origem": "r1-p07"
+  },
+  {
+   "fr": "oui",
+   "pt": "sim",
+   "tipo": "palavra",
+   "audio": "batalhas/r1-b02/v-oui.mp3",
+   "aceitos": [
+    "oui"
+   ],
+   "parecidos": [],
+   "origem": "r1-p05"
+  }
+ ],
+ "ataques_inimigo": {
+  "renard": {
+   "fr": "Le renard bondit !",
+   "pt": "A raposa dá o bote!"
+  },
+  "oie": {
+   "fr": "L'oie donne un coup de bec !",
+   "pt": "A gansa dá uma bicada!"
+  },
+  "rat": {
+   "fr": "Le rat mord !",
+   "pt": "O rato morde!"
+  }
+ }
+}

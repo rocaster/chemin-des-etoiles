@@ -1,0 +1,14 @@
+{
+  "origem": "GenerateImage, arte original solicitada por Alex",
+  "referencia": "out/static/nivelamento/mesa-fundo.png (inalterada)",
+  "fonte": "gen/simulados/escrivaninha-v2-raw.jpg",
+  "pipeline": "gen/formatos/arte_formatos.py: BOX 400x225, 64 cores MAXCOVERAGE sem dither, NEAREST x4; exportacao WebP lossless",
+  "asset": "out/static/simulados/escrivaninha-v2.webp",
+  "tamanho": [
+    1600,
+    900
+  ],
+  "bytes": 31252,
+  "sha256": "34face6f763102fa2d0296ac234603737c3b79cd5fcdb73cc23fe30b0ab33413",
+  "descricao": "Mesa de escriba top-down; vela, pena, tinteiro, livros e mapa integrados a arte. Pergaminho central limpo para HTML, luz quente e sombras. Sem elementos CSS fingindo objetos."
+}

@@ -1,0 +1,391 @@
+{
+  "id": "r1-p29",
+  "regiao": 1,
+  "parada": 29,
+  "etapa": 29,
+  "formato": "cartas",
+  "titulo": "Cartas: roupas e cores",
+  "titulo_fr": "Les cartes des couleurs",
+  "nivel": "A1",
+  "duracao_min": 4,
+  "cenario": {
+    "fundo": "parada/r1-p08/cena-fundo.png",
+    "frente": "parada/r1-p08/cena-frente.png",
+    "npc": {
+      "nome": "Madame Zélie",
+      "papel": "cartomante",
+      "img": "parada/r1-p08/npc.png",
+      "x": 60,
+      "y": 35,
+      "w": 18.5,
+      "voz": "zelie"
+    },
+    "brilhos": [
+      {
+        "tipo": "lanterna",
+        "x": 41,
+        "y": 67
+      },
+      {
+        "tipo": "lanterna",
+        "x": 30,
+        "y": 62
+      }
+    ]
+  },
+  "vozes": {
+    "zelie": "fr-CA-SylvieNeural",
+    "leo": "fr-CA-AntoineNeural"
+  },
+  "audios": {
+    "abertura": {
+      "voz": "zelie",
+      "texto": "Bonsoir ! Voici les vêtements et les couleurs. Dites le nom de la carte."
+    },
+    "ultima": {
+      "voz": "zelie",
+      "texto": "Encore une carte !"
+    },
+    "erro": {
+      "voz": "zelie",
+      "texto": "Non. Écoutez :"
+    },
+    "fecho": {
+      "voz": "zelie",
+      "texto": "C'est fini ! Bravo ! Au revoir !"
+    },
+    "boa1": {
+      "voz": "zelie",
+      "texto": "Très bien !"
+    },
+    "boa2": {
+      "voz": "zelie",
+      "texto": "Magnifique ! Bravo !"
+    },
+    "boa3": {
+      "voz": "zelie",
+      "texto": "Oui ! Quelle belle couleur !"
+    },
+    "mista1": {
+      "voz": "zelie",
+      "texto": "Hmm… Encore une fois !"
+    },
+    "mista2": {
+      "voz": "zelie",
+      "texto": "Presque ! Écoutez bien."
+    },
+    "c-une-chemise-rouge": {
+      "voz": "zelie",
+      "texto": "Une chemise rouge."
+    },
+    "c-un-pantalon-bleu": {
+      "voz": "zelie",
+      "texto": "Un pantalon bleu."
+    },
+    "c-une-robe-verte": {
+      "voz": "zelie",
+      "texto": "Une robe verte."
+    },
+    "c-un-chapeau-noir": {
+      "voz": "zelie",
+      "texto": "Un chapeau noir."
+    },
+    "c-un-chien": {
+      "voz": "zelie",
+      "texto": "Un chien."
+    },
+    "c-un-cheval": {
+      "voz": "zelie",
+      "texto": "Un cheval."
+    },
+    "c-une-tente": {
+      "voz": "zelie",
+      "texto": "Une tente."
+    },
+    "c-le-chocolat": {
+      "voz": "zelie",
+      "texto": "Le chocolat."
+    },
+    "c-une-fleur": {
+      "voz": "zelie",
+      "texto": "Une fleur."
+    }
+  },
+  "imagens": {
+    "une-chemise-rouge": {
+      "src": "parada/mapa40/icones/chemise-rouge.png",
+      "fr": "une chemise rouge",
+      "pt": "uma camisa vermelha",
+      "alt": "uma camisa vermelha"
+    },
+    "un-pantalon-bleu": {
+      "src": "parada/mapa40/icones/pantalon-bleu.png",
+      "fr": "un pantalon bleu",
+      "pt": "uma calça azul",
+      "alt": "uma calça azul"
+    },
+    "une-robe-verte": {
+      "src": "parada/mapa40/icones/robe-verte.png",
+      "fr": "une robe verte",
+      "pt": "um vestido verde",
+      "alt": "um vestido verde"
+    },
+    "un-chapeau-noir": {
+      "src": "parada/mapa40/icones/chapeau-noir.png",
+      "fr": "un chapeau noir",
+      "pt": "um chapéu preto",
+      "alt": "um chapéu preto"
+    },
+    "un-chien": {
+      "src": "parada/mapa40/icones/chien.png",
+      "fr": "un chien",
+      "pt": "um cachorro",
+      "alt": "um cachorro"
+    },
+    "un-cheval": {
+      "src": "parada/mapa40/icones/cheval.png",
+      "fr": "un cheval",
+      "pt": "um cavalo",
+      "alt": "um cavalo"
+    },
+    "une-tente": {
+      "src": "parada/mapa40/icones/tente.png",
+      "fr": "une tente",
+      "pt": "uma barraca",
+      "alt": "uma barraca"
+    },
+    "le-chocolat": {
+      "src": "parada/mapa40/icones/chocolat.png",
+      "fr": "le chocolat",
+      "pt": "o chocolate",
+      "alt": "o chocolate"
+    },
+    "une-fleur": {
+      "src": "parada/mapa40/icones/fleur.png",
+      "fr": "une fleur",
+      "pt": "uma flor",
+      "alt": "uma flor"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "une chemise rouge",
+      "pt": "uma camisa vermelha",
+      "img": "une-chemise-rouge",
+      "audio": "c-une-chemise-rouge"
+    },
+    {
+      "fr": "un pantalon bleu",
+      "pt": "uma calça azul",
+      "img": "un-pantalon-bleu",
+      "audio": "c-un-pantalon-bleu"
+    },
+    {
+      "fr": "une robe verte",
+      "pt": "um vestido verde",
+      "img": "une-robe-verte",
+      "audio": "c-une-robe-verte"
+    },
+    {
+      "fr": "un chapeau noir",
+      "pt": "um chapéu preto",
+      "img": "un-chapeau-noir",
+      "audio": "c-un-chapeau-noir"
+    },
+    {
+      "fr": "un chien",
+      "pt": "um cachorro",
+      "img": "un-chien",
+      "audio": "c-un-chien"
+    },
+    {
+      "fr": "un cheval",
+      "pt": "um cavalo",
+      "img": "un-cheval",
+      "audio": "c-un-cheval"
+    },
+    {
+      "fr": "une tente",
+      "pt": "uma barraca",
+      "img": "une-tente",
+      "audio": "c-une-tente"
+    },
+    {
+      "fr": "le chocolat",
+      "pt": "o chocolate",
+      "img": "le-chocolat",
+      "audio": "c-le-chocolat"
+    },
+    {
+      "fr": "une fleur",
+      "pt": "uma flor",
+      "img": "une-fleur",
+      "audio": "c-une-fleur"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 20,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "instrucao": "Toque numa carta e diga em voz alta o nome do objeto, em francês.",
+  "verso": "parada/r1-p08/verso.png",
+  "falas": {
+    "abertura": "abertura",
+    "boa": [
+      "boa1",
+      "boa2",
+      "boa3"
+    ],
+    "mista": [
+      "mista1",
+      "mista2"
+    ],
+    "ultima": "ultima",
+    "erro": "erro",
+    "fecho": "fecho"
+  },
+  "comentar_a_cada": 3,
+  "cartas": [
+    {
+      "id": "une-chemise-rouge",
+      "fr": "une chemise rouge",
+      "pt": "uma camisa vermelha",
+      "img": "une-chemise-rouge",
+      "audio": "c-une-chemise-rouge",
+      "aceita": [
+        "une chemise rouge",
+        "chemise rouge"
+      ],
+      "origem": "r1-p29"
+    },
+    {
+      "id": "un-pantalon-bleu",
+      "fr": "un pantalon bleu",
+      "pt": "uma calça azul",
+      "img": "un-pantalon-bleu",
+      "audio": "c-un-pantalon-bleu",
+      "aceita": [
+        "un pantalon bleu",
+        "pantalon bleu"
+      ],
+      "origem": "r1-p29"
+    },
+    {
+      "id": "une-robe-verte",
+      "fr": "une robe verte",
+      "pt": "um vestido verde",
+      "img": "une-robe-verte",
+      "audio": "c-une-robe-verte",
+      "aceita": [
+        "une robe verte",
+        "robe verte"
+      ],
+      "origem": "r1-p29"
+    },
+    {
+      "id": "un-chapeau-noir",
+      "fr": "un chapeau noir",
+      "pt": "um chapéu preto",
+      "img": "un-chapeau-noir",
+      "audio": "c-un-chapeau-noir",
+      "aceita": [
+        "un chapeau noir",
+        "chapeau noir"
+      ],
+      "origem": "r1-p29"
+    },
+    {
+      "id": "un-chien",
+      "fr": "un chien",
+      "pt": "um cachorro",
+      "img": "un-chien",
+      "audio": "c-un-chien",
+      "aceita": [
+        "un chien",
+        "chien"
+      ],
+      "origem": "r1-p17"
+    },
+    {
+      "id": "un-cheval",
+      "fr": "un cheval",
+      "pt": "um cavalo",
+      "img": "un-cheval",
+      "audio": "c-un-cheval",
+      "aceita": [
+        "un cheval",
+        "cheval"
+      ],
+      "origem": "r1-p17"
+    },
+    {
+      "id": "une-tente",
+      "fr": "une tente",
+      "pt": "uma barraca",
+      "img": "une-tente",
+      "audio": "c-une-tente",
+      "aceita": [
+        "une tente",
+        "tente"
+      ],
+      "origem": "r1-p23"
+    },
+    {
+      "id": "le-chocolat",
+      "fr": "le chocolat",
+      "pt": "o chocolate",
+      "img": "le-chocolat",
+      "audio": "c-le-chocolat",
+      "aceita": [
+        "le chocolat",
+        "chocolat",
+        "du chocolat"
+      ],
+      "origem": "r1-p28"
+    },
+    {
+      "id": "une-fleur",
+      "fr": "une fleur",
+      "pt": "uma flor",
+      "img": "une-fleur",
+      "audio": "c-une-fleur",
+      "aceita": [
+        "une fleur",
+        "fleur"
+      ],
+      "origem": "r1-p17"
+    }
+  ],
+  "novas": [
+    "une chemise",
+    "un pantalon",
+    "une robe",
+    "un chapeau",
+    "rouge",
+    "bleu",
+    "vert / verte",
+    "noir"
+  ],
+  "padroes": [
+    "roupa + cor (a cor vem depois: une robe verte)"
+  ]
+}

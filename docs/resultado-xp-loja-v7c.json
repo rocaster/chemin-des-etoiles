@@ -1,0 +1,127 @@
+{
+  "versao": "7c",
+  "causa_titulos": "Catálogo ativo não continha nome_fr/nome_fr_f. Prévia e perfil liam nome PT; quatro descrições eram idênticas. Não havia implementação FR anterior ativa.",
+  "titulos": [
+    {
+      "id": "titulo-viajante",
+      "categoria": "titulos",
+      "nome": "Viajante das Estrelas",
+      "preco": 90,
+      "descricao": "Para quem segue o Chemin des Étoiles sem desistir, explorando novas palavras a cada etapa.",
+      "nome_fr": "Voyageur des étoiles",
+      "nome_fr_f": "Voyageuse des étoiles"
+    },
+    {
+      "id": "titulo-guardiao",
+      "categoria": "titulos",
+      "nome": "Guardião das Palavras",
+      "preco": 90,
+      "descricao": "Uma homenagem a quem cuida das palavras aprendidas e as mantém vivas na memória.",
+      "nome_fr": "Gardien des mots",
+      "nome_fr_f": "Gardienne des mots",
+      "nome_pt_f": "Guardiã das Palavras"
+    },
+    {
+      "id": "titulo-voz",
+      "categoria": "titulos",
+      "nome": "Voz do Vilarejo",
+      "preco": 90,
+      "descricao": "Para quem faz sua voz ganhar espaço no vilarejo e transforma palavras em conversa.",
+      "nome_fr": "Voix du village",
+      "nome_fr_f": "Voix du village"
+    },
+    {
+      "id": "titulo-coroa",
+      "categoria": "titulos",
+      "nome": "Coroa da Teimosia",
+      "preco": 90,
+      "descricao": "Uma coroa bem-humorada para celebrar a persistência de tentar de novo, mesmo depois dos tropeços.",
+      "nome_fr": "Couronne de l’entêtement",
+      "nome_fr_f": "Couronne de l’entêtement"
+    }
+  ],
+  "padrao": {
+    "m": "Voyageur sans titre",
+    "f": "Voyageuse sans titre"
+  },
+  "economia": {
+    "formatos": {
+      "missao": 18,
+      "conversa": 20,
+      "historia": 16,
+      "biblioteca": 16,
+      "cartas": 18,
+      "batalha": 12,
+      "simulados": 0
+    },
+    "soma_etapas": 650,
+    "bonus_area": 75,
+    "bonus_boss": 150,
+    "bonus_mapa": 175,
+    "soma_marcos": 550,
+    "total_garantido": 1200,
+    "total_com_precisao": 1220,
+    "custo_um_por_categoria": 1190,
+    "sobra": [
+      10,
+      30
+    ],
+    "loja_total": 7860,
+    "percentual_colecao": [
+      15.27,
+      15.52
+    ],
+    "retroativo": false,
+    "politica": "IDs/valores pagos preservados; só créditos ausentes recebem tarifa vigente. Perfis mistos podem ficar abaixo de1200."
+  },
+  "testes": {
+    "pytest_normal": 639,
+    "pytest_cp1252": 639,
+    "novos_pytest": 89,
+    "loja_dom_por_modo": 82,
+    "xp_dom_por_modo": 93,
+    "simulados_por_modo": [
+      91,
+      29,
+      43
+    ],
+    "onboarding_por_modo": [
+      124,
+      72
+    ],
+    "rotas_por_modo": 57,
+    "mapa_por_execucao": 9,
+    "mapa40_por_modo": 21,
+    "batalha_por_modo": 51,
+    "missoes_dom_por_modo": 209,
+    "formatos_e2e_por_modo": 4,
+    "batalhas_e2e_por_modo": 2,
+    "http_por_modo": 46,
+    "integridade_por_modo": 1275
+  },
+  "falhas_finais": 0,
+  "mock_pil": "/workspace/ncl/prints-loja/v7c/titulos-fr-pt.png",
+  "screenshots": [],
+  "utf8": true,
+  "env_lido": false,
+  "azure_acoes": false,
+  "deploy": false,
+  "xp_inalterado": true,
+  "instalacao_cumulativa": {
+    "paginas_http_200": 1600,
+    "assets_unicos_http_200": 160,
+    "sheets_novos_http_200": 42,
+    "combinacoes": 320,
+    "patches": [
+      "v1",
+      "v7"
+    ],
+    "v2_v3_v4_v5_v6_desnecessarios": true,
+    "xp_mapa": 640,
+    "cristais_ganhos": 1220,
+    "compras_equipamentos_categorias": 5,
+    "falhas": 0,
+    "cp1252": true,
+    "titulo_fr_validado": true
+  }
+}

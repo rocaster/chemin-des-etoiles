@@ -1,0 +1,9 @@
+/* Só os menus de cosméticos. Movimento real está dentro dos oito quadros:
+   cabeça, braços/item/asas, orelhas/cauda e respiração do corpo por rig. */
+.heroi-pose{display:block;aspect-ratio:3/4;width:168px;height:224px;background-repeat:no-repeat;background-size:800% 100%;background-position:0 0;image-rendering:pixelated}
+.sprite-oito{animation:pose-oito 2.8s steps(8,end) infinite;will-change:background-position}
+.pet.sprite-oito{background-size:800% 100%;animation-duration:2.8s}
+@keyframes pose-oito{from{background-position:0% 0}to{background-position:114.285714% 0}}
+.amostra-personagem .heroi-pose{height:214px;width:auto;max-width:100%;aspect-ratio:3/4}
+@media(max-width:640px){.amostra-personagem .heroi-pose{width:110px;height:auto;max-height:220px;aspect-ratio:3/4}}
+@media(prefers-reduced-motion:reduce){.sprite-oito,.pet.sprite-oito{animation:none!important;background-position:0 0!important;will-change:auto}}

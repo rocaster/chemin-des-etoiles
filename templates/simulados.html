@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>{{ examen|upper }} Canada · Simulado não oficial</title><link rel="stylesheet" href="{{ url_for('static',filename='simulados/simulados.css',v='ui2') }}"></head>
+<body class="modo-{{ modo }}">
+<div class="cenario-escrivao" aria-hidden="true"></div>
+<a class="voltar-mapa" href="{{ url_for('mapa') }}" aria-label="Voltar ao mapa" title="Voltar ao mapa">
+  <svg viewBox="0 0 64 56" aria-hidden="true"><path d="M11 8H53V47H11Z" fill="#ead7a8" stroke="#81572b" stroke-width="2"/><path d="M17 32L27 20L34 27L43 16L49 30M19 39L43 36" fill="none" stroke="#9b7a44" stroke-width="2"/><image href="{{ url_for('static',filename='missao/rolo.png') }}" x="3" y="3" width="58" height="8"/><image href="{{ url_for('static',filename='missao/rolo.png') }}" x="3" y="45" width="58" height="8"/></svg>
+</a>
+<header class="placa-exame"><span class="placa-kicker">Chemin des Étoiles</span><strong>{{ examen|upper }} Canada</strong></header>
+<aside class="chrono" id="chrono" aria-label="{{ 'Cronômetro do simulado' if modo=='prova' else 'Sala de exames' }}">
+  <img class="relogio-arte" src="{{ url_for('static',filename='simulados/ampulheta.svg') }}" alt="">
+  <div class="placa-tempo">
+  {% if modo=='prova' %}<time id="tempo" aria-label="Tempo restante da parte" role="timer">--:--</time><small id="tempo-secao"></small>
+  {% else %}<span class="tempo-decorativo">{{ 'VOTRE CARNET' if modo=='resultados' else 'À VOUS DE JOUER' }}</span>{% endif %}
+  </div>
+  <strong id="etapa-titulo" class="chrono-etapa">{{ 'Seu resultado' if modo=='resultados' else 'Treino não oficial' }}</strong><small id="timer-aviso" aria-live="polite"></small>
+</aside>
+<main class="mesa"><article class="folha-exame"><div class="conteudo-papel">
+{% if modo=='inicio' %}
+<p class="capitulo">La salle des épreuves</p><h1>Votre prochaine épreuve</h1><p class="intro">Escolha seu desafio. O tempo começa depois da sua escolha.</p>
+<nav class="marcadores" aria-label="Escolher prova ou competência">
+<button type="button" class="botao marcador principal" data-iniciar="completo"><span><small>LES QUATRE ÉPREUVES</small><b>Prova completa</b></span><span class="duracao">{{ '2h55' if examen=='tef' else '2h47' }}</span></button>
+{% for s,sigla,label,tempo in [('co','CO','Compreensão oral','40 min' if examen=='tef' else '35 min'),('ce','CE','Compreensão escrita','60 min'),('ee','EE','Expressão escrita','60 min'),('eo','EO','Expressão oral','15 min' if examen=='tef' else '12 min')] %}
+<button type="button" class="botao marcador fita-{{ s }}" data-iniciar="{{ s }}"><span class="sigla">{{ sigla }}</span><span class="nome-competencia">{{ label }}</span><span class="duracao">{{ tempo }}</span></button>
+{% endfor %}</nav>
+{% if ativo %}<div class="tentativa-ativa"><a class="botao sec" href="{{ url_for('simulados.prova',examen=ativo.examen) }}">Retomar {{ ativo.examen|upper }} · {{ ativo.secao|upper }}</a><p>Há um treino em andamento. Outra escolha pedirá confirmação antes de substituí-lo.</p></div>{% endif %}
+{% if historico %}<details class="caderno"><summary>Seu caderno · últimas tentativas</summary><div>{% for h in historico|reverse %}<p><a href="{{ url_for('simulados.resultados',tentativa=h.id) }}">{{ h.examen|upper }} · {{ h.secao|upper }} · {{ h.id[:8] }}</a></p>{% endfor %}</div></details>{% else %}<p class="caderno-vazio">Seu caderno de prática começa aqui.</p>{% endif %}
+{% elif modo=='prova' %}
+<div id="prova"><p class="capitulo">Votre épreuve</p><h1 id="titulo"></h1><p id="instrucao" class="intro"></p><div id="conteudo"></div><div class="acoes" id="navegacao"></div><button type="button" class="botao entregar-prova" id="entregar">Entregar seção / encerrar parte</button><p class="rodape">Sem pausa · áudio uma vez · envio automático no zero. Recarregar não reinicia o tempo.</p></div>
+<script type="application/json" id="sim-config">{{ config|tojson }}</script>
+{% else %}
+<p class="capitulo">Votre carnet de voyage</p><h1>Votre bilan</h1><p class="intro">Uma página a mais no seu caminho. Sem nota oficial ou XP.</p>
+{% for r in resultado.resultados %}<section class="cartao"><h2>{{ r.titulo }}</h2><p class="metadados">{{ r.duracao_s }} s utilizados{% if r.tempo_esgotado %} · tempo esgotado{% endif %}</p>
+{% if r.acertos is defined %}<p class="acertos"><strong>{{ r.acertos }} <small>/ {{ r.total }}</small></strong><span>acertos · sem desconto por erro/branco</span></p><p class="aviso">Estimativa não oficial: {{ r.estimativa.escala }}/699{% if r.estimativa.ancien is not none %}; equivalência antiga estimada {{ r.estimativa.ancien }}/{{ 360 if r.etapa=='co' else 300 }}{% endif %}. NCLC estimado: {{ r.estimativa.nclc }}. {{ r.estimativa.aviso }}</p>{% endif %}
+{% if r.tarefas is defined %}{% for t in r.tarefas %}<p>Tarefa {{ t.id }}: {{ t.palavras }} palavras — {{ 'faixa atendida' if t.faixa_ok else 'fora da faixa solicitada' }} (mín. {{ t.min }}{% if t.max %}, máx. {{ t.max }}{% endif %}).</p><details><summary>Seu texto</summary><p class="feedback">{{ t.texto }}</p></details>{% endfor %}<p>{{ r.aviso }}</p><p>Autoavaliação: {{ r.checklist|join(', ') or 'nenhuma marcada' }}.</p>{% endif %}
+{% if r.transcript is defined %}<p>{{ r.perguntas }} intervenções interrogativas · {{ r.intervencoes }} intervenções · {{ r.palavras }} palavras do candidato.</p><p>{{ r.aviso }}</p>{% if r.transcript_truncado|default(false) %}<p>Transcrição limitada; métricas referem-se ao trecho salvo.</p>{% endif %}<details><summary>Sua transcrição</summary>{% for t in r.transcript %}<p><b>{{ t.papel }} ({{ t.modo }}):</b> {{ t.texto }}</p>{% endfor %}</details>{% endif %}</section>{% endfor %}
+<a class="botao" href="{{ url_for('simulados.inicio',examen=examen) }}">Escolher outro treino</a>
+{% endif %}
+<p id="status" role="status" aria-live="polite"></p>
+</div><footer class="rodape-papel">
+{% if modo=='inicio' and ativo %}<button type="button" class="link-discreto" id="nova">Nova tentativa · descartar a atual</button>{% endif %}
+<details class="legal"><summary>Simulado não oficial · sem vínculo com CCI, FEI ou IRCC</summary><p>{{ disclaimer }}</p><p>Microfone: navegador compatível, permissão e HTTPS ou localhost. O reconhecimento pode usar serviços externos. Há alternativa digitada, marcada como texto.</p></details>
+</footer></article></main>
+<script>window.SIM_ATIVA={{ (true if modo=='inicio' and ativo else false)|tojson }};window.SIM_BASE={{ ('/simulados/' ~ examen)|tojson }};</script>
+<script src="{{ url_for('static',filename='parada/voz.js') }}"></script><script src="{{ url_for('static',filename='simulados/prova.js',v='ui2') }}"></script>
+</body></html>

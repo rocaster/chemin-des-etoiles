@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulo %}NCL Simulado{% endblock %}</title>
+  <style>
+    :root {
+      --fundo: #f3ead7;
+      --fundo-card: #fbf6ea;
+      --texto: #2b2118;
+      --texto-suave: #6b5a48;
+      --borda: #b48a54;
+      --destaque: #8a3b12;
+      --erro: #a3201a;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fundo: #1d1812;
+        --fundo-card: #2a2219;
+        --texto: #f1e6d0;
+        --texto-suave: #c4b08f;
+        --borda: #8c6a3e;
+        --destaque: #f0b45c;
+        --erro: #ff8a80;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--fundo);
+      color: var(--texto);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.5;
+    }
+    main { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
+    h1 { margin: 0 0 4px; color: var(--destaque); }
+    .sub { margin: 0 0 24px; color: var(--texto-suave); }
+    .pixel { image-rendering: pixelated; }
+  </style>
+  {% block estilo %}{% endblock %}
+</head>
+<body>
+  <main>{% block conteudo %}{% endblock %}</main>
+</body>
+</html>

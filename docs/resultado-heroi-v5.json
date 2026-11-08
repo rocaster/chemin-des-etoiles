@@ -1,0 +1,92 @@
+{
+  "versao": 5,
+  "geracao": "18 fontes novas GenerateImage, pets sem referência/forma anterior; heróis somente referência de identidade",
+  "quadros": 8,
+  "pets": {
+    "frame": [
+      48,
+      48
+    ],
+    "sheet": [
+      384,
+      48
+    ],
+    "trabalho": [
+      96,
+      96
+    ],
+    "quantidade": 10,
+    "precos_inalterados": true
+  },
+  "herois": {
+    "frame": [
+      96,
+      128
+    ],
+    "sheet": [
+      768,
+      128
+    ],
+    "quantidade": 8,
+    "paletas": 4,
+    "sheets": 32,
+    "props": "espada só nos cavaleiros; arco/livro/magia/alaúde nos demais"
+  },
+  "testes": {
+    "pytest": 299,
+    "anteriores_atualizados": 202,
+    "novos": 97,
+    "dom_loja": 47,
+    "simulados": {
+      "python": 91,
+      "js": 29,
+      "dom": 43
+    },
+    "onboarding": {
+      "python": 124,
+      "js": 72
+    },
+    "rotas": 57,
+    "mapa": {
+      "portas": [
+        5077,
+        5089
+      ],
+      "etapas": 40,
+      "praca_cliques_arrasto": true
+    },
+    "integridade": 508,
+    "gifs": 20,
+    "falhas_finais": 0
+  },
+  "previews": {
+    "pets": "/workspace/ncl/prints-loja/arte-pets-preview.png",
+    "herois": "/workspace/ncl/prints-loja/poses-herois-preview.png",
+    "gifs": "/workspace/ncl/prints-loja/anim/",
+    "copias_no_zip": "docs/pranchas-v5/",
+    "screenshots": false
+  },
+  "preservado": [
+    "originais e paletas preexistentes",
+    "oito legados de espada cavaleiro-m",
+    "fogueira e telas congeladas",
+    "painel direito, baú, refúgio/almofada",
+    "mapa, XP, economia, trilhas, preços"
+  ],
+  "pendente": [
+    "aprovação estética",
+    "inspeção de CSS/layout em navegador desktop/mobile"
+  ],
+  "deploy": false,
+  "instalacao_cumulativa": {
+    "somente_patches": [
+      "patch-loja-personagem.zip",
+      "patch-heroi-v5.zip"
+    ],
+    "v2_v3_v4_ausentes": true,
+    "combinacoes_hero_paleta_pet": 320,
+    "paginas_http_200": 960,
+    "assets_unicos_http_200": 53,
+    "sheets_novos_http_200": 42
+  }
+}

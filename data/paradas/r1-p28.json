@@ -1,0 +1,658 @@
+{
+  "id": "r1-p28",
+  "regiao": 1,
+  "parada": 28,
+  "etapa": 28,
+  "titulo": "Gostos",
+  "titulo_fr": "J'aime, je n'aime pas",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "parada/r1-p06/cena-fundo.png",
+    "frente": "parada/r1-p06/cena-frente.png",
+    "npc": {
+      "nome": "Fanfan le barde",
+      "papel": "bardo",
+      "img": "parada/r1-p06/npc.png",
+      "x": 55,
+      "y": 37,
+      "w": 20.25,
+      "voz": "fanfan"
+    },
+    "brilhos": [
+      {
+        "tipo": "fogo",
+        "x": 35,
+        "y": 61
+      },
+      {
+        "tipo": "lanterna",
+        "x": 13,
+        "y": 32
+      },
+      {
+        "tipo": "lanterna",
+        "x": 26,
+        "y": 31
+      }
+    ]
+  },
+  "vozes": {
+    "fanfan": {
+      "voz": "fr-CA-AntoineNeural",
+      "pitch": "+4Hz"
+    },
+    "leo": "fr-CA-AntoineNeural",
+    "hugo": {
+      "voz": "fr-CA-JeanNeural",
+      "pitch": "+2Hz"
+    }
+  },
+  "audios": {
+    "w-la-musique": {
+      "voz": "fanfan",
+      "texto": "La musique."
+    },
+    "w-danser": {
+      "voz": "fanfan",
+      "texto": "Danser."
+    },
+    "w-le-chocolat": {
+      "voz": "fanfan",
+      "texto": "Le chocolat."
+    },
+    "w-le-soccer": {
+      "voz": "fanfan",
+      "texto": "Le soccer."
+    },
+    "w-j-aime": {
+      "voz": "fanfan",
+      "texto": "J'aime."
+    },
+    "w-je-n-aime-pas": {
+      "voz": "fanfan",
+      "texto": "Je n'aime pas."
+    },
+    "w-et-toi": {
+      "voz": "fanfan",
+      "texto": "Et toi ?"
+    },
+    "c1-fala": {
+      "voz": "fanfan",
+      "texto": "J'aime la musique ! J'aime danser."
+    },
+    "c2-fala": {
+      "voz": "fanfan",
+      "texto": "Je n'aime pas le soccer."
+    },
+    "c3-fala": {
+      "voz": "leo",
+      "texto": "Moi, j'aime le chocolat !"
+    },
+    "frase-b1": {
+      "voz": "fanfan",
+      "texto": "J'aime la musique."
+    },
+    "frase-b2": {
+      "voz": "fanfan",
+      "texto": "Je n'aime pas le soccer."
+    },
+    "frase-b3": {
+      "voz": "fanfan",
+      "texto": "J'aime le chocolat."
+    },
+    "d-n1": {
+      "voz": "fanfan",
+      "texto": "Bonjour, mon ami ! Tu aimes la musique ?"
+    },
+    "d-n2": {
+      "voz": "fanfan",
+      "texto": "Et tu aimes danser ?"
+    },
+    "d-n3": {
+      "voz": "fanfan",
+      "texto": "Moi, j'aime chanter ! Voilà du chocolat pour toi."
+    },
+    "modelo": {
+      "voz": "leo",
+      "texto": "J'aime la musique. Je n'aime pas le soccer."
+    },
+    "rev": {
+      "voz": "hugo",
+      "texto": "Vous venez d'où ?"
+    },
+    "recap": {
+      "voz": "fanfan",
+      "texto": "J'aime le chocolat. Et toi ?"
+    }
+  },
+  "imagens": {
+    "musique": {
+      "src": "parada/mapa40/icones/luth.png",
+      "fr": "la musique",
+      "pt": "a música",
+      "alt": "a música"
+    },
+    "danser": {
+      "src": "parada/mapa40/icones/danse.png",
+      "fr": "danser",
+      "pt": "dançar",
+      "alt": "dançar"
+    },
+    "chocolat": {
+      "src": "parada/mapa40/icones/chocolat.png",
+      "fr": "le chocolat",
+      "pt": "o chocolate",
+      "alt": "o chocolate"
+    },
+    "soccer": {
+      "src": "parada/mapa40/icones/ballon.png",
+      "fr": "le soccer",
+      "pt": "o futebol (no Québec)",
+      "alt": "o futebol (no Québec)"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "la musique",
+      "pt": "a música",
+      "audio": "w-la-musique",
+      "img": "musique"
+    },
+    {
+      "fr": "danser",
+      "pt": "dançar",
+      "audio": "w-danser",
+      "img": "danser"
+    },
+    {
+      "fr": "le chocolat",
+      "pt": "o chocolate",
+      "audio": "w-le-chocolat",
+      "img": "chocolat"
+    },
+    {
+      "fr": "le soccer",
+      "pt": "o futebol (no Québec)",
+      "audio": "w-le-soccer",
+      "img": "soccer"
+    },
+    {
+      "fr": "j'aime",
+      "pt": "eu gosto (de)",
+      "audio": "w-j-aime"
+    },
+    {
+      "fr": "je n'aime pas",
+      "pt": "eu não gosto (de)",
+      "audio": "w-je-n-aime-pas"
+    },
+    {
+      "fr": "et toi ?",
+      "pt": "e você?",
+      "audio": "w-et-toi"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-aime": {
+      "id": "rv-aime",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Fanfan : Tu aimes la musique ?"
+      ],
+      "pergunta": "Você gosta. O que diz?",
+      "opcoes": [
+        "Il est trois heures.",
+        "Je viens de Québec.",
+        "Oui, j'aime la musique !"
+      ],
+      "correta": 2,
+      "explicacao": "Oui, j'aime…"
+    },
+    "rv-merci": {
+      "id": "rv-merci",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Fanfan : Voilà du chocolat pour toi."
+      ],
+      "pergunta": "O que você diz?",
+      "opcoes": [
+        "Bonne nuit !",
+        "Merci !",
+        "Je n'aime pas merci."
+      ],
+      "correta": 1,
+      "explicacao": "Merci ! (e j'aime le chocolat !)"
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "Fanfan, o bardo, quer saber do que você gosta. Ouça e escolha a imagem.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-la-musique",
+          "texto_fr": "la musique",
+          "opcoes": [
+            "musique",
+            "soccer",
+            "danser",
+            "chocolat"
+          ],
+          "correta": "musique",
+          "explicacao": "La musique = a música."
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-danser",
+          "texto_fr": "danser",
+          "opcoes": [
+            "chocolat",
+            "danser",
+            "musique",
+            "soccer"
+          ],
+          "correta": "danser",
+          "explicacao": "Danser = dançar."
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-le-chocolat",
+          "texto_fr": "le chocolat",
+          "opcoes": [
+            "soccer",
+            "musique",
+            "danser",
+            "chocolat"
+          ],
+          "correta": "chocolat",
+          "explicacao": "Le chocolat = o chocolate."
+        },
+        {
+          "id": "d4",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-le-soccer",
+          "texto_fr": "le soccer",
+          "opcoes": [
+            "danser",
+            "soccer",
+            "musique",
+            "chocolat"
+          ],
+          "correta": "soccer",
+          "explicacao": "Le soccer = o futebol (na França: le football)."
+        },
+        {
+          "id": "d5",
+          "tipo": "pares",
+          "instrucao": "Ligue cada palavra à sua imagem: toque numa palavra e depois na imagem.",
+          "pares": [
+            {
+              "fr": "la musique",
+              "img": "musique",
+              "audio": "w-la-musique"
+            },
+            {
+              "fr": "danser",
+              "img": "danser",
+              "audio": "w-danser"
+            },
+            {
+              "fr": "le chocolat",
+              "img": "chocolat",
+              "audio": "w-le-chocolat"
+            },
+            {
+              "fr": "le soccer",
+              "img": "soccer",
+              "audio": "w-le-soccer"
+            }
+          ],
+          "explicacao": "Música, dança, chocolate e futebol."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Escute Fanfan. O texto só aparece depois que você responder.",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Ouça Fanfan.",
+          "audio": "c1-fala",
+          "pergunta": "Do que Fanfan gosta?",
+          "opcoes": [
+            "chocolate",
+            "música e dança",
+            "futebol"
+          ],
+          "correta": 1,
+          "explicacao": "J'aime la musique, j'aime danser."
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "Ouça Fanfan.",
+          "audio": "c2-fala",
+          "pergunta": "Fanfan gosta de futebol?",
+          "opcoes": [
+            "não",
+            "sim",
+            "só no domingo"
+          ],
+          "correta": 0,
+          "explicacao": "Je n'aime pas = eu não gosto."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Ouça Léo.",
+          "audio": "c3-fala",
+          "pergunta": "Do que Léo gosta?",
+          "opcoes_img": [
+            "musique",
+            "danser",
+            "chocolat",
+            "soccer"
+          ],
+          "correta": "chocolat",
+          "explicacao": "J'aime le chocolat."
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia a conversa.",
+          "texto_fr": [
+            "Fanfan : Tu aimes danser ?",
+            "Léo : Non, je n'aime pas danser.",
+            "Léo : J'aime le soccer. Et toi ?",
+            "Fanfan : Moi, j'aime la musique !"
+          ],
+          "pergunta": "Léo gosta de dançar?",
+          "opcoes": [
+            "muito",
+            "não",
+            "sim"
+          ],
+          "correta": 1,
+          "explicacao": "Je n'aime pas danser."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "Mesma conversa.",
+          "texto_fr": [
+            "Fanfan : Tu aimes danser ?",
+            "Léo : Non, je n'aime pas danser.",
+            "Léo : J'aime le soccer. Et toi ?",
+            "Fanfan : Moi, j'aime la musique !"
+          ],
+          "pergunta": "O que quer dizer “Et toi ?”",
+          "opcoes": [
+            "E você?",
+            "Obrigado!",
+            "Onde?"
+          ],
+          "correta": 0,
+          "explicacao": "Et toi ? = e você?"
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Monte as frases. J'aime… = eu gosto de… · Je n'aime pas… = eu não gosto de…",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte: “Eu gosto de música.”",
+          "palavras": [
+            "J'aime",
+            "la",
+            "musique."
+          ],
+          "extras": [
+            "pas",
+            "soccer"
+          ],
+          "audio": "frase-b1",
+          "explicacao": "J'aime + la/le + coisa."
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete: “Eu não gosto de futebol.”",
+          "frase": "Je n'aime ___ le soccer.",
+          "banco": [
+            "pas",
+            "ne",
+            "aime"
+          ],
+          "respostas": [
+            "pas"
+          ],
+          "audio": "frase-b2",
+          "explicacao": "Je n'aime pas = ne… pas em volta do verbo."
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Escreva: “Eu gosto de chocolate.”",
+          "frase": "J'aime le ___.",
+          "respostas": [
+            "chocolat"
+          ],
+          "dica": "Começa com c…",
+          "audio": "frase-b3",
+          "explicacao": "Le chocolat (o -t final não soa)."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "w-danser",
+          "respostas": [
+            "danser"
+          ],
+          "explicacao": "Danser = dançar."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez! Conte a Fanfan do que você gosta e grave a sua frase.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Fanfan le barde.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Bonjour, mon ami ! Tu aimes la musique ?",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Il est trois heures.",
+                  "feedback": "Ele perguntou do que você gosta!",
+                  "erro": true,
+                  "revisao": "rv-aime"
+                },
+                {
+                  "fr": "Oui, j'aime la musique !",
+                  "feedback": "Isso: j'aime.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "Non, je n'aime pas la musique.",
+                  "feedback": "Isso: je n'aime pas.",
+                  "vai": "n2"
+                }
+              ]
+            },
+            "n2": {
+              "fala": "Et tu aimes danser ?",
+              "audio": "d-n2",
+              "opcoes": [
+                {
+                  "fr": "Oui ! Et toi ?",
+                  "feedback": "Isso: devolver a pergunta.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Je danse le chocolat.",
+                  "feedback": "Hmm… Diga oui / non + j'aime…",
+                  "erro": true
+                },
+                {
+                  "fr": "Non, j'aime le soccer.",
+                  "feedback": "Isso: dizer outro gosto.",
+                  "vai": "n3"
+                }
+              ]
+            },
+            "n3": {
+              "fala": "Moi, j'aime chanter ! Voilà du chocolat pour toi.",
+              "audio": "d-n3",
+              "opcoes": [
+                {
+                  "fr": "Je n'aime pas merci.",
+                  "feedback": "Agradeça simplesmente: merci !",
+                  "erro": true,
+                  "revisao": "rv-merci"
+                },
+                {
+                  "fr": "Merci ! J'aime le chocolat !",
+                  "feedback": "Perfeito!",
+                  "vai": "fim"
+                }
+              ]
+            }
+          },
+          "explicacao": "Tu aimes… ? → oui, j'aime… / non, je n'aime pas… → et toi ?"
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave em voz alta (1–2 frases): diga do que você gosta e do que não gosta.",
+          "modelo": "J'aime la musique. Je n'aime pas le soccer.",
+          "audio_modelo": "modelo",
+          "checklist": [
+            "J'aime…",
+            "Je n'aime pas…",
+            "Et toi ?"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva os seus gostos.",
+            "palavras_chave": [
+              [
+                "aime"
+              ]
+            ],
+            "explicacao": "J'aime… / je n'aime pas…"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "intro": "Última rodada: os itens errados voltam, uma revisão e a frase da missão.",
+      "recuperar": true,
+      "itens": [
+        {
+          "id": "r2",
+          "tipo": "audio",
+          "instrucao": "Revisão da etapa 26 (guarda): ouça Hugo.",
+          "audio": "rev",
+          "pergunta": "O que você responde?",
+          "opcoes": [
+            "J'aime danser.",
+            "Il pleut.",
+            "Je viens de Québec."
+          ],
+          "correta": 2,
+          "explicacao": "Vous venez d'où ? → Je viens de… (etapa 26)."
+        },
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “Eu gosto de chocolate. E você?”",
+          "palavras": [
+            "J'aime",
+            "le",
+            "chocolat.",
+            "Et",
+            "toi ?"
+          ],
+          "extras": [
+            "pas"
+          ],
+          "audio": "recap",
+          "explicacao": "J'aime le chocolat. Et toi ?"
+        }
+      ]
+    }
+  ],
+  "novas": [
+    "j'aime",
+    "je n'aime pas",
+    "la musique",
+    "danser",
+    "le chocolat",
+    "le soccer",
+    "et toi ?"
+  ],
+  "padroes": [
+    "J'aime + coisa / verbo.",
+    "Je n'aime pas + coisa."
+  ]
+}

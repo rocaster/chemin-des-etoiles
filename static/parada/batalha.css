@@ -1,0 +1,188 @@
+/* Batalha (protótipo) — tela 16:9 fixa como o mockup aprovado; tudo em unidades nativas (--u = 1 px de 400×225). */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0e0b07; color: #3a220c; font-family: Georgia, "Times New Roman", serif; overflow: hidden; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+[hidden] { display: none !important; }
+:root { --w: min(100vw, 100vh * 16 / 9); }
+@supports (height: 100dvh) { :root { --w: min(100dvw, 100dvh * 16 / 9); } }
+.tela { --u: calc(var(--w) / 400); position: absolute; left: 50%; top: 50%; width: var(--w); height: calc(var(--w) * 9 / 16); transform: translate(-50%, -50%); }
+.arena { position: absolute; inset: 0; background-size: 100% 100%; image-rendering: pixelated; overflow: hidden; }
+.arena * { image-rendering: pixelated; }
+
+/* sprites: tira horizontal, quadro escolhido por --f (sem interpolação) */
+.heroi, .inimigo, .efeito, .ic { position: absolute; background-repeat: no-repeat; }
+.heroi { left: calc(var(--u) * 31); top: calc(var(--u) * 33); width: calc(var(--u) * 128); height: calc(var(--u) * 100);
+  background-size: calc(var(--u) * 1536) 100%; background-position: calc(var(--u) * -128 * var(--f, 0)) 0; z-index: 2; }
+.inimigo { left: calc(var(--u) * 256); top: calc(var(--u) * 36); width: calc(var(--u) * 96); height: calc(var(--u) * 64);
+  background-size: calc(var(--u) * 672) 100%; background-position: calc(var(--u) * -96 * var(--f, 0)) 0; z-index: 2; }
+.inimigo.ataca { translate: calc(var(--u) * -34) calc(var(--u) * 14); }
+.inimigo.branco { filter: brightness(2.6) saturate(0); }
+.inimigo.investe { translate: calc(var(--u) * -6) calc(var(--u) * 3); }
+.heroi.idle { animation: idle-h 1s steps(1, end) infinite; }
+.inimigo.idle { animation: idle-i 1.2s steps(1, end) infinite; }
+@keyframes idle-h { 0% { --f: 0; background-position: 0 0; } 50% { background-position: calc(var(--u) * -128) 0; } }
+@keyframes idle-i { 0% { background-position: 0 0; } 50% { background-position: calc(var(--u) * -96) 0; } }
+.efeito { width: calc(var(--u) * 48); height: calc(var(--u) * 48); background-size: calc(var(--u) * 192) 100%;
+  background-position: calc(var(--u) * -48 * var(--f, 0)) 0; z-index: 3; left: calc(var(--u) * 272); top: calc(var(--u) * 46); }
+#efeito-heroi { left: calc(var(--u) * 72); top: calc(var(--u) * 74); }
+.numero { position: absolute; z-index: 6; margin: 0; left: calc(var(--u) * 250); top: calc(var(--u) * 50); font: 700 calc(var(--u) * 11) Georgia, serif;
+  color: #ffd84a; text-shadow: calc(var(--u) * .7) calc(var(--u) * .7) 0 #2a1a0c, calc(var(--u) * -.7) calc(var(--u) * .7) 0 #2a1a0c, calc(var(--u) * .7) calc(var(--u) * -.7) 0 #2a1a0c, calc(var(--u) * -.7) calc(var(--u) * -.7) 0 #2a1a0c;
+  animation: sobe .8s steps(4, end) forwards; }
+@keyframes sobe { to { translate: 0 calc(var(--u) * -10); opacity: .2; } }
+
+/* placas de nome + barra de 4 segmentos (mesmo estilo para herói e inimigo) */
+.placa { position: absolute; z-index: 5; padding: calc(var(--u) * 2) calc(var(--u) * 4) calc(var(--u) * 3); background-color: #ecd9ab; background-size: calc(var(--u) * 36) auto;
+  border: calc(var(--u) * 1) solid #5a3a16; box-shadow: 0 0 0 calc(var(--u) * 1) #b8965c, calc(var(--u) * 1.5) calc(var(--u) * 1.5) 0 calc(var(--u) * 1) rgba(0, 0, 0, .4); text-align: center; }
+.placa .nome { margin: 0 0 calc(var(--u) * 1.5); font: 700 calc(var(--u) * 6.5) / 1.1 Georgia, serif; color: #2a1a0c; white-space: nowrap; }
+.placa-heroi { left: calc(var(--u) * 64); top: calc(var(--u) * 34); width: calc(var(--u) * 62); }
+.placa-inimigo { left: calc(var(--u) * 262); top: calc(var(--u) * 20); width: calc(var(--u) * 78); }
+.barra { display: grid; grid-template-columns: repeat(var(--seg, 5), 1fr); gap: calc(var(--u) * 1); padding: calc(var(--u) * 1); background: #2a1a0c; height: calc(var(--u) * 5); }
+.barra i { display: block; background: #4fa33a; box-shadow: inset 0 calc(var(--u) * 1) 0 #8fd46a, inset 0 calc(var(--u) * -1) 0 #2f6b22; }
+.barra i.vazio { background: #8a2216; box-shadow: inset 0 calc(var(--u) * 1) 0 #b53a24, inset 0 calc(var(--u) * -1) 0 #5a120c; }
+.barra i.perde { animation: perde .45s steps(3, end); }
+@keyframes perde { 0%, 66% { background: #fff; } }
+
+/* combo perto do herói */
+.combo { position: absolute; z-index: 5; left: calc(var(--u) * 128); top: calc(var(--u) * 62); display: flex; flex-direction: column; align-items: center;
+  padding: calc(var(--u) * 1.5) calc(var(--u) * 3); background-color: #ecd9ab; background-size: calc(var(--u) * 36) auto; border: calc(var(--u) * 1) solid #5a3a16;
+  box-shadow: calc(var(--u) * 1) calc(var(--u) * 1) 0 rgba(0, 0, 0, .4); font: 700 calc(var(--u) * 5) / 1.1 Georgia, serif; color: #2a1a0c; }
+.combo b { font-size: calc(var(--u) * 8); color: #8a3b12; }
+.combo.zerado b { color: #6e6458; } .combo.zerado { opacity: .9; }
+.combo.fort b { color: #a3201a; } .combo.special b { color: #6a2fb0; }
+.combo.pula { animation: pula .3s steps(2, end); }
+@keyframes pula { 50% { translate: 0 calc(var(--u) * -3); } }
+
+/* legenda de combo (no lugar dos botões do mockup — só indica, não é clicável) */
+.legenda { position: absolute; z-index: 5; left: calc(var(--u) * 296); top: calc(var(--u) * 136); width: calc(var(--u) * 82); margin: 0; padding: 0; list-style: none; display: grid; gap: calc(var(--u) * 3); }
+.legenda li { display: flex; align-items: center; gap: calc(var(--u) * 3); height: calc(var(--u) * 16); padding: 0 calc(var(--u) * 4); font: 700 calc(var(--u) * 7) Georgia, serif; color: #fff4dc;
+  border: calc(var(--u) * 1) solid #2a1a0c; box-shadow: inset 0 0 0 calc(var(--u) * 1) #b8965c, calc(var(--u) * 1) calc(var(--u) * 1) 0 rgba(0, 0, 0, .45); opacity: .78; filter: saturate(.6); }
+.legenda li small { margin-left: auto; font-size: calc(var(--u) * 4.6); opacity: .9; white-space: nowrap; }
+.legenda li[data-tipo="leger"] { background: #3f6b2a; } .legenda li[data-tipo="fort"] { background: #7a3a1c; } .legenda li[data-tipo="special"] { background: #4a2a72; }
+.legenda li.ativo { opacity: 1; filter: none; box-shadow: inset 0 0 0 calc(var(--u) * 1) #f0c46a, 0 0 0 calc(var(--u) * 1) #f0c46a, calc(var(--u) * 1) calc(var(--u) * 1) 0 rgba(0, 0, 0, .45); }
+.ic { position: static; flex: none; width: calc(var(--u) * 12); height: calc(var(--u) * 12); background-size: calc(var(--u) * 48) 100%; }
+.ic.corte { background-position: calc(var(--u) * -12) 0; } .ic.golpe { background-position: calc(var(--u) * -24) 0; } .ic.estrela { background-position: calc(var(--u) * -24) 0; }
+
+/* caixa da pergunta (pergaminho grande embaixo, como no mockup) */
+.pergunta { position: absolute; z-index: 6; left: calc(var(--u) * 17.6); top: calc(var(--u) * 145); width: calc(var(--u) * 262); min-height: calc(var(--u) * 74);
+  padding: calc(var(--u) * 5) calc(var(--u) * 9); background-color: #ecd9ab; background-size: calc(var(--u) * 36) auto;
+  border: calc(var(--u) * 2) solid #5a3a16; box-shadow: 0 0 0 calc(var(--u) * 1) #b8965c, inset 0 0 0 calc(var(--u) * 1) #d8bd85, calc(var(--u) * 2) calc(var(--u) * 2) 0 calc(var(--u) * 1) rgba(0, 0, 0, .45); }
+.pergunta .enunciado { margin: 0 0 calc(var(--u) * 3); font: 700 calc(var(--u) * 7.5) / 1.2 Georgia, serif; color: #2a1a0c; }
+.pergunta .dica { margin: calc(var(--u) * -2) 0 calc(var(--u) * 3); font: italic calc(var(--u) * 5) / 1.2 Georgia, serif; color: #6e4620; }
+.opcoes { display: grid; gap: calc(var(--u) * 2.5); margin: 0; padding: 0; list-style: none; }
+.opcao { display: flex; align-items: center; gap: calc(var(--u) * 3); width: 100%; min-height: calc(var(--u) * 13); padding: calc(var(--u) * 1) calc(var(--u) * 5); text-align: left; cursor: pointer;
+  font: 700 calc(var(--u) * 7) / 1.1 Georgia, serif; color: #fff4dc; background: #355e25; border: calc(var(--u) * 1) solid #1d1812;
+  box-shadow: inset 0 0 0 calc(var(--u) * 1) #a88a50, inset 0 calc(var(--u) * 2) 0 calc(var(--u) * 1) rgba(255, 255, 255, .08); }
+.opcao b { color: #f0c46a; }
+.opcao:hover:not([disabled]) { background: #417230; }
+.opcao:focus-visible, .botao:focus-visible, .fuga:focus-visible { outline: calc(var(--u) * 1.2) solid #f0c46a; outline-offset: calc(var(--u) * .6); }
+.opcao.certa { background: #4f9a2e; box-shadow: inset 0 0 0 calc(var(--u) * 1) #f0c46a; }
+.opcao.errada { background: #9a2a12; }
+.opcao[disabled] { cursor: default; }
+.opcao[disabled]:not(.certa):not(.errada) { opacity: .6; }
+.retorno { margin: calc(var(--u) * 2.5) 0 0; font: 700 calc(var(--u) * 5.5) / 1.2 Georgia, serif; color: #3f6b1c; min-height: calc(var(--u) * 6); }
+.retorno.erro { color: #9a2a12; }
+.botao { display: inline-block; padding: calc(var(--u) * 2.5) calc(var(--u) * 7); font: 700 calc(var(--u) * 6.5) Georgia, serif; color: #fff4dc; background: #8a3b12; text-decoration: none; cursor: pointer;
+  border: calc(var(--u) * 1) solid #1d1812; box-shadow: calc(var(--u) * 1) calc(var(--u) * 1) 0 rgba(0, 0, 0, .45); }
+.botao.sec { background: #f4e8c8; color: #462810; border-color: #9c7240; }
+.linha { display: flex; gap: calc(var(--u) * 3); align-items: center; flex-wrap: wrap; margin-top: calc(var(--u) * 3); }
+
+.fuga { position: absolute; z-index: 7; left: calc(var(--u) * 4); top: calc(var(--u) * 4); padding: calc(var(--u) * 1.5) calc(var(--u) * 4); font: 700 calc(var(--u) * 5.5) Georgia, serif;
+  color: #462810; text-decoration: none; background-color: #ecd9ab; background-size: calc(var(--u) * 36) auto; border: calc(var(--u) * 1) solid #5a3a16; }
+.selo-teste { position: absolute; z-index: 7; right: calc(var(--u) * 4); top: calc(var(--u) * 4); margin: 0; padding: calc(var(--u) * 1) calc(var(--u) * 3); font: 700 calc(var(--u) * 4.5) Georgia, serif;
+  color: #fff4dc; background: #a3201a; border: calc(var(--u) * .7) solid #1d1812; letter-spacing: .04em; }
+
+/* Spécial por classe: camada do tamanho da arena (tira de 10 quadros de 400×225), faixa com o nome, clarão e tremida */
+.especial { position: absolute; inset: 0; z-index: 4; pointer-events: none; background-repeat: no-repeat; background-size: 1000% 100%;
+  background-position: calc(var(--f, 0) * 100% / 9) 0; image-rendering: pixelated; }
+.faixa-especial { position: absolute; z-index: 7; left: 50%; top: calc(var(--u) * 6); translate: -50% 0; margin: 0; display: flex; flex-direction: column; align-items: center;
+  padding: calc(var(--u) * 2) calc(var(--u) * 12); background: #1d1812; border: calc(var(--u) * 1) solid var(--cor-esp); box-shadow: 0 0 0 calc(var(--u) * 1) #1d1812, 0 0 calc(var(--u) * 8) var(--cor-esp);
+  color: #fff4dc; white-space: nowrap; animation: faixa .9s steps(3, end) both; }
+.faixa-especial b { font: 700 calc(var(--u) * 10) / 1.1 Georgia, serif; color: var(--cor-esp); letter-spacing: .04em; text-shadow: calc(var(--u) * .8) calc(var(--u) * .8) 0 #000; }
+.faixa-especial span { font: italic calc(var(--u) * 5) / 1.2 Georgia, serif; }
+@keyframes faixa { 0% { scale: 1.6; opacity: 0; } 34% { scale: 1.15; opacity: 1; } 67%, 100% { scale: 1; opacity: 1; } }
+.flash.classe { animation: clarao .5s steps(3, end); }
+@keyframes clarao { 0% { background: color-mix(in srgb, var(--cor-esp, #fff) 55%, transparent); } 66% { background: color-mix(in srgb, var(--cor-esp, #fff) 18%, transparent); } }
+.arena.treme { animation: treme .36s steps(6, end); }
+@keyframes treme { 0%, 100% { translate: 0 0; } 17% { translate: calc(var(--u) * -3) calc(var(--u) * 1); } 33% { translate: calc(var(--u) * 3) calc(var(--u) * -2); }
+  50% { translate: calc(var(--u) * -2) calc(var(--u) * 2); } 67% { translate: calc(var(--u) * 2) 0; } 83% { translate: calc(var(--u) * -1) calc(var(--u) * -1); } }
+
+/* Defesa: contra-ataque do inimigo. Painel com outra cara (borda vermelha, faixa com escudo) e efeito de escudo no herói */
+#efeito-bloqueio { left: calc(var(--u) * 102); top: calc(var(--u) * 66); z-index: 4; }
+.bloqueado { position: absolute; z-index: 6; margin: 0; left: calc(var(--u) * 150); top: calc(var(--u) * 84); font: 700 calc(var(--u) * 11) Georgia, serif; color: #bfe4ff;
+  text-shadow: calc(var(--u) * .7) calc(var(--u) * .7) 0 #12203c, calc(var(--u) * -.7) calc(var(--u) * .7) 0 #12203c, calc(var(--u) * .7) calc(var(--u) * -.7) 0 #12203c, calc(var(--u) * -.7) calc(var(--u) * -.7) 0 #12203c;
+  animation: faixa .6s steps(3, end) both; }
+.pergunta.defesa { border-color: #6e140e; box-shadow: 0 0 0 calc(var(--u) * 1) #d0563a, inset 0 0 0 calc(var(--u) * 1) #e0a080, inset 0 0 calc(var(--u) * 16) rgba(150, 30, 20, .28), calc(var(--u) * 2) calc(var(--u) * 2) 0 calc(var(--u) * 1) rgba(0, 0, 0, .45); }
+.faixa-defesa { display: flex; align-items: center; gap: calc(var(--u) * 3); margin: calc(var(--u) * -5) calc(var(--u) * -9) calc(var(--u) * 3); padding: calc(var(--u) * 2) calc(var(--u) * 6);
+  background: #8e1c12; color: #fff4dc; font: 700 calc(var(--u) * 7) / 1.1 Georgia, serif; letter-spacing: .03em; border-bottom: calc(var(--u) * 1) solid #3c0a06;
+  background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, .12) 0 calc(var(--u) * 2), transparent calc(var(--u) * 2) calc(var(--u) * 4)); }
+.ic-escudo { flex: none; width: calc(var(--u) * 8); height: calc(var(--u) * 9); background-size: 100% 100%; image-rendering: pixelated; }
+.faixa-defesa small { margin-left: auto; font: italic 400 calc(var(--u) * 5) Georgia, serif; opacity: .9; }
+/* timer da defesa: barra que encolhe em degraus (pixel) + segundos; movimento reduzido: só o número */
+.timer-defesa { position: relative; display: flex; align-items: center; height: calc(var(--u) * 6); margin: calc(var(--u) * -1) 0 calc(var(--u) * 2);
+  background: #3c0a06; border: calc(var(--u) * 1) solid #1d1812; box-shadow: inset 0 0 0 calc(var(--u) * .6) #6e140e; }
+.timer-defesa i { display: block; height: 100%; width: 100%; background: #f0c46a; box-shadow: inset 0 calc(var(--u) * 1) 0 #ffe7a0, inset 0 calc(var(--u) * -1) 0 #b8862c; }
+.timer-defesa b { position: absolute; right: calc(var(--u) * 2); top: 50%; transform: translateY(-50%); font: 700 calc(var(--u) * 4.6) Georgia, serif; color: #fff4dc; text-shadow: calc(var(--u) * .5) calc(var(--u) * .5) 0 #1d1812; }
+.timer-defesa.urgente i { background: #e8503a; box-shadow: inset 0 calc(var(--u) * 1) 0 #ff8a70, inset 0 calc(var(--u) * -1) 0 #9a2a12; }
+.timer-defesa.urgente:not(.parado) { animation: urgente .5s steps(2, end) infinite; }
+@keyframes urgente { 50% { box-shadow: inset 0 0 0 calc(var(--u) * .6) #ffb090, 0 0 0 calc(var(--u) * 1) #e8503a; } }
+@media (prefers-reduced-motion: reduce) {
+  .timer-defesa { justify-content: center; height: auto; background: #6e140e; }
+  .timer-defesa i { display: none; }
+  .timer-defesa b { position: static; transform: none; font-size: calc(var(--u) * 7); }
+  .timer-defesa.urgente:not(.parado) { animation: none; }
+}
+.alvo-defesa { margin: 0; font: 700 calc(var(--u) * 15) / 1.1 Georgia, serif; color: #6e140e; text-align: center; }
+.alvo-defesa.oculto { color: #a07850; letter-spacing: .1em; }
+.pergunta.defesa .dica { text-align: center; margin: 0 0 calc(var(--u) * 3); }
+.pergunta.defesa .linha { justify-content: center; margin-top: 0; }
+.pergunta.defesa .opcoes { grid-template-columns: repeat(3, 1fr); }
+.pergunta.defesa .opcao { justify-content: center; background: #7a2a18; }
+.pergunta.defesa .opcao:hover:not([disabled]) { background: #8e3820; }
+.pergunta.defesa .opcao.certa { background: #2f6ba0; box-shadow: inset 0 0 0 calc(var(--u) * 1) #bfe4ff; }
+.botao.mic { background: #8e1c12; }
+.pergunta.ouvindo .botao.mic { animation: ouvindo .8s steps(2, end) infinite; }
+@keyframes ouvindo { 50% { background: #c0392b; box-shadow: 0 0 0 calc(var(--u) * 1.5) #f0c46a; } }
+.campo-defesa { flex: 1; min-width: 0; padding: calc(var(--u) * 2) calc(var(--u) * 3); font: 700 calc(var(--u) * 7) Georgia, serif; color: #2a1a0c; background: #fff8e6; border: calc(var(--u) * 1) solid #7a4a20; }
+.trocar { margin: calc(var(--u) * 2) 0 0; text-align: center; font: calc(var(--u) * 4.6) Georgia, serif; color: #6e4620; }
+.trocar button { font: inherit; color: #8e1c12; text-decoration: underline; background: none; border: 0; padding: 0 calc(var(--u) * 1.5); cursor: pointer; }
+.pergunta.defesa .retorno { text-align: center; margin-top: calc(var(--u) * 1.5); }
+.retorno.bloq { color: #1f5a8e; }
+
+/* golpe no herói, escurecer na derrota, mensagem final */
+.flash { position: absolute; inset: 0; z-index: 8; pointer-events: none; background: rgba(200, 30, 20, .0); }
+.flash.vermelho { animation: verm .35s steps(2, end); }
+@keyframes verm { 0% { background: rgba(200, 30, 20, .35); } }
+.escuro { position: absolute; inset: 0; z-index: 8; pointer-events: none; background: #0b0814; opacity: 0; transition: opacity 1.2s steps(6, end); }
+.escuro.on { opacity: .72; }
+.mensagem { position: absolute; z-index: 9; left: calc(var(--u) * 17.6); top: calc(var(--u) * 148); width: calc(var(--u) * 262); padding: calc(var(--u) * 6) calc(var(--u) * 10) calc(var(--u) * 8); text-align: center;
+  background-color: #ecd9ab; background-size: calc(var(--u) * 36) auto; border: calc(var(--u) * 2) solid #5a3a16; box-shadow: 0 0 0 calc(var(--u) * 1) #f0c46a, calc(var(--u) * 2) calc(var(--u) * 2) 0 calc(var(--u) * 1) rgba(0, 0, 0, .5); }
+.mensagem h2 { margin: 0 0 calc(var(--u) * 2); font: 700 calc(var(--u) * 10) / 1.15 Georgia, serif; color: #8a3b12; }
+.mensagem.derrota h2 { font-size: calc(var(--u) * 8); color: #3a2a5a; }
+.mensagem .pt { margin: 0 0 calc(var(--u) * 2); font: italic calc(var(--u) * 5.5) / 1.25 Georgia, serif; color: #6e4620; }
+.mensagem .sub { margin: 0 0 calc(var(--u) * 4); font: calc(var(--u) * 4.8) / 1.25 Georgia, serif; color: #6e4620; }
+.vitoria .pergunta, .derrota .pergunta { visibility: hidden; }
+
+/* retrato / telas estreitas: a arena fica no topo e o pergaminho da pergunta desce para baixo dela */
+@media (max-aspect-ratio: 1/1) {
+  :root { --w: 100vw; }
+  .tela { top: 0; transform: translateX(-50%); }
+  .pergunta { position: fixed; left: 8px; right: 8px; width: auto; top: calc(100vw * 9 / 16 + 8px); --u: calc(min(100vw, 460px) / 260); }
+  .legenda { display: none; }
+  .mensagem { position: fixed; left: 8px; right: 8px; width: auto; top: calc(100vw * 9 / 16 + 8px); --u: calc(min(100vw, 460px) / 260); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .heroi.idle, .inimigo.idle, .combo.pula, .barra i.perde, .numero, .flash.vermelho, .flash.classe, .arena.treme, .faixa-especial, .bloqueado, .pergunta.ouvindo .botao.mic { animation: none; }
+  .inimigo.ataca { translate: none; }
+  .escuro { transition: none; }
+}
+
+/* Chefe (etapa 40 · Castelo): sprite de 7 quadros de 128×96 (idle 0–1, dor 2, queda 3–4, preparo 5, golpe 6), pés no mesmo ponto (296, 96);
+   placa mais larga para 20 segmentos, no alto da arena entre herói e chefe. */
+.chefe .inimigo { left: calc(var(--u) * 232); top: calc(var(--u) * 1); width: calc(var(--u) * 128); height: calc(var(--u) * 96);
+  background-size: calc(var(--u) * 896) 100%; background-position: calc(var(--u) * -128 * var(--f, 0)) 0; }
+.chefe .inimigo.idle { animation-name: idle-c; animation-duration: 1.4s; }
+@keyframes idle-c { 0% { background-position: 0 0; } 50% { background-position: calc(var(--u) * -128) 0; } }
+.chefe .placa-inimigo { left: calc(var(--u) * 150); top: calc(var(--u) * 6); width: calc(var(--u) * 118); }
+.chefe .barra { gap: calc(var(--u) * .6); }
+.chefe .efeito:not(#efeito-heroi):not(.escudo) { left: calc(var(--u) * 272); top: calc(var(--u) * 34); }
+.chefe .numero { top: calc(var(--u) * 30); }

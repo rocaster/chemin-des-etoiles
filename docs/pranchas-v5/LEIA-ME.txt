@@ -1,0 +1,3 @@
+Pranchas de arte e GIFs, não screenshots de navegador.
+18 GIFs individuais + todos-herois.gif + todos-pets.gif; 8 quadros, 350 ms, loop infinito.
+PNG/sheets e fontes têm transparência; GIFs usam fundo neutro para revisão.

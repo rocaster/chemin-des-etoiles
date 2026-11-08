@@ -1,0 +1,433 @@
+{
+  "id": "r1-p22",
+  "regiao": 1,
+  "parada": 22,
+  "etapa": 22,
+  "formato": "biblioteca",
+  "titulo": "Biblioteca: o diário do viajante",
+  "titulo_fr": "Le journal du voyageur",
+  "nivel": "A1",
+  "duracao_min": 5,
+  "cenario": {
+    "fundo": "parada/r1-p07/cena-fundo.png",
+    "frente": "parada/r1-p07/cena-frente.png",
+    "npc": {
+      "nome": "Frère Anselme",
+      "papel": "monge bibliotecário",
+      "img": "parada/r1-p07/npc.png",
+      "x": 25,
+      "y": 38.7,
+      "w": 18.25,
+      "voz": "anselme"
+    },
+    "brilhos": [
+      {
+        "tipo": "lanterna",
+        "x": 46,
+        "y": 23
+      },
+      {
+        "tipo": "lanterna",
+        "x": 8,
+        "y": 61
+      }
+    ]
+  },
+  "vozes": {
+    "anselme": {
+      "voz": "fr-CA-JeanNeural",
+      "pitch": "-4Hz"
+    },
+    "leo": "fr-CA-AntoineNeural"
+  },
+  "audios": {
+    "abertura": {
+      "voz": "anselme",
+      "texto": "Bienvenue ! Voici le journal du voyageur. Écoutez, et touchez les mots."
+    },
+    "fecho": {
+      "voz": "anselme",
+      "texto": "Très bien ! Revenez demain."
+    },
+    "w-je-marche": {
+      "voz": "anselme",
+      "texto": "Je marche."
+    },
+    "x-je-marche": {
+      "voz": "anselme",
+      "texto": "Je marche dans la forêt."
+    },
+    "w-chantent": {
+      "voz": "anselme",
+      "texto": "Chantent."
+    },
+    "x-chantent": {
+      "voz": "anselme",
+      "texto": "Les oiseaux chantent."
+    },
+    "w-mercredi": {
+      "voz": "anselme",
+      "texto": "Mercredi."
+    },
+    "x-mercredi": {
+      "voz": "anselme",
+      "texto": "Mercredi, il pleut."
+    },
+    "w-j-arrive": {
+      "voz": "anselme",
+      "texto": "J'arrive."
+    },
+    "x-j-arrive": {
+      "voz": "anselme",
+      "texto": "J'arrive au moulin."
+    },
+    "w-gentille": {
+      "voz": "anselme",
+      "texto": "Gentille."
+    },
+    "x-gentille": {
+      "voz": "anselme",
+      "texto": "Mathilde est gentille."
+    },
+    "w-la-soupe": {
+      "voz": "anselme",
+      "texto": "La soupe."
+    },
+    "x-la-soupe": {
+      "voz": "anselme",
+      "texto": "Je mange de la soupe."
+    },
+    "w-fatigue": {
+      "voz": "anselme",
+      "texto": "Fatigué."
+    },
+    "x-fatigue": {
+      "voz": "anselme",
+      "texto": "Je suis fatigué."
+    },
+    "w-sous": {
+      "voz": "anselme",
+      "texto": "Sous."
+    },
+    "x-sous": {
+      "voz": "anselme",
+      "texto": "Je dors sous un arbre."
+    },
+    "p1-f1": {
+      "voz": "anselme",
+      "texto": "Lundi, il fait beau."
+    },
+    "p1-f2": {
+      "voz": "anselme",
+      "texto": "Je marche dans la forêt."
+    },
+    "p1-f3": {
+      "voz": "anselme",
+      "texto": "Il y a des arbres et des oiseaux."
+    },
+    "p1-f4": {
+      "voz": "anselme",
+      "texto": "Les oiseaux chantent."
+    },
+    "p1-q": {
+      "voz": "anselme",
+      "texto": "Lundi, il fait quel temps ?"
+    },
+    "p2-f1": {
+      "voz": "anselme",
+      "texto": "Mercredi, il pleut."
+    },
+    "p2-f2": {
+      "voz": "anselme",
+      "texto": "J'arrive au moulin."
+    },
+    "p2-f3": {
+      "voz": "anselme",
+      "texto": "La famille de Mathilde est gentille."
+    },
+    "p2-f4": {
+      "voz": "anselme",
+      "texto": "Le soir, je mange de la soupe."
+    },
+    "p2-q": {
+      "voz": "anselme",
+      "texto": "Mercredi, il arrive où ?"
+    },
+    "p3-f1": {
+      "voz": "anselme",
+      "texto": "Dimanche, je suis fatigué."
+    },
+    "p3-f2": {
+      "voz": "anselme",
+      "texto": "Je dors sous un arbre."
+    },
+    "p3-f3": {
+      "voz": "anselme",
+      "texto": "Demain, je vais au château !"
+    },
+    "p3-q": {
+      "voz": "anselme",
+      "texto": "Il dort où ?"
+    }
+  },
+  "imagens": {},
+  "vocabulario": [
+    {
+      "fr": "je marche",
+      "pt": "eu caminho",
+      "audio": "w-je-marche"
+    },
+    {
+      "fr": "chantent",
+      "pt": "cantam",
+      "audio": "w-chantent"
+    },
+    {
+      "fr": "mercredi",
+      "pt": "quarta-feira",
+      "audio": "w-mercredi"
+    },
+    {
+      "fr": "j'arrive",
+      "pt": "eu chego",
+      "audio": "w-j-arrive"
+    },
+    {
+      "fr": "gentille",
+      "pt": "gentil, simpática",
+      "audio": "w-gentille"
+    },
+    {
+      "fr": "la soupe",
+      "pt": "a sopa",
+      "audio": "w-la-soupe"
+    },
+    {
+      "fr": "fatigué",
+      "pt": "cansado",
+      "audio": "w-fatigue"
+    },
+    {
+      "fr": "sous",
+      "pt": "debaixo de",
+      "audio": "w-sous"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 15,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "instrucao": "Frère Anselme lê os pergaminhos. Toque nas palavras sublinhadas para ver a tradução e guardar no grimório.",
+  "abertura": "abertura",
+  "fecho": "fecho",
+  "glossario": {
+    "je-marche": {
+      "fr": "je marche",
+      "pt": "eu caminho",
+      "audio": "w-je-marche",
+      "exemplo": "Je marche dans la forêt.",
+      "exemplo_pt": "Eu caminho na floresta.",
+      "exemplo_audio": "x-je-marche"
+    },
+    "chantent": {
+      "fr": "chantent",
+      "pt": "cantam",
+      "audio": "w-chantent",
+      "exemplo": "Les oiseaux chantent.",
+      "exemplo_pt": "Os pássaros cantam.",
+      "exemplo_audio": "x-chantent"
+    },
+    "mercredi": {
+      "fr": "mercredi",
+      "pt": "quarta-feira",
+      "audio": "w-mercredi",
+      "exemplo": "Mercredi, il pleut.",
+      "exemplo_pt": "Na quarta, chove.",
+      "exemplo_audio": "x-mercredi"
+    },
+    "j-arrive": {
+      "fr": "j'arrive",
+      "pt": "eu chego",
+      "audio": "w-j-arrive",
+      "exemplo": "J'arrive au moulin.",
+      "exemplo_pt": "Eu chego ao moinho.",
+      "exemplo_audio": "x-j-arrive"
+    },
+    "gentille": {
+      "fr": "gentille",
+      "pt": "gentil, simpática",
+      "audio": "w-gentille",
+      "exemplo": "Mathilde est gentille.",
+      "exemplo_pt": "Mathilde é gentil.",
+      "exemplo_audio": "x-gentille"
+    },
+    "la-soupe": {
+      "fr": "la soupe",
+      "pt": "a sopa",
+      "audio": "w-la-soupe",
+      "exemplo": "Je mange de la soupe.",
+      "exemplo_pt": "Eu como sopa.",
+      "exemplo_audio": "x-la-soupe"
+    },
+    "fatigue": {
+      "fr": "fatigué",
+      "pt": "cansado",
+      "audio": "w-fatigue",
+      "exemplo": "Je suis fatigué.",
+      "exemplo_pt": "Eu estou cansado.",
+      "exemplo_audio": "x-fatigue"
+    },
+    "sous": {
+      "fr": "sous",
+      "pt": "debaixo de",
+      "audio": "w-sous",
+      "exemplo": "Je dors sous un arbre.",
+      "exemplo_pt": "Eu durmo debaixo de uma árvore.",
+      "exemplo_audio": "x-sous"
+    }
+  },
+  "pergaminhos": [
+    {
+      "titulo": "Lundi",
+      "titulo_pt": "Segunda-feira",
+      "frases": [
+        {
+          "fr": "Lundi, il fait beau.",
+          "audio": "p1-f1"
+        },
+        {
+          "fr": "Je marche dans la forêt.",
+          "audio": "p1-f2"
+        },
+        {
+          "fr": "Il y a des arbres et des oiseaux.",
+          "audio": "p1-f3"
+        },
+        {
+          "fr": "Les oiseaux chantent.",
+          "audio": "p1-f4"
+        }
+      ],
+      "termos": [
+        "je-marche",
+        "chantent"
+      ],
+      "pergunta": {
+        "fr": "Lundi, il fait quel temps ?",
+        "pt": "Como está o tempo na segunda?",
+        "opcoes": [
+          "Il fait beau.",
+          "Il pleut.",
+          "Il fait froid."
+        ],
+        "correta": 0,
+        "audio": "p1-q"
+      }
+    },
+    {
+      "titulo": "Mercredi",
+      "titulo_pt": "Quarta-feira",
+      "frases": [
+        {
+          "fr": "Mercredi, il pleut.",
+          "audio": "p2-f1"
+        },
+        {
+          "fr": "J'arrive au moulin.",
+          "audio": "p2-f2"
+        },
+        {
+          "fr": "La famille de Mathilde est gentille.",
+          "audio": "p2-f3"
+        },
+        {
+          "fr": "Le soir, je mange de la soupe.",
+          "audio": "p2-f4"
+        }
+      ],
+      "termos": [
+        "mercredi",
+        "j-arrive",
+        "gentille",
+        "la-soupe"
+      ],
+      "pergunta": {
+        "fr": "Mercredi, il arrive où ?",
+        "pt": "Na quarta, aonde ele chega?",
+        "opcoes": [
+          "au moulin",
+          "au château",
+          "à la taverne"
+        ],
+        "correta": 0,
+        "audio": "p2-q"
+      }
+    },
+    {
+      "titulo": "Dimanche",
+      "titulo_pt": "Domingo",
+      "frases": [
+        {
+          "fr": "Dimanche, je suis fatigué.",
+          "audio": "p3-f1"
+        },
+        {
+          "fr": "Je dors sous un arbre.",
+          "audio": "p3-f2"
+        },
+        {
+          "fr": "Demain, je vais au château !",
+          "audio": "p3-f3"
+        }
+      ],
+      "termos": [
+        "fatigue",
+        "sous"
+      ],
+      "pergunta": {
+        "fr": "Il dort où ?",
+        "pt": "Onde ele dorme?",
+        "opcoes": [
+          "sous un arbre",
+          "dans une chambre",
+          "au moulin"
+        ],
+        "correta": 0,
+        "audio": "p3-q"
+      }
+    }
+  ],
+  "novas": [
+    "je marche",
+    "chantent",
+    "mercredi",
+    "j'arrive",
+    "gentille",
+    "la soupe",
+    "fatigué",
+    "sous"
+  ],
+  "padroes": [
+    "Je + verbo no presente (je marche, j'arrive, je dors).",
+    "Dia + , + frase (Lundi, il fait beau.)"
+  ]
+}

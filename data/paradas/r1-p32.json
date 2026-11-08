@@ -1,0 +1,345 @@
+{
+  "id": "r1-p32",
+  "regiao": 1,
+  "parada": 32,
+  "etapa": 32,
+  "formato": "historia",
+  "titulo": "O bardo: o torneio",
+  "titulo_fr": "Le tournoi",
+  "nivel": "A1",
+  "duracao_min": 5,
+  "cenario": {
+    "fundo": "parada/r1-p06/cena-fundo.png",
+    "frente": "parada/r1-p06/cena-frente.png",
+    "npc": {
+      "nome": "Fanfan le barde",
+      "papel": "bardo",
+      "img": "parada/r1-p06/npc.png",
+      "x": 55,
+      "y": 37,
+      "w": 20.25,
+      "voz": "fanfan"
+    },
+    "brilhos": [
+      {
+        "tipo": "fogo",
+        "x": 35,
+        "y": 61
+      },
+      {
+        "tipo": "lanterna",
+        "x": 13,
+        "y": 32
+      },
+      {
+        "tipo": "lanterna",
+        "x": 26,
+        "y": 31
+      }
+    ]
+  },
+  "vozes": {
+    "fanfan": {
+      "voz": "fr-CA-AntoineNeural",
+      "pitch": "+4Hz"
+    },
+    "leo": "fr-CA-AntoineNeural"
+  },
+  "audios": {
+    "abertura": {
+      "voz": "fanfan",
+      "texto": "Approchez, approchez ! Voici l'histoire du tournoi."
+    },
+    "fecho": {
+      "voz": "fanfan",
+      "texto": "Bravo ! Merci, mes amis !"
+    },
+    "s1": {
+      "voz": "fanfan",
+      "texto": "Aujourd'hui, il y a un tournoi au château. Il fait beau."
+    },
+    "s2": {
+      "voz": "fanfan",
+      "texto": "Il y a deux chevaliers. Le chevalier Rouge a un chapeau rouge. Le chevalier Bleu a un chapeau bleu."
+    },
+    "s3": {
+      "voz": "fanfan",
+      "texto": "Le public aime la musique. Les gens chantent et dansent."
+    },
+    "s4": {
+      "voz": "fanfan",
+      "texto": "Oh non ! Le chevalier Bleu tombe. Le chevalier Rouge dit : « Ça va, mon ami ? »"
+    },
+    "s5": {
+      "voz": "fanfan",
+      "texto": "Le roi est content. Il dit : « Bravo ! Vous êtes deux amis ! »"
+    },
+    "q1": {
+      "voz": "fanfan",
+      "texto": "Il pleut ?"
+    },
+    "q2": {
+      "voz": "fanfan",
+      "texto": "Le chevalier Bleu a un chapeau de quelle couleur ?"
+    },
+    "q3": {
+      "voz": "fanfan",
+      "texto": "Le public aime la musique ?"
+    },
+    "q4": {
+      "voz": "fanfan",
+      "texto": "Qui tombe ?"
+    },
+    "q5": {
+      "voz": "fanfan",
+      "texto": "Le roi est comment ?"
+    },
+    "q6": {
+      "voz": "fanfan",
+      "texto": "Quel est le meilleur résumé ?"
+    },
+    "ordenar": {
+      "voz": "fanfan",
+      "texto": "Remettez l'histoire dans l'ordre."
+    },
+    "w-un-tournoi": {
+      "voz": "fanfan",
+      "texto": "Un tournoi."
+    },
+    "w-un-chevalier": {
+      "voz": "fanfan",
+      "texto": "Un chevalier."
+    },
+    "w-le-public": {
+      "voz": "fanfan",
+      "texto": "Le public."
+    },
+    "w-les-gens": {
+      "voz": "fanfan",
+      "texto": "Les gens."
+    },
+    "w-tombe": {
+      "voz": "fanfan",
+      "texto": "Tombe."
+    },
+    "w-ca-va": {
+      "voz": "fanfan",
+      "texto": "Ça va ?"
+    },
+    "w-le-roi": {
+      "voz": "fanfan",
+      "texto": "Le roi."
+    }
+  },
+  "imagens": {},
+  "vocabulario": [
+    {
+      "fr": "un tournoi",
+      "pt": "um torneio",
+      "audio": "w-un-tournoi"
+    },
+    {
+      "fr": "un chevalier",
+      "pt": "um cavaleiro",
+      "audio": "w-un-chevalier"
+    },
+    {
+      "fr": "le public",
+      "pt": "o público",
+      "audio": "w-le-public"
+    },
+    {
+      "fr": "les gens",
+      "pt": "as pessoas",
+      "audio": "w-les-gens"
+    },
+    {
+      "fr": "tombe",
+      "pt": "cai",
+      "audio": "w-tombe"
+    },
+    {
+      "fr": "ça va ?",
+      "pt": "tudo bem?",
+      "audio": "w-ca-va"
+    },
+    {
+      "fr": "le roi",
+      "pt": "o rei",
+      "audio": "w-le-roi"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 20,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "instrucao": "Ouça o bardo. Ele faz pausas e pergunta o que aconteceu.",
+  "abertura": "abertura",
+  "fecho": "fecho",
+  "segmentos": [
+    {
+      "audio": "s1",
+      "fr": "Aujourd'hui, il y a un tournoi au château. Il fait beau.",
+      "pt": "Hoje há um torneio no castelo. Faz tempo bom."
+    },
+    {
+      "audio": "s2",
+      "fr": "Il y a deux chevaliers. Le chevalier Rouge a un chapeau rouge. Le chevalier Bleu a un chapeau bleu.",
+      "pt": "Há dois cavaleiros. O cavaleiro Vermelho tem um chapéu vermelho. O cavaleiro Azul tem um chapéu azul."
+    },
+    {
+      "audio": "s3",
+      "fr": "Le public aime la musique. Les gens chantent et dansent.",
+      "pt": "O público gosta da música. As pessoas cantam e dançam."
+    },
+    {
+      "audio": "s4",
+      "fr": "Oh non ! Le chevalier Bleu tombe. Le chevalier Rouge dit : « Ça va, mon ami ? »",
+      "pt": "Ah, não! O cavaleiro Azul cai. O cavaleiro Vermelho diz: “Tudo bem, meu amigo?”"
+    },
+    {
+      "audio": "s5",
+      "fr": "Le roi est content. Il dit : « Bravo ! Vous êtes deux amis ! »",
+      "pt": "O rei fica contente. Ele diz: “Bravo! Vocês são dois amigos!”"
+    }
+  ],
+  "perguntas": [
+    {
+      "apos": 1,
+      "tipo": "simnao",
+      "fr": "Il pleut ?",
+      "pt": "Está chovendo?",
+      "audio": "q1",
+      "opcoes": [
+        "Oui",
+        "Non"
+      ],
+      "correta": 1,
+      "explicacao": "Não: il fait beau."
+    },
+    {
+      "apos": 2,
+      "tipo": "escolha",
+      "fr": "Le chevalier Bleu a un chapeau de quelle couleur ?",
+      "pt": "De que cor é o chapéu do cavaleiro Azul?",
+      "audio": "q2",
+      "opcoes": [
+        "bleu",
+        "rouge",
+        "noir"
+      ],
+      "correta": 0,
+      "explicacao": "Un chapeau bleu = um chapéu azul."
+    },
+    {
+      "apos": 3,
+      "tipo": "simnao",
+      "fr": "Le public aime la musique ?",
+      "pt": "O público gosta da música?",
+      "audio": "q3",
+      "opcoes": [
+        "Oui",
+        "Non"
+      ],
+      "correta": 0,
+      "explicacao": "Oui : « le public aime la musique »."
+    },
+    {
+      "apos": 4,
+      "tipo": "escolha",
+      "fr": "Qui tombe ?",
+      "pt": "Quem cai?",
+      "audio": "q4",
+      "opcoes": [
+        "le chevalier Bleu",
+        "le chevalier Rouge",
+        "le roi"
+      ],
+      "correta": 0,
+      "explicacao": "Le chevalier Bleu tombe."
+    },
+    {
+      "apos": 5,
+      "tipo": "escolha",
+      "fr": "Le roi est comment ?",
+      "pt": "Como o rei fica?",
+      "audio": "q5",
+      "opcoes": [
+        "content",
+        "fatigué",
+        "en colère"
+      ],
+      "correta": 0,
+      "explicacao": "Le roi est content."
+    },
+    {
+      "apos": 5,
+      "tipo": "resumo",
+      "fr": "Quel est le meilleur résumé ?",
+      "pt": "Qual é o melhor resumo?",
+      "audio": "q6",
+      "opcoes": [
+        "Un chevalier tombe. L'autre aide son ami.",
+        "Il pleut. Le tournoi est fini.",
+        "Le roi danse avec le chevalier Rouge."
+      ],
+      "correta": 0,
+      "explicacao": "Um cavaleiro cai e o outro ajuda: viram amigos."
+    }
+  ],
+  "ordenar": {
+    "fr": "Remettez l'histoire dans l'ordre.",
+    "pt": "Coloque a história na ordem.",
+    "eventos": [
+      {
+        "fr": "Il y a un tournoi au château.",
+        "pt": "Há um torneio no castelo."
+      },
+      {
+        "fr": "Les gens chantent et dansent.",
+        "pt": "As pessoas cantam e dançam."
+      },
+      {
+        "fr": "Le chevalier Bleu tombe.",
+        "pt": "O cavaleiro Azul cai."
+      },
+      {
+        "fr": "Le roi dit : « Bravo ! »",
+        "pt": "O rei diz: “Bravo!”"
+      }
+    ],
+    "audio": "ordenar"
+  },
+  "novas": [
+    "un tournoi",
+    "un chevalier",
+    "le public",
+    "les gens",
+    "tombe",
+    "ça va ?",
+    "le roi"
+  ],
+  "padroes": [
+    "Il/Elle a + roupa + cor.",
+    "Qui… ? (quem)"
+  ]
+}

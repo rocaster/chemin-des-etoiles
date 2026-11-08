@@ -1,0 +1,200 @@
+{
+  "id": "r1-p05",
+  "regiao": 1,
+  "parada": 5,
+  "formato": "conversa",
+  "titulo": "Conversa no traversier",
+  "titulo_fr": "Sur le traversier",
+  "nivel": "A1",
+  "duracao_min": 3,
+  "cenario": {
+    "fundo": "parada/r1-p05/cena-fundo.png",
+    "frente": "parada/r1-p05/cena-frente.png",
+    "npc": {
+      "nome": "Capitaine Arsène",
+      "papel": "barqueiro do traversier",
+      "img": "parada/r1-p05/npc.png",
+      "x": 50,
+      "y": 39.5,
+      "w": 20,
+      "voz": "arsene"
+    },
+    "veiculo": {
+      "fr": "le traversier",
+      "pt": "a balsa (no Québec se diz traversier; na França, le ferry/le bac)"
+    },
+    "brilhos": []
+  },
+  "vozes": {
+    "arsene": {
+      "voz": "fr-CA-ThierryNeural",
+      "pitch": "-6Hz"
+    }
+  },
+  "audios": {
+    "correcao": {
+      "voz": "arsene",
+      "texto": "Écoutez. On dit :"
+    },
+    "abertura": {
+      "voz": "arsene",
+      "texto": "Montez, montez ! Le traversier part pour Québec."
+    },
+    "fecho": {
+      "voz": "arsene",
+      "texto": "Bonne journée à Québec ! Au revoir !"
+    },
+    "t1-npc": {
+      "voz": "arsene",
+      "texto": "Bonjour ! Bienvenue sur le traversier."
+    },
+    "t1-modelo": {
+      "voz": "arsene",
+      "texto": "Bonjour, monsieur !"
+    },
+    "t3-npc": {
+      "voz": "arsene",
+      "texto": "Où allez-vous ?"
+    },
+    "t3-modelo": {
+      "voz": "arsene",
+      "texto": "Je vais à Québec."
+    },
+    "t4-npc": {
+      "voz": "arsene",
+      "texto": "Un billet pour Québec ? C'est cinq dollars."
+    },
+    "t4-modelo": {
+      "voz": "arsene",
+      "texto": "Voilà, cinq dollars."
+    },
+    "t6-npc": {
+      "voz": "arsene",
+      "texto": "Vous voulez un café ?"
+    },
+    "t6-modelo": {
+      "voz": "arsene",
+      "texto": "Oui, s'il vous plaît."
+    },
+    "t7-npc": {
+      "voz": "arsene",
+      "texto": "Voilà votre café. Nous arrivons à Québec !"
+    },
+    "t7-modelo": {
+      "voz": "arsene",
+      "texto": "Merci beaucoup. Au revoir !"
+    }
+  },
+  "imagens": {},
+  "vocabulario": [
+    {
+      "fr": "le traversier",
+      "pt": "a balsa",
+      "audio": null
+    },
+    {
+      "fr": "un billet",
+      "pt": "um bilhete / passagem",
+      "audio": null
+    },
+    {
+      "fr": "Où allez-vous ?",
+      "pt": "Aonde o senhor vai?",
+      "audio": null
+    },
+    {
+      "fr": "je vais à…",
+      "pt": "eu vou a/para…",
+      "audio": null
+    },
+    {
+      "fr": "oui / non",
+      "pt": "sim / não",
+      "audio": null
+    },
+    {
+      "fr": "cinq dollars",
+      "pt": "cinco dólares",
+      "audio": null
+    },
+    {
+      "fr": "merci beaucoup",
+      "pt": "muito obrigado(a)",
+      "audio": null
+    }
+  ],
+  "recompensa": {
+    "xp_base": 20,
+    "xp_por_estrela": 0,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 1000,
+        "estrelas": 1
+      }
+    ],
+    "xp_pausado": false,
+    "xp_versao": 6
+  },
+  "instrucao": "O capitão fala primeiro. Responda em voz alta com a frase que aparece no pergaminho.",
+  "correcao": "correcao",
+  "abertura": "abertura",
+  "fecho": "fecho",
+  "turnos": [
+    {
+      "npc": "t1-npc",
+      "npc_texto": "Bonjour ! Bienvenue sur le traversier.",
+      "contexto_pt": "O capitão dá as boas-vindas.",
+      "modelo": "Bonjour, monsieur !",
+      "modelo_pt": "Bom dia, senhor!",
+      "modelo_audio": "t1-modelo",
+      "chaves": []
+    },
+    {
+      "npc": "t3-npc",
+      "npc_texto": "Où allez-vous ?",
+      "contexto_pt": "Ele pergunta aonde você vai.",
+      "modelo": "Je vais à Québec.",
+      "modelo_pt": "Eu vou para Quebec.",
+      "modelo_audio": "t3-modelo",
+      "chaves": []
+    },
+    {
+      "npc": "t4-npc",
+      "npc_texto": "Un billet pour Québec ? C'est cinq dollars.",
+      "contexto_pt": "A passagem custa cinco dólares.",
+      "modelo": "Voilà, cinq dollars.",
+      "modelo_pt": "Aqui está, cinco dólares.",
+      "modelo_audio": "t4-modelo",
+      "chaves": []
+    },
+    {
+      "npc": "t6-npc",
+      "npc_texto": "Vous voulez un café ?",
+      "contexto_pt": "Ele oferece um café.",
+      "modelo": "Oui, s'il vous plaît.",
+      "modelo_pt": "Sim, por favor.",
+      "modelo_audio": "t6-modelo",
+      "chaves": []
+    },
+    {
+      "npc": "t7-npc",
+      "npc_texto": "Voilà votre café. Nous arrivons à Québec !",
+      "contexto_pt": "Chegando a Quebec.",
+      "modelo": "Merci beaucoup. Au revoir !",
+      "modelo_pt": "Muito obrigado. Tchau!",
+      "modelo_audio": "t7-modelo",
+      "chaves": []
+    }
+  ]
+}

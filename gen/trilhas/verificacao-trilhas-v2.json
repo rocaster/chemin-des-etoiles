@@ -1,0 +1,88 @@
+{
+  "protected_sha256": {
+    "trilha-batalha.wav": "60a1b4ca062cb99d609c7eceb1002ad8f2e53f74e3bafdd3006f955b71956606",
+    "trilha-batalha.ogg": "f384ffb1a0aba2e3799164b8cb8c5246efeb620806cad4bd7ecf7798ca2b25e2",
+    "trilha-chefe.wav": "1c1f816c687c8d76fd59c86b6d98fa5de63ebc64c276b096fae507ae01db7647",
+    "trilha-chefe.ogg": "1e9980e201ab3a19727cd649c0afcaf44d49d2c89f22e4b52772a003443444a4"
+  },
+  "protected_unchanged": true,
+  "sample_bytes": 2479586,
+  "patch_bytes": 6293067,
+  "sample_order": [
+    "mapa",
+    "missao",
+    "conversa",
+    "historia",
+    "biblioteca",
+    "cartas"
+  ],
+  "sample_note": "Somente na amostra: trechos de 20 s normalizados a -21 dBFS; lacunas de 0,65 s. Arquivos do jogo mantêm RMS solicitado.",
+  "personagem": {
+    "protected_other_tracks_sha256": {
+      "trilha-historia.ogg": "c105ccb2b1631bdceac7424406218d244369b347cd27cbbdc2ef548e4865a14d",
+      "trilha-praca.ogg": "60ab54a2c7af93f08b183ffca3bf086cc35da175eb80f8a960629eb37d0e1d03",
+      "trilha-mapa.wav": "e6976c849d4fb56d0ac575967de7e4fa8b0ef27a736e518e10238b5e5dd01cde",
+      "trilha-mapa.ogg": "ca5d5e6523ee304d930277237783973c06fc15e28deb54110ac6d7b497741ae5",
+      "trilha-conversa.ogg": "07e213d81adedcba9c3434ed613bfe9e59eeef556313e68502bdcd24ce08eb89",
+      "trilha-chefe.ogg": "1e9980e201ab3a19727cd649c0afcaf44d49d2c89f22e4b52772a003443444a4",
+      "trilha-praca.wav": "6a7953c0bc49502ace229e92d7765f9d40555d13612d52a9780feb115e1590e5",
+      "trilha-biblioteca.ogg": "78795411f479df915533e460996a2dc9ab1600c1b333f6f0d445a24225f38f9b",
+      "trilha-biblioteca.wav": "03929eef2e76962643b7a36a7d8766a01a21b13b95a9db7d16ebd56b316c553b",
+      "trilha-cartas.ogg": "8ca8712e8762b2d6f09333dbcb6c2b7607bbd0662bccca989be802fa838119cf",
+      "trilha-batalha.wav": "60a1b4ca062cb99d609c7eceb1002ad8f2e53f74e3bafdd3006f955b71956606",
+      "trilha-batalha.ogg": "f384ffb1a0aba2e3799164b8cb8c5246efeb620806cad4bd7ecf7798ca2b25e2",
+      "trilha-missao.ogg": "440a35463b1ac174cbb57b11640aa146b5e9a901421f097b3cf213bda2969e37",
+      "trilha-conversa.wav": "09cbee14e1cf0a828bd6918416aff63586ca796a01a78de538cda45c550d196b",
+      "trilha-cartas.wav": "a31a69e2e4fad30634c3983cb2bd1b98c6df298cd49c2f7120bfa3836e9cab40",
+      "trilha-chefe.wav": "1c1f816c687c8d76fd59c86b6d98fa5de63ebc64c276b096fae507ae01db7647",
+      "trilha-historia.wav": "5a8f6f0248ee4ce8db0dcc8dd3548370ad1c8b9deb94b8cf873c665d7c377979",
+      "trilha-missao.wav": "0ece99e58da9c046cc936067689e2f94efdd862889d42a9be7849d44d78e974b"
+    },
+    "protected_unchanged": true,
+    "ogg_matches_master_frames": true,
+    "duration_in_requested_range": true,
+    "level_matches_praca_db": -0.003,
+    "sample": "/workspace/ncl/trilha-personagem-amostra.mp3",
+    "sample_bytes": 601382,
+    "sample_seconds": 30,
+    "sample_note": "Trecho 9–39 s no nivel real de producao, sem normalizacao extra; fade curto apenas no MP3 de demonstracao.",
+    "ogg_seam_delta": 0.0007329551735892892,
+    "ogg_seam_below_minus60_dbfs": true,
+    "master_excluded_from_deploy": true,
+    "reference_sampled": false,
+    "subjective_listening_done": false,
+    "quality_checks": {
+      "previous_praca_pcm_bit_identical": true,
+      "channels": 2,
+      "sample_rate": 44100,
+      "frames_wav": 2910600,
+      "frames_ogg": 2910600,
+      "no_clipping": true,
+      "neighbor_delta_p99": 0.011558033525943756,
+      "boundary_delta": 0.0007329551735892892,
+      "mp3_duration_s": 30.040816,
+      "mp3_bytes": 601382,
+      "mp3_rms_dbfs": -27.24
+    },
+    "template_only_single_music_tag_added": true,
+    "shared_player_unchanged": true,
+    "button_position": "Controle padrao: fixed right 14px bottom 14px, 42x42; fora do formulario. CSS/layout da tela inalterados.",
+    "visual_overlap_check_done": false,
+    "tests": {
+      "simulados": "91 OK, 0 falhas",
+      "onboarding": "124 OK, 0 falhas — Cosmos fake; nenhum e-mail real ou acesso a .env",
+      "rotas": "57 OK, 0 falhas"
+    },
+    "mapa": {
+      "paradas": 40,
+      "ponto": true,
+      "ponto_href": "/praca/1",
+      "ponto_sem_numero": true,
+      "ponto_nao_desabilitado": true,
+      "clique_parada5_navega": true,
+      "clique_praca_navega": true,
+      "arrasto_nao_navega": true
+    },
+    "protected_game_files_unchanged": true
+  }
+}

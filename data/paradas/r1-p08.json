@@ -1,0 +1,335 @@
+{
+  "id": "r1-p08",
+  "regiao": 1,
+  "parada": 8,
+  "formato": "cartas",
+  "titulo": "As cartas de Madame Zélie",
+  "titulo_fr": "Les cartes de Madame Zélie",
+  "nivel": "A1",
+  "duracao_min": 4,
+  "cenario": {
+    "fundo": "parada/r1-p08/cena-fundo.png",
+    "frente": "parada/r1-p08/cena-frente.png",
+    "npc": {
+      "nome": "Madame Zélie",
+      "papel": "cartomante",
+      "img": "parada/r1-p08/npc.png",
+      "x": 60,
+      "y": 35,
+      "w": 18.5,
+      "voz": "zelie"
+    },
+    "brilhos": [
+      {
+        "tipo": "lanterna",
+        "x": 41,
+        "y": 67
+      },
+      {
+        "tipo": "lanterna",
+        "x": 30,
+        "y": 62
+      }
+    ]
+  },
+  "vozes": {
+    "zelie": {
+      "voz": "fr-CA-SylvieNeural",
+      "pitch": "-4Hz"
+    }
+  },
+  "audios": {
+    "c-pomme": {
+      "voz": "zelie",
+      "texto": "Une pomme."
+    },
+    "c-poire": {
+      "voz": "zelie",
+      "texto": "Une poire."
+    },
+    "c-fromage": {
+      "voz": "zelie",
+      "texto": "Du fromage."
+    },
+    "c-cafe": {
+      "voz": "zelie",
+      "texto": "Un café."
+    },
+    "c-lanterne": {
+      "voz": "zelie",
+      "texto": "Une lanterne."
+    },
+    "c-cle": {
+      "voz": "zelie",
+      "texto": "Une clé."
+    },
+    "c-panier": {
+      "voz": "zelie",
+      "texto": "Un panier."
+    },
+    "abertura": {
+      "voz": "zelie",
+      "texto": "Bonsoir ! Touchez une carte et dites son nom."
+    },
+    "boa1": {
+      "voz": "zelie",
+      "texto": "Très bien ! Les étoiles sont contentes."
+    },
+    "boa2": {
+      "voz": "zelie",
+      "texto": "Magnifique ! Bravo !"
+    },
+    "boa3": {
+      "voz": "zelie",
+      "texto": "Oui, oui ! Les cartes vous aiment."
+    },
+    "mista1": {
+      "voz": "zelie",
+      "texto": "Hmm… Encore une fois !"
+    },
+    "mista2": {
+      "voz": "zelie",
+      "texto": "Pas mal ! Écoutez bien et répétez."
+    },
+    "ultima": {
+      "voz": "zelie",
+      "texto": "Encore une carte !"
+    },
+    "erro": {
+      "voz": "zelie",
+      "texto": "Non. Écoutez :"
+    },
+    "fecho": {
+      "voz": "zelie",
+      "texto": "C'est fini ! Bravo ! Au revoir !"
+    },
+    "c-the": {
+      "voz": "zelie",
+      "texto": "Un thé."
+    },
+    "c-eau": {
+      "voz": "zelie",
+      "texto": "De l'eau."
+    }
+  },
+  "imagens": {
+    "pomme": {
+      "src": "parada/r1-p03/pomme.png",
+      "alt": "uma maçã"
+    },
+    "poire": {
+      "src": "parada/r1-p03/poire.png",
+      "alt": "uma pera"
+    },
+    "fromage": {
+      "src": "parada/r1-p03/fromage.png",
+      "alt": "queijo"
+    },
+    "cafe": {
+      "src": "parada/bebida-cafe.png",
+      "alt": "um café"
+    },
+    "lanterne": {
+      "src": "parada/r1-p08/lanterne.png",
+      "alt": "uma lanterna"
+    },
+    "cle": {
+      "src": "parada/r1-p08/cle.png",
+      "alt": "uma chave"
+    },
+    "panier": {
+      "src": "parada/r1-p08/panier.png",
+      "alt": "um cesto"
+    },
+    "the": {
+      "src": "parada/bebida-the.png",
+      "alt": "um chá"
+    },
+    "eau": {
+      "src": "parada/bebida-eau.png",
+      "alt": "água"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "une lanterne",
+      "pt": "uma lanterna",
+      "img": "lanterne",
+      "audio": "c-lanterne"
+    },
+    {
+      "fr": "une clé",
+      "pt": "uma chave",
+      "img": "cle",
+      "audio": "c-cle"
+    },
+    {
+      "fr": "un panier",
+      "pt": "um cesto",
+      "img": "panier",
+      "audio": "c-panier"
+    },
+    {
+      "fr": "une pomme",
+      "pt": "uma maçã",
+      "img": "pomme",
+      "audio": "c-pomme"
+    },
+    {
+      "fr": "une poire",
+      "pt": "uma pera",
+      "img": "poire",
+      "audio": "c-poire"
+    },
+    {
+      "fr": "du fromage",
+      "pt": "queijo",
+      "img": "fromage",
+      "audio": "c-fromage"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 20,
+    "xp_por_estrela": 0,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 1000,
+        "estrelas": 1
+      }
+    ],
+    "xp_pausado": false,
+    "xp_versao": 6
+  },
+  "instrucao": "Toque numa carta e diga em voz alta o nome do objeto, em francês.",
+  "verso": "parada/r1-p08/verso.png",
+  "cartas": [
+    {
+      "id": "pomme",
+      "fr": "une pomme",
+      "pt": "uma maçã",
+      "img": "pomme",
+      "audio": "c-pomme",
+      "aceita": [
+        "une pomme",
+        "pomme"
+      ]
+    },
+    {
+      "id": "poire",
+      "fr": "une poire",
+      "pt": "uma pera",
+      "img": "poire",
+      "audio": "c-poire",
+      "aceita": [
+        "une poire",
+        "poire"
+      ]
+    },
+    {
+      "id": "fromage",
+      "fr": "du fromage",
+      "pt": "queijo",
+      "img": "fromage",
+      "audio": "c-fromage",
+      "aceita": [
+        "du fromage",
+        "fromage"
+      ]
+    },
+    {
+      "id": "the",
+      "fr": "un thé",
+      "pt": "um chá",
+      "img": "the",
+      "audio": "c-the",
+      "aceita": [
+        "un thé",
+        "thé",
+        "the"
+      ]
+    },
+    {
+      "id": "eau",
+      "fr": "de l'eau",
+      "pt": "água",
+      "img": "eau",
+      "audio": "c-eau",
+      "aceita": [
+        "de l'eau",
+        "l'eau",
+        "eau"
+      ]
+    },
+    {
+      "id": "cafe",
+      "fr": "un café",
+      "pt": "um café",
+      "img": "cafe",
+      "audio": "c-cafe",
+      "aceita": [
+        "un café",
+        "café"
+      ]
+    },
+    {
+      "id": "lanterne",
+      "fr": "une lanterne",
+      "pt": "uma lanterna",
+      "img": "lanterne",
+      "audio": "c-lanterne",
+      "aceita": [
+        "une lanterne",
+        "lanterne"
+      ]
+    },
+    {
+      "id": "cle",
+      "fr": "une clé",
+      "pt": "uma chave",
+      "img": "cle",
+      "audio": "c-cle",
+      "aceita": [
+        "une clé",
+        "clé"
+      ]
+    },
+    {
+      "id": "panier",
+      "fr": "un panier",
+      "pt": "um cesto",
+      "img": "panier",
+      "audio": "c-panier",
+      "aceita": [
+        "un panier",
+        "panier"
+      ]
+    }
+  ],
+  "falas": {
+    "abertura": "abertura",
+    "boa": [
+      "boa1",
+      "boa2",
+      "boa3"
+    ],
+    "mista": [
+      "mista1",
+      "mista2"
+    ],
+    "ultima": "ultima",
+    "erro": "erro",
+    "fecho": "fecho"
+  },
+  "comentar_a_cada": 3
+}

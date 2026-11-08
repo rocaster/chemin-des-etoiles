@@ -1,0 +1,3 @@
+<div class="fx fx-{{ efeito }}" aria-hidden="true">
+{% for i in range(14) %}<i style="--i:{{ i }};left:{{ (i*37+7)%100 }}%;--atraso:-{{ i*0.7 }}s"></i>{% endfor %}
+</div>

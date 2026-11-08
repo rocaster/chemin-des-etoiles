@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block titulo %}Refúgio do herói{% endblock %} · Chemin des Étoiles</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='loja/loja.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='loja/animacoes-v5.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='loja/efeitos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='loja/perfil-v6.css') }}">
+{% block estilos_extras %}{% endblock %}
+</head>
+<body class="cosmeticos">
+<a class="pular" href="#principal">Pular para o conteúdo</a>
+<header class="cabecalho">
+<a class="placa voltar" href="{{ url_for('mapa') }}">‹ Voltar ao mapa</a>
+<a class="marca" href="{{ url_for('loja.heroi') }}">Chemin des Étoiles<small>Seu refúgio entre as aventuras</small></a>
+<div class="saldo" aria-label="Saldo de cristais"><span class="cristal" aria-hidden="true">◆</span> <strong>{{ estado.cristais }}</strong> cristais</div>
+</header>
+<nav class="atalhos" aria-label="Áreas do refúgio">
+<a href="{{ url_for('loja.heroi') }}" {% if request.endpoint == 'loja.heroi' %}aria-current="page"{% endif %}>Personagem</a>
+<a href="{{ url_for('loja.inicio') }}" {% if request.endpoint == 'loja.inicio' %}aria-current="page"{% endif %}>Loja de cosméticos</a>
+<a href="{{ url_for('loja.conquistas') }}">Baú de conquistas</a>
+</nav>
+<main id="principal" tabindex="-1">
+{% for mensagem in get_flashed_messages() %}<p class="aviso sucesso" role="status">{{ mensagem }}</p>{% endfor %}
+{% block conteudo %}{% endblock %}
+</main>
+<footer>Cosméticos não dão vantagens nas lições. Seu XP nunca é gasto.<br>{{ catalogo.aviso }}</footer>
+</body></html>

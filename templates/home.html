@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block titulo %}{{ perfil.nome }} · NCL Simulado{% endblock %}
+
+{% block estilo %}
+<style>
+  .heroi { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .retrato { position: relative; width: 180px; height: 180px; flex: none; }
+  .retrato img { position: absolute; display: block; }
+  .retrato .moldura { inset: 0; width: 100%; height: 100%; z-index: 2; }
+  .retrato .av { left: 10%; top: 12%; width: 80%; height: auto; z-index: 1; }
+  .retrato .fechado { opacity: 0; animation: piscar 5s infinite; }
+  @keyframes piscar { 0%, 92%, 100% { opacity: 0; } 94%, 97% { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .retrato .fechado { animation: none; } }
+  dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; }
+  dt { color: var(--texto-suave); }
+  dd { margin: 0; font-weight: bold; }
+  .aviso { margin-top: 32px; color: var(--texto-suave); }
+</style>
+{% endblock %}
+
+{% block conteudo %}
+<h1>Bem-vindo, {{ perfil.nome }}!</h1>
+<p class="sub">Sua aventura está começando.</p>
+
+<div class="heroi">
+  <div class="retrato">
+    <img class="av pixel" src="{{ url_for('static', filename='avatars/' ~ perfil.avatar ~ '-aberto.png') }}" alt="Seu avatar">
+    <img class="av fechado pixel" src="{{ url_for('static', filename='avatars/' ~ perfil.avatar ~ '-fechado.png') }}" alt="">
+    <img class="moldura pixel" src="{{ url_for('static', filename='frames/' ~ moldura) }}" alt="">
+  </div>
+  <dl>
+    <dt>Classe</dt><dd>{{ perfil.classe | capitalize }}</dd>
+    <dt>Região</dt><dd>{{ perfil.regiao | capitalize }}</dd>
+    <dt>XP</dt><dd>{{ perfil.xp }}</dd>
+    <dt>Dias seguidos</dt><dd>{{ perfil.sequencia_dias }}</dd>
+  </dl>
+</div>
+
+<p class="aviso">O mapa da jornada e as lições vêm nos próximos passos.</p>
+<p><a href="{{ url_for('avatar') }}">Trocar de avatar</a></p>
+{% endblock %}

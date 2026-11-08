@@ -1,0 +1,704 @@
+{
+  "id": "r1-p04",
+  "regiao": 1,
+  "parada": 4,
+  "titulo": "Na padaria",
+  "titulo_fr": "À la boulangerie",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "parada/r1-p04/cena-fundo.png",
+    "frente": "parada/r1-p04/cena-frente.png",
+    "npc": {
+      "nome": "Monsieur Paul",
+      "papel": "padeiro",
+      "img": "parada/r1-p04/npc.png",
+      "x": 45,
+      "y": 28,
+      "w": 16,
+      "voz": "paul"
+    },
+    "brilhos": [
+      {
+        "tipo": "fogo",
+        "x": 88,
+        "y": 55
+      },
+      {
+        "tipo": "lanterna",
+        "x": 27,
+        "y": 22
+      },
+      {
+        "tipo": "lanterna",
+        "x": 74,
+        "y": 22
+      }
+    ]
+  },
+  "vozes": {
+    "paul": "fr-CA-ThierryNeural",
+    "leo": "fr-CA-AntoineNeural",
+    "margot": "fr-CA-SylvieNeural"
+  },
+  "audios": {
+    "croissant": {
+      "voz": "paul",
+      "texto": "Un croissant."
+    },
+    "baguette": {
+      "voz": "paul",
+      "texto": "Une baguette."
+    },
+    "pain-choc": {
+      "voz": "paul",
+      "texto": "Un pain au chocolat."
+    },
+    "cest-tout": {
+      "voz": "leo",
+      "texto": "C'est tout."
+    },
+    "voila": {
+      "voz": "paul",
+      "texto": "Voilà !"
+    },
+    "ca-fait": {
+      "voz": "paul",
+      "texto": "Ça fait deux dollars."
+    },
+    "paul-oferta": {
+      "voz": "paul",
+      "texto": "Bonjour ! Un croissant ? Une baguette ?"
+    },
+    "leo-pain": {
+      "voz": "leo",
+      "texto": "Je voudrais un pain au chocolat, s'il vous plaît. C'est tout."
+    },
+    "paul-total": {
+      "voz": "paul",
+      "texto": "Voilà ! Ça fait deux dollars."
+    },
+    "frase-croissant": {
+      "voz": "leo",
+      "texto": "Je voudrais un croissant, s'il vous plaît. C'est tout."
+    },
+    "frase-cafait": {
+      "voz": "paul",
+      "texto": "Ça fait deux dollars."
+    },
+    "frase-tout": {
+      "voz": "leo",
+      "texto": "C'est tout, merci."
+    },
+    "modelo": {
+      "voz": "leo",
+      "texto": "Bonjour ! Je voudrais un croissant, s'il vous plaît. C'est tout."
+    },
+    "recap": {
+      "voz": "leo",
+      "texto": "Une baguette, s'il vous plaît. C'est tout, merci."
+    },
+    "une-pomme": {
+      "voz": "margot",
+      "texto": "Une pomme."
+    },
+    "rev-poire": {
+      "voz": "margot",
+      "texto": "Une poire : un dollar."
+    },
+    "d-n1": {
+      "voz": "paul",
+      "texto": "Bonjour ! Un croissant ? Une baguette ?"
+    },
+    "d-n2b": {
+      "voz": "paul",
+      "texto": "Une baguette. C'est tout ?"
+    },
+    "d-n2p": {
+      "voz": "paul",
+      "texto": "Un pain au chocolat. C'est tout ?"
+    },
+    "d-n2bc": {
+      "voz": "paul",
+      "texto": "Une baguette et un croissant. C'est tout ?"
+    },
+    "d-n3": {
+      "voz": "paul",
+      "texto": "Voilà ! Ça fait deux dollars."
+    }
+  },
+  "imagens": {
+    "croissant": {
+      "src": "parada/r1-p04/croissant.png",
+      "fr": "un croissant",
+      "pt": "um croissant"
+    },
+    "baguette": {
+      "src": "parada/r1-p04/baguette.png",
+      "fr": "une baguette",
+      "pt": "uma baguete"
+    },
+    "pain-chocolat": {
+      "src": "parada/r1-p04/pain-chocolat.png",
+      "fr": "un pain au chocolat",
+      "pt": "um pão de chocolate"
+    },
+    "sac": {
+      "src": "parada/r1-p04/sac.png",
+      "fr": "c'est tout",
+      "pt": "é só isso"
+    },
+    "pomme": {
+      "src": "parada/r1-p03/pomme.png",
+      "fr": "une pomme",
+      "pt": "uma maçã"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "un croissant",
+      "pt": "um croissant",
+      "audio": "croissant",
+      "img": "croissant"
+    },
+    {
+      "fr": "une baguette",
+      "pt": "uma baguete",
+      "audio": "baguette",
+      "img": "baguette"
+    },
+    {
+      "fr": "un pain au chocolat",
+      "pt": "um pão de chocolate",
+      "audio": "pain-choc",
+      "img": "pain-chocolat"
+    },
+    {
+      "fr": "c'est tout",
+      "pt": "é só isso",
+      "audio": "cest-tout",
+      "img": "sac"
+    },
+    {
+      "fr": "voilà",
+      "pt": "aqui está / pronto",
+      "audio": "voila"
+    },
+    {
+      "fr": "ça fait…",
+      "pt": "dá… / fica… (total)",
+      "audio": "ca-fait"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_pausado": false,
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-cesttout": {
+      "id": "rv-cesttout",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Paul : Une baguette. C'est tout ?"
+      ],
+      "pergunta": "Você não quer mais nada. O que responde?",
+      "opcoes": [
+        "C'est tout, merci.",
+        "Voilà !",
+        "Ça fait deux dollars."
+      ],
+      "correta": 0,
+      "explicacao": "C'est tout = é só isso. Voilà diz quem entrega algo."
+    },
+    "rv-cafait": {
+      "id": "rv-cafait",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Paul : Voilà ! Ça fait deux dollars."
+      ],
+      "pergunta": "Quanto você vai pagar?",
+      "opcoes": [
+        "dois dólares",
+        "um dólar",
+        "nada"
+      ],
+      "correta": 0,
+      "explicacao": "Ça fait deux dollars = dá dois dólares."
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "Monsieur Paul, o padeiro, acabou de tirar os pães do forno. Ouça e escolha a imagem certa.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "croissant",
+          "texto_fr": "un croissant",
+          "opcoes": [
+            "croissant",
+            "baguette",
+            "pain-chocolat",
+            "pomme"
+          ],
+          "correta": "croissant",
+          "explicacao": "Un croissant = um croissant."
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "baguette",
+          "texto_fr": "une baguette",
+          "opcoes": [
+            "pain-chocolat",
+            "croissant",
+            "pomme",
+            "baguette"
+          ],
+          "correta": "baguette",
+          "explicacao": "Une baguette = uma baguete (pão comprido)."
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "pain-choc",
+          "texto_fr": "un pain au chocolat",
+          "opcoes": [
+            "baguette",
+            "pain-chocolat",
+            "croissant",
+            "pomme"
+          ],
+          "correta": "pain-chocolat",
+          "explicacao": "Un pain au chocolat = um pão de chocolate (massa folhada com chocolate)."
+        },
+        {
+          "id": "d4",
+          "tipo": "pares",
+          "instrucao": "Ligue cada palavra à sua imagem (tem uma da feira também!).",
+          "pares": [
+            {
+              "fr": "un croissant",
+              "img": "croissant",
+              "audio": "croissant"
+            },
+            {
+              "fr": "une baguette",
+              "img": "baguette",
+              "audio": "baguette"
+            },
+            {
+              "fr": "un pain au chocolat",
+              "img": "pain-chocolat",
+              "audio": "pain-choc"
+            },
+            {
+              "fr": "une pomme",
+              "img": "pomme",
+              "audio": "une-pomme"
+            }
+          ],
+          "explicacao": "Os pães de Paul — e a maçã da feira de Margot."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Escute os clientes na padaria. O texto só aparece depois que você responder.",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Ouça Monsieur Paul.",
+          "audio": "paul-oferta",
+          "pergunta": "O que o padeiro oferece?",
+          "opcoes": [
+            "croissant ou baguete",
+            "pão de chocolate ou baguete",
+            "croissant ou queijo"
+          ],
+          "correta": 0,
+          "explicacao": "Un croissant ? Une baguette ?"
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "Ouça o pedido de Léo.",
+          "audio": "leo-pain",
+          "pergunta": "O que Léo pede?",
+          "opcoes_img": [
+            "croissant",
+            "baguette",
+            "pain-chocolat",
+            "pomme"
+          ],
+          "correta": "pain-chocolat",
+          "explicacao": "Un pain au chocolat… C'est tout = é só isso."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Paul entrega o pão e diz o total.",
+          "audio": "paul-total",
+          "pergunta": "Quanto deu?",
+          "opcoes": [
+            "dois dólares",
+            "um dólar",
+            "três dólares"
+          ],
+          "correta": 0,
+          "explicacao": "Voilà = aqui está. Ça fait deux dollars = dá dois dólares."
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia a conversa no balcão.",
+          "texto_fr": [
+            "Paul : Bonjour !",
+            "Léo : Je voudrais une baguette et un croissant, s'il vous plaît.",
+            "Paul : C'est tout ?",
+            "Léo : C'est tout, merci.",
+            "Paul : Voilà ! Ça fait deux dollars."
+          ],
+          "pergunta": "O que Léo comprou?",
+          "opcoes": [
+            "baguete e croissant",
+            "só uma baguete",
+            "pão de chocolate"
+          ],
+          "correta": 0,
+          "explicacao": "Une baguette et un croissant (et = e)."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "Mesma conversa.",
+          "texto_fr": [
+            "Paul : Bonjour !",
+            "Léo : Je voudrais une baguette et un croissant, s'il vous plaît.",
+            "Paul : C'est tout ?",
+            "Léo : C'est tout, merci.",
+            "Paul : Voilà ! Ça fait deux dollars."
+          ],
+          "pergunta": "O que quer dizer “c'est tout”?",
+          "opcoes": [
+            "é só isso",
+            "quanto custa",
+            "aqui está"
+          ],
+          "correta": 0,
+          "explicacao": "C'est tout = é só isso. Voilà = aqui está."
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Monte o seu pedido na padaria. C'est tout = é só isso · ça fait = dá (o total).",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte: “Eu gostaria de um croissant, por favor. É só isso.”",
+          "palavras": [
+            "Je",
+            "voudrais",
+            "un",
+            "croissant,",
+            "s'il",
+            "vous",
+            "plaît.",
+            "C'est",
+            "tout."
+          ],
+          "extras": [
+            "voilà"
+          ],
+          "audio": "frase-croissant",
+          "explicacao": "Pedido + c'est tout para dizer que acabou."
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete o que o padeiro diz do total.",
+          "frase": "___ fait deux dollars.",
+          "banco": [
+            "Ça",
+            "Voilà",
+            "C'est"
+          ],
+          "respostas": [
+            "Ça"
+          ],
+          "audio": "frase-cafait",
+          "explicacao": "Ça fait… = dá… (o total)."
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Agora sem banco: escreva a palavra que falta (“É só isso, obrigado”).",
+          "frase": "C'est ___, merci.",
+          "respostas": [
+            "tout"
+          ],
+          "dica": "Começa com t…",
+          "audio": "frase-tout",
+          "explicacao": "C'est tout = é só isso (o t final não soa)."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "voila",
+          "respostas": [
+            "voilà"
+          ],
+          "explicacao": "Voilà — com acento grave no à."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez no balcão! Peça seus pães a Monsieur Paul, pague e depois grave o seu pedido.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Monsieur Paul.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Bonjour ! Un croissant ? Une baguette ?",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Bonjour ! Je voudrais une baguette, s'il vous plaît.",
+                  "feedback": "Perfeito: pedido educado.",
+                  "vai": "n2b"
+                },
+                {
+                  "fr": "Bonjour ! Je voudrais un pain au chocolat, s'il vous plaît.",
+                  "feedback": "Perfeito: pedido educado.",
+                  "vai": "n2p"
+                },
+                {
+                  "fr": "C'est tout !",
+                  "feedback": "Você ainda não pediu nada! Primeiro: Je voudrais…",
+                  "erro": true,
+                  "revisao": "rv-cesttout"
+                }
+              ]
+            },
+            "n2b": {
+              "fala": "Une baguette. C'est tout ?",
+              "audio": "d-n2b",
+              "opcoes": [
+                {
+                  "fr": "C'est tout, merci.",
+                  "feedback": "Isso: é só isso, obrigado.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Et un croissant, s'il vous plaît.",
+                  "feedback": "Boa: dá para pedir mais uma coisa.",
+                  "vai": "n2bc"
+                },
+                {
+                  "fr": "Voilà !",
+                  "feedback": "Voilà diz quem entrega algo. Ele perguntou se é só isso: c'est tout.",
+                  "erro": true,
+                  "revisao": "rv-cesttout"
+                }
+              ]
+            },
+            "n2p": {
+              "fala": "Un pain au chocolat. C'est tout ?",
+              "audio": "d-n2p",
+              "opcoes": [
+                {
+                  "fr": "C'est tout, merci.",
+                  "feedback": "Isso: é só isso, obrigado.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Voilà !",
+                  "feedback": "Voilà diz quem entrega algo. Ele perguntou se é só isso: c'est tout.",
+                  "erro": true,
+                  "revisao": "rv-cesttout"
+                }
+              ]
+            },
+            "n2bc": {
+              "fala": "Une baguette et un croissant. C'est tout ?",
+              "audio": "d-n2bc",
+              "opcoes": [
+                {
+                  "fr": "C'est tout, merci.",
+                  "feedback": "Isso: é só isso, obrigado.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Combien ?",
+                  "feedback": "Vale perguntar! Mas ele ia dizer o total logo depois do c'est tout.",
+                  "vai": "n3",
+                  "aviso": true
+                }
+              ]
+            },
+            "n3": {
+              "fala": "Voilà ! Ça fait deux dollars.",
+              "audio": "d-n3",
+              "opcoes": [
+                {
+                  "fr": "Voilà ! Merci, au revoir !",
+                  "feedback": "Isso: você entrega o dinheiro (voilà), agradece e se despede.",
+                  "vai": "fim"
+                },
+                {
+                  "fr": "Combien ?",
+                  "feedback": "Ele já disse: ça fait deux dollars = dá dois dólares.",
+                  "erro": true,
+                  "revisao": "rv-cafait"
+                },
+                {
+                  "fr": "Un dollar ?",
+                  "feedback": "Deux dollars = dois dólares.",
+                  "erro": true,
+                  "revisao": "rv-cafait"
+                }
+              ]
+            }
+          },
+          "explicacao": "Je voudrais… → c'est tout → (voilà, ça fait…) → voilà, merci, au revoir."
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave o seu pedido na padaria (1–2 frases) e diga que é só isso.",
+          "modelo": "Bonjour ! Je voudrais un croissant, s'il vous plaît. C'est tout.",
+          "audio_modelo": "modelo",
+          "checklist": [
+            "Bonjour",
+            "Je voudrais…",
+            "un croissant / une baguette / un pain au chocolat",
+            "s'il vous plaît · c'est tout"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva o seu pedido.",
+            "palavras_chave": [
+              [
+                "je voudrais"
+              ],
+              [
+                "croissant",
+                "baguette",
+                "pain au chocolat"
+              ],
+              [
+                "c'est tout",
+                "c est tout"
+              ]
+            ],
+            "explicacao": "Je voudrais + pão + s'il vous plaît. C'est tout."
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "intro": "Última rodada: os itens errados voltam, revisões da feira e da praça e a frase da missão.",
+      "itens": [
+        {
+          "id": "r2",
+          "tipo": "audio",
+          "instrucao": "Revisão da parada 3 (feira): ouça Margot.",
+          "audio": "rev-poire",
+          "pergunta": "Quanto custa a pera?",
+          "opcoes": [
+            "um dólar",
+            "dois dólares",
+            "é de graça"
+          ],
+          "correta": 0,
+          "explicacao": "Une poire : un dollar (parada 3)."
+        },
+        {
+          "id": "r3",
+          "tipo": "texto",
+          "instrucao": "Revisão da parada 2 (praça).",
+          "texto_fr": [
+            "Paul : Merci ! Au revoir !"
+          ],
+          "pergunta": "O que quer dizer “au revoir”?",
+          "opcoes": [
+            "tchau / até logo",
+            "muito prazer",
+            "eu me chamo"
+          ],
+          "correta": 0,
+          "explicacao": "Au revoir = tchau (parada 2)."
+        },
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “Uma baguete, por favor. É só isso, obrigado.”",
+          "palavras": [
+            "Une",
+            "baguette,",
+            "s'il",
+            "vous",
+            "plaît.",
+            "C'est",
+            "tout,",
+            "merci."
+          ],
+          "extras": [
+            "voilà"
+          ],
+          "audio": "recap",
+          "explicacao": "Une baguette, s'il vous plaît. C'est tout, merci."
+        }
+      ],
+      "recuperar": true
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "id": "r1-p37",
+  "regiao": 1,
+  "parada": 37,
+  "etapa": 37,
+  "formato": "conversa",
+  "titulo": "A conselheira do rei",
+  "titulo_fr": "La conseillère",
+  "nivel": "A1",
+  "duracao_min": 4,
+  "cenario": {
+    "fundo": "parada/mapa40/cenas/cidade/cena-fundo.png",
+    "frente": "parada/mapa40/cenas/cidade/cena-frente.png",
+    "npc": {
+      "nome": "Dame Isaure",
+      "papel": "conselheira do rei",
+      "img": "parada/mapa40/npc/isaure.png",
+      "x": 52,
+      "y": 33.8,
+      "w": 17.5,
+      "voz": "isaure"
+    },
+    "brilhos": []
+  },
+  "vozes": {
+    "isaure": {
+      "voz": "fr-CA-SylvieNeural",
+      "pitch": "-5Hz"
+    },
+    "leo": "fr-CA-AntoineNeural"
+  },
+  "audios": {
+    "abertura": {
+      "voz": "isaure",
+      "texto": "Bonsoir, voyageur. Le roi vous attend."
+    },
+    "fecho": {
+      "voz": "isaure",
+      "texto": "Bonne chance ! À demain !"
+    },
+    "correcao": {
+      "voz": "isaure",
+      "texto": "Écoutez. On dit :"
+    },
+    "t1-npc": {
+      "voz": "isaure",
+      "texto": "Bonsoir. Je suis Isaure, la conseillère du roi."
+    },
+    "t1-modelo": {
+      "voz": "leo",
+      "texto": "Bonsoir, madame !"
+    },
+    "t2-npc": {
+      "voz": "isaure",
+      "texto": "Vous aimez le château ?"
+    },
+    "t2-modelo": {
+      "voz": "leo",
+      "texto": "Oui, j'aime le château."
+    },
+    "t3-npc": {
+      "voz": "isaure",
+      "texto": "Demain, il y a un grand combat. Vous êtes prêt ?"
+    },
+    "t3-modelo": {
+      "voz": "leo",
+      "texto": "Oui, je suis prêt."
+    },
+    "t4-npc": {
+      "voz": "isaure",
+      "texto": "Le chevalier noir est très fort."
+    },
+    "t4-modelo": {
+      "voz": "leo",
+      "texto": "Il est où ?"
+    },
+    "t5-npc": {
+      "voz": "isaure",
+      "texto": "Dans la grande salle, à huit heures."
+    },
+    "t5-modelo": {
+      "voz": "leo",
+      "texto": "D'accord ! À demain !"
+    },
+    "w-la-conseillere": {
+      "voz": "isaure",
+      "texto": "La conseillère."
+    },
+    "w-un-combat": {
+      "voz": "isaure",
+      "texto": "Un combat."
+    },
+    "w-pret": {
+      "voz": "isaure",
+      "texto": "Prêt."
+    },
+    "w-tres-fort": {
+      "voz": "isaure",
+      "texto": "Très fort."
+    },
+    "w-le-chevalier-noir": {
+      "voz": "isaure",
+      "texto": "Le chevalier noir."
+    },
+    "w-bonne-chance": {
+      "voz": "isaure",
+      "texto": "Bonne chance !"
+    }
+  },
+  "imagens": {},
+  "vocabulario": [
+    {
+      "fr": "la conseillère",
+      "pt": "a conselheira",
+      "audio": "w-la-conseillere"
+    },
+    {
+      "fr": "un combat",
+      "pt": "um combate",
+      "audio": "w-un-combat"
+    },
+    {
+      "fr": "prêt",
+      "pt": "pronto",
+      "audio": "w-pret"
+    },
+    {
+      "fr": "très fort",
+      "pt": "muito forte",
+      "audio": "w-tres-fort"
+    },
+    {
+      "fr": "le chevalier noir",
+      "pt": "o cavaleiro negro",
+      "audio": "w-le-chevalier-noir"
+    },
+    {
+      "fr": "bonne chance !",
+      "pt": "boa sorte!",
+      "audio": "w-bonne-chance"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 20,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "instrucao": "Dame Isaure fala primeiro. Responda em voz alta com a frase que aparece no pergaminho.",
+  "abertura": "abertura",
+  "fecho": "fecho",
+  "correcao": "correcao",
+  "turnos": [
+    {
+      "npc": "t1-npc",
+      "npc_texto": "Bonsoir. Je suis Isaure, la conseillère du roi.",
+      "contexto_pt": "A conselheira se apresenta.",
+      "modelo": "Bonsoir, madame !",
+      "modelo_pt": "Boa noite, senhora!",
+      "modelo_audio": "t1-modelo",
+      "chaves": [
+        "bonsoir"
+      ]
+    },
+    {
+      "npc": "t2-npc",
+      "npc_texto": "Vous aimez le château ?",
+      "contexto_pt": "Ela pergunta se você gosta do castelo.",
+      "modelo": "Oui, j'aime le château.",
+      "modelo_pt": "Sim, eu gosto do castelo.",
+      "modelo_audio": "t2-modelo",
+      "chaves": [
+        "aime"
+      ]
+    },
+    {
+      "npc": "t3-npc",
+      "npc_texto": "Demain, il y a un grand combat. Vous êtes prêt ?",
+      "contexto_pt": "Amanhã há um grande combate.",
+      "modelo": "Oui, je suis prêt.",
+      "modelo_pt": "Sim, estou pronto.",
+      "modelo_audio": "t3-modelo",
+      "chaves": [
+        "prêt"
+      ]
+    },
+    {
+      "npc": "t4-npc",
+      "npc_texto": "Le chevalier noir est très fort.",
+      "contexto_pt": "O cavaleiro negro é muito forte.",
+      "modelo": "Il est où ?",
+      "modelo_pt": "Onde ele está?",
+      "modelo_audio": "t4-modelo",
+      "chaves": [
+        "où"
+      ]
+    },
+    {
+      "npc": "t5-npc",
+      "npc_texto": "Dans la grande salle, à huit heures.",
+      "contexto_pt": "No salão grande, às oito.",
+      "modelo": "D'accord ! À demain !",
+      "modelo_pt": "Combinado! Até amanhã!",
+      "modelo_audio": "t5-modelo",
+      "chaves": [
+        "accord"
+      ]
+    }
+  ],
+  "novas": [
+    "la conseillère",
+    "un combat",
+    "prêt",
+    "très",
+    "fort",
+    "bonne chance"
+  ],
+  "padroes": [
+    "Je suis prêt(e).",
+    "Il est où ? (revisão)"
+  ]
+}

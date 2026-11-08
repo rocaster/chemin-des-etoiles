@@ -1,0 +1,619 @@
+{
+  "id": "r1-p02",
+  "regiao": 1,
+  "parada": 2,
+  "titulo": "Se apresentar na praça da vila",
+  "titulo_fr": "Sur la place du village",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "parada/r1-p02/cena-fundo.png",
+    "frente": "parada/r1-p02/cena-frente.png",
+    "npc": {
+      "nome": "Gaston",
+      "papel": "guarda da vila",
+      "img": "parada/r1-p02/npc.png",
+      "x": 50,
+      "y": 32.9,
+      "w": 17,
+      "voz": "gaston"
+    },
+    "brilhos": []
+  },
+  "vozes": {
+    "gaston": "fr-CA-JeanNeural",
+    "leo": "fr-CA-AntoineNeural"
+  },
+  "audios": {
+    "enchante": {
+      "voz": "gaston",
+      "texto": "Enchanté !"
+    },
+    "au-revoir": {
+      "voz": "gaston",
+      "texto": "Au revoir !"
+    },
+    "je-mappelle": {
+      "voz": "gaston",
+      "texto": "Je m'appelle Gaston."
+    },
+    "jhabite": {
+      "voz": "gaston",
+      "texto": "J'habite à Québec."
+    },
+    "comment": {
+      "voz": "gaston",
+      "texto": "Comment vous appelez-vous ?"
+    },
+    "et-vous": {
+      "voz": "gaston",
+      "texto": "Et vous ?"
+    },
+    "gaston-apres": {
+      "voz": "gaston",
+      "texto": "Bonjour ! Je m'appelle Gaston. J'habite à Québec."
+    },
+    "leo-apres": {
+      "voz": "leo",
+      "texto": "Bonjour ! Je m'appelle Léo. J'habite à Montréal."
+    },
+    "frase-leo": {
+      "voz": "leo",
+      "texto": "Je m'appelle Léo. J'habite à Montréal."
+    },
+    "frase-comment": {
+      "voz": "leo",
+      "texto": "Comment vous appelez-vous ?"
+    },
+    "frase-quebec": {
+      "voz": "leo",
+      "texto": "J'habite à Québec."
+    },
+    "recap": {
+      "voz": "leo",
+      "texto": "Bonjour ! Je m'appelle Léo. J'habite à Montréal. Au revoir !"
+    },
+    "d-n1": {
+      "voz": "gaston",
+      "texto": "Bonjour ! Je m'appelle Gaston. Et vous ?"
+    },
+    "d-n2": {
+      "voz": "gaston",
+      "texto": "Enchanté ! J'habite à Québec. Et vous ?"
+    },
+    "d-n3": {
+      "voz": "gaston",
+      "texto": "Ah, Montréal ! Au revoir !"
+    }
+  },
+  "imagens": {
+    "aperto": {
+      "src": "parada/r1-p02/aperto.png",
+      "fr": "enchanté(e)",
+      "pt": "muito prazer"
+    },
+    "tchau": {
+      "src": "parada/r1-p02/tchau.png",
+      "fr": "au revoir",
+      "pt": "tchau / até logo"
+    },
+    "nome": {
+      "src": "parada/r1-p02/nome.png",
+      "fr": "je m'appelle…",
+      "pt": "eu me chamo…"
+    },
+    "casa": {
+      "src": "parada/r1-p02/casa.png",
+      "fr": "j'habite à…",
+      "pt": "eu moro em…"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "je m'appelle…",
+      "pt": "eu me chamo…",
+      "audio": "je-mappelle",
+      "img": "nome"
+    },
+    {
+      "fr": "comment vous appelez-vous ?",
+      "pt": "como você se chama? (formal)",
+      "audio": "comment"
+    },
+    {
+      "fr": "enchanté / enchantée",
+      "pt": "muito prazer (♂ / ♀)",
+      "audio": "enchante",
+      "img": "aperto"
+    },
+    {
+      "fr": "j'habite à…",
+      "pt": "eu moro em…",
+      "audio": "jhabite",
+      "img": "casa"
+    },
+    {
+      "fr": "et vous ?",
+      "pt": "e você?",
+      "audio": "et-vous"
+    },
+    {
+      "fr": "au revoir",
+      "pt": "tchau / até logo",
+      "audio": "au-revoir",
+      "img": "tchau"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_pausado": false,
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-nome": {
+      "id": "rv-nome",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Gaston : Je m'appelle Gaston. Et vous ?"
+      ],
+      "pergunta": "Como você diz o seu nome?",
+      "opcoes": [
+        "Je m'appelle Léa.",
+        "Je m'appelle Gaston.",
+        "Au revoir, Léa."
+      ],
+      "correta": 0,
+      "explicacao": "Je m'appelle + o SEU nome."
+    },
+    "rv-tchau": {
+      "id": "rv-tchau",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Gaston : Au revoir !"
+      ],
+      "pergunta": "Gaston está indo embora. O que você responde?",
+      "opcoes": [
+        "Au revoir !",
+        "Enchanté !",
+        "Je m'appelle…"
+      ],
+      "correta": 0,
+      "explicacao": "Para se despedir: au revoir. Enchanté é para quando vocês se conhecem."
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "Na praça, Gaston, o guarda da vila, cumprimenta quem chega. Ouça e escolha a imagem certa.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "enchante",
+          "texto_fr": "enchanté",
+          "opcoes": [
+            "aperto",
+            "tchau",
+            "nome",
+            "casa"
+          ],
+          "correta": "aperto",
+          "explicacao": "Enchanté = muito prazer. Uma mulher diz enchantée (soa igual)."
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "au-revoir",
+          "texto_fr": "au revoir",
+          "opcoes": [
+            "casa",
+            "nome",
+            "tchau",
+            "aperto"
+          ],
+          "correta": "tchau",
+          "explicacao": "Au revoir = tchau / até logo."
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "je-mappelle",
+          "texto_fr": "je m'appelle Gaston",
+          "opcoes": [
+            "nome",
+            "aperto",
+            "casa",
+            "tchau"
+          ],
+          "correta": "nome",
+          "explicacao": "Je m'appelle Gaston = eu me chamo Gaston."
+        },
+        {
+          "id": "d4",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "jhabite",
+          "texto_fr": "j'habite à Québec",
+          "opcoes": [
+            "tchau",
+            "casa",
+            "aperto",
+            "nome"
+          ],
+          "correta": "casa",
+          "explicacao": "J'habite à Québec = eu moro em Québec."
+        },
+        {
+          "id": "d5",
+          "tipo": "pares",
+          "instrucao": "Ligue cada expressão à sua imagem: toque numa expressão e depois na imagem.",
+          "pares": [
+            {
+              "fr": "je m'appelle…",
+              "img": "nome",
+              "audio": "je-mappelle"
+            },
+            {
+              "fr": "enchanté",
+              "img": "aperto",
+              "audio": "enchante"
+            },
+            {
+              "fr": "j'habite à…",
+              "img": "casa",
+              "audio": "jhabite"
+            },
+            {
+              "fr": "au revoir",
+              "img": "tchau",
+              "audio": "au-revoir"
+            }
+          ],
+          "explicacao": "Nome, prazer, onde mora, tchau: uma apresentação completa."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Escute as pessoas se apresentando na praça. O texto só aparece depois que você responder.",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Ouça Gaston.",
+          "audio": "gaston-apres",
+          "pergunta": "Como ele se chama?",
+          "opcoes": [
+            "Gaston",
+            "Québec",
+            "Léo"
+          ],
+          "correta": 0,
+          "explicacao": "Je m'appelle Gaston. Québec é a cidade onde ele mora."
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "Agora ouça o viajante Léo.",
+          "audio": "leo-apres",
+          "pergunta": "Onde Léo mora?",
+          "opcoes": [
+            "Montréal",
+            "Québec",
+            "Gaston"
+          ],
+          "correta": 0,
+          "explicacao": "J'habite à Montréal = eu moro em Montréal."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Gaston faz uma pergunta.",
+          "audio": "comment",
+          "pergunta": "O que Gaston quer saber?",
+          "opcoes": [
+            "o seu nome",
+            "onde você mora",
+            "se você quer um café"
+          ],
+          "correta": 0,
+          "explicacao": "Comment vous appelez-vous ? = como você se chama? (forma educada)."
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia a conversa na praça.",
+          "texto_fr": [
+            "Gaston : Bonjour ! Je m'appelle Gaston. Et vous ?",
+            "Claire : Je m'appelle Claire. Enchantée !",
+            "Gaston : Enchanté ! J'habite à Québec.",
+            "Claire : Au revoir, Gaston !"
+          ],
+          "pergunta": "Qual é o nome da moça?",
+          "opcoes": [
+            "Claire",
+            "Gaston",
+            "Québec"
+          ],
+          "correta": 0,
+          "explicacao": "Je m'appelle Claire."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "Mesma conversa.",
+          "texto_fr": [
+            "Gaston : Bonjour ! Je m'appelle Gaston. Et vous ?",
+            "Claire : Je m'appelle Claire. Enchantée !",
+            "Gaston : Enchanté ! J'habite à Québec.",
+            "Claire : Au revoir, Gaston !"
+          ],
+          "pergunta": "Por que Claire escreve enchantée, com -e no fim?",
+          "opcoes": [
+            "porque ela é mulher",
+            "porque é uma pergunta",
+            "porque está se despedindo"
+          ],
+          "correta": 0,
+          "explicacao": "Homem: enchanté. Mulher: enchantée. A pronúncia é a mesma."
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Monte a sua apresentação. Je m'appelle = eu me chamo · j'habite à = eu moro em.",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte: “Eu me chamo Léo. Eu moro em Montréal.”",
+          "palavras": [
+            "Je",
+            "m'appelle",
+            "Léo.",
+            "J'habite",
+            "à",
+            "Montréal."
+          ],
+          "extras": [
+            "au revoir"
+          ],
+          "audio": "frase-leo",
+          "explicacao": "Je m'appelle + nome. J'habite à + cidade."
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete a pergunta do nome.",
+          "frase": "Comment vous ___-vous ?",
+          "banco": [
+            "appelez",
+            "habite",
+            "enchanté"
+          ],
+          "respostas": [
+            "appelez"
+          ],
+          "audio": "frase-comment",
+          "explicacao": "Comment vous appelez-vous ? = como você se chama?"
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Agora sem banco: escreva a palavra que falta (“Eu moro em Québec”).",
+          "frase": "J'___ à Québec.",
+          "respostas": [
+            "habite"
+          ],
+          "dica": "Começa com h…",
+          "audio": "frase-quebec",
+          "explicacao": "J'habite à… = eu moro em… (o h não soa)."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "au-revoir",
+          "respostas": [
+            "au revoir"
+          ],
+          "explicacao": "Au revoir = tchau / até logo."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez! Gaston quer te conhecer. Escolha as respostas e depois grave a sua apresentação.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Gaston.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Bonjour ! Je m'appelle Gaston. Et vous ?",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Bonjour ! Je m'appelle Léa.",
+                  "feedback": "Isso: bonjour + je m'appelle + seu nome.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "Bonjour ! Je m'appelle Hugo.",
+                  "feedback": "Isso: bonjour + je m'appelle + seu nome.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "Je m'appelle Gaston.",
+                  "feedback": "Esse é o nome dele! Diga o seu: Je m'appelle + seu nome.",
+                  "erro": true,
+                  "revisao": "rv-nome"
+                },
+                {
+                  "fr": "Au revoir !",
+                  "feedback": "Au revoir é despedida — vocês acabaram de se conhecer.",
+                  "erro": true
+                }
+              ]
+            },
+            "n2": {
+              "fala": "Enchanté ! J'habite à Québec. Et vous ?",
+              "audio": "d-n2",
+              "opcoes": [
+                {
+                  "fr": "Enchanté ! J'habite à Montréal.",
+                  "feedback": "Perfeito: prazer + onde você mora.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "J'habite à Montréal.",
+                  "feedback": "Funciona! Com enchanté(e) antes fica ainda mais simpático.",
+                  "vai": "n3",
+                  "aviso": true
+                },
+                {
+                  "fr": "Comment vous appelez-vous ?",
+                  "feedback": "Ele já disse o nome: Gaston! Agora diga onde você mora: J'habite à…",
+                  "erro": true
+                }
+              ]
+            },
+            "n3": {
+              "fala": "Ah, Montréal ! Au revoir !",
+              "audio": "d-n3",
+              "opcoes": [
+                {
+                  "fr": "Au revoir, Gaston !",
+                  "feedback": "Isso: au revoir para se despedir.",
+                  "vai": "fim"
+                },
+                {
+                  "fr": "Enchanté !",
+                  "feedback": "Enchanté é para quando se conhecem. Para se despedir: au revoir!",
+                  "erro": true,
+                  "revisao": "rv-tchau"
+                },
+                {
+                  "fr": "Bonjour !",
+                  "feedback": "Bonjour é para chegar. Ele está indo embora: au revoir!",
+                  "erro": true
+                }
+              ]
+            }
+          },
+          "explicacao": "Bonjour → je m'appelle… → enchanté(e) → j'habite à… → au revoir."
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave a sua apresentação em voz alta (1–2 frases): seu nome e onde você mora.",
+          "modelo": "Bonjour ! Je m'appelle Léo. J'habite à Montréal.",
+          "audio_modelo": "leo-apres",
+          "checklist": [
+            "Bonjour",
+            "Je m'appelle + seu nome",
+            "J'habite à + sua cidade",
+            "Au revoir (opcional)"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva a sua apresentação.",
+            "palavras_chave": [
+              [
+                "je m'appelle",
+                "je m appelle"
+              ],
+              [
+                "j'habite",
+                "j habite"
+              ]
+            ],
+            "explicacao": "Je m'appelle + nome. J'habite à + cidade."
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "intro": "Última rodada: os itens em que você errou voltam, uma revisão da taverna e a frase da missão.",
+      "itens": [
+        {
+          "id": "r2",
+          "tipo": "texto",
+          "instrucao": "Revisão da parada 1 (taverna).",
+          "texto_fr": [
+            "Odile : Bonjour ! Un café ? Un thé ?"
+          ],
+          "pergunta": "Como você pede um chá com educação?",
+          "opcoes": [
+            "Je voudrais un thé, s'il vous plaît.",
+            "Je m'appelle un thé.",
+            "Au revoir, un thé."
+          ],
+          "correta": 0,
+          "explicacao": "Je voudrais… s'il vous plaît (parada 1)."
+        },
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “Olá! Eu me chamo Léo. Eu moro em Montréal. Tchau!”",
+          "palavras": [
+            "Bonjour !",
+            "Je",
+            "m'appelle",
+            "Léo.",
+            "J'habite",
+            "à",
+            "Montréal.",
+            "Au revoir !"
+          ],
+          "extras": [
+            "enchanté"
+          ],
+          "audio": "recap",
+          "explicacao": "Bonjour ! Je m'appelle Léo. J'habite à Montréal. Au revoir !"
+        }
+      ],
+      "recuperar": true
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "resultado": "implementado localmente, sem deploy",
+  "rotas_get": [
+    "/heroi",
+    "/loja",
+    "/conquistas"
+  ],
+  "rotas_post": [
+    "/loja/comprar",
+    "/loja/equipar",
+    "/loja/retirar"
+  ],
+  "testes": {
+    "loja_pytest": {
+      "passaram": 51,
+      "falharam": 0
+    },
+    "loja_dom": {
+      "passaram": 44,
+      "falharam": 0
+    },
+    "simulados_python": {
+      "passaram": 91,
+      "falharam": 0
+    },
+    "simulados_js": {
+      "passaram": 29,
+      "falharam": 0
+    },
+    "simulados_dom": {
+      "passaram": 43,
+      "falharam": 0
+    },
+    "onboarding_python": {
+      "passaram": 124,
+      "falharam": 0
+    },
+    "onboarding_js": {
+      "passaram": 72,
+      "falharam": 0
+    },
+    "rotas": {
+      "passaram": 57,
+      "falharam": 0
+    },
+    "mapa": {
+      "paradas": 40,
+      "praca": true,
+      "cliques": true,
+      "arrasto": true,
+      "portas": [
+        5077,
+        5088
+      ],
+      "avisos": [
+        "HTMLMediaElement.play não implementado no jsdom"
+      ]
+    }
+  },
+  "integridade": {
+    "funcao_personagem": true,
+    "funcao__pagina_personagem": true,
+    "funcao_nivelamento": true,
+    "funcao_missao": true,
+    "funcao_parada": true,
+    "funcao_parada_concluir": true,
+    "funcao_borda_por_xp": true,
+    "funcao_xp_do_perfil": true,
+    "funcao_tela_batalha": true,
+    "BORDAS_MAPA": true,
+    "templates/personagem.html": true,
+    "templates/nivelamento.html": true,
+    "templates/missao.html": true,
+    "templates/parada.html": true,
+    "static/parada/motor.js": true,
+    "static/parada/batalha.js": true,
+    "static/audio/trilhas/trilha-batalha.wav": true,
+    "static/audio/trilhas/trilha-batalha.ogg": true,
+    "static/audio/trilhas/trilha-chefe.ogg": true,
+    "static/audio/trilhas/trilha-chefe.wav": true,
+    "load_dotenv_preservado": true
+  },
+  "screenshots": [],
+  "pranchas_arte_nao_screenshots": [
+    "/workspace/ncl/prints-loja/arte-pets-preview.png",
+    "/workspace/ncl/prints-loja/arte-paletas-preview.png"
+  ],
+  "pendencias": [
+    "Ganhos de cristais indefinidos; contas reais iniciam com 0",
+    "Preços e critérios de conquistas provisórios",
+    "Invicto, Primeira Vez e Falador não rastreáveis com os dados existentes",
+    "Selos atuais são derivados do progresso; confirmar política permanente",
+    "Validação visual em navegador desktop/mobile e screenshots pendentes; executor sem automação de navegador permitida"
+  ],
+  "preservado": [
+    "/personagem",
+    "/nivelamento",
+    "/missao",
+    "motor.js",
+    "missões de blocos",
+    "BORDAS_MAPA",
+    "XP",
+    "músicas batalha/chefe",
+    "load_dotenv()"
+  ],
+  "configuracoes": "data/loja.json e data/conquistas.json",
+  "saldo_inicial": {
+    "teste": 1000,
+    "real": 0
+  },
+  "nivel": "visual 1–6, mesmos limiares das molduras XP, não proficiência"
+}

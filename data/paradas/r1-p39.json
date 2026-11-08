@@ -1,0 +1,387 @@
+{
+  "id": "r1-p39",
+  "regiao": 1,
+  "parada": 39,
+  "etapa": 39,
+  "formato": "cartas",
+  "titulo": "Cartas da cartomante do castelo",
+  "titulo_fr": "Les cartes de Morgane",
+  "nivel": "A1",
+  "duracao_min": 4,
+  "cenario": {
+    "fundo": "parada/r1-p08/cena-fundo.png",
+    "frente": "parada/r1-p08/cena-frente.png",
+    "npc": {
+      "nome": "Morgane",
+      "papel": "cartomante do castelo",
+      "img": "parada/mapa40/npc/morgane.png",
+      "x": 60,
+      "y": 35,
+      "w": 12.75,
+      "voz": "morgane"
+    },
+    "brilhos": [
+      {
+        "tipo": "lanterna",
+        "x": 41,
+        "y": 67
+      },
+      {
+        "tipo": "lanterna",
+        "x": 30,
+        "y": 62
+      }
+    ]
+  },
+  "vozes": {
+    "morgane": {
+      "voz": "fr-CA-SylvieNeural",
+      "pitch": "-8Hz"
+    },
+    "leo": "fr-CA-AntoineNeural"
+  },
+  "audios": {
+    "abertura": {
+      "voz": "morgane",
+      "texto": "Bonsoir. Je suis Morgane. Les cartes montrent votre voyage. Dites leur nom."
+    },
+    "ultima": {
+      "voz": "morgane",
+      "texto": "La dernière carte !"
+    },
+    "erro": {
+      "voz": "morgane",
+      "texto": "Non. Écoutez :"
+    },
+    "fecho": {
+      "voz": "morgane",
+      "texto": "Bravo ! Le chevalier noir vous attend. Bonne chance !"
+    },
+    "boa1": {
+      "voz": "morgane",
+      "texto": "Très bien !"
+    },
+    "boa2": {
+      "voz": "morgane",
+      "texto": "Oui ! Vous êtes prêt."
+    },
+    "boa3": {
+      "voz": "morgane",
+      "texto": "Magnifique !"
+    },
+    "mista1": {
+      "voz": "morgane",
+      "texto": "Hmm… Encore une fois !"
+    },
+    "mista2": {
+      "voz": "morgane",
+      "texto": "Presque ! Écoutez bien."
+    },
+    "c-un-cafe": {
+      "voz": "morgane",
+      "texto": "Un café."
+    },
+    "c-une-pomme": {
+      "voz": "morgane",
+      "texto": "Une pomme."
+    },
+    "c-une-baguette": {
+      "voz": "morgane",
+      "texto": "Une baguette."
+    },
+    "c-le-pont": {
+      "voz": "morgane",
+      "texto": "Le pont."
+    },
+    "c-il-pleut": {
+      "voz": "morgane",
+      "texto": "Il pleut."
+    },
+    "c-un-chat": {
+      "voz": "morgane",
+      "texto": "Un chat."
+    },
+    "c-une-robe-verte": {
+      "voz": "morgane",
+      "texto": "Une robe verte."
+    },
+    "c-le-chocolat": {
+      "voz": "morgane",
+      "texto": "Le chocolat."
+    },
+    "c-un-coffre": {
+      "voz": "morgane",
+      "texto": "Un coffre."
+    }
+  },
+  "imagens": {
+    "un-cafe": {
+      "src": "parada/bebida-cafe.png",
+      "fr": "un café",
+      "pt": "um café",
+      "alt": "um café"
+    },
+    "une-pomme": {
+      "src": "parada/r1-p03/pomme.png",
+      "fr": "une pomme",
+      "pt": "uma maçã",
+      "alt": "uma maçã"
+    },
+    "une-baguette": {
+      "src": "parada/r1-p04/baguette.png",
+      "fr": "une baguette",
+      "pt": "uma baguete",
+      "alt": "uma baguete"
+    },
+    "le-pont": {
+      "src": "parada/mapa40/icones/pont.png",
+      "fr": "le pont",
+      "pt": "a ponte",
+      "alt": "a ponte"
+    },
+    "il-pleut": {
+      "src": "parada/mapa40/icones/pluie.png",
+      "fr": "il pleut",
+      "pt": "está chovendo",
+      "alt": "está chovendo"
+    },
+    "un-chat": {
+      "src": "parada/mapa40/icones/chat.png",
+      "fr": "un chat",
+      "pt": "um gato",
+      "alt": "um gato"
+    },
+    "une-robe-verte": {
+      "src": "parada/mapa40/icones/robe-verte.png",
+      "fr": "une robe verte",
+      "pt": "um vestido verde",
+      "alt": "um vestido verde"
+    },
+    "le-chocolat": {
+      "src": "parada/mapa40/icones/chocolat.png",
+      "fr": "le chocolat",
+      "pt": "o chocolate",
+      "alt": "o chocolate"
+    },
+    "un-coffre": {
+      "src": "parada/mapa40/icones/coffre.png",
+      "fr": "un coffre",
+      "pt": "um baú",
+      "alt": "um baú"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "un café",
+      "pt": "um café",
+      "img": "un-cafe",
+      "audio": "c-un-cafe"
+    },
+    {
+      "fr": "une pomme",
+      "pt": "uma maçã",
+      "img": "une-pomme",
+      "audio": "c-une-pomme"
+    },
+    {
+      "fr": "une baguette",
+      "pt": "uma baguete",
+      "img": "une-baguette",
+      "audio": "c-une-baguette"
+    },
+    {
+      "fr": "le pont",
+      "pt": "a ponte",
+      "img": "le-pont",
+      "audio": "c-le-pont"
+    },
+    {
+      "fr": "il pleut",
+      "pt": "está chovendo",
+      "img": "il-pleut",
+      "audio": "c-il-pleut"
+    },
+    {
+      "fr": "un chat",
+      "pt": "um gato",
+      "img": "un-chat",
+      "audio": "c-un-chat"
+    },
+    {
+      "fr": "une robe verte",
+      "pt": "um vestido verde",
+      "img": "une-robe-verte",
+      "audio": "c-une-robe-verte"
+    },
+    {
+      "fr": "le chocolat",
+      "pt": "o chocolate",
+      "img": "le-chocolat",
+      "audio": "c-le-chocolat"
+    },
+    {
+      "fr": "un coffre",
+      "pt": "um baú",
+      "img": "un-coffre",
+      "audio": "c-un-coffre"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 20,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "instrucao": "Toque numa carta e diga em voz alta o nome do objeto, em francês.",
+  "verso": "parada/r1-p08/verso.png",
+  "falas": {
+    "abertura": "abertura",
+    "boa": [
+      "boa1",
+      "boa2",
+      "boa3"
+    ],
+    "mista": [
+      "mista1",
+      "mista2"
+    ],
+    "ultima": "ultima",
+    "erro": "erro",
+    "fecho": "fecho"
+  },
+  "comentar_a_cada": 3,
+  "cartas": [
+    {
+      "id": "un-cafe",
+      "fr": "un café",
+      "pt": "um café",
+      "img": "un-cafe",
+      "audio": "c-un-cafe",
+      "aceita": [
+        "un café",
+        "café"
+      ],
+      "origem": "r1-p01"
+    },
+    {
+      "id": "une-pomme",
+      "fr": "une pomme",
+      "pt": "uma maçã",
+      "img": "une-pomme",
+      "audio": "c-une-pomme",
+      "aceita": [
+        "une pomme",
+        "pomme"
+      ],
+      "origem": "r1-p03"
+    },
+    {
+      "id": "une-baguette",
+      "fr": "une baguette",
+      "pt": "uma baguete",
+      "img": "une-baguette",
+      "audio": "c-une-baguette",
+      "aceita": [
+        "une baguette",
+        "baguette"
+      ],
+      "origem": "r1-p04"
+    },
+    {
+      "id": "le-pont",
+      "fr": "le pont",
+      "pt": "a ponte",
+      "img": "le-pont",
+      "audio": "c-le-pont",
+      "aceita": [
+        "le pont",
+        "pont",
+        "un pont"
+      ],
+      "origem": "r1-p12"
+    },
+    {
+      "id": "il-pleut",
+      "fr": "il pleut",
+      "pt": "está chovendo",
+      "img": "il-pleut",
+      "audio": "c-il-pleut",
+      "aceita": [
+        "il pleut",
+        "pluie",
+        "la pluie"
+      ],
+      "origem": "r1-p15"
+    },
+    {
+      "id": "un-chat",
+      "fr": "un chat",
+      "pt": "um gato",
+      "img": "un-chat",
+      "audio": "c-un-chat",
+      "aceita": [
+        "un chat",
+        "chat"
+      ],
+      "origem": "r1-p17"
+    },
+    {
+      "id": "une-robe-verte",
+      "fr": "une robe verte",
+      "pt": "um vestido verde",
+      "img": "une-robe-verte",
+      "audio": "c-une-robe-verte",
+      "aceita": [
+        "une robe verte",
+        "robe verte"
+      ],
+      "origem": "r1-p29"
+    },
+    {
+      "id": "le-chocolat",
+      "fr": "le chocolat",
+      "pt": "o chocolate",
+      "img": "le-chocolat",
+      "audio": "c-le-chocolat",
+      "aceita": [
+        "le chocolat",
+        "chocolat",
+        "du chocolat"
+      ],
+      "origem": "r1-p28"
+    },
+    {
+      "id": "un-coffre",
+      "fr": "un coffre",
+      "pt": "um baú",
+      "img": "un-coffre",
+      "audio": "c-un-coffre",
+      "aceita": [
+        "un coffre",
+        "coffre"
+      ],
+      "origem": "r1-p33"
+    }
+  ],
+  "novas": [],
+  "padroes": [
+    "revisão: dizer o nome (3 cartas de cada região)"
+  ]
+}

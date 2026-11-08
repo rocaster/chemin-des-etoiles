@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar · Chemin des Étoiles</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      /* Fundo em pixel art (vale de outono) com véu escuro para dar leitura ao formulário */
+      background-color: #0b1633;
+      background-image:
+        radial-gradient(ellipse at center, rgba(8,14,30,.55) 0%, rgba(8,14,30,.25) 60%, rgba(8,14,30,.45) 100%),
+        url("{{ url_for('static', filename='bg/vale-outono-pixel.png') }}");
+      background-size: cover; background-position: center;
+      image-rendering: pixelated;
+      color: #f3ead7;
+      font-family: Georgia, "Times New Roman", serif;
+      overflow-x: hidden; overflow-y: auto;
+    }
+    /* Folhas caindo */
+    .folhas { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .folha {
+      position: absolute; top: -40px; width: 18px; height: 18px;
+      /* Folha de bordo (maple leaf) do Canadá, recortada por máscara SVG */
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-2015 -2000 4030 4030'%3E%3Cpath d='m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z'/%3E%3C/svg%3E") center / contain no-repeat;
+              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-2015 -2000 4030 4030'%3E%3Cpath d='m-90 2030 45-863a95 95 0 0 0-111-98l-859 151 116-320a65 65 0 0 0-20-73l-941-762 212-99a65 65 0 0 0 34-79l-186-572 542 115a65 65 0 0 0 73-38l105-247 423 454a65 65 0 0 0 111-57l-204-1052 327 189a65 65 0 0 0 91-27l332-652 332 652a65 65 0 0 0 91 27l327-189-204 1052a65 65 0 0 0 111 57l423-454 105 247a65 65 0 0 0 73 38l542-115-186 572a65 65 0 0 0 34 79l212 99-941 762a65 65 0 0 0-20 73l116 320-859-151a95 95 0 0 0-111 98l45 863z'/%3E%3C/svg%3E") center / contain no-repeat;
+      opacity: .9;
+      animation: cair linear infinite, balancar ease-in-out infinite alternate;
+    }
+    @keyframes cair { to { top: 105vh; } }
+    @keyframes balancar {
+      from { transform: translateX(-30px) rotate(-25deg); }
+      to   { transform: translateX(30px) rotate(35deg); }
+    }
+    @media (prefers-reduced-motion: reduce) { .folha { animation: none; display: none; } }
+
+    .painel { position: relative; z-index: 1; width: 100%; max-width: 360px; padding: 24px; text-align: center; }
+    h1 {
+      margin: 0 0 6px;
+      font-family: "Cinzel", "Trajan Pro", Georgia, serif;
+      font-size: clamp(1.4rem, 6.2vw, 1.95rem); font-weight: 700; letter-spacing: .03em; white-space: nowrap;
+      color: #f0c46a; text-shadow: 0 2px 12px rgba(240,180,92,.35);
+    }
+    .marca-titulo { margin: 0 0 10px; white-space: normal; text-shadow: none; }
+    .marca { display: block; position: relative; left: 50%; transform: translateX(-50%); width: min(460px, 96vw); max-width: none; height: auto; filter: drop-shadow(0 4px 14px rgba(0,0,0,.35)); }
+    .sub { margin: 0 0 32px; color: #e6eddf; font-style: italic; text-shadow: 0 1px 6px rgba(0,0,0,.9); }
+    form { display: flex; flex-direction: column; gap: 12px; }
+    label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    input {
+      width: 100%; padding: 13px 14px; font: inherit; font-size: 1rem;
+      color: #1d1812; background: rgba(255,255,255,.82);
+      border: 1px solid rgba(255,255,255,.55); border-radius: 10px;
+    }
+    input::placeholder { color: #5b5146; }
+    input:focus { outline: 2px solid #f0c46a; outline-offset: 2px; }
+    button {
+      width: 100%; margin-top: 6px; padding: 13px; font: inherit; font-weight: bold; font-size: 1.05rem;
+      color: #1d1812; background: #f0c46a; border: 0; border-radius: 10px; cursor: pointer;
+    }
+    button:hover { background: #f6d38a; }
+    .erro { color: #ffb4a8; margin: 0 0 12px; }
+    .cadastrar { display: inline-block; margin-top: 22px; font-size: .9rem; color: #e6eddf; text-shadow: 0 1px 6px rgba(0,0,0,.9); }
+    .cadastrar:hover { color: #f0c46a; }
+    .modos { display: flex; gap: 8px; margin: 0 0 14px; }
+    .modos a { flex: 1; padding: 9px 4px; color: #e6eddf; border-bottom: 2px solid transparent; text-decoration: none; }
+    .modos a[aria-current="page"] { color: #f0c46a; border-color: #f0c46a; }
+    .aviso { color: #e6eddf; overflow-wrap: anywhere; }
+    [hidden] { display: none !important; }
+    .reenvio { margin-top: 14px; }
+    .reenvio button { font-size: .9rem; padding: 9px; background: #e6d3aa; }
+    .link-local { color: #f0c46a; overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <div class="folhas" aria-hidden="true" id="folhas"></div>
+
+  <main class="painel">
+    <h1 class="marca-titulo"><img class="marca" src="{{ url_for('static', filename='logo/wordmark-chemin-web.png') }}" alt="Chemin des Étoiles"></h1>
+    <p class="sub">Sua jornada rumo ao francês</p>
+
+    {% set cadastro = modo == 'cadastro' %}
+    <nav class="modos" aria-label="Acesso à conta">
+      <a href="{{ url_for('login') }}" data-modo="entrar" {% if not cadastro %}aria-current="page"{% endif %}>Entrar</a>
+      <a href="{{ url_for('login', modo='cadastro') }}" data-modo="cadastro" {% if cadastro %}aria-current="page"{% endif %}>Criar conta</a>
+    </nav>
+    {% if erro %}<p class="erro" role="alert">{{ erro }}</p>{% endif %}
+    {% if aviso %}<p class="aviso" role="status">{{ aviso }}</p>{% endif %}
+    {% if link_confirmacao %}<p class="aviso">Somente teste local: <a class="link-local" href="{{ link_confirmacao }}">Confirmar e-mail</a></p>{% endif %}
+
+    <form method="post" action="{{ url_for('login') }}" id="acesso">
+      <input type="hidden" name="acao" id="acao" value="{{ 'cadastrar' if cadastro else 'entrar' }}">
+      <label for="usuario">Usuário</label>
+      <input id="usuario" name="usuario" type="text" placeholder="Usuário" autocomplete="username" value="{{ usuario|default('') }}" maxlength="30" required>
+      <div data-cadastro {% if not cadastro %}hidden{% endif %}>
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" placeholder="E-mail" autocomplete="email" value="{{ email|default('') }}" maxlength="254" {% if cadastro %}required{% else %}disabled{% endif %}>
+      </div>
+      <label for="senha">Senha</label>
+      <input id="senha" name="senha" type="password" placeholder="{{ 'Senha (mínimo 6 caracteres)' if cadastro else 'Senha' }}" autocomplete="{{ 'new-password' if cadastro else 'current-password' }}" maxlength="128" {% if cadastro %}minlength="6"{% endif %} required>
+      <div data-cadastro {% if not cadastro %}hidden{% endif %}>
+        <label for="confirmacao">Confirme a senha</label>
+        <input id="confirmacao" name="confirmacao" type="password" placeholder="Confirme a senha" autocomplete="new-password" maxlength="128" {% if cadastro %}required{% else %}disabled{% endif %}>
+      </div>
+      <button type="submit" id="entrar">{{ 'Criar conta' if cadastro else 'Entrar' }}</button>
+    </form>
+    {% if reenviar %}
+    <form class="reenvio" method="post" action="{{ url_for('reenviar_confirmacao') }}">
+      <input type="hidden" name="usuario" value="{{ reenviar }}">
+      <button type="submit">Reenviar link de confirmação</button>
+    </form>
+    {% endif %}
+  </main>
+
+  <script>
+    // Troca o formulario no mesmo painel, sem abrir outra pagina.
+    document.querySelectorAll('[data-modo]').forEach(a => a.addEventListener('click', ev => {
+      ev.preventDefault();
+      const cadastro = a.dataset.modo === 'cadastro';
+      document.querySelectorAll('[data-modo]').forEach(b => {
+        if (b === a) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+      });
+      document.querySelectorAll('[data-cadastro]').forEach(box => {
+        box.hidden = !cadastro;
+        box.querySelectorAll('input').forEach(i => { i.disabled = !cadastro; i.required = cadastro; });
+      });
+      document.getElementById('acao').value = cadastro ? 'cadastrar' : 'entrar';
+      const senha = document.getElementById('senha');
+      senha.value = ''; document.getElementById('confirmacao').value = '';
+      senha.autocomplete = cadastro ? 'new-password' : 'current-password';
+      senha.placeholder = cadastro ? 'Senha (mínimo 6 caracteres)' : 'Senha';
+      if (cadastro) senha.minLength = 6; else senha.removeAttribute('minlength');
+      document.getElementById('entrar').textContent = cadastro ? 'Criar conta' : 'Entrar';
+      history.replaceState(null, '', a.href);
+    }));
+    // Gera folhas de bordo (maple leaf) em tons de vermelho e dourado, caindo devagar.
+    const cores = ["#b3261e", "#d2452b", "#e0892b", "#d4a017", "#f0c46a", "#8e1c12"];
+    const box = document.getElementById("folhas");
+    for (let i = 0; i < 22; i++) {
+      const f = document.createElement("span");
+      f.className = "folha";
+      const tam = 16 + Math.random() * 16;
+      f.style.width = f.style.height = tam + "px";
+      f.style.left = Math.random() * 100 + "vw";
+      f.style.background = cores[i % cores.length];
+      const queda = 12 + Math.random() * 14;
+      f.style.animationDuration = queda + "s, " + (3 + Math.random() * 3) + "s";
+      f.style.animationDelay = (-Math.random() * queda) + "s, 0s";
+      box.appendChild(f);
+    }
+  </script>
+</body>
+</html>

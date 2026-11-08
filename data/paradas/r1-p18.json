@@ -1,0 +1,655 @@
+{
+  "id": "r1-p18",
+  "regiao": 1,
+  "parada": 18,
+  "etapa": 18,
+  "titulo": "A família do moleiro",
+  "titulo_fr": "La famille du moulin",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "parada/mapa40/cenas/moinho/cena-fundo.png",
+    "frente": "parada/mapa40/cenas/moinho/cena-frente.png",
+    "npc": {
+      "nome": "Mathilde",
+      "papel": "moleira",
+      "img": "parada/mapa40/npc/mathilde.png",
+      "x": 52,
+      "y": 37.3,
+      "w": 17.75,
+      "voz": "mathilde"
+    },
+    "brilhos": []
+  },
+  "vozes": {
+    "mathilde": {
+      "voz": "fr-CA-SylvieNeural",
+      "pitch": "+3Hz"
+    },
+    "leo": "fr-CA-AntoineNeural",
+    "arsene": {
+      "voz": "fr-CA-ThierryNeural",
+      "pitch": "-6Hz"
+    }
+  },
+  "audios": {
+    "w-mon-pere": {
+      "voz": "mathilde",
+      "texto": "Mon père."
+    },
+    "w-ma-mere": {
+      "voz": "mathilde",
+      "texto": "Ma mère."
+    },
+    "w-mon-frere": {
+      "voz": "mathilde",
+      "texto": "Mon frère."
+    },
+    "w-ma-s-ur": {
+      "voz": "mathilde",
+      "texto": "Ma sœur."
+    },
+    "w-la-famille": {
+      "voz": "mathilde",
+      "texto": "La famille."
+    },
+    "w-j-ai": {
+      "voz": "mathilde",
+      "texto": "J'ai."
+    },
+    "w-voici": {
+      "voz": "mathilde",
+      "texto": "Voici."
+    },
+    "c1-fala": {
+      "voz": "mathilde",
+      "texto": "Voici mon père. Il s'appelle Bernard."
+    },
+    "c2-fala": {
+      "voz": "mathilde",
+      "texto": "J'ai un frère et une sœur."
+    },
+    "c3-fala": {
+      "voz": "mathilde",
+      "texto": "Voici ma mère."
+    },
+    "frase-b1": {
+      "voz": "mathilde",
+      "texto": "Voici mon père."
+    },
+    "frase-b2": {
+      "voz": "mathilde",
+      "texto": "Voici ma mère."
+    },
+    "frase-b3": {
+      "voz": "mathilde",
+      "texto": "J'ai un frère."
+    },
+    "d-n1": {
+      "voz": "mathilde",
+      "texto": "Bonjour ! Bienvenue au moulin !"
+    },
+    "d-n2": {
+      "voz": "mathilde",
+      "texto": "Oui ! J'ai un frère. Il s'appelle Jules."
+    },
+    "d-n3": {
+      "voz": "mathilde",
+      "texto": "Super ! Voilà du pain pour la route."
+    },
+    "modelo": {
+      "voz": "leo",
+      "texto": "Voici ma mère. J'ai un frère."
+    },
+    "rev": {
+      "voz": "arsene",
+      "texto": "Il fait beau aujourd'hui ?"
+    },
+    "recap": {
+      "voz": "mathilde",
+      "texto": "Voici ma famille. J'ai une sœur."
+    }
+  },
+  "imagens": {
+    "pere": {
+      "src": "parada/mapa40/icones/pere.png",
+      "fr": "mon père",
+      "pt": "meu pai",
+      "alt": "meu pai"
+    },
+    "mere": {
+      "src": "parada/mapa40/icones/mere.png",
+      "fr": "ma mère",
+      "pt": "minha mãe",
+      "alt": "minha mãe"
+    },
+    "frere": {
+      "src": "parada/mapa40/icones/frere.png",
+      "fr": "mon frère",
+      "pt": "meu irmão",
+      "alt": "meu irmão"
+    },
+    "soeur": {
+      "src": "parada/mapa40/icones/soeur.png",
+      "fr": "ma sœur",
+      "pt": "minha irmã",
+      "alt": "minha irmã"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "mon père",
+      "pt": "meu pai",
+      "audio": "w-mon-pere",
+      "img": "pere"
+    },
+    {
+      "fr": "ma mère",
+      "pt": "minha mãe",
+      "audio": "w-ma-mere",
+      "img": "mere"
+    },
+    {
+      "fr": "mon frère",
+      "pt": "meu irmão",
+      "audio": "w-mon-frere",
+      "img": "frere"
+    },
+    {
+      "fr": "ma sœur",
+      "pt": "minha irmã",
+      "audio": "w-ma-s-ur",
+      "img": "soeur"
+    },
+    {
+      "fr": "la famille",
+      "pt": "a família",
+      "audio": "w-la-famille"
+    },
+    {
+      "fr": "j'ai",
+      "pt": "eu tenho",
+      "audio": "w-j-ai"
+    },
+    {
+      "fr": "voici",
+      "pt": "aqui está / este é",
+      "audio": "w-voici"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-voici": {
+      "id": "rv-voici",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Mathilde : Bienvenue au moulin !"
+      ],
+      "pergunta": "Você quer saber da família dela. O que diz?",
+      "opcoes": [
+        "Voici votre famille ?",
+        "Il pleut !",
+        "Où est le pont ?"
+      ],
+      "correta": 0,
+      "explicacao": "Voici votre famille ? = Esta é a sua família?"
+    },
+    "rv-jules": {
+      "id": "rv-jules",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Mathilde : J'ai un frère. Il s'appelle Jules."
+      ],
+      "pergunta": "Como se chama o irmão?",
+      "opcoes": [
+        "Jules",
+        "Bernard",
+        "Bastien"
+      ],
+      "correta": 0,
+      "explicacao": "Il s'appelle Jules."
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "Mathilde, a moleira, apresenta a família. Ouça e escolha a imagem.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-mon-pere",
+          "texto_fr": "mon père",
+          "opcoes": [
+            "mere",
+            "pere",
+            "soeur",
+            "frere"
+          ],
+          "correta": "pere",
+          "explicacao": "Mon père = meu pai."
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-ma-mere",
+          "texto_fr": "ma mère",
+          "opcoes": [
+            "soeur",
+            "mere",
+            "frere",
+            "pere"
+          ],
+          "correta": "mere",
+          "explicacao": "Ma mère = minha mãe."
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-mon-frere",
+          "texto_fr": "mon frère",
+          "opcoes": [
+            "pere",
+            "frere",
+            "mere",
+            "soeur"
+          ],
+          "correta": "frere",
+          "explicacao": "Mon frère = meu irmão."
+        },
+        {
+          "id": "d4",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-ma-s-ur",
+          "texto_fr": "ma sœur",
+          "opcoes": [
+            "pere",
+            "mere",
+            "soeur",
+            "frere"
+          ],
+          "correta": "soeur",
+          "explicacao": "Ma sœur = minha irmã."
+        },
+        {
+          "id": "d5",
+          "tipo": "pares",
+          "instrucao": "Ligue cada palavra à sua imagem: toque numa palavra e depois na imagem.",
+          "pares": [
+            {
+              "fr": "mon père",
+              "img": "pere",
+              "audio": "w-mon-pere"
+            },
+            {
+              "fr": "ma mère",
+              "img": "mere",
+              "audio": "w-ma-mere"
+            },
+            {
+              "fr": "mon frère",
+              "img": "frere",
+              "audio": "w-mon-frere"
+            },
+            {
+              "fr": "ma sœur",
+              "img": "soeur",
+              "audio": "w-ma-s-ur"
+            }
+          ],
+          "explicacao": "Pai, mãe, irmão e irmã. Mon com masculino, ma com feminino."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Escute Mathilde. O texto só aparece depois que você responder.",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Ouça Mathilde.",
+          "audio": "c1-fala",
+          "pergunta": "Quem é Bernard?",
+          "opcoes": [
+            "o pai dela",
+            "o irmão dela",
+            "o lenhador"
+          ],
+          "correta": 0,
+          "explicacao": "Voici mon père = este é o meu pai."
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "Ouça Mathilde.",
+          "audio": "c2-fala",
+          "pergunta": "Quantos irmãos ela tem?",
+          "opcoes": [
+            "dois irmãos",
+            "só uma irmã",
+            "um irmão e uma irmã"
+          ],
+          "correta": 2,
+          "explicacao": "J'ai un frère et une sœur = tenho um irmão e uma irmã."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Ouça Mathilde.",
+          "audio": "c3-fala",
+          "pergunta": "Quem ela mostra?",
+          "opcoes_img": [
+            "pere",
+            "mere",
+            "frere",
+            "soeur"
+          ],
+          "correta": "mere",
+          "explicacao": "Ma mère = minha mãe."
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia a conversa no moinho.",
+          "texto_fr": [
+            "Léo : Bonjour ! Voici ta famille ?",
+            "Mathilde : Oui ! Voici ma mère et ma sœur.",
+            "Léo : Et ton frère ?",
+            "Mathilde : Il est au pont."
+          ],
+          "pergunta": "Onde está o irmão?",
+          "opcoes": [
+            "na floresta",
+            "na ponte",
+            "no moinho"
+          ],
+          "correta": 1,
+          "explicacao": "Il est au pont = ele está na ponte."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "Mesma conversa.",
+          "texto_fr": [
+            "Léo : Bonjour ! Voici ta famille ?",
+            "Mathilde : Oui ! Voici ma mère et ma sœur.",
+            "Léo : Et ton frère ?",
+            "Mathilde : Il est au pont."
+          ],
+          "pergunta": "Quem está com Mathilde?",
+          "opcoes": [
+            "a mãe e a irmã",
+            "o pai e o irmão",
+            "só o pai"
+          ],
+          "correta": 0,
+          "explicacao": "Ma mère et ma sœur."
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Monte as frases da família. Voici… = este é… · J'ai… = eu tenho…",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte: “Este é o meu pai.”",
+          "palavras": [
+            "Voici",
+            "mon",
+            "père."
+          ],
+          "extras": [
+            "ma",
+            "sœur"
+          ],
+          "audio": "frase-b1",
+          "explicacao": "Voici + mon/ma + pessoa."
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete: “Esta é a minha mãe.”",
+          "frase": "Voici ___ mère.",
+          "banco": [
+            "ma",
+            "mon",
+            "un"
+          ],
+          "respostas": [
+            "ma"
+          ],
+          "audio": "frase-b2",
+          "explicacao": "Ma com feminino: ma mère, ma sœur."
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Escreva: “Eu tenho um irmão.”",
+          "frase": "J'ai un ___.",
+          "respostas": [
+            "frère",
+            "frere"
+          ],
+          "dica": "Começa com f…",
+          "audio": "frase-b3",
+          "explicacao": "J'ai un frère = eu tenho um irmão."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "w-ma-s-ur",
+          "respostas": [
+            "ma sœur"
+          ],
+          "explicacao": "Ma sœur = minha irmã (œ soa como “ê” fechado)."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez! Converse com Mathilde sobre a família e grave a sua frase.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Mathilde.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Bonjour ! Bienvenue au moulin !",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Il pleut !",
+                  "feedback": "Hoje faz sol! Pergunte pela família.",
+                  "erro": true,
+                  "revisao": "rv-voici"
+                },
+                {
+                  "fr": "Bonjour ! Voici votre famille ?",
+                  "feedback": "Isso: perguntar pela família.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "Bonjour ! Vous avez un frère ?",
+                  "feedback": "Boa pergunta!",
+                  "vai": "n2"
+                }
+              ]
+            },
+            "n2": {
+              "fala": "Oui ! J'ai un frère. Il s'appelle Jules.",
+              "audio": "d-n2",
+              "opcoes": [
+                {
+                  "fr": "Moi aussi, j'ai un frère !",
+                  "feedback": "Isso: falar da sua família.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Moi, j'ai une sœur.",
+                  "feedback": "Isso: falar da sua família.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Il s'appelle Bernard ?",
+                  "feedback": "Ela disse Jules.",
+                  "erro": true,
+                  "revisao": "rv-jules"
+                }
+              ]
+            },
+            "n3": {
+              "fala": "Super ! Voilà du pain pour la route.",
+              "audio": "d-n3",
+              "opcoes": [
+                {
+                  "fr": "Ma mère ?",
+                  "feedback": "Agora agradeça o pão: merci beaucoup!",
+                  "erro": true
+                },
+                {
+                  "fr": "Merci beaucoup ! Au revoir !",
+                  "feedback": "Perfeito: agradecer e se despedir.",
+                  "vai": "fim"
+                }
+              ]
+            }
+          },
+          "explicacao": "Voici votre famille ? → j'ai un frère / une sœur → merci, au revoir."
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave em voz alta (1–2 frases): apresente alguém da sua família.",
+          "modelo": "Voici ma mère. J'ai un frère.",
+          "audio_modelo": "modelo",
+          "checklist": [
+            "Voici…",
+            "mon père / ma mère",
+            "J'ai un frère / une sœur"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva sobre a sua família.",
+            "palavras_chave": [
+              [
+                "voici",
+                "j'ai",
+                "jai"
+              ],
+              [
+                "père",
+                "pere",
+                "mère",
+                "mere",
+                "frère",
+                "frere",
+                "sœur",
+                "soeur"
+              ]
+            ],
+            "explicacao": "Voici + mon/ma… e J'ai un frère / une sœur."
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "intro": "Última rodada: os itens errados voltam, uma revisão e a frase da missão.",
+      "recuperar": true,
+      "itens": [
+        {
+          "id": "r2",
+          "tipo": "audio",
+          "instrucao": "Revisão da etapa 15 (o tempo): ouça a pergunta.",
+          "audio": "rev",
+          "pergunta": "Hoje chove. O que você responde?",
+          "opcoes": [
+            "Oui, j'ai un frère.",
+            "C'est à droite.",
+            "Non, il pleut."
+          ],
+          "correta": 2,
+          "explicacao": "Il fait beau ? → Non, il pleut (etapa 15)."
+        },
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “Esta é a minha família. Eu tenho uma irmã.”",
+          "palavras": [
+            "Voici",
+            "ma",
+            "famille.",
+            "J'ai",
+            "une",
+            "sœur."
+          ],
+          "extras": [
+            "mon"
+          ],
+          "audio": "recap",
+          "explicacao": "Voici ma famille. J'ai une sœur."
+        }
+      ]
+    }
+  ],
+  "novas": [
+    "mon père",
+    "ma mère",
+    "mon frère",
+    "ma sœur",
+    "la famille",
+    "j'ai"
+  ],
+  "padroes": [
+    "Voici mon / ma + pessoa.",
+    "J'ai un frère / une sœur."
+  ]
+}

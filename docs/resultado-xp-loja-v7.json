@@ -1,0 +1,130 @@
+{
+  "versao": 7,
+  "precos": {
+    "paleta": 150,
+    "particula": 250,
+    "titulo": 90,
+    "pet": 400,
+    "cenario": 300
+  },
+  "itens_pagos": 28,
+  "total_loja": 7860,
+  "cristais_mapa": [
+    1000,
+    1020
+  ],
+  "percentual_colecao_por_mapa": [
+    12.72,
+    12.98
+  ],
+  "ganhos_e_xp_inalterados": true,
+  "molduras": [
+    {
+      "id": "madeira",
+      "lvl": 1,
+      "xp": 0
+    },
+    {
+      "id": "pedra",
+      "lvl": 2,
+      "xp": 45
+    },
+    {
+      "id": "bronze",
+      "lvl": 3,
+      "xp": 135
+    },
+    {
+      "id": "prata",
+      "lvl": 4,
+      "xp": 270
+    },
+    {
+      "id": "ouro",
+      "lvl": 5,
+      "xp": 405
+    },
+    {
+      "id": "diamante",
+      "lvl": 6,
+      "xp": 585
+    }
+  ],
+  "cenarios_pagos": [
+    "floresta",
+    "taverna",
+    "ceu-estrelado",
+    "praia-tropical",
+    "mundo-doces",
+    "jardim-japones"
+  ],
+  "cenario_padrao_gratis": "refugio",
+  "testes": {
+    "pytest": 539,
+    "pytest_cp1252": 539,
+    "novos_pytest_v7": 119,
+    "loja_dom": 55,
+    "xp_dom_vm": 93,
+    "simulados_python": 91,
+    "simulados_js": 29,
+    "simulados_dom": 43,
+    "onboarding_python": 124,
+    "onboarding_js": 72,
+    "rotas": 57,
+    "mapa_5077": 9,
+    "mapa_5091": 9,
+    "mapa40": 21,
+    "batalha": 51,
+    "missoes_dom": 209,
+    "formatos_e2e": 4,
+    "batalhas_e2e": 2,
+    "integridade": 701,
+    "http_local": 46
+  },
+  "falhas_finais": 0,
+  "pranchas_pil": [
+    "/workspace/ncl/prints-loja/v7/cenario-ceu-estrelado-preview.png",
+    "/workspace/ncl/prints-loja/v7/cenario-floresta-preview.png",
+    "/workspace/ncl/prints-loja/v7/cenario-jardim-japones-preview.png",
+    "/workspace/ncl/prints-loja/v7/cenario-mundo-doces-preview.png",
+    "/workspace/ncl/prints-loja/v7/cenario-praia-tropical-preview.png",
+    "/workspace/ncl/prints-loja/v7/cenario-refugio-preview.png",
+    "/workspace/ncl/prints-loja/v7/cenario-taverna-preview.png",
+    "/workspace/ncl/prints-loja/v7/cenarios-v7-preview.png"
+  ],
+  "screenshots_navegador": [],
+  "utf8": {
+    "hotfix_preservado": true,
+    "text_io_explicito": true,
+    "testes_principais_cp1252": true
+  },
+  "seguranca": {
+    "dotenv_preservado": true,
+    "env_lido": false,
+    "azure_acoes": false,
+    "deploy": false,
+    "cosmos_real": false,
+    "smtp_real": false
+  },
+  "pendencias": [
+    "inspecao visual desktop/mobile em navegador real",
+    "avaliar precos/duracoes em uso real",
+    "telemetria de conquistas previamente nao rastreaveis"
+  ],
+  "instalacao_cumulativa": {
+    "paginas_http_200": 1600,
+    "assets_unicos_http_200": 160,
+    "sheets_novos_http_200": 42,
+    "combinacoes": 320,
+    "patches": [
+      "v1",
+      "v7"
+    ],
+    "v2_v3_v4_v5_v6_desnecessarios": true,
+    "xp_mapa": 640,
+    "cristais_ganhos": 1020,
+    "compras_equipamentos_categorias": 5,
+    "falhas": 0,
+    "cp1252": true
+  }
+}

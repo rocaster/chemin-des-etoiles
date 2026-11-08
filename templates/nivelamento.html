@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Test de niveau · Chemin des Étoiles</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; overflow: hidden; }
+    body {
+      height: 100vh; height: 100dvh;
+      background: #1a140e; color: #462810;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    h1.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    /* Palco 16:9 em cobertura, igual ao da fogueira. --u = 1 pixel do fundo (400x225). */
+    .palco {
+      --vw: 100vw; --vh: 100vh;
+      position: fixed; top: 50%; left: 50%;
+      width: max(var(--vw), calc(var(--vh) * 16 / 9));
+      height: max(var(--vh), calc(var(--vw) * 9 / 16));
+      transform: translate(-50%, -50%);
+      background: #1a140e url("{{ url_for('static', filename='nivelamento/mesa-fundo.png') }}") center / 100% 100% no-repeat;
+      image-rendering: pixelated;
+    }
+    .palco::after { content: ""; position: absolute; inset: 0; background: rgba(8, 6, 16, .18); }
+    /* Vela (canto superior esquerdo do fundo): chama em 3 quadros + brilho, em % do palco. */
+    .vela-luz, .vela-brilho, .vela-chama { position: absolute; pointer-events: none; image-rendering: pixelated; }
+    .vela-luz {
+      left: calc(7.625% - 16%); top: calc(6.2% - 26%); width: 32%; height: 52%;
+      background: radial-gradient(closest-side, rgba(255, 170, 70, .16) 0 30%, rgba(255, 140, 50, .09) 30% 58%, rgba(255, 120, 40, .04) 58% 82%, transparent 82%);
+      mix-blend-mode: screen; opacity: .8;
+      animation: vela-luz 2.7s steps(1, end) infinite;
+    }
+    .vela-brilho {
+      left: calc(7.625% - 4.5%); top: calc(5.4% - 7.6%); width: 9%; height: 15.2%;
+      background: radial-gradient(closest-side, rgba(255, 214, 120, .42) 0 26%, rgba(255, 170, 60, .22) 26% 52%, rgba(255, 130, 40, .1) 52% 78%, transparent 78%);
+      mix-blend-mode: screen; opacity: .85;
+      animation: vela-brilho 2.3s steps(1, end) infinite;
+    }
+    .vela-chama {
+      left: 6.5%; top: .8889%; width: 2.5%; height: 7.1111%;
+      background: url("{{ url_for('static', filename='nivelamento/chama-quadros.png') }}") 0 0 / 300% 100% no-repeat;
+      animation: vela-chama 2.6s steps(1, end) infinite;
+    }
+    @keyframes vela-chama {
+      0%   { background-position: 0 0; }
+      14%  { background-position: 50% 0; }
+      27%  { background-position: 0 0; }
+      41%  { background-position: 100% 0; }
+      49%  { background-position: 50% 0; }
+      63%  { background-position: 0 0; }
+      78%  { background-position: 100% 0; }
+      88%  { background-position: 0 0; }
+    }
+    @keyframes vela-brilho {
+      0%   { opacity: .85; transform: scale(1); }
+      17%  { opacity: 1;   transform: scale(1.06); }
+      36%  { opacity: .75; transform: scale(.97); }
+      52%  { opacity: .95; transform: scale(1.03); }
+      71%  { opacity: .7;  transform: scale(.96); }
+      86%  { opacity: 1;   transform: scale(1.05); }
+    }
+    @keyframes vela-luz {
+      0%   { opacity: .8; }
+      22%  { opacity: 1; }
+      45%  { opacity: .7; }
+      63%  { opacity: .95; }
+      81%  { opacity: .75; }
+    }
+    /* Prévias: ?vela=1|2|3 congela um momento da animação */
+    body.vela-q2 .vela-chama { animation: none; background-position: 50% 0; }
+    body.vela-q2 .vela-brilho { animation: none; opacity: 1; transform: scale(1.06); }
+    body.vela-q2 .vela-luz { animation: none; opacity: 1; }
+    body.vela-q1 .vela-chama, body.vela-q1 .vela-brilho, body.vela-q1 .vela-luz { animation: none; }
+    body.vela-q1 .vela-brilho { opacity: .7; transform: scale(.96); }
+    body.vela-q1 .vela-luz { opacity: .7; }
+    :root { --u: calc(max(100vw, 100vh * 16 / 9) / 400); }
+    @supports (height: 100dvh) {
+      .palco { --vw: 100dvw; --vh: 100dvh; }
+      :root { --u: calc(max(100dvw, 100dvh * 16 / 9) / 400); }
+    }
+
+    /* Mesa: a folha fica no centro; tinteiro e pena ao lado, vistos de cima. */
+    .mesa {
+      position: fixed; inset: 0; z-index: 2;
+      display: flex; align-items: center; justify-content: center;
+      padding: 18px;
+    }
+    .area {
+      position: relative;
+      display: grid;
+      width: min(660px, 100%);
+      max-height: 100%;
+      font-size: 17px;
+    }
+    .folha {
+      grid-area: 1 / 1;
+      position: relative; min-height: 0;
+      display: flex; flex-direction: column;
+      padding: 22px 28px 18px;
+      background: #e9d6aa url("{{ url_for('static', filename='nivelamento/papel-textura.png') }}") 0 0 / calc(var(--u) * 48) auto repeat;
+      image-rendering: pixelated;
+      box-shadow: 0 0 0 4px #b8965c, 0 0 0 8px #784e1e, 12px 12px 0 8px rgba(0, 0, 0, .38);
+      clip-path: polygon(0 8px, 8px 8px, 8px 0, calc(100% - 8px) 0, calc(100% - 8px) 8px, 100% 8px,
+        100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 8px calc(100% - 8px), 0 calc(100% - 8px));
+      visibility: hidden;
+    }
+    .folha.ativa { visibility: visible; z-index: 3; }
+    .folha.proxima { visibility: visible; z-index: 2; }
+    .folha .corpo { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding-right: 4px; image-rendering: auto; }
+    .folha header { flex: 0 0 auto; border-bottom: 4px solid #b8965c; margin-bottom: 10px; padding-bottom: 6px; }
+    .folha .parte { margin: 0; font-size: .8rem; font-weight: 700; letter-spacing: .08em; color: #8a5a28; text-transform: uppercase; }
+    .folha h2 { margin: 2px 0 2px; font-size: 1.35rem; color: #462810; }
+    .dica { margin: 0; font-size: .86rem; color: #7a5530; font-style: italic; }
+    .item { margin: 0 0 12px; }
+    .item:last-child { margin-bottom: 4px; }
+    .pergunta { margin: 6px 0 6px; font-size: 1.02rem; font-weight: 700; }
+    .pergunta .num { display: inline-block; min-width: 1.5em; color: #8a5a28; }
+
+    /* Opções em blocos de pergaminho */
+    .opcoes { display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 0; padding: 0; border: 0; }
+    .opcoes legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .opcao { position: relative; }
+    .opcao input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+    .opcao span {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px 6px;
+      background: #f4e8c8; border: 3px solid #9c7240; color: #462810;
+      font-size: .98rem; cursor: pointer;
+    }
+    .opcao span b { color: #8a5a28; }
+    .opcao input:checked + span { background: #2c2a5a; border-color: #1d1838; color: #f7edcf; }
+    .opcao input:checked + span b { color: #f0c46a; }
+    .opcao input:focus-visible + span { outline: 3px solid #f0c46a; outline-offset: 2px; }
+    .opcao.icone span { flex-direction: column; padding: 4px 10px 5px; gap: 2px; font-size: .85rem; }
+    .opcao.icone img { width: 48px; height: 48px; image-rendering: pixelated; display: block; }
+
+    /* Estímulos de leitura */
+    .placa {
+      display: inline-block; padding: 8px 16px; margin: 2px 0;
+      background: #6b4422; color: #f7e7c0; border: 4px solid #3b2412;
+      box-shadow: inset 0 0 0 2px #8a5a2e; text-align: center; font-size: .92rem; line-height: 1.35;
+    }
+    .placa strong { display: block; letter-spacing: .12em; font-size: 1rem; color: #ffd98a; }
+    .sms { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+    .sms .de { font-size: .78rem; color: #7a5530; font-weight: 700; }
+    .sms .balao {
+      max-width: 92%; padding: 7px 12px; background: #3d6fb0; color: #fff;
+      border: 3px solid #23426e; font-size: .94rem;
+      clip-path: polygon(0 4px, 4px 4px, 4px 0, calc(100% - 4px) 0, calc(100% - 4px) 4px, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 4px calc(100% - 4px), 0 calc(100% - 4px));
+    }
+    .anuncio {
+      position: relative; display: inline-block; max-width: 100%;
+      padding: 10px 14px 8px; background: #fbf4dc; border: 3px solid #b39b6a;
+      font-size: .9rem; line-height: 1.4;
+    }
+    .anuncio::before { content: ""; position: absolute; top: -6px; left: 50%; width: 10px; height: 10px; margin-left: -5px; background: #b3261e; border: 2px solid #5a120e; }
+    .anuncio strong { color: #8a3b12; }
+
+    /* Escuta */
+    .escuta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .botao {
+      font: inherit; font-weight: 700; font-size: .95rem;
+      padding: 6px 14px; color: #1d1812; background: #f0c46a;
+      border: 3px solid #1d1812; cursor: pointer;
+    }
+    .botao:hover:not(:disabled) { background: #f6d38a; }
+    .botao:disabled { background: #cbb58a; color: #6b5a48; cursor: not-allowed; }
+    .botao:focus-visible { outline: 3px solid #2c2a5a; outline-offset: 2px; }
+    .botao.sec { background: #f4e8c8; border-color: #9c7240; color: #462810; }
+    .contador { font-size: .85rem; color: #7a5530; }
+
+    /* Escrita */
+    .ficha { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; }
+    .campo label { display: block; font-size: .82rem; font-weight: 700; color: #6e4620; margin-bottom: 2px; }
+    .campo input, .campo select, textarea {
+      width: 100%; font: inherit; font-size: 1rem; color: #462810;
+      padding: 5px 8px; background: #f7edcf; border: 3px solid #9c7240; border-radius: 0; outline: none;
+    }
+    .campo input:focus, .campo select:focus, textarea:focus { border-color: #2c2a5a; background: #fbf4dc; }
+    textarea { resize: none; height: 104px; line-height: 1.4; }
+    .palavras { margin: 3px 0 0; font-size: .85rem; color: #7a5530; }
+    .palavras.ok { color: #2e6a2e; font-weight: 700; }
+    .palavras.fora { color: #a3201a; font-weight: 700; }
+
+    /* Fala */
+    .pedidos { margin: 4px 0 10px; padding-left: 0; list-style: none; }
+    .pedidos li { margin: 0 0 6px; padding: 6px 10px; background: #f4e8c8; border-left: 6px solid #2c2a5a; font-size: .98rem; }
+    .gravador { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .tempo { font-variant-numeric: tabular-nums; font-weight: 700; min-width: 4.5em; }
+    .grav-status { margin: 6px 0 0; font-size: .88rem; color: #7a5530; min-height: 1.3em; }
+    .rec .tempo { color: #a3201a; }
+
+    footer.pe { flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; padding-top: 8px; border-top: 4px solid #b8965c; }
+    .folha[data-parte="3"] footer.pe { flex-wrap: wrap; }
+    .aviso { margin: 0; font-size: .88rem; color: #a3201a; font-weight: 700; }
+    .entregar {
+      font: inherit; font-weight: 700; font-size: 1rem;
+      padding: 8px 18px; color: #1d1812; background: #f0c46a;
+      border: 3px solid #1d1812; cursor: pointer; margin-left: auto;
+    }
+    .entregar:hover { background: #f6d38a; }
+    .entregar:focus-visible { outline: 3px solid #2c2a5a; outline-offset: 3px; }
+    .final .corpo { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 12px; }
+    .final h2 { font-size: 1.7rem; }
+    .final p { margin: 0; font-size: 1.05rem; }
+    .selo { width: calc(var(--u) * 20); height: calc(var(--u) * 20); background: #a3201a; border: 4px solid #5a120e;
+      clip-path: polygon(25% 0, 75% 0, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0 75%, 0 25%);
+      display: grid; place-items: center; color: #ffd98a; font-size: 1.6rem; font-weight: 700; }
+    a.entregar { text-decoration: none; margin: 4px 0 0; }
+
+    /* Tinteiro e pena ao lado da folha (vista de cima) */
+    .objetos { position: absolute; left: 100%; top: 4%; margin-left: calc(var(--u) * 6); width: calc(var(--u) * 52); height: 90%; pointer-events: none; }
+    .tinteiro { position: absolute; left: 0; top: 0; width: calc(var(--u) * 34); height: calc(var(--u) * 34); }
+    .tinteiro img { position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; }
+    .tinteiro .tinta { display: none; }
+    .tinteiro .tinta.on { display: block; }
+    .pena { position: absolute; left: calc(var(--u) * 2); top: calc(var(--u) * 30); width: calc(var(--u) * 48); height: calc(var(--u) * 75); }
+    .pena img { position: absolute; left: 0; top: 0; height: 100%; image-rendering: pixelated; }
+    .pena .b { display: none; height: calc(var(--u) * 84); width: calc(var(--u) * 34); left: calc(var(--u) * 7); top: calc(var(--u) * -4); }
+    .pena.molhando .a { display: none; }
+    .pena.molhando .b { display: block; }
+
+    /* Troca de folhas: 2 quadros (lado, depois para baixo) e a próxima cai do alto. */
+    .folha.sai { animation: folha-sai .5s steps(1, end) forwards; }
+    .folha.entra { animation: folha-entra .36s steps(4, end) forwards; }
+    @keyframes folha-sai {
+      0%   { transform: translate(0, 0) rotate(0); }
+      50%  { transform: translate(24%, 0); }
+      100% { transform: translate(24%, 130vh); }
+    }
+    @keyframes folha-entra {
+      from { transform: translateY(-130vh); }
+      to   { transform: translateY(0); }
+    }
+    /* Quadros fixos para prévias (?quadro=1|2|entra) */
+    .folha.q1 { transform: translate(24%, 0); }
+    .folha.q2 { transform: translate(24%, 72%); }
+    .folha.qe { transform: translateY(-46%); }
+
+    /* ===== Modelos de apresentação (só layout; conteúdo e letras A/B/C iguais) ===== */
+    /* Modelo 2: um item por vez, estímulo como bilhete preso ao lado da pergunta. */
+    .passos { display: none; align-items: center; gap: 8px; }
+    .passos .marca { font-size: .85rem; font-weight: 700; color: #7a5530; min-width: 3.2em; text-align: center; }
+    body.modelo-2 .folha.paginada .passos { display: flex; }
+    body.modelo-2 .folha.paginada .item.oculto { display: none; }
+    body.modelo-2 .folha.paginada .entregar.oculto { display: none; }
+    body.modelo-2 .item.com-estimulo { display: flex; gap: 18px; align-items: flex-start; margin: 8px 0 4px; }
+    body.modelo-2 .item.com-estimulo > :first-child {
+      position: relative; flex: 0 0 44%; max-width: 44%;
+      box-shadow: 6px 6px 0 rgba(70, 40, 16, .25);
+    }
+    body.modelo-2 .item.com-estimulo > :first-child:not(.placa) {
+      padding: 16px 12px 12px; background: #fbf4dc; border: 3px solid #b39b6a;
+    }
+    body.modelo-2 .item.com-estimulo > .placa { margin: 0; padding: 16px 14px 12px; }
+    body.modelo-2 .item.com-estimulo > :first-child::after {
+      content: ""; position: absolute; top: -6px; left: 50%; width: 12px; height: 12px; margin-left: -6px;
+      background: #b3261e; border: 3px solid #5a120e;
+    }
+    body.modelo-2 .item.com-estimulo > .escuta { flex-direction: column; align-items: flex-start; }
+    body.modelo-2 .item.com-estimulo .placa,
+    body.modelo-2 .item.com-estimulo .anuncio { display: block; }
+    body.modelo-2 .item.com-estimulo .anuncio { border: 0; padding: 0; background: transparent; }
+    body.modelo-2 .item.com-estimulo .anuncio::before { display: none; }
+    body.modelo-2 .item.com-estimulo .opcoes { flex: 1 1 auto; flex-direction: column; align-items: stretch; }
+    body.modelo-2 .item.com-estimulo .opcoes .pergunta { margin-top: 0; }
+    body.modelo-2 .item.com-estimulo .opcao.icone { align-self: flex-start; }
+    body.modelo-2 .item.com-estimulo .opcoes:has(.icone) { flex-direction: row; flex-wrap: wrap; }
+
+    /* Modelo 3: folha larga em duas colunas, opções em blocos grandes. */
+    body.modelo-3 .area { width: min(860px, 100%); }
+    body.modelo-3 .item.com-estimulo {
+      display: grid; grid-template-columns: minmax(0, 40%) minmax(0, 1fr); gap: 6px 18px; align-items: start;
+      padding: 0 0 10px; margin-bottom: 10px; border-bottom: 2px dashed #c9ab74;
+    }
+    body.modelo-3 .item.com-estimulo:last-child { border-bottom: 0; padding-bottom: 0; }
+    body.modelo-3 .item.com-estimulo > :first-child { margin-top: 6px; }
+    body.modelo-3 .item.com-estimulo .placa, body.modelo-3 .item.com-estimulo .anuncio { display: block; }
+    body.modelo-3 .item.com-estimulo > .escuta { flex-direction: column; align-items: flex-start; gap: 4px; }
+    body.modelo-3 .item.com-estimulo .opcoes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    body.modelo-3 .item.com-estimulo .opcoes .pergunta { grid-column: 1 / -1; margin: 2px 0 2px; }
+    body.modelo-3 .item.com-estimulo .opcao span {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+      width: 100%; height: 100%; min-height: 58px; padding: 6px 6px 7px; gap: 2px; line-height: 1.2;
+    }
+    body.modelo-3 .item.com-estimulo .opcao span b { font-size: 1.1rem; }
+    body.modelo-3 .item.com-estimulo .opcao.icone span { min-height: 76px; }
+
+    @media (max-width: 760px) {
+      .mesa { padding: calc(var(--u) * 30) 10px 12px; align-items: stretch; }
+      .area { width: 100%; height: 100%; font-size: 16px; }
+      .folha { padding: 16px 16px 12px; }
+      .folha h2 { font-size: 1.18rem; }
+      .ficha { grid-template-columns: 1fr; gap: 6px; }
+      .objetos { left: auto; right: 4px; top: calc(var(--u) * -29); margin: 0; width: calc(var(--u) * 60); height: calc(var(--u) * 28); }
+      .tinteiro { left: auto; right: 0; width: calc(var(--u) * 26); height: calc(var(--u) * 26); }
+      .pena { left: 0; top: calc(var(--u) * -6); width: calc(var(--u) * 24); height: calc(var(--u) * 37.5); transform: rotate(-90deg) scaleX(-1); transform-origin: 50% 50%; }
+      .pena .b { height: calc(var(--u) * 42); width: calc(var(--u) * 17); left: calc(var(--u) * 3.5); top: calc(var(--u) * -2); }
+      .opcao span { padding: 4px 10px 5px; font-size: .94rem; }
+      textarea { height: 116px; }
+      body.modelo-2 .item.com-estimulo { flex-direction: column; gap: 12px; }
+      body.modelo-2 .item.com-estimulo > :first-child { flex: none; max-width: none; width: 100%; }
+      body.modelo-3 .item.com-estimulo { grid-template-columns: 1fr; gap: 4px; padding-bottom: 8px; margin-bottom: 8px; }
+      body.modelo-3 .item.com-estimulo > :first-child { margin-top: 0; }
+      body.modelo-3 .item.com-estimulo .opcoes { gap: 6px; }
+      body.modelo-3 .item.com-estimulo .opcao span { flex-direction: row; gap: 4px; min-height: 40px; padding: 3px 4px 4px; font-size: .85rem; }
+      body.modelo-3 .item.com-estimulo .opcao span b { font-size: .95rem; }
+      body.modelo-3 .item.com-estimulo .opcao.icone span { flex-direction: column; min-height: 60px; }
+      body.modelo-3 .item.com-estimulo .placa { padding: 4px 10px; font-size: .86rem; }
+      body.modelo-3 .item.com-estimulo .anuncio { padding: 8px 10px 6px; font-size: .86rem; }
+      body.modelo-3 .item.com-estimulo .sms .balao { padding: 5px 10px; font-size: .9rem; }
+      body.modelo-3 .folha header { margin-bottom: 6px; }
+    }
+    @media (max-height: 640px) and (min-width: 761px) {
+      .folha { padding: 14px 22px 12px; }
+      .item { margin-bottom: 6px; }
+      .folha header { margin-bottom: 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .folha.sai, .folha.entra { animation: none; }
+      .vela-luz, .vela-brilho, .vela-chama { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="sr">Test de niveau</h1>
+  <div class="palco" aria-hidden="true"><div class="vela-luz"></div><div class="vela-brilho"></div><div class="vela-chama"></div></div>
+
+  <main class="mesa">
+    <div class="area" id="area">
+      <div class="objetos" aria-hidden="true">
+        <div class="tinteiro">
+          <img src="{{ url_for('static', filename='nivelamento/tinteiro.png') }}" alt="">
+          {% for k in range(4) %}
+          <img class="tinta" data-tinta="{{ k }}" src="{{ url_for('static', filename='nivelamento/tinta-' ~ k ~ '.png') }}" alt="">
+          <img class="tinta" data-tinta="{{ k }}m" src="{{ url_for('static', filename='nivelamento/tinta-' ~ k ~ '-molhada.png') }}" alt="">
+          {% endfor %}
+        </div>
+        <div class="pena" id="pena">
+          <img class="a" src="{{ url_for('static', filename='nivelamento/pena-a.png') }}" alt="">
+          <img class="b" src="{{ url_for('static', filename='nivelamento/pena-b.png') }}" alt="">
+        </div>
+      </div>
+
+      <!-- Parte 1: Leitura -->
+      <section class="folha" data-parte="1" aria-labelledby="t1">
+        <header>
+          <p class="parte">Partie 1 / 4 · Lecture</p>
+          <h2 id="t1">Lisez et choisissez la bonne réponse.</h2>
+          <p class="dica">Leia e escolha a resposta certa.</p>
+        </header>
+        <div class="corpo">
+          <div class="item">
+            <div class="placa"><strong>BIBLIOTHÈQUE</strong>Ouvert du lundi au samedi, 9h–18h<br>Fermé le dimanche</div>
+            <fieldset class="opcoes" data-item="item1">
+              <legend>Item 1</legend>
+              <p class="pergunta" style="flex-basis:100%"><span class="num">1.</span>Quel jour la bibliothèque est fermée ?</p>
+              <label class="opcao"><input type="radio" name="item1" value="A"><span><b>A</b> le lundi</span></label>
+              <label class="opcao"><input type="radio" name="item1" value="B"><span><b>B</b> le samedi</span></label>
+              <label class="opcao"><input type="radio" name="item1" value="C"><span><b>C</b> le dimanche</span></label>
+            </fieldset>
+          </div>
+          <div class="item">
+            <div class="sms"><span class="de">Julie</span><span class="balao">Salut ! On se retrouve à 14h devant le cinéma ? Bisous !</span></div>
+            <fieldset class="opcoes" data-item="item2">
+              <legend>Item 2</legend>
+              <p class="pergunta" style="flex-basis:100%"><span class="num">2.</span>Où est le rendez-vous ?</p>
+              <label class="opcao"><input type="radio" name="item2" value="A"><span><b>A</b> au café</span></label>
+              <label class="opcao"><input type="radio" name="item2" value="B"><span><b>B</b> devant le cinéma</span></label>
+              <label class="opcao"><input type="radio" name="item2" value="C"><span><b>C</b> à l'école</span></label>
+            </fieldset>
+          </div>
+          <div class="item">
+            <div class="anuncio"><strong>Chambre à louer</strong> — 400 €/mois — centre-ville, calme. Pas d'animaux. Appelez Marc au soir.</div>
+            <fieldset class="opcoes" data-item="item3">
+              <legend>Item 3</legend>
+              <p class="pergunta" style="flex-basis:100%"><span class="num">3.</span>Qu'est-ce qui est interdit ?</p>
+              <label class="opcao"><input type="radio" name="item3" value="A"><span><b>A</b> appeler le soir</span></label>
+              <label class="opcao"><input type="radio" name="item3" value="B"><span><b>B</b> avoir un chat</span></label>
+              <label class="opcao"><input type="radio" name="item3" value="C"><span><b>C</b> habiter au centre-ville</span></label>
+            </fieldset>
+          </div>
+        </div>
+        <footer class="pe"><p class="aviso" hidden>Responda as 3 perguntas.</p><button type="button" class="entregar">Rendre la feuille</button></footer>
+      </section>
+
+      <!-- Parte 2: Escuta -->
+      <section class="folha" data-parte="2" aria-labelledby="t2">
+        <header>
+          <p class="parte">Partie 2 / 4 · Écoute</p>
+          <h2 id="t2">Écoutez et choisissez la bonne réponse.</h2>
+          <p class="dica">Ouça (no máximo 2 vezes) e escolha a resposta certa.</p>
+        </header>
+        <div class="corpo">
+          {% set audios = [
+            ("item4", "Quel âge a Léa ?", "Bonjour ! Je m'appelle Léa. J'ai vingt ans et j'habite à Lyon."),
+            ("item5", "Où va le train ?", "Attention, s'il vous plaît. Le train pour Montréal partira à quinze heures, voie trois."),
+            ("item6", "Qu'est-ce qu'elle commande ?", "Tu veux un café ? ... Non merci, j'ai déjà bu un café ce matin. Un thé, s'il te plaît.")
+          ] %}
+          {% for item, pergunta, fala in audios %}
+          <div class="item">
+            <div class="escuta" data-audio="{{ item }}" data-fala="{{ fala }}">
+              <button type="button" class="botao ouvir">▶ Écouter</button>
+              <span class="contador">2 écoutes restantes</span>
+              <audio preload="auto" src="{{ url_for('static', filename='audio/nivelamento/' ~ item ~ '.mp3') }}"></audio>
+            </div>
+            <fieldset class="opcoes" data-item="{{ item }}">
+              <legend>{{ item }}</legend>
+              <p class="pergunta" style="flex-basis:100%"><span class="num">{{ loop.index + 3 }}.</span>{{ pergunta }}</p>
+              {% if item == "item4" %}
+              <label class="opcao"><input type="radio" name="item4" value="A"><span><b>A</b> 12 ans</span></label>
+              <label class="opcao"><input type="radio" name="item4" value="B"><span><b>B</b> 20 ans</span></label>
+              <label class="opcao"><input type="radio" name="item4" value="C"><span><b>C</b> 30 ans</span></label>
+              {% elif item == "item5" %}
+              <label class="opcao"><input type="radio" name="item5" value="A"><span><b>A</b> Québec</span></label>
+              <label class="opcao"><input type="radio" name="item5" value="B"><span><b>B</b> Ottawa</span></label>
+              <label class="opcao"><input type="radio" name="item5" value="C"><span><b>C</b> Montréal</span></label>
+              {% else %}
+              <label class="opcao icone"><input type="radio" name="item6" value="A" aria-label="A: un café"><span><img src="{{ url_for('static', filename='nivelamento/icone-cafe.png') }}" alt=""><b>A</b></span></label>
+              <label class="opcao icone"><input type="radio" name="item6" value="B" aria-label="B: un thé"><span><img src="{{ url_for('static', filename='nivelamento/icone-the.png') }}" alt=""><b>B</b></span></label>
+              <label class="opcao icone"><input type="radio" name="item6" value="C" aria-label="C: de l'eau"><span><img src="{{ url_for('static', filename='nivelamento/icone-agua.png') }}" alt=""><b>C</b></span></label>
+              {% endif %}
+            </fieldset>
+          </div>
+          {% endfor %}
+        </div>
+        <footer class="pe"><p class="aviso" hidden>Responda as 3 perguntas.</p><button type="button" class="entregar">Rendre la feuille</button></footer>
+      </section>
+
+      <!-- Parte 3: Escrita -->
+      <section class="folha" data-parte="3" aria-labelledby="t3">
+        <header>
+          <p class="parte">Partie 3 / 4 · Écriture</p>
+          <h2 id="t3">Vous vous inscrivez à un cours de français.</h2>
+          <p class="dica">Preencha a ficha e escreva uma pequena mensagem.</p>
+        </header>
+        <div class="corpo">
+          <div class="item">
+            <p class="pergunta"><span class="num">7.</span>Complétez la fiche.</p>
+            <div class="ficha">
+              <div class="campo"><label for="f-prenom">Prénom</label><input id="f-prenom" maxlength="40" autocomplete="off"></div>
+              <div class="campo"><label for="f-age">Âge</label><input id="f-age" type="number" min="1" max="120" inputmode="numeric"></div>
+              <div class="campo"><label for="f-ville">Ville</label><input id="f-ville" maxlength="60" autocomplete="off"></div>
+              <div class="campo"><label for="f-nat">Nationalité</label>
+                <select id="f-nat">
+                  <option value="">— choisissez —</option>
+                  <option>brésilienne</option><option>brésilien</option>
+                  <option>canadienne</option><option>canadien</option>
+                  <option>française</option><option>français</option>
+                  <option value="autre">autre</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <p class="pergunta"><span class="num">8.</span>Écrivez un petit message à votre nouveau professeur. Présentez-vous en 3 à 5 phrases (25 à 40 mots).</p>
+            <p class="dica">Diga: prénom, âge, ville, un loisir.</p>
+            <textarea id="f-msg" aria-describedby="f-cont" spellcheck="false"></textarea>
+            <p class="palavras" id="f-cont" aria-live="polite">0 mot · 25 à 40</p>
+          </div>
+        </div>
+        <footer class="pe"><p class="aviso" hidden></p><button type="button" class="botao sec" id="e-pular">Pular esta parte <small>· sem penalidade</small></button><button type="button" class="entregar">Rendre la feuille</button></footer>
+      </section>
+
+      <!-- Parte 4: Fala -->
+      <section class="folha" data-parte="4" aria-labelledby="t4">
+        <header>
+          <p class="parte">Partie 4 / 4 · Expression orale</p>
+          <h2 id="t4">Enregistrez-vous (30 secondes maximum).</h2>
+          <p class="dica">Uma gravação só, respondendo aos dois pedidos.</p>
+        </header>
+        <div class="corpo">
+          <ol class="pedidos">
+            <li><span class="num"><b>9.</b></span> Dites votre prénom et la ville où vous habitez.</li>
+            <li><span class="num"><b>10.</b></span> Parlez d'une activité que vous aimez faire.</li>
+          </ol>
+          <div class="gravador" id="gravador">
+            <button type="button" class="botao" id="g-rec">● Enregistrer</button>
+            <button type="button" class="botao sec" id="g-stop" disabled>■ Arrêter</button>
+            <button type="button" class="botao sec" id="g-ouvir" disabled>▶ Réécouter</button>
+            <button type="button" class="botao sec" id="g-regrav" disabled>↺ Réenregistrer (1 fois)</button>
+            <span class="tempo" id="g-tempo">0:00 / 0:30</span>
+          </div>
+          <p class="grav-status" id="g-status" aria-live="polite">O áudio fica só no seu aparelho; enviamos apenas que houve gravação.</p>
+          <p><button type="button" class="botao sec" id="g-pular">Passer (sans micro)</button></p>
+        </div>
+        <footer class="pe"><p class="aviso" hidden>Grave sua resposta ou toque em « Passer ».</p><button type="button" class="entregar">Terminer le test</button></footer>
+      </section>
+
+      <!-- Folha final -->
+      <section class="folha final" data-parte="5" aria-labelledby="t5">
+        <div class="corpo">
+          <div class="selo" aria-hidden="true">✓</div>
+          <h2 id="t5">Respostas registradas!</h2>
+          <p>Sua missão vai começar.</p>
+          <p class="dica">Merci ! Vos réponses sont bien enregistrées.</p>
+          <a class="entregar" href="{{ url_for('missao') }}">Começar a missão</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+  (() => {
+    const params = new URLSearchParams(location.search);
+    const reduz = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const folhas = [...document.querySelectorAll(".folha")];
+    const folha = n => folhas.find(f => f.dataset.parte === String(n));
+    const pena = document.getElementById("pena");
+    const tintas = [...document.querySelectorAll(".tinta")];
+    let parte = Math.min(5, Math.max(1, {{ parte|int }}));
+    const estado = { escrita_pulada: false, escutas: { item4: 2, item5: 2, item6: 2 }, fala: { estado: null, duracao_s: null } };
+
+    /* Tinta: cor base por parte (vai escurecendo); a cada resposta, brilho de tinta fresca. */
+    let tintaTimer = null;
+    function tinta(molhada) {
+      const base = String(Math.min(parte, 4) - 1);
+      const alvo = molhada ? base + "m" : base;
+      tintas.forEach(t => t.classList.toggle("on", t.dataset.tinta === alvo));
+    }
+    function respondeu() {
+      tinta(true);
+      clearTimeout(tintaTimer);
+      tintaTimer = setTimeout(() => tinta(false), 650);
+      if (!reduz) {
+        pena.classList.add("molhando");
+        setTimeout(() => pena.classList.remove("molhando"), 320);
+      }
+    }
+    document.addEventListener("change", ev => { if (ev.target.closest(".folha")) respondeu(); });
+
+    function mostrar(n) {
+      folhas.forEach(f => f.classList.remove("ativa", "proxima", "sai", "entra", "q1", "q2", "qe"));
+      folha(n).classList.add("ativa");
+      parte = n;
+      tinta(false);
+    }
+
+    function trocar(n) {
+      const atual = folha(parte), prox = folha(n);
+      if (reduz) { mostrar(n); return; }
+      atual.classList.add("sai");
+      atual.addEventListener("animationend", () => {
+        atual.classList.remove("ativa", "sai");
+        parte = n; tinta(false);
+        prox.classList.add("ativa", "entra");
+        prox.addEventListener("animationend", () => prox.classList.remove("entra"), { once: true });
+      }, { once: true });
+    }
+
+    const marcada = nome => document.querySelector(`input[name="${nome}"]:checked`)?.value || null;
+    const contarPalavras = t => (t.trim().match(/[\p{L}\p{N}'’-]+/gu) || []).length;
+
+    function validar(n) {
+      const f = folha(n);
+      const av = f.querySelector(".aviso");
+      let msg = "";
+      if (n === 1 || n === 2) {
+        const itens = n === 1 ? ["item1", "item2", "item3"] : ["item4", "item5", "item6"];
+        if (itens.some(i => !marcada(i))) msg = "Responda as 3 perguntas.";
+      } else if (n === 3) {
+        const vazio = ["f-prenom", "f-age", "f-ville", "f-nat"].some(id => !document.getElementById(id).value.trim());
+        const p = contarPalavras(document.getElementById("f-msg").value);
+        if (vazio) msg = "Preencha os 4 campos da ficha.";
+        else if (p < 25 || p > 40) msg = "Escreva entre 25 e 40 palavras.";
+      } else if (n === 4) {
+        if (!estado.fala.estado) msg = "Grave sua resposta ou toque em « Passer ».";
+      }
+      av.textContent = msg; av.hidden = !msg;
+      return !msg;
+    }
+
+    function coletar() {
+      return {
+        item1: marcada("item1"), item2: marcada("item2"), item3: marcada("item3"),
+        item4: marcada("item4"), item5: marcada("item5"), item6: marcada("item6"),
+        item7: {
+          prenom: document.getElementById("f-prenom").value,
+          age: document.getElementById("f-age").value,
+          ville: document.getElementById("f-ville").value,
+          nationalite: document.getElementById("f-nat").value
+        },
+        item8: document.getElementById("f-msg").value,
+        escrita_pulada: estado.escrita_pulada,
+        fala: estado.fala,
+        escutas: Object.fromEntries(Object.entries(estado.escutas).map(([k, v]) => [k, 2 - v])),
+        modelo
+      };
+    }
+
+    async function enviar(botao) {
+      const av = folha(4).querySelector(".aviso");
+      botao.disabled = true; botao.textContent = "Envoi…";
+      try {
+        const r = await fetch("{{ url_for('nivelamento') }}", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(coletar()), credentials: "same-origin"
+        });
+        if (!r.ok) throw new Error(String(r.status));
+        try { sessionStorage.removeItem("nivelamento_modelo"); } catch (e) {}
+        trocar(5);
+      } catch (e) {
+        av.textContent = "Não foi possível salvar agora. Tente de novo."; av.hidden = false;
+        botao.disabled = false; botao.textContent = "Terminer le test";
+      }
+    }
+
+    document.querySelectorAll(".entregar").forEach(b => {
+      if (b.tagName !== "BUTTON") return;
+      b.addEventListener("click", () => {
+        const n = Number(b.closest(".folha").dataset.parte);
+        if (!validar(n)) return;
+        if (n === 3) estado.escrita_pulada = false;
+        if (n === 4) enviar(b); else trocar(n + 1);
+      });
+    });
+
+    document.getElementById("e-pular").addEventListener("click", () => {
+      estado.escrita_pulada = true;
+      folha(3).querySelector(".aviso").hidden = true;
+      trocar(4);
+    });
+
+    /* Contagem de palavras ao vivo */
+    const msg = document.getElementById("f-msg"), cont = document.getElementById("f-cont");
+    function atualizarContagem() {
+      const p = contarPalavras(msg.value);
+      cont.textContent = `${p} mot${p === 1 ? "" : "s"} · 25 à 40`;
+      cont.classList.toggle("ok", p >= 25 && p <= 40);
+      cont.classList.toggle("fora", p > 40);
+    }
+    msg.addEventListener("input", atualizarContagem);
+    let digitando = null;
+    msg.addEventListener("input", () => { clearTimeout(digitando); digitando = setTimeout(respondeu, 400); });
+
+    /* Escuta: mp3 local; se falhar, voz do navegador fr-FR. Máximo 2 escutas. */
+    document.querySelectorAll(".escuta").forEach(box => {
+      const item = box.dataset.audio, botao = box.querySelector(".ouvir"),
+            cont = box.querySelector(".contador"), audio = box.querySelector("audio");
+      let usarVoz = false;
+      audio.addEventListener("error", () => { usarVoz = true; });
+      const fim = () => { botao.disabled = estado.escutas[item] <= 0; };
+      function falar() {
+        if (!("speechSynthesis" in window)) { fim(); return; }
+        const u = new SpeechSynthesisUtterance(box.dataset.fala.replace("...", ","));
+        u.lang = "fr-FR"; u.rate = .85;
+        const v = speechSynthesis.getVoices().find(v => v.lang && v.lang.toLowerCase().startsWith("fr"));
+        if (v) u.voice = v;
+        u.onend = fim; u.onerror = fim;
+        speechSynthesis.speak(u);
+      }
+      botao.addEventListener("click", () => {
+        if (estado.escutas[item] <= 0) return;
+        estado.escutas[item]--;
+        const r = estado.escutas[item];
+        cont.textContent = r === 0 ? "Plus d'écoute" : `${r} écoute restante`;
+        botao.disabled = true;
+        if (usarVoz) { falar(); return; }
+        audio.currentTime = 0;
+        audio.play().catch(() => { usarVoz = true; falar(); });
+      });
+      audio.addEventListener("ended", fim);
+    });
+
+    /* Gravação (MediaRecorder, até 30 s, regravar 1 vez). O áudio não sai do navegador. */
+    const gRec = document.getElementById("g-rec"), gStop = document.getElementById("g-stop"),
+          gOuvir = document.getElementById("g-ouvir"), gRegrav = document.getElementById("g-regrav"),
+          gTempo = document.getElementById("g-tempo"), gStatus = document.getElementById("g-status"),
+          gPular = document.getElementById("g-pular"), gravador = document.getElementById("gravador");
+    let rec = null, partes = [], url = null, t0 = 0, relogio = null, limite = null, regravacoes = 0, player = null;
+    const fmt = s => `0:${String(Math.floor(s)).padStart(2, "0")}`;
+    async function gravar() {
+      if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) {
+        gStatus.textContent = "Este navegador não grava áudio. Toque em « Passer »."; return;
+      }
+      let stream;
+      try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
+      catch (e) { gStatus.textContent = "Sem permissão do microfone. Você pode pular esta parte."; return; }
+      partes = [];
+      rec = new MediaRecorder(stream);
+      rec.ondataavailable = e => e.data.size && partes.push(e.data);
+      rec.onstop = () => {
+        stream.getTracks().forEach(t => t.stop());
+        clearInterval(relogio); clearTimeout(limite);
+        const dur = Math.min(30, (performance.now() - t0) / 1000);
+        if (url) URL.revokeObjectURL(url);
+        url = URL.createObjectURL(new Blob(partes, { type: rec.mimeType || "audio/webm" }));
+        estado.fala = { estado: "gravado", duracao_s: Math.round(dur * 10) / 10 };
+        gravador.classList.remove("rec");
+        gStop.disabled = true; gOuvir.disabled = false; gRec.disabled = true;
+        gRegrav.disabled = regravacoes >= 1;
+        gStatus.textContent = `Gravação feita (${fmt(dur)}).`;
+        folha(4).querySelector(".aviso").hidden = true;
+        respondeu();
+      };
+      rec.start();
+      t0 = performance.now();
+      gravador.classList.add("rec");
+      gRec.disabled = true; gStop.disabled = false; gOuvir.disabled = true; gRegrav.disabled = true;
+      gStatus.textContent = "Gravando… fale em francês.";
+      relogio = setInterval(() => { gTempo.textContent = `${fmt((performance.now() - t0) / 1000)} / 0:30`; }, 250);
+      limite = setTimeout(() => rec.state === "recording" && rec.stop(), 30000);
+    }
+    gRec.addEventListener("click", gravar);
+    gStop.addEventListener("click", () => rec && rec.state === "recording" && rec.stop());
+    gOuvir.addEventListener("click", () => { if (!url) return; player?.pause(); player = new Audio(url); player.play(); });
+    gRegrav.addEventListener("click", () => { if (regravacoes >= 1) return; regravacoes++; gRegrav.disabled = true; gravar(); });
+    gPular.addEventListener("click", () => {
+      if (rec && rec.state === "recording") return;
+      estado.fala = { estado: "pulado", duracao_s: null };
+      gStatus.textContent = "Parte de fala pulada. Ela não pesa no resultado.";
+      folha(4).querySelector(".aviso").hidden = true;
+      respondeu();
+    });
+
+    /* Modelo de apresentação: sorteado 1x por partida (sessionStorage); ?modelo=N força. */
+    const MODELOS = [1, 2, 3];
+    let modelo = Number(params.get("modelo"));
+    if (!MODELOS.includes(modelo)) {
+      modelo = Number(sessionStorage.getItem("nivelamento_modelo"));
+      if (!MODELOS.includes(modelo)) {
+        modelo = MODELOS[Math.floor(Math.random() * MODELOS.length)];
+        try { sessionStorage.setItem("nivelamento_modelo", String(modelo)); } catch (e) {}
+      }
+    }
+    document.body.classList.add("modelo-" + modelo);
+    document.querySelectorAll('.folha[data-parte="1"] .item, .folha[data-parte="2"] .item')
+      .forEach(i => i.classList.add("com-estimulo"));
+
+    /* Modelo 2: paginação dentro da folha (Anterior / Próximo). */
+    const passoDe = {};
+    function itemOk(item) {
+      const radio = item.querySelector('input[type="radio"]');
+      if (radio) return !!marcada(radio.name);
+      const campos = [...item.querySelectorAll(".ficha input, .ficha select")];
+      return campos.every(c => c.value.trim());
+    }
+    function irPasso(f, n) {
+      const itens = [...f.querySelectorAll(".corpo > .item")];
+      passoDe[f.dataset.parte] = n;
+      itens.forEach((it, i) => it.classList.toggle("oculto", i !== n));
+      f.querySelector(".passos .marca").textContent = `${n + 1} / ${itens.length}`;
+      f.querySelector(".passos .voltar").disabled = n === 0;
+      f.querySelector(".passos .seguir").classList.toggle("oculto", n === itens.length - 1);
+      f.querySelector(".passos .seguir").hidden = n === itens.length - 1;
+      f.querySelector(".entregar").classList.toggle("oculto", n !== itens.length - 1);
+      f.querySelector(".aviso").hidden = true;
+    }
+    if (modelo === 2) {
+      folhas.forEach(f => {
+        const itens = f.querySelectorAll(".corpo > .item");
+        if (itens.length < 2) return;
+        f.classList.add("paginada");
+        const nav = document.createElement("div");
+        nav.className = "passos";
+        nav.innerHTML = '<button type="button" class="botao sec voltar">‹ Anterior</button><span class="marca"></span><button type="button" class="botao seguir">Próximo ›</button>';
+        const pe = f.querySelector("footer.pe");
+        pe.insertBefore(nav, pe.querySelector(".entregar"));
+        nav.querySelector(".voltar").addEventListener("click", () => irPasso(f, Math.max(0, passoDe[f.dataset.parte] - 1)));
+        nav.querySelector(".seguir").addEventListener("click", () => {
+          const atual = itens[passoDe[f.dataset.parte]];
+          if (!itemOk(atual)) {
+            const av = f.querySelector(".aviso");
+            av.textContent = atual.querySelector(".ficha") ? "Preencha os 4 campos da ficha." : "Escolha uma resposta.";
+            av.hidden = false; return;
+          }
+          irPasso(f, passoDe[f.dataset.parte] + 1);
+        });
+        irPasso(f, 0);
+      });
+      const pp = Number(params.get("passo"));
+      if (pp >= 1) { const f = folha(parte); if (f.classList.contains("paginada")) irPasso(f, Math.min(pp, f.querySelectorAll(".corpo > .item").length) - 1); }
+    }
+
+    /* Prévias: ?parte=N, ?quadro=1|2|entra, ?demo=1 preenche respostas */
+    mostrar(parte);
+    if (params.get("demo") === "1") {
+      ["item1:C", "item2:B", "item3:B", "item4:B", "item5:C", "item6:B"].forEach(p => {
+        const [n, v] = p.split(":"); const el = document.querySelector(`input[name="${n}"][value="${v}"]`); if (el) el.checked = true;
+      });
+      document.getElementById("f-prenom").value = "Rafael";
+      document.getElementById("f-age").value = "32";
+      document.getElementById("f-ville").value = "Aracaju";
+      document.getElementById("f-nat").value = "brésilien";
+      msg.value = "Bonjour ! Je m'appelle Rafael. J'ai 32 ans. J'habite à Aracaju, au Brésil. J'aime le football et la musique. Le week-end, je fais du vélo avec mes amis. À bientôt !";
+      atualizarContagem();
+    }
+    if (params.get("tinta") === "molhada") tinta(true);
+    if (["1", "2"].includes(params.get("vela"))) document.body.classList.add("vela-q" + params.get("vela"));
+    const q = params.get("quadro");
+    if (q && parte < 5) {
+      const atual = folha(parte), prox = folha(parte + 1);
+      if (q === "1") atual.classList.add("q1");
+      if (q === "2") { atual.classList.add("q2"); }
+      if (q === "entra") { atual.classList.remove("ativa"); prox.classList.add("ativa", "qe"); }
+    }
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "verificacoes_http": 30,
+  "falhas": 0,
+  "servidor_offline": "http://127.0.0.1:5090",
+  "compras": [
+    {
+      "item": "paleta-ametista",
+      "preco": 120,
+      "saldo": 880
+    },
+    {
+      "item": "efeito-inverno",
+      "preco": 160,
+      "saldo": 720
+    },
+    {
+      "item": "titulo-voz",
+      "preco": 90,
+      "saldo": 630
+    },
+    {
+      "item": "pet-fenix",
+      "preco": 240,
+      "saldo": 390
+    }
+  ],
+  "primeira_conclusao": {
+    "borda": "madeira",
+    "borda_nova": false,
+    "cristais_ganhos": 18,
+    "cristais_pendentes": false,
+    "cristais_total": 408,
+    "estrelas": 3,
+    "ok": true,
+    "teste": true,
+    "xp": 25,
+    "xp_creditado_etapa": 25,
+    "xp_ganho": 25,
+    "xp_total": 25,
+    "xp_versao": 6
+  },
+  "repeticao": {
+    "borda": "madeira",
+    "borda_nova": false,
+    "cristais_ganhos": 0,
+    "cristais_pendentes": false,
+    "cristais_total": 408,
+    "estrelas": 3,
+    "ok": true,
+    "teste": true,
+    "xp": 0,
+    "xp_creditado_etapa": 25,
+    "xp_ganho": 0,
+    "xp_total": 25,
+    "xp_versao": 6
+  },
+  "nota": "HTMLs são respostas HTTP, não capturas visuais; CSRF removido."
+}

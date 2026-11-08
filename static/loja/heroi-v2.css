@@ -1,0 +1,9 @@
+/* Somente /heroi: cenário existente intacto; poses v5 articuladas por sheet. */
+.retrato.diorama{width:min(448px,100%);aspect-ratio:7/6;background:#263e42 url('cenario/refugio.png') center/100% 100%;image-rendering:pixelated;border-radius:0;box-shadow:0 6px 0 #131f29,0 8px 24px #0d182b55;outline:2px solid #50635a}
+.diorama .dupla{inset:13% 5% 23% 20%;gap:0;justify-content:center;align-items:flex-end}
+.diorama .heroi-pose{height:100%;width:auto;max-width:70%;flex-shrink:1;aspect-ratio:3/4;min-width:0}
+.diorama .pet-companheiro{width:32%;top:3.5%;margin-left:4px;margin-right:0;transform-origin:50% 100%}
+.diorama .pet-companheiro small{bottom:-22px;font-size:10px;background:#243c3e99;padding:1px 4px;color:#e9d5a5;max-width:155px}
+.diorama .pet-vazio{top:0}.pet-vazio img{display:block;width:100%;height:auto;image-rendering:pixelated}
+@media(max-width:640px){.retrato.diorama{max-width:390px}.heroi-painel{gap:35px}.diorama .pet-companheiro small{font-size:9px;bottom:-20px}}
+@media(prefers-reduced-motion:reduce){.diorama .sprite-oito{animation:none!important;background-position:0 0!important}}

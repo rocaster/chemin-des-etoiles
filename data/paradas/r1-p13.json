@@ -1,0 +1,45 @@
+{
+  "id": "r1-p13",
+  "regiao": 1,
+  "etapa": 13,
+  "formato": "batalha",
+  "batalha": "r1-b04",
+  "titulo": "A raposa da estrada",
+  "titulo_fr": "Le renard du chemin",
+  "nivel": "A1",
+  "duracao_min": 5,
+  "revisa": [
+    "r1-p06",
+    "r1-p07",
+    "r1-p12",
+    "r1-p01",
+    "r1-p05",
+    "r1-p02",
+    "r1-p03",
+    "r1-p08",
+    "r1-p04"
+  ],
+  "recompensa": {
+    "xp_base": 0,
+    "xp_por_estrela": 0,
+    "xp_pausado": true,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  }
+}

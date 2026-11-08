@@ -1,0 +1,70 @@
+{
+  "versao": "7b",
+  "escopo_particulas": [
+    "diorama /heroi",
+    "previa equipada da loja",
+    "amostras da loja"
+  ],
+  "sem_particulas": [
+    "mapa inteiro",
+    "mapas de areas",
+    "batalhas",
+    "chefe",
+    "HUD",
+    "paginas fora do refúgio/loja"
+  ],
+  "estado_equipado_preservado": true,
+  "dados_precos_xp_cristais_inalterados": true,
+  "utf8_preservado": true,
+  "testes": {
+    "pytest_normal": 550,
+    "pytest_cp1252": 550,
+    "novos_pytest": 11,
+    "loja_dom_por_modo": 67,
+    "xp_dom_por_modo": 93,
+    "simulados_por_modo": {
+      "python": 91,
+      "js": 29,
+      "dom": 43
+    },
+    "onboarding_por_modo": {
+      "python": 124,
+      "js": 72
+    },
+    "rotas_por_modo": 57,
+    "mapa_por_execucao": 9,
+    "mapa40_por_modo": 21,
+    "batalha_por_modo": 51,
+    "missoes_dom_por_modo": 209,
+    "formatos_e2e_por_modo": 4,
+    "batalhas_e2e_por_modo": 2,
+    "http_por_modo": 46,
+    "integridade_por_modo": 1279
+  },
+  "falhas_finais": 0,
+  "seguranca": {
+    "env_lido": false,
+    "azure_acoes": false,
+    "deploy": false,
+    "cosmos_real": false
+  },
+  "evidencias": "/workspace/ncl/prints-loja/v7b",
+  "screenshots": [],
+  "instalacao_cumulativa": {
+    "paginas_http_200": 1600,
+    "assets_unicos_http_200": 160,
+    "sheets_novos_http_200": 42,
+    "combinacoes": 320,
+    "patches": [
+      "v1",
+      "v7"
+    ],
+    "v2_v3_v4_v5_v6_desnecessarios": true,
+    "xp_mapa": 640,
+    "cristais_ganhos": 1020,
+    "compras_equipamentos_categorias": 5,
+    "falhas": 0,
+    "cp1252": true,
+    "particulas_so_heroi_e_loja_validadas": true
+  }
+}

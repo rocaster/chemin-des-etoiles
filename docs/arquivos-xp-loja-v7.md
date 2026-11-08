@@ -1,0 +1,61 @@
+# Arquivos v7
+
+Delta exato por SHA-256 sobre a v6 com hotfix UTF-8 (snapshot anterior à v7). Novos/alterados:
+
+- `LEIA-ME-v7.md`
+- `data/loja.json`
+- `data/pets-nomes.json`
+- `docs/alteracoes-2026-11-07-cenarios-e-trilhas.md`
+- `docs/arquivos-xp-loja-v7.md`
+- `docs/balanceamento-xp-cristais.md`
+- `docs/evidencias-v7/batalha-equipada.html`
+- `docs/evidencias-v7/heroi-equipado.html`
+- `docs/evidencias-v7/loja-antes.html`
+- `docs/evidencias-v7/loja-depois-compra.html`
+- `docs/evidencias-v7/loja-pets-renomeado.html`
+- `docs/evidencias-v7/mapa-mundo.html`
+- `docs/evidencias-v7/mapa-regiao.html`
+- `docs/evidencias-v7/resultado-http.json`
+- `docs/pranchas-v7/cenario-ceu-estrelado-preview.png`
+- `docs/pranchas-v7/cenario-floresta-preview.png`
+- `docs/pranchas-v7/cenario-jardim-japones-preview.png`
+- `docs/pranchas-v7/cenario-mundo-doces-preview.png`
+- `docs/pranchas-v7/cenario-praia-tropical-preview.png`
+- `docs/pranchas-v7/cenario-refugio-preview.png`
+- `docs/pranchas-v7/cenario-taverna-preview.png`
+- `docs/pranchas-v7/cenarios-v7-preview.png`
+- `docs/python-utf8-v7.json`
+- `docs/resultado-xp-loja-v7.json`
+- `gen/formatos/teste/flask-offline.py`
+- `gen/formatos/teste/teste-onboarding.py`
+- `gen/formatos/teste/teste-rotas.py`
+- `gen/formatos/teste/teste-simulados.py`
+- `gen/loja/animacao_v5.py`
+- `gen/loja/cenarios_v7.py`
+- `gen/loja/gerar_arte.py`
+- `gen/loja/teste-dom.js`
+- `gen/loja/teste-dom.py`
+- `gen/loja/teste-http-v6.py`
+- `gen/loja/teste-http-v7.py`
+- `gen/loja/teste-xp-v6-dom.py`
+- `gen/loja/v7-dom.js`
+- `gen/loja/verificar_integridade_v7.py`
+- `gen/mapa40/teste/teste-mapa40.py`
+- `loja.py`
+- `static/loja/cenario/ceu-estrelado.png`
+- `static/loja/cenario/floresta.png`
+- `static/loja/cenario/jardim-japones.png`
+- `static/loja/cenario/mundo-doces.png`
+- `static/loja/cenario/praia-tropical.png`
+- `static/loja/cenario/taverna.png`
+- `static/loja/perfil-v6.css`
+- `templates/heroi.html`
+- `templates/loja-molduras.html`
+- `templates/loja.html`
+- `templates/mapa.html`
+- `tests/test_heroi_v2.py`
+- `tests/test_heroi_v4.py`
+- `tests/test_loja.py`
+- `tests/test_loja_v7.py`
+
+O cumulativo também carrega todos os arquivos v5/v6 necessários sobre a base v1, incluindo o hotfix xp.py/simulados.py. Sem .env/ambientes/cache/instance. Aposentados do pacote: README e auditor históricos v6; substituídos por v7.

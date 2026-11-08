@@ -1,0 +1,251 @@
+{
+  "versao": 1,
+  "saldo_inicial": {
+    "teste": 1000,
+    "real": 0
+  },
+  "aviso": "Cristais por primeira conclusão; repetições não dão créditos de etapa. Preços provisórios.",
+  "itens": [
+    {
+      "id": "paleta-esmeralda",
+      "categoria": "personagem",
+      "nome": "Traje Esmeralda",
+      "preco": 150,
+      "descricao": "A mesma roupa, em novos tons. Só o tecido muda de cor.",
+      "paleta": "esmeralda",
+      "matiz": 145
+    },
+    {
+      "id": "paleta-ametista",
+      "categoria": "personagem",
+      "nome": "Traje Ametista",
+      "preco": 150,
+      "descricao": "A mesma roupa, em novos tons. Só o tecido muda de cor.",
+      "paleta": "ametista",
+      "matiz": 275
+    },
+    {
+      "id": "paleta-rubi",
+      "categoria": "personagem",
+      "nome": "Traje Rubi",
+      "preco": 150,
+      "descricao": "A mesma roupa, em novos tons. Só o tecido muda de cor.",
+      "paleta": "rubi",
+      "matiz": 350
+    },
+    {
+      "id": "efeito-verao",
+      "categoria": "particulas",
+      "nome": "Verão dourado",
+      "preco": 250,
+      "descricao": "Pequenos brilhos dourados.",
+      "efeito": "verao"
+    },
+    {
+      "id": "efeito-inverno",
+      "categoria": "particulas",
+      "nome": "Inverno sereno",
+      "preco": 250,
+      "descricao": "Flocos de neve delicados.",
+      "efeito": "inverno"
+    },
+    {
+      "id": "efeito-outono",
+      "categoria": "particulas",
+      "nome": "Outono encantado",
+      "preco": 250,
+      "descricao": "Folhas dançando no ar.",
+      "efeito": "outono"
+    },
+    {
+      "id": "efeito-nevoa",
+      "categoria": "particulas",
+      "nome": "Névoa misteriosa",
+      "preco": 250,
+      "descricao": "Uma bruma suave envolve seu refúgio.",
+      "efeito": "nevoa"
+    },
+    {
+      "id": "efeito-chuva",
+      "categoria": "particulas",
+      "nome": "Tempestade do castelo",
+      "preco": 250,
+      "descricao": "Chuva e clarão suave de trovão nas batalhas; sem som extra.",
+      "efeito": "chuva"
+    },
+    {
+      "id": "titulo-viajante",
+      "categoria": "titulos",
+      "nome": "Viajante das Estrelas",
+      "preco": 90,
+      "descricao": "Para quem segue o Chemin des Étoiles sem desistir, explorando novas palavras a cada etapa.",
+      "nome_fr": "Voyageur des étoiles",
+      "nome_fr_f": "Voyageuse des étoiles"
+    },
+    {
+      "id": "titulo-guardiao",
+      "categoria": "titulos",
+      "nome": "Guardião das Palavras",
+      "preco": 90,
+      "descricao": "Uma homenagem a quem cuida das palavras aprendidas e as mantém vivas na memória.",
+      "nome_fr": "Gardien des mots",
+      "nome_fr_f": "Gardienne des mots",
+      "nome_pt_f": "Guardiã das Palavras"
+    },
+    {
+      "id": "titulo-voz",
+      "categoria": "titulos",
+      "nome": "Voz do Vilarejo",
+      "preco": 90,
+      "descricao": "Para quem faz sua voz ganhar espaço no vilarejo e transforma palavras em conversa.",
+      "nome_fr": "Voix du village",
+      "nome_fr_f": "Voix du village"
+    },
+    {
+      "id": "titulo-coroa",
+      "categoria": "titulos",
+      "nome": "Coroa da Teimosia",
+      "preco": 90,
+      "descricao": "Uma coroa bem-humorada para celebrar a persistência de tentar de novo, mesmo depois dos tropeços.",
+      "nome_fr": "Couronne de l’entêtement",
+      "nome_fr_f": "Couronne de l’entêtement"
+    },
+    {
+      "id": "pet-dragao",
+      "categoria": "pets",
+      "nome": "Dragão bebê",
+      "preco": 400,
+      "descricao": "Escamas verdes, asinhas curtas e um nariz curioso.",
+      "sprite": "loja/pets/dragao.png"
+    },
+    {
+      "id": "pet-lobo",
+      "categoria": "pets",
+      "nome": "Lobo",
+      "preco": 400,
+      "descricao": "Companheiro cinzento leal, de orelhas sempre atentas.",
+      "sprite": "loja/pets/lobo.png"
+    },
+    {
+      "id": "pet-raposa",
+      "categoria": "pets",
+      "nome": "Raposa",
+      "preco": 400,
+      "descricao": "Ruiva esperta com uma cauda volumosa.",
+      "sprite": "loja/pets/raposa.png"
+    },
+    {
+      "id": "pet-tigre",
+      "categoria": "pets",
+      "nome": "Tigre",
+      "preco": 400,
+      "descricao": "Filhote listrado que pisca preguiçosamente.",
+      "sprite": "loja/pets/tigre.png"
+    },
+    {
+      "id": "pet-corvo",
+      "categoria": "pets",
+      "nome": "Corvo místico",
+      "preco": 400,
+      "descricao": "Penas escuras e olhos violeta que vigiam o caminho.",
+      "sprite": "loja/pets/corvo.png"
+    },
+    {
+      "id": "pet-fenix",
+      "categoria": "pets",
+      "nome": "Fênix",
+      "preco": 400,
+      "descricao": "Pequena ave dourada com uma cauda de brasas.",
+      "sprite": "loja/pets/fenix.png"
+    },
+    {
+      "id": "pet-gato",
+      "categoria": "pets",
+      "nome": "Gato das sombras",
+      "preco": 400,
+      "descricao": "Um gatinho noturno de olhos brilhantes.",
+      "sprite": "loja/pets/gato.png"
+    },
+    {
+      "id": "pet-cervo",
+      "categoria": "pets",
+      "nome": "Cervo dourado",
+      "preco": 400,
+      "descricao": "Pelagem dourada e chifrinhos luminosos.",
+      "sprite": "loja/pets/cervo.png"
+    },
+    {
+      "id": "pet-coruja",
+      "categoria": "pets",
+      "nome": "Coruja sábia",
+      "preco": 400,
+      "descricao": "Guardiã dos livros, de óculos redondos.",
+      "sprite": "loja/pets/coruja.png"
+    },
+    {
+      "id": "pet-coelho",
+      "categoria": "pets",
+      "nome": "Coelho cristal",
+      "preco": 400,
+      "descricao": "Orelhas de cristal azul e focinho inquieto.",
+      "sprite": "loja/pets/coelho.png"
+    },
+    {
+      "id": "cenario-refugio",
+      "categoria": "cenarios",
+      "nome": "Refúgio",
+      "descricao": "Seu refúgio original: gratuito e sempre seu.",
+      "preco": 0,
+      "padrao": true,
+      "sprite": "loja/cenario/refugio.png"
+    },
+    {
+      "id": "cenario-floresta",
+      "categoria": "cenarios",
+      "nome": "Floresta",
+      "descricao": "Luz filtrada entre árvores e musgo.",
+      "preco": 300,
+      "sprite": "loja/cenario/floresta.png"
+    },
+    {
+      "id": "cenario-taverna",
+      "categoria": "cenarios",
+      "nome": "Taverna",
+      "descricao": "Madeira acolhedora, brasas e luz de lamparina.",
+      "preco": 300,
+      "sprite": "loja/cenario/taverna.png"
+    },
+    {
+      "id": "cenario-ceu-estrelado",
+      "categoria": "cenarios",
+      "nome": "Céu estrelado",
+      "descricao": "Uma noite serena de estrelas sobre as montanhas.",
+      "preco": 300,
+      "sprite": "loja/cenario/ceu-estrelado.png"
+    },
+    {
+      "id": "cenario-praia-tropical",
+      "categoria": "cenarios",
+      "nome": "Praia tropical",
+      "descricao": "Coqueiros, mar azul e areia dourada.",
+      "preco": 300,
+      "sprite": "loja/cenario/praia-tropical.png"
+    },
+    {
+      "id": "cenario-mundo-doces",
+      "categoria": "cenarios",
+      "nome": "Mundo dos doces",
+      "descricao": "Nuvens açucaradas, pirulitos e caminhos de confeitos.",
+      "preco": 300,
+      "sprite": "loja/cenario/mundo-doces.png"
+    },
+    {
+      "id": "cenario-jardim-japones",
+      "categoria": "cenarios",
+      "nome": "Jardim japonês com cerejeiras",
+      "descricao": "Cerejeiras floridas, ponte vermelha e jardim tranquilo.",
+      "preco": 300,
+      "sprite": "loja/cenario/jardim-japones.png"
+    }
+  ]
+}

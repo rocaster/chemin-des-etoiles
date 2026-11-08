@@ -1,0 +1,9 @@
+{
+  "verificacoes_http": 46,
+  "falhas": 0,
+  "saldo_final": 1030,
+  "xp_mapa": 640,
+  "cristais_ganhos": 1220,
+  "categorias_compradas_equipadas": 5,
+  "nota": "HTTP offline; HTMLs com CSRF removido. Não são screenshots."
+}

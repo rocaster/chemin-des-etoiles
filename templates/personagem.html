@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Escolha seu personagem · Chemin des Étoiles</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; overflow: hidden; }
+    body {
+      min-height: 100vh;
+      height: 100vh;
+      height: 100dvh;
+      background: #1a140e;
+      color: #f3ead7;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .pagina {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+    }
+    .palco {
+      --vw: 100vw;
+      --vh: 100vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: max(var(--vw), calc(var(--vh) * 16 / 9));
+      height: max(var(--vh), calc(var(--vw) * 9 / 16));
+      transform: translate(-50%, -50%) translateX(var(--pan, 0px));
+      background: #1a140e url("{{ url_for('static', filename='bg/fogueira-fundo.png') }}") center / 100% 100% no-repeat;
+      image-rendering: pixelated;
+      overflow: hidden;
+    }
+    @supports (height: 100dvh) {
+      .palco { --vw: 100dvw; --vh: 100dvh; }
+    }
+    .velo, .fogo { pointer-events: none; }
+    .velo {
+      position: absolute; inset: 0; z-index: 1;
+      background: rgba(8, 6, 16, .22);
+    }
+    .fogo {
+      position: absolute;
+      left: 42%; top: 52%;
+      width: 16%; height: 30%;
+      z-index: 2;
+      background: radial-gradient(circle at 50% 58%, rgba(255,190,80,.55) 0%, rgba(255,130,30,.24) 38%, transparent 70%);
+      mix-blend-mode: screen;
+      animation: fogo-pulso .9s steps(2, end) infinite;
+    }
+    @keyframes fogo-pulso {
+      from { opacity: .45; filter: brightness(1); }
+      to   { opacity: 1; filter: brightness(1.35); }
+    }
+
+    .sprite {
+      position: absolute;
+      padding: 0; border: 0; background: transparent;
+      cursor: pointer;
+      overflow: visible;
+    }
+    .sprite::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 70%;
+      height: 8%;
+      transform: translate(-50%, 40%);
+      background: radial-gradient(ellipse at 50% 50%,
+        rgba(0,0,0,.45) 0%,
+        rgba(0,0,0,.45) 32%,
+        rgba(0,0,0,.22) 33%,
+        rgba(0,0,0,.22) 54%,
+        transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+      image-rendering: pixelated;
+    }
+    .sprite:focus-visible { outline: 2px solid #f0c46a; outline-offset: 2px; }
+    .sprite img {
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      object-fit: fill;
+      image-rendering: pixelated;
+      pointer-events: none;
+      display: block;
+      filter: brightness(.65) saturate(.75);
+    }
+    .sprite.is-sel img {
+      filter: brightness(1.1) drop-shadow(0 0 7px #f0c46a) drop-shadow(0 0 2px #ffd98a);
+    }
+    .sprite.is-hover:not(.is-sel) img {
+      filter: brightness(.82) saturate(.9) drop-shadow(0 0 5px #e8bc6a);
+    }
+    .sprite .aberto { z-index: 1; }
+    .sprite .fechado {
+      z-index: 2;
+      opacity: 0;
+      animation: piscar 5s infinite;
+      animation-delay: var(--atraso, 0s);
+    }
+    @keyframes piscar { 0%, 92%, 100% { opacity: 0; } 94%, 97% { opacity: 1; } }
+    body.forcar-piscar .sprite .fechado {
+      animation: none;
+      opacity: 1;
+    }
+
+    .comandos {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 30;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 36px 16px calc(20px + env(safe-area-inset-bottom, 0px));
+      background: linear-gradient(to top, rgba(8, 6, 16, .92) 0%, rgba(8, 6, 16, .58) 48%, rgba(8, 6, 16, 0) 100%);
+    }
+    .linha {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 520px;
+      padding: 0 8px;
+    }
+    .seta {
+      flex: 0 0 40px;
+      width: 40px; height: 40px; padding: 0;
+      border: 0; background: transparent; cursor: pointer;
+      color: #f0c46a;
+      filter: drop-shadow(2px 2px 0 #1d1812);
+    }
+    .seta:hover { color: #f6d38a; }
+    .seta:focus-visible { outline: 2px solid #f0c46a; outline-offset: 3px; }
+    .seta svg { display: block; width: 100%; height: 100%; }
+    .placa {
+      flex: 1 1 auto;
+      min-width: 0;
+      max-width: 280px;
+      padding: 7px 14px 8px;
+      text-align: center;
+      background: #e8d4a8;
+      color: #462810;
+      border: 3px solid #784e1e;
+      box-shadow: 0 0 0 3px #e8d4a8;
+      clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+    }
+    .placa .rotulo {
+      display: block;
+      margin-bottom: 3px;
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: #6e4620;
+    }
+    .placa input[name="nome"] {
+      display: block;
+      width: 100%;
+      margin: 0 0 5px;
+      padding: 4px 8px 5px;
+      border: 2px solid #784e1e;
+      background: #f3e6c4;
+      color: #462810;
+      font: inherit;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-align: center;
+      outline: none;
+    }
+    .placa input[name="nome"]:focus {
+      border-color: #a36a28;
+      background: #f7edcf;
+    }
+    .placa .classe {
+      display: block;
+      font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+      font-weight: 700;
+      letter-spacing: .02em;
+      color: #462810;
+    }
+    #form-personagem {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: inherit;
+    }
+    .iniciar {
+      font: inherit; font-weight: 700; font-size: 1rem;
+      padding: 8px 22px;
+      color: #1d1812; background: #f0c46a;
+      border: 3px solid #1d1812; cursor: pointer;
+    }
+    .iniciar:hover { background: #f6d38a; }
+    .iniciar:focus-visible { outline: 2px solid #fff2c8; outline-offset: 3px; }
+    .erro {
+      margin: 0; padding: 6px 12px;
+      color: #ffb4a8; text-shadow: 0 1px 6px #000;
+      font-weight: 700;
+    }
+
+    @media (max-width: 520px) {
+      .comandos { padding: 14px 10px calc(10px + env(safe-area-inset-bottom, 0px)); gap: 6px; }
+      .linha { padding: 0 8px; gap: 8px; }
+      .seta { flex: 0 0 36px; width: 36px; height: 36px; }
+      .placa { max-width: none; padding: 4px 10px 5px; }
+      .placa .rotulo { font-size: .82rem; margin-bottom: 2px; }
+      .placa input[name="nome"] { font-size: .95rem; padding: 3px 6px; margin-bottom: 3px; }
+      .placa .classe { font-size: 1.15rem; }
+      .iniciar { padding: 7px 18px; }
+    }
+
+    .palco.no-pan-anim { transition: none !important; }
+    @media (prefers-reduced-motion: no-preference) {
+      .palco.pan-ready { transition: transform .4s ease; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sprite .fechado { animation: none; }
+      .fogo { animation: none; opacity: .55; }
+      .palco { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Escolha seu personagem</h1>
+  <div class="pagina">
+    <div class="palco" id="palco" data-sel="{{ selecionado }}">
+      <div class="velo" aria-hidden="true"></div>
+      <div class="fogo" aria-hidden="true"></div>
+
+      <button type="button" class="sprite" data-id="arqueiro-f" aria-label="Arqueira"
+              style="left:1%;bottom:5%;width:18%;aspect-ratio:320/412;z-index:5;--atraso:.0s">
+        <img class="aberto" src="{{ url_for('static', filename='fogueira/sprite-arqueiro-f-aberto.png') }}" alt="">
+        <img class="fechado" src="{{ url_for('static', filename='fogueira/sprite-arqueiro-f-fechado.png') }}" alt="">
+      </button>
+      <button type="button" class="sprite" data-id="arqueiro-m" aria-label="Arqueiro"
+              style="left:10.6%;bottom:47.1%;width:8.9%;aspect-ratio:232/452;z-index:2;--atraso:.7s">
+        <img class="aberto" src="{{ url_for('static', filename='fogueira/sprite-arqueiro-m-aberto.png') }}" alt="">
+        <img class="fechado" src="{{ url_for('static', filename='fogueira/sprite-arqueiro-m-fechado.png') }}" alt="">
+      </button>
+      <button type="button" class="sprite" data-id="cavaleiro-f" aria-label="Cavaleira"
+              style="left:23%;bottom:4.5%;width:17%;aspect-ratio:304/412;z-index:7;--atraso:1.4s">
+        <img class="aberto" src="{{ url_for('static', filename='fogueira/sprite-cavaleiro-f-aberto.png') }}" alt="">
+        <img class="fechado" src="{{ url_for('static', filename='fogueira/sprite-cavaleiro-f-fechado.png') }}" alt="">
+      </button>
+      <button type="button" class="sprite" data-id="cavaleiro-m" aria-label="Cavaleiro"
+              style="left:30.6%;bottom:46.3%;width:10.3%;aspect-ratio:216/364;z-index:3;--atraso:2.1s">
+        <img class="aberto" src="{{ url_for('static', filename='fogueira/sprite-cavaleiro-m-aberto.png') }}" alt="">
+        <img class="fechado" src="{{ url_for('static', filename='fogueira/sprite-cavaleiro-m-fechado.png') }}" alt="">
+      </button>
+      <button type="button" class="sprite" data-id="bardo-f" aria-label="Barda"
+              style="left:50.3%;bottom:42%;width:7.7%;aspect-ratio:208/484;z-index:4;--atraso:2.8s">
+        <img class="aberto" src="{{ url_for('static', filename='fogueira/sprite-bardo-f-aberto.png') }}" alt="">
+        <img class="fechado" src="{{ url_for('static', filename='fogueira/sprite-bardo-f-fechado.png') }}" alt="">
+      </button>
+      <button type="button" class="sprite" data-id="mago-f" aria-label="Maga"
+              style="left:59%;bottom:4%;width:14.5%;aspect-ratio:256/472;z-index:8;--atraso:3.5s">
+        <img class="aberto" src="{{ url_for('static', filename='fogueira/sprite-mago-f-aberto.png') }}" alt="">
+        <img class="fechado" src="{{ url_for('static', filename='fogueira/sprite-mago-f-fechado.png') }}" alt="">
+      </button>
+      <button type="button" class="sprite" data-id="bardo-m" aria-label="Bardo"
+              style="left:76.1%;bottom:52%;width:7%;aspect-ratio:216/516;z-index:1;--atraso:4.2s">
+        <img class="aberto" src="{{ url_for('static', filename='fogueira/sprite-bardo-m-aberto.png') }}" alt="">
+        <img class="fechado" src="{{ url_for('static', filename='fogueira/sprite-bardo-m-fechado.png') }}" alt="">
+      </button>
+      <button type="button" class="sprite" data-id="mago-m" aria-label="Mago"
+              style="left:81.5%;bottom:5%;width:17%;aspect-ratio:304/464;z-index:6;--atraso:.35s">
+        <img class="aberto" src="{{ url_for('static', filename='fogueira/sprite-mago-m-aberto.png') }}" alt="">
+        <img class="fechado" src="{{ url_for('static', filename='fogueira/sprite-mago-m-fechado.png') }}" alt="">
+      </button>
+    </div>
+
+    <div class="comandos">
+        <form method="post" action="{{ url_for('personagem') }}" id="form-personagem" novalidate>
+          {% if erro %}<p class="erro" role="alert">{{ erro }}</p>{% endif %}
+          <p class="erro" id="aviso-nome" hidden>Dê um nome ao seu personagem.</p>
+          <div class="linha">
+            <button type="button" class="seta" id="ant" aria-label="Personagem anterior">
+              <svg viewBox="0 0 44 44" aria-hidden="true"><polygon points="34,6 10,22 34,38" fill="currentColor"/></svg>
+            </button>
+            <div class="placa" id="placa">
+              <label class="rotulo" for="campo-nome">Nome</label>
+              <input type="text" name="nome" id="campo-nome" maxlength="20" required
+                     value="{{ nome_personagem }}" autocomplete="nickname" spellcheck="false">
+              <span class="classe" id="classe-placa">Cavaleira</span>
+            </div>
+            <button type="button" class="seta" id="prox" aria-label="Próximo personagem">
+              <svg viewBox="0 0 44 44" aria-hidden="true"><polygon points="10,6 34,22 10,38" fill="currentColor"/></svg>
+            </button>
+          </div>
+          <input type="hidden" name="avatar" id="campo-avatar" value="{{ selecionado }}">
+          <button type="submit" class="iniciar">Iniciar missão</button>
+        </form>
+    </div>
+  </div>
+
+  <script>
+    const ordem = [
+      {id:"arqueiro-f", nome:"Arqueira"},
+      {id:"arqueiro-m", nome:"Arqueiro"},
+      {id:"cavaleiro-f", nome:"Cavaleira"},
+      {id:"cavaleiro-m", nome:"Cavaleiro"},
+      {id:"bardo-f", nome:"Barda"},
+      {id:"bardo-m", nome:"Bardo"},
+      {id:"mago-f", nome:"Maga"},
+      {id:"mago-m", nome:"Mago"}
+    ];
+    const palco = document.getElementById("palco");
+    const campo = document.getElementById("campo-avatar");
+    const campoNome = document.getElementById("campo-nome");
+    const classeEl = document.getElementById("classe-placa");
+    const avisoNome = document.getElementById("aviso-nome");
+    const sprites = [...document.querySelectorAll(".sprite")];
+    const params = new URLSearchParams(location.search);
+
+    if (params.get("blink") === "1") {
+      document.body.classList.add("forcar-piscar");
+    }
+    if (params.has("nome")) {
+      campoNome.value = params.get("nome").slice(0, 20);
+    }
+
+    function indiceDe(id) {
+      const i = ordem.findIndex(p => p.id === id);
+      return i < 0 ? 2 : i;
+    }
+
+    function medidasPalco() {
+      const viewW = window.innerWidth;
+      const viewH = window.innerHeight;
+      return {
+        viewW,
+        viewH,
+        stageW: Math.max(viewW, viewH * 16 / 9),
+        portrait: viewW < viewH
+      };
+    }
+
+    function aplicarPan(id, instant) {
+      const { viewW, stageW, portrait } = medidasPalco();
+      const overflow = stageW - viewW;
+      let pan = 0;
+      /* Retrato: a cobertura corta as laterais. No desktop paisagem o recorte
+         é pequeno e o enquadramento já aprovado permanece com pan 0. */
+      if (portrait && overflow > 1) {
+        const el = sprites.find(s => s.dataset.id === id);
+        const left = parseFloat(el.style.left) / 100;
+        const width = parseFloat(el.style.width) / 100;
+        const centro = left + width / 2;
+        const maxPan = overflow / 2;
+        pan = stageW * (0.5 - centro);
+        pan = Math.max(-maxPan, Math.min(maxPan, pan));
+      }
+      if (instant) palco.classList.add("no-pan-anim");
+      palco.style.setProperty("--pan", pan + "px");
+      if (instant) {
+        void palco.offsetWidth;
+        requestAnimationFrame(() => {
+          palco.classList.remove("no-pan-anim");
+          palco.classList.add("pan-ready");
+        });
+      }
+    }
+
+    function escolher(id, instant) {
+      const i = indiceDe(id);
+      const p = ordem[i];
+      palco.dataset.sel = p.id;
+      campo.value = p.id;
+      classeEl.textContent = p.nome;
+      sprites.forEach(s => s.classList.toggle("is-sel", s.dataset.id === p.id));
+      aplicarPan(p.id, instant);
+    }
+
+    sprites.forEach(s => {
+      s.addEventListener("click", () => escolher(s.dataset.id));
+      s.addEventListener("pointerenter", () => {
+        sprites.forEach(x => x.classList.toggle("is-hover", x.dataset.id === s.dataset.id));
+      });
+      s.addEventListener("pointerleave", () => {
+        sprites.forEach(x => x.classList.remove("is-hover"));
+      });
+    });
+    document.getElementById("ant").addEventListener("click", () => {
+      const i = indiceDe(campo.value);
+      escolher(ordem[(i + 7) % 8].id);
+    });
+    document.getElementById("prox").addEventListener("click", () => {
+      const i = indiceDe(campo.value);
+      escolher(ordem[(i + 1) % 8].id);
+    });
+    document.addEventListener("keydown", (ev) => {
+      if (ev.target.closest("input, textarea, select")) return;
+      if (ev.key === "ArrowLeft") { ev.preventDefault(); document.getElementById("ant").click(); }
+      if (ev.key === "ArrowRight") { ev.preventDefault(); document.getElementById("prox").click(); }
+    });
+    document.getElementById("form-personagem").addEventListener("submit", (ev) => {
+      if (campoNome.value.trim()) {
+        avisoNome.hidden = true;
+        return;
+      }
+      ev.preventDefault();
+      avisoNome.hidden = false;
+      campoNome.focus();
+    });
+    campoNome.addEventListener("input", () => { avisoNome.hidden = true; });
+    campoNome.addEventListener("invalid", () => { avisoNome.hidden = false; });
+    window.addEventListener("resize", () => aplicarPan(campo.value));
+
+    escolher("{{ selecionado }}", true);
+  </script>
+  <script src="{{ url_for('static', filename='audio/trilha-fundo.js') }}" data-trilha="{{ url_for('static', filename='audio/trilhas/trilha-personagem.ogg', v='2') }}" data-volume="0.25"></script>
+</body>
+</html>

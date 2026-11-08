@@ -1,0 +1,666 @@
+{
+  "id": "r1-p25",
+  "regiao": 1,
+  "parada": 25,
+  "etapa": 25,
+  "titulo": "A rotina do padeiro",
+  "titulo_fr": "La journée du boulanger",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "parada/r1-p04/cena-fundo.png",
+    "frente": "parada/r1-p04/cena-frente.png",
+    "npc": {
+      "nome": "Monsieur Paul",
+      "papel": "padeiro",
+      "img": "parada/r1-p04/npc.png",
+      "x": 45,
+      "y": 28,
+      "w": 16,
+      "voz": "paul"
+    },
+    "brilhos": [
+      {
+        "tipo": "fogo",
+        "x": 88,
+        "y": 55
+      },
+      {
+        "tipo": "lanterna",
+        "x": 27,
+        "y": 22
+      },
+      {
+        "tipo": "lanterna",
+        "x": 74,
+        "y": 22
+      }
+    ]
+  },
+  "vozes": {
+    "paul": "fr-CA-ThierryNeural",
+    "leo": "fr-CA-AntoineNeural",
+    "bastien": {
+      "voz": "fr-CA-ThierryNeural",
+      "pitch": "-8Hz"
+    }
+  },
+  "audios": {
+    "w-je-me-leve": {
+      "voz": "paul",
+      "texto": "Je me lève."
+    },
+    "w-je-travaille": {
+      "voz": "paul",
+      "texto": "Je travaille."
+    },
+    "w-je-mange": {
+      "voz": "paul",
+      "texto": "Je mange."
+    },
+    "w-je-dors": {
+      "voz": "paul",
+      "texto": "Je dors."
+    },
+    "w-tous-les-jours": {
+      "voz": "paul",
+      "texto": "Tous les jours."
+    },
+    "w-a-midi": {
+      "voz": "paul",
+      "texto": "À midi."
+    },
+    "w-puis": {
+      "voz": "paul",
+      "texto": "Puis."
+    },
+    "c1-fala": {
+      "voz": "paul",
+      "texto": "Je me lève à cinq heures. Tous les jours !"
+    },
+    "c2-fala": {
+      "voz": "paul",
+      "texto": "Le matin, je travaille. À midi, je mange."
+    },
+    "c3-fala": {
+      "voz": "paul",
+      "texto": "Le soir, je dors. Bonne nuit !"
+    },
+    "frase-b1": {
+      "voz": "paul",
+      "texto": "Je me lève à six heures."
+    },
+    "frase-b2": {
+      "voz": "paul",
+      "texto": "À midi, je mange."
+    },
+    "frase-b3": {
+      "voz": "paul",
+      "texto": "Le matin, je travaille."
+    },
+    "d-n1": {
+      "voz": "paul",
+      "texto": "Bonjour ! Vous voulez une baguette ?"
+    },
+    "d-n2": {
+      "voz": "paul",
+      "texto": "Je me lève à cinq heures, puis je travaille."
+    },
+    "d-n3": {
+      "voz": "paul",
+      "texto": "Voilà votre baguette. Bonne journée !"
+    },
+    "modelo": {
+      "voz": "leo",
+      "texto": "Je me lève à sept heures. Puis je travaille. Le soir, je dors."
+    },
+    "rev": {
+      "voz": "bastien",
+      "texto": "J'ai froid !"
+    },
+    "recap": {
+      "voz": "paul",
+      "texto": "Tous les jours, je travaille. À midi, je mange."
+    }
+  },
+  "imagens": {
+    "leve": {
+      "src": "parada/mapa40/icones/horloge.png",
+      "fr": "je me lève",
+      "pt": "eu me levanto",
+      "alt": "eu me levanto"
+    },
+    "travaille": {
+      "src": "parada/mapa40/icones/marteau.png",
+      "fr": "je travaille",
+      "pt": "eu trabalho",
+      "alt": "eu trabalho"
+    },
+    "mange": {
+      "src": "parada/mapa40/icones/soupe.png",
+      "fr": "je mange",
+      "pt": "eu como",
+      "alt": "eu como"
+    },
+    "dors": {
+      "src": "parada/mapa40/icones/lit.png",
+      "fr": "je dors",
+      "pt": "eu durmo",
+      "alt": "eu durmo"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "je me lève",
+      "pt": "eu me levanto",
+      "audio": "w-je-me-leve",
+      "img": "leve"
+    },
+    {
+      "fr": "je travaille",
+      "pt": "eu trabalho",
+      "audio": "w-je-travaille",
+      "img": "travaille"
+    },
+    {
+      "fr": "je mange",
+      "pt": "eu como",
+      "audio": "w-je-mange",
+      "img": "mange"
+    },
+    {
+      "fr": "je dors",
+      "pt": "eu durmo",
+      "audio": "w-je-dors",
+      "img": "dors"
+    },
+    {
+      "fr": "tous les jours",
+      "pt": "todos os dias",
+      "audio": "w-tous-les-jours"
+    },
+    {
+      "fr": "à midi",
+      "pt": "ao meio-dia",
+      "audio": "w-a-midi"
+    },
+    {
+      "fr": "puis",
+      "pt": "depois / então",
+      "audio": "w-puis"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-travaille": {
+      "id": "rv-travaille",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Paul : Vous voulez une baguette ?"
+      ],
+      "pergunta": "Responda e pergunte da rotina dele.",
+      "opcoes": [
+        "Où est le pont ?",
+        "Oui, merci ! Vous travaillez tous les jours ?",
+        "Il y a du vent."
+      ],
+      "correta": 1,
+      "explicacao": "Oui, merci ! + pergunta."
+    },
+    "rv-leve": {
+      "id": "rv-leve",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Paul : Je me lève à cinq heures."
+      ],
+      "pergunta": "O que Paul faz às cinco?",
+      "opcoes": [
+        "come",
+        "se levanta",
+        "dorme"
+      ],
+      "correta": 1,
+      "explicacao": "Je me lève = eu me levanto."
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "Você chega à cidade. Monsieur Paul conta o seu dia. Ouça e escolha a imagem.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-je-me-leve",
+          "texto_fr": "je me lève",
+          "opcoes": [
+            "mange",
+            "travaille",
+            "dors",
+            "leve"
+          ],
+          "correta": "leve",
+          "explicacao": "Je me lève = eu me levanto."
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-je-travaille",
+          "texto_fr": "je travaille",
+          "opcoes": [
+            "mange",
+            "leve",
+            "dors",
+            "travaille"
+          ],
+          "correta": "travaille",
+          "explicacao": "Je travaille = eu trabalho."
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-je-mange",
+          "texto_fr": "je mange",
+          "opcoes": [
+            "dors",
+            "leve",
+            "mange",
+            "travaille"
+          ],
+          "correta": "mange",
+          "explicacao": "Je mange = eu como."
+        },
+        {
+          "id": "d4",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-je-dors",
+          "texto_fr": "je dors",
+          "opcoes": [
+            "leve",
+            "travaille",
+            "dors",
+            "mange"
+          ],
+          "correta": "dors",
+          "explicacao": "Je dors = eu durmo."
+        },
+        {
+          "id": "d5",
+          "tipo": "pares",
+          "instrucao": "Ligue cada palavra à sua imagem: toque numa palavra e depois na imagem.",
+          "pares": [
+            {
+              "fr": "je me lève",
+              "img": "leve",
+              "audio": "w-je-me-leve"
+            },
+            {
+              "fr": "je travaille",
+              "img": "travaille",
+              "audio": "w-je-travaille"
+            },
+            {
+              "fr": "je mange",
+              "img": "mange",
+              "audio": "w-je-mange"
+            },
+            {
+              "fr": "je dors",
+              "img": "dors",
+              "audio": "w-je-dors"
+            }
+          ],
+          "explicacao": "Levantar, trabalhar, comer e dormir."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Escute Paul. O texto só aparece depois que você responder.",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Ouça Paul.",
+          "audio": "c1-fala",
+          "pergunta": "A que horas Paul se levanta?",
+          "opcoes": [
+            "às quinze",
+            "às nove",
+            "às cinco"
+          ],
+          "correta": 2,
+          "explicacao": "À cinq heures = às cinco horas."
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "Ouça Paul.",
+          "audio": "c2-fala",
+          "pergunta": "O que ele faz ao meio-dia?",
+          "opcoes": [
+            "dorme",
+            "trabalha",
+            "come"
+          ],
+          "correta": 2,
+          "explicacao": "À midi, je mange = ao meio-dia eu como."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Ouça Paul.",
+          "audio": "c3-fala",
+          "pergunta": "O que ele faz à noite?",
+          "opcoes_img": [
+            "leve",
+            "travaille",
+            "mange",
+            "dors"
+          ],
+          "correta": "dors",
+          "explicacao": "Je dors = eu durmo."
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia a conversa na padaria.",
+          "texto_fr": [
+            "Léo : Vous travaillez le dimanche ?",
+            "Paul : Non. Le dimanche, je dors !",
+            "Léo : Et le lundi ?",
+            "Paul : Le lundi, je travaille."
+          ],
+          "pergunta": "O que Paul faz no domingo?",
+          "opcoes": [
+            "dorme",
+            "trabalha",
+            "vai ao castelo"
+          ],
+          "correta": 0,
+          "explicacao": "Le dimanche, je dors."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "Mesma conversa.",
+          "texto_fr": [
+            "Léo : Vous travaillez le dimanche ?",
+            "Paul : Non. Le dimanche, je dors !",
+            "Léo : Et le lundi ?",
+            "Paul : Le lundi, je travaille."
+          ],
+          "pergunta": "E na segunda?",
+          "opcoes": [
+            "dorme",
+            "come sopa",
+            "trabalha"
+          ],
+          "correta": 2,
+          "explicacao": "Le lundi, je travaille."
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Monte as frases da rotina. Je + verbo: je mange, je travaille…",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte: “Eu me levanto às seis horas.”",
+          "palavras": [
+            "Je",
+            "me",
+            "lève",
+            "à",
+            "six",
+            "heures."
+          ],
+          "extras": [
+            "dors",
+            "midi"
+          ],
+          "audio": "frase-b1",
+          "explicacao": "Je me lève à + hora."
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete: “Ao meio-dia, eu como.”",
+          "frase": "À midi, je ___.",
+          "banco": [
+            "mange",
+            "dors",
+            "lève"
+          ],
+          "respostas": [
+            "mange"
+          ],
+          "audio": "frase-b2",
+          "explicacao": "À midi, je mange."
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Escreva: “De manhã, eu trabalho.”",
+          "frase": "Le matin, je ___.",
+          "respostas": [
+            "travaille"
+          ],
+          "dica": "Começa com t…",
+          "audio": "frase-b3",
+          "explicacao": "Je travaille = eu trabalho."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "w-je-dors",
+          "respostas": [
+            "je dors"
+          ],
+          "explicacao": "Je dors = eu durmo (o -s final não soa)."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez! Converse com Paul sobre o dia e grave a sua rotina.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Monsieur Paul.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Bonjour ! Vous voulez une baguette ?",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Il y a du vent.",
+                  "feedback": "Ele ofereceu pão! Responda e pergunte da rotina.",
+                  "erro": true,
+                  "revisao": "rv-travaille"
+                },
+                {
+                  "fr": "Oui ! Vous vous levez à quelle heure ?",
+                  "feedback": "Boa pergunta sobre a rotina.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "Oui, merci ! Vous travaillez tous les jours ?",
+                  "feedback": "Boa pergunta sobre a rotina.",
+                  "vai": "n2"
+                }
+              ]
+            },
+            "n2": {
+              "fala": "Je me lève à cinq heures, puis je travaille.",
+              "audio": "d-n2",
+              "opcoes": [
+                {
+                  "fr": "Moi, je me lève à sept heures.",
+                  "feedback": "Isso: falar da sua rotina.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Cinq heures ? Oh là là !",
+                  "feedback": "Isso: reagir.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "Je dors à cinq heures ?",
+                  "feedback": "Ele disse que se levanta às cinco.",
+                  "erro": true,
+                  "revisao": "rv-leve"
+                }
+              ]
+            },
+            "n3": {
+              "fala": "Voilà votre baguette. Bonne journée !",
+              "audio": "d-n3",
+              "opcoes": [
+                {
+                  "fr": "Je mange.",
+                  "feedback": "Agradeça: merci, bonne journée!",
+                  "erro": true
+                },
+                {
+                  "fr": "Merci ! Bonne journée !",
+                  "feedback": "Perfeito: agradecer e se despedir.",
+                  "vai": "fim"
+                }
+              ]
+            }
+          },
+          "explicacao": "Vous travaillez… ? → je me lève à… → puis je travaille → bonne journée."
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave em voz alta (1–2 frases): conte a sua rotina.",
+          "modelo": "Je me lève à sept heures. Puis je travaille. Le soir, je dors.",
+          "audio_modelo": "modelo",
+          "checklist": [
+            "Je me lève à … heures",
+            "je travaille / je mange",
+            "le soir, je dors"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva a sua rotina.",
+            "palavras_chave": [
+              [
+                "lève",
+                "leve",
+                "travaille",
+                "mange",
+                "dors"
+              ]
+            ],
+            "explicacao": "Je me lève… puis je travaille… je dors."
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "intro": "Última rodada: os itens errados voltam, uma revisão e a frase da missão.",
+      "recuperar": true,
+      "itens": [
+        {
+          "id": "r2",
+          "tipo": "audio",
+          "instrucao": "Revisão da etapa 23 (acampamento): ouça Bastien.",
+          "audio": "rev",
+          "pergunta": "O que Bastien diz?",
+          "opcoes": [
+            "Boa noite!",
+            "Estou com frio!",
+            "Estou com fome!"
+          ],
+          "correta": 1,
+          "explicacao": "J'ai froid = estou com frio (etapa 23)."
+        },
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “Todos os dias eu trabalho. Ao meio-dia eu como.”",
+          "palavras": [
+            "Tous",
+            "les",
+            "jours,",
+            "je",
+            "travaille.",
+            "À",
+            "midi,",
+            "je",
+            "mange."
+          ],
+          "extras": [
+            "dors"
+          ],
+          "audio": "recap",
+          "explicacao": "Tous les jours, je travaille. À midi, je mange."
+        }
+      ]
+    }
+  ],
+  "novas": [
+    "je me lève",
+    "je travaille",
+    "je mange",
+    "je dors",
+    "tous les jours",
+    "à midi",
+    "puis"
+  ],
+  "padroes": [
+    "Je + verbo (je travaille, je mange).",
+    "Je me lève à + hora."
+  ]
+}

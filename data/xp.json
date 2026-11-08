@@ -1,0 +1,15 @@
+{
+  "versao": 6,
+  "primeira_conclusao": {
+    "missao": 25,
+    "conversa": 20,
+    "historia": 20,
+    "biblioteca": 15,
+    "cartas": 20,
+    "batalha": 0,
+    "simulado": 0
+  },
+  "repeticao": 0,
+  "total_mapa_novo": 640,
+  "migracao": "Somente progresso servidor; preserva XP servidor legado/externo, não importa XP de localStorage."
+}

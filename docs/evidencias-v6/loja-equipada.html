@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loja de cosméticos · Chemin des Étoiles</title>
+<link rel="stylesheet" href="/static/loja/loja.css">
+<link rel="stylesheet" href="/static/loja/animacoes-v5.css">
+<link rel="stylesheet" href="/static/loja/efeitos.css">
+<link rel="stylesheet" href="/static/loja/perfil-v6.css">
+
+</head>
+<body class="cosmeticos">
+<a class="pular" href="#principal">Pular para o conteúdo</a>
+
+<div class="fx fx-inverno" aria-hidden="true">
+<i style="--i:0;left:7%;--atraso:-0.0s"></i><i style="--i:1;left:44%;--atraso:-0.7s"></i><i style="--i:2;left:81%;--atraso:-1.4s"></i><i style="--i:3;left:18%;--atraso:-2.0999999999999996s"></i><i style="--i:4;left:55%;--atraso:-2.8s"></i><i style="--i:5;left:92%;--atraso:-3.5s"></i><i style="--i:6;left:29%;--atraso:-4.199999999999999s"></i><i style="--i:7;left:66%;--atraso:-4.8999999999999995s"></i><i style="--i:8;left:3%;--atraso:-5.6s"></i><i style="--i:9;left:40%;--atraso:-6.3s"></i><i style="--i:10;left:77%;--atraso:-7.0s"></i><i style="--i:11;left:14%;--atraso:-7.699999999999999s"></i><i style="--i:12;left:51%;--atraso:-8.399999999999999s"></i><i style="--i:13;left:88%;--atraso:-9.1s"></i>
+</div>
+<header class="cabecalho">
+<a class="placa voltar" href="/mapa">‹ Voltar ao mapa</a>
+<a class="marca" href="/heroi">Chemin des Étoiles<small>Seu refúgio entre as aventuras</small></a>
+<div class="saldo" aria-label="Saldo de cristais"><span class="cristal" aria-hidden="true">◆</span> <strong>390</strong> cristais</div>
+</header>
+<nav class="atalhos" aria-label="Áreas do refúgio">
+<a href="/heroi" >Personagem</a>
+<a href="/loja" aria-current="page">Loja de cosméticos</a>
+<a href="/conquistas">Baú de conquistas</a>
+</nav>
+<main id="principal" tabindex="-1">
+
+
+<div class="abertura"><p class="sobretitulo">LE COMPTOIR DES ÉTOILES</p><h1>Loja de cosméticos</h1><p>Um toque de magia. A sua aventura, do seu jeito.</p></div>
+<div class="aviso">◆ Use <strong>cristais</strong>, nunca XP. Você está no modo teste: o saldo inicial de demonstração é 1.000 cristais e some ao reiniciar o servidor.</div>
+<nav class="abas" aria-label="Categorias da loja"><a href="/loja?categoria=personagem" aria-current="page">Personagem</a><a href="/loja?categoria=particulas" >Partículas</a><a href="/loja?categoria=titulos" >Títulos</a><a href="/loja?categoria=pets" >Pets</a></nav>
+<section aria-label="Personagem">
+<div class="prateleira-topo"><h2>Personagem</h2><form method="post" action="/loja/retirar"><input type="hidden" name="csrf" value="TOKEN_DE_TESTE_REMOVIDO"><input type="hidden" name="categoria" value="personagem"><button class="botao secundario" type="submit">Restaurar cor original</button></form></div>
+<section class="perfil-resumo" aria-label="Seu visual equipado">
+<span class="heroi-pose sprite-oito" role="img" aria-label="Teste com a roupa equipada" style="background-image:url('/static/loja/herois/poses-v5/arqueiro-f-ametista.png')"></span>
+<div><strong>Teste</strong><p>Voz do Vilarejo</p><small>Seu visual equipado · comprar guarda no inventário; depois clique em Equipar.</small></div>
+<span class="perfil-pet sprite-oito" role="img" aria-label="Fênix" style="background-image:url('/static/loja/pets/fenix.png')"></span>
+</section>
+<p class="nota">Somente a cor do tecido muda, sobre a arte existente. Rosto, cabelo, pele e equipamentos mantêm a paleta original.</p>
+<div class="produtos">
+<article class="produto pergaminho" data-item="paleta-esmeralda">
+<div class="amostra amostra-personagem">
+<span class="heroi-pose sprite-oito" role="img" data-quadros="8" aria-label="Prévia da roupa na paleta Traje Esmeralda" style="background-image:url('/static/loja/herois/poses-v5/arqueiro-f-esmeralda.png')"></span>
+</div>
+<div class="produto-texto"><h3>Traje Esmeralda</h3><p>A mesma roupa, em novos tons. Só o tecido muda de cor.</p><div class="produto-rodape"><strong class="preco">◆ 120 <small>cristais</small></strong>
+<form method="post" action="/loja/comprar"><input type="hidden" name="csrf" value="TOKEN_DE_TESTE_REMOVIDO"><input type="hidden" name="item" value="paleta-esmeralda"><button class="botao" type="submit" >Comprar</button></form>
+</div></div>
+</article>
+<article class="produto pergaminho" data-item="paleta-ametista">
+<div class="amostra amostra-personagem">
+<span class="heroi-pose sprite-oito" role="img" data-quadros="8" aria-label="Prévia da roupa na paleta Traje Ametista" style="background-image:url('/static/loja/herois/poses-v5/arqueiro-f-ametista.png')"></span>
+</div>
+<div class="produto-texto"><h3>Traje Ametista</h3><p>A mesma roupa, em novos tons. Só o tecido muda de cor.</p><div class="produto-rodape"><strong class="preco">◆ 120 <small>cristais</small></strong>
+<span class="em-uso">Equipado ✓</span>
+</div><p class="nota propriedade">No seu inventário · compra única</p></div>
+</article>
+<article class="produto pergaminho" data-item="paleta-rubi">
+<div class="amostra amostra-personagem">
+<span class="heroi-pose sprite-oito" role="img" data-quadros="8" aria-label="Prévia da roupa na paleta Traje Rubi" style="background-image:url('/static/loja/herois/poses-v5/arqueiro-f-rubi.png')"></span>
+</div>
+<div class="produto-texto"><h3>Traje Rubi</h3><p>A mesma roupa, em novos tons. Só o tecido muda de cor.</p><div class="produto-rodape"><strong class="preco">◆ 120 <small>cristais</small></strong>
+<form method="post" action="/loja/comprar"><input type="hidden" name="csrf" value="TOKEN_DE_TESTE_REMOVIDO"><input type="hidden" name="item" value="paleta-rubi"><button class="botao" type="submit" >Comprar</button></form>
+</div></div>
+</article></div>
+</section>
+
+</main>
+<footer>Cosméticos não dão vantagens nas lições. Seu XP nunca é gasto.<br>Cristais por primeira conclusão; repetições não dão créditos de etapa. Preços provisórios.</footer>
+</body></html>

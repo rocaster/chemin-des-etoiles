@@ -1,0 +1,302 @@
+{
+  "id": "r1-p06",
+  "regiao": 1,
+  "parada": 6,
+  "formato": "historia",
+  "titulo": "A história do bardo",
+  "titulo_fr": "L'histoire du barde",
+  "nivel": "A1",
+  "duracao_min": 4,
+  "cenario": {
+    "fundo": "parada/r1-p06/cena-fundo.png",
+    "frente": "parada/r1-p06/cena-frente.png",
+    "npc": {
+      "nome": "Fanfan le barde",
+      "papel": "bardo",
+      "img": "parada/r1-p06/npc.png",
+      "x": 55,
+      "y": 37,
+      "w": 20.25,
+      "voz": "fanfan"
+    },
+    "brilhos": [
+      {
+        "tipo": "fogo",
+        "x": 35,
+        "y": 61
+      },
+      {
+        "tipo": "lanterna",
+        "x": 13,
+        "y": 32
+      },
+      {
+        "tipo": "lanterna",
+        "x": 26,
+        "y": 31
+      }
+    ]
+  },
+  "vozes": {
+    "fanfan": {
+      "voz": "fr-CA-AntoineNeural",
+      "pitch": "+4Hz"
+    }
+  },
+  "audios": {
+    "abertura": {
+      "voz": "fanfan",
+      "texto": "Approchez, approchez ! Écoutez mon histoire."
+    },
+    "fecho": {
+      "voz": "fanfan",
+      "texto": "Bravo ! Merci, mes amis !"
+    },
+    "s1": {
+      "voz": "fanfan",
+      "texto": "Il était une fois, dans notre village, une petite fille. Elle s'appelle Rose."
+    },
+    "s2": {
+      "voz": "fanfan",
+      "texto": "Le matin, Rose va à la boulangerie. Elle dit : « Bonjour ! Je voudrais une baguette, s'il vous plaît. »"
+    },
+    "s3": {
+      "voz": "fanfan",
+      "texto": "Mais oh non ! Rose n'a pas d'argent. Pas un dollar !"
+    },
+    "s4": {
+      "voz": "fanfan",
+      "texto": "Le boulanger dit : « Ce n'est pas grave. C'est un cadeau. Voilà ! »"
+    },
+    "s5": {
+      "voz": "fanfan",
+      "texto": "Rose dit : « Merci beaucoup, monsieur ! » Et elle rentre à la maison, très contente."
+    },
+    "q1": {
+      "voz": "fanfan",
+      "texto": "Elle s'appelle Rose ?"
+    },
+    "q2": {
+      "voz": "fanfan",
+      "texto": "Rose va au marché ?"
+    },
+    "q3": {
+      "voz": "fanfan",
+      "texto": "Qu'est-ce que Rose veut ?"
+    },
+    "q4": {
+      "voz": "fanfan",
+      "texto": "Quel est le problème ?"
+    },
+    "q5": {
+      "voz": "fanfan",
+      "texto": "Que dit le boulanger ?"
+    },
+    "q6": {
+      "voz": "fanfan",
+      "texto": "Quel est le meilleur résumé ?"
+    },
+    "ordenar": {
+      "voz": "fanfan",
+      "texto": "Remettez l'histoire dans l'ordre."
+    }
+  },
+  "imagens": {},
+  "vocabulario": [
+    {
+      "fr": "il était une fois",
+      "pt": "era uma vez",
+      "audio": null
+    },
+    {
+      "fr": "une petite fille",
+      "pt": "uma menina",
+      "audio": null
+    },
+    {
+      "fr": "le matin",
+      "pt": "de manhã",
+      "audio": null
+    },
+    {
+      "fr": "mais",
+      "pt": "mas",
+      "audio": null
+    },
+    {
+      "fr": "l'argent",
+      "pt": "o dinheiro",
+      "audio": null
+    },
+    {
+      "fr": "un cadeau",
+      "pt": "um presente",
+      "audio": null
+    },
+    {
+      "fr": "contente",
+      "pt": "contente, feliz",
+      "audio": null
+    }
+  ],
+  "recompensa": {
+    "xp_base": 20,
+    "xp_por_estrela": 0,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 1000,
+        "estrelas": 1
+      }
+    ],
+    "xp_pausado": false,
+    "xp_versao": 6
+  },
+  "instrucao": "Ouça o bardo. Ele faz pausas e pergunta o que aconteceu.",
+  "abertura": "abertura",
+  "fecho": "fecho",
+  "segmentos": [
+    {
+      "audio": "s1",
+      "fr": "Il était une fois, dans notre village, une petite fille. Elle s'appelle Rose.",
+      "pt": "Era uma vez, na nossa vila, uma menina. Ela se chama Rose."
+    },
+    {
+      "audio": "s2",
+      "fr": "Le matin, Rose va à la boulangerie. Elle dit : « Bonjour ! Je voudrais une baguette, s'il vous plaît. »",
+      "pt": "De manhã, Rose vai à padaria. Ela diz: “Bom dia! Eu queria uma baguete, por favor.”"
+    },
+    {
+      "audio": "s3",
+      "fr": "Mais oh non ! Rose n'a pas d'argent. Pas un dollar !",
+      "pt": "Mas, ah não! Rose não tem dinheiro. Nem um dólar!"
+    },
+    {
+      "audio": "s4",
+      "fr": "Le boulanger dit : « Ce n'est pas grave. C'est un cadeau. Voilà ! »",
+      "pt": "O padeiro diz: “Não tem problema. É um presente. Aqui está!”"
+    },
+    {
+      "audio": "s5",
+      "fr": "Rose dit : « Merci beaucoup, monsieur ! » Et elle rentre à la maison, très contente.",
+      "pt": "Rose diz: “Muito obrigada, senhor!” E volta para casa, muito contente."
+    }
+  ],
+  "perguntas": [
+    {
+      "apos": 1,
+      "tipo": "simnao",
+      "fr": "Elle s'appelle Rose ?",
+      "pt": "Ela se chama Rose?",
+      "audio": "q1",
+      "opcoes": [
+        "Oui",
+        "Non"
+      ],
+      "correta": 0,
+      "explicacao": "« Elle s'appelle Rose » — sim, o nome dela é Rose."
+    },
+    {
+      "apos": 2,
+      "tipo": "simnao",
+      "fr": "Rose va au marché ?",
+      "pt": "Rose vai à feira?",
+      "audio": "q2",
+      "opcoes": [
+        "Oui",
+        "Non"
+      ],
+      "correta": 1,
+      "explicacao": "Não: ela vai à boulangerie (padaria)."
+    },
+    {
+      "apos": 2,
+      "tipo": "escolha",
+      "fr": "Qu'est-ce que Rose veut ?",
+      "pt": "O que Rose quer?",
+      "audio": "q3",
+      "opcoes": [
+        "une baguette",
+        "un croissant",
+        "du fromage"
+      ],
+      "correta": 0,
+      "explicacao": "« Je voudrais une baguette » — uma baguete."
+    },
+    {
+      "apos": 3,
+      "tipo": "escolha",
+      "fr": "Quel est le problème ?",
+      "pt": "Qual é o problema?",
+      "audio": "q4",
+      "opcoes": [
+        "Rose n'a pas d'argent.",
+        "La boulangerie est fermée.",
+        "Rose n'aime pas le pain."
+      ],
+      "correta": 0,
+      "explicacao": "« Rose n'a pas d'argent » — ela não tem dinheiro."
+    },
+    {
+      "apos": 4,
+      "tipo": "escolha",
+      "fr": "Que dit le boulanger ?",
+      "pt": "O que o padeiro diz?",
+      "audio": "q5",
+      "opcoes": [
+        "C'est un cadeau.",
+        "Ça fait deux dollars.",
+        "Au revoir !"
+      ],
+      "correta": 0,
+      "explicacao": "« C'est un cadeau » — é um presente."
+    },
+    {
+      "apos": 5,
+      "tipo": "resumo",
+      "fr": "Quel est le meilleur résumé ?",
+      "pt": "Qual é o melhor resumo?",
+      "audio": "q6",
+      "opcoes": [
+        "Rose n'a pas d'argent. Le boulanger donne la baguette.",
+        "Rose va au marché. Elle achète du fromage.",
+        "Le boulanger n'a pas de pain. Rose est triste."
+      ],
+      "correta": 0,
+      "explicacao": "O resumo certo junta o problema (sem dinheiro) e a solução (o padeiro dá a baguete)."
+    }
+  ],
+  "ordenar": {
+    "fr": "Remettez l'histoire dans l'ordre.",
+    "pt": "Coloque a história na ordem.",
+    "eventos": [
+      {
+        "fr": "Rose va à la boulangerie.",
+        "pt": "Rose vai à padaria."
+      },
+      {
+        "fr": "Rose demande une baguette.",
+        "pt": "Rose pede uma baguete."
+      },
+      {
+        "fr": "Rose n'a pas d'argent.",
+        "pt": "Rose não tem dinheiro."
+      },
+      {
+        "fr": "Le boulanger donne la baguette.",
+        "pt": "O padeiro dá a baguete."
+      }
+    ],
+    "audio": "ordenar"
+  }
+}

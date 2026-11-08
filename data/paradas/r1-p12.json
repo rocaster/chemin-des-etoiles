@@ -1,0 +1,655 @@
+{
+  "id": "r1-p12",
+  "regiao": 1,
+  "parada": 12,
+  "etapa": 12,
+  "titulo": "Pedir o caminho",
+  "titulo_fr": "Le chemin",
+  "nivel": "A1",
+  "duracao_min": 10,
+  "cenario": {
+    "fundo": "parada/r1-p02/cena-fundo.png",
+    "frente": "parada/r1-p02/cena-frente.png",
+    "npc": {
+      "nome": "Gaston",
+      "papel": "guarda da vila",
+      "img": "parada/r1-p02/npc.png",
+      "x": 50,
+      "y": 32.9,
+      "w": 17,
+      "voz": "gaston"
+    },
+    "brilhos": []
+  },
+  "vozes": {
+    "gaston": "fr-CA-JeanNeural",
+    "leo": "fr-CA-AntoineNeural"
+  },
+  "audios": {
+    "w-a-gauche": {
+      "voz": "gaston",
+      "texto": "À gauche."
+    },
+    "w-a-droite": {
+      "voz": "gaston",
+      "texto": "À droite."
+    },
+    "w-tout-droit": {
+      "voz": "gaston",
+      "texto": "Tout droit."
+    },
+    "w-le-pont": {
+      "voz": "gaston",
+      "texto": "Le pont."
+    },
+    "w-la-foret": {
+      "voz": "gaston",
+      "texto": "La forêt."
+    },
+    "w-ou-est": {
+      "voz": "gaston",
+      "texto": "Où est… ?"
+    },
+    "w-c-est-loin": {
+      "voz": "gaston",
+      "texto": "C'est loin."
+    },
+    "w-c-est-pres": {
+      "voz": "gaston",
+      "texto": "C'est près."
+    },
+    "c1-fala": {
+      "voz": "gaston",
+      "texto": "Le pont ? C'est tout droit."
+    },
+    "c2-fala": {
+      "voz": "gaston",
+      "texto": "La forêt ? C'est à gauche. C'est près."
+    },
+    "c3-fala": {
+      "voz": "leo",
+      "texto": "Où est le pont ?"
+    },
+    "frase-b1": {
+      "voz": "gaston",
+      "texto": "Où est le pont ?"
+    },
+    "frase-b2": {
+      "voz": "gaston",
+      "texto": "Le pont ? C'est tout droit."
+    },
+    "frase-b3": {
+      "voz": "gaston",
+      "texto": "La forêt ? C'est à gauche."
+    },
+    "d-n1": {
+      "voz": "gaston",
+      "texto": "Bonjour, Léo ! Ça va ?"
+    },
+    "d-n2": {
+      "voz": "gaston",
+      "texto": "C'est à gauche, et tout droit."
+    },
+    "d-n3": {
+      "voz": "gaston",
+      "texto": "Non, c'est près. Bonne route !"
+    },
+    "modelo": {
+      "voz": "leo",
+      "texto": "Bonjour ! Où est le pont ? C'est loin ?"
+    },
+    "rev": {
+      "voz": "gaston",
+      "texto": "Comment vous appelez-vous ?"
+    },
+    "recap": {
+      "voz": "gaston",
+      "texto": "Où est la forêt ? C'est à droite."
+    }
+  },
+  "imagens": {
+    "gauche": {
+      "src": "parada/mapa40/icones/gauche.png",
+      "fr": "à gauche",
+      "pt": "à esquerda",
+      "alt": "à esquerda"
+    },
+    "droite": {
+      "src": "parada/mapa40/icones/droite.png",
+      "fr": "à droite",
+      "pt": "à direita",
+      "alt": "à direita"
+    },
+    "toutdroit": {
+      "src": "parada/mapa40/icones/tout-droit.png",
+      "fr": "tout droit",
+      "pt": "em frente / reto",
+      "alt": "em frente / reto"
+    },
+    "pont": {
+      "src": "parada/mapa40/icones/pont.png",
+      "fr": "le pont",
+      "pt": "a ponte",
+      "alt": "a ponte"
+    }
+  },
+  "vocabulario": [
+    {
+      "fr": "à gauche",
+      "pt": "à esquerda",
+      "audio": "w-a-gauche",
+      "img": "gauche"
+    },
+    {
+      "fr": "à droite",
+      "pt": "à direita",
+      "audio": "w-a-droite",
+      "img": "droite"
+    },
+    {
+      "fr": "tout droit",
+      "pt": "em frente / reto",
+      "audio": "w-tout-droit",
+      "img": "toutdroit"
+    },
+    {
+      "fr": "le pont",
+      "pt": "a ponte",
+      "audio": "w-le-pont",
+      "img": "pont"
+    },
+    {
+      "fr": "la forêt",
+      "pt": "a floresta",
+      "audio": "w-la-foret"
+    },
+    {
+      "fr": "où est… ?",
+      "pt": "onde fica…?",
+      "audio": "w-ou-est"
+    },
+    {
+      "fr": "c'est loin",
+      "pt": "é longe",
+      "audio": "w-c-est-loin"
+    },
+    {
+      "fr": "c'est près",
+      "pt": "é perto",
+      "audio": "w-c-est-pres"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 25,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "itens_revisao": {
+    "rv-ou": {
+      "id": "rv-ou",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Gaston : Bonjour, Léo ! Ça va ?"
+      ],
+      "pergunta": "Você quer saber onde fica a ponte. O que diz?",
+      "opcoes": [
+        "Bonne nuit !",
+        "Où est le pont ?",
+        "Un café, combien ?"
+      ],
+      "correta": 1,
+      "explicacao": "Où est le pont ? = Onde fica a ponte?"
+    },
+    "rv-gauche": {
+      "id": "rv-gauche",
+      "tipo": "texto",
+      "instrucao": "Revisão rápida.",
+      "texto_fr": [
+        "Gaston : C'est à gauche."
+      ],
+      "pergunta": "Para que lado?",
+      "opcoes": [
+        "à esquerda",
+        "à direita",
+        "em frente"
+      ],
+      "correta": 0,
+      "explicacao": "À gauche = à esquerda."
+    }
+  },
+  "blocos": [
+    {
+      "id": "descobrir",
+      "nome": "Descobrir",
+      "minutos": 1.5,
+      "intro": "Gaston saiu da vila com você. Na estrada há placas: ouça e escolha a imagem.",
+      "itens": [
+        {
+          "id": "d1",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-a-gauche",
+          "texto_fr": "à gauche",
+          "opcoes": [
+            "gauche",
+            "droite",
+            "pont",
+            "toutdroit"
+          ],
+          "correta": "gauche",
+          "explicacao": "À gauche = à esquerda."
+        },
+        {
+          "id": "d2",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-a-droite",
+          "texto_fr": "à droite",
+          "opcoes": [
+            "toutdroit",
+            "pont",
+            "gauche",
+            "droite"
+          ],
+          "correta": "droite",
+          "explicacao": "À droite = à direita."
+        },
+        {
+          "id": "d3",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-tout-droit",
+          "texto_fr": "tout droit",
+          "opcoes": [
+            "gauche",
+            "pont",
+            "droite",
+            "toutdroit"
+          ],
+          "correta": "toutdroit",
+          "explicacao": "Tout droit = sempre em frente."
+        },
+        {
+          "id": "d4",
+          "tipo": "imagem",
+          "instrucao": "Ouça e toque na imagem certa.",
+          "audio": "w-le-pont",
+          "texto_fr": "le pont",
+          "opcoes": [
+            "toutdroit",
+            "gauche",
+            "pont",
+            "droite"
+          ],
+          "correta": "pont",
+          "explicacao": "Le pont = a ponte."
+        },
+        {
+          "id": "d5",
+          "tipo": "pares",
+          "instrucao": "Ligue cada palavra à sua imagem: toque numa palavra e depois na imagem.",
+          "pares": [
+            {
+              "fr": "à gauche",
+              "img": "gauche",
+              "audio": "w-a-gauche"
+            },
+            {
+              "fr": "à droite",
+              "img": "droite",
+              "audio": "w-a-droite"
+            },
+            {
+              "fr": "tout droit",
+              "img": "toutdroit",
+              "audio": "w-tout-droit"
+            },
+            {
+              "fr": "le pont",
+              "img": "pont",
+              "audio": "w-le-pont"
+            }
+          ],
+          "explicacao": "Esquerda, direita, em frente e a ponte."
+        }
+      ]
+    },
+    {
+      "id": "compreender",
+      "nome": "Compreender",
+      "minutos": 2,
+      "intro": "Escute as pessoas na estrada. O texto só aparece depois que você responder.",
+      "itens": [
+        {
+          "id": "c1",
+          "tipo": "audio",
+          "instrucao": "Léo perguntou onde fica a ponte. Ouça Gaston.",
+          "audio": "c1-fala",
+          "pergunta": "Onde fica a ponte?",
+          "opcoes": [
+            "em frente",
+            "à esquerda",
+            "à direita"
+          ],
+          "correta": 0,
+          "explicacao": "C'est tout droit = é em frente."
+        },
+        {
+          "id": "c2",
+          "tipo": "audio",
+          "instrucao": "Ouça Gaston.",
+          "audio": "c2-fala",
+          "pergunta": "A floresta é longe?",
+          "opcoes": [
+            "é à direita",
+            "não, é perto",
+            "sim, é longe"
+          ],
+          "correta": 1,
+          "explicacao": "C'est près = é perto."
+        },
+        {
+          "id": "c3",
+          "tipo": "audio",
+          "instrucao": "Ouça a pergunta de Léo.",
+          "audio": "c3-fala",
+          "pergunta": "O que Léo procura?",
+          "opcoes_img": [
+            "gauche",
+            "droite",
+            "toutdroit",
+            "pont"
+          ],
+          "correta": "pont",
+          "explicacao": "Où est le pont ? = Onde fica a ponte?"
+        },
+        {
+          "id": "c4",
+          "tipo": "texto",
+          "instrucao": "Leia a conversa na estrada.",
+          "texto_fr": [
+            "Léo : Bonjour ! Où est la forêt ?",
+            "Gaston : C'est à droite.",
+            "Léo : C'est loin ?",
+            "Gaston : Non, c'est près."
+          ],
+          "pergunta": "Para que lado fica a floresta?",
+          "opcoes": [
+            "à esquerda",
+            "em frente",
+            "à direita"
+          ],
+          "correta": 2,
+          "explicacao": "C'est à droite = é à direita."
+        },
+        {
+          "id": "c5",
+          "tipo": "texto",
+          "instrucao": "Mesma conversa.",
+          "texto_fr": [
+            "Léo : Bonjour ! Où est la forêt ?",
+            "Gaston : C'est à droite.",
+            "Léo : C'est loin ?",
+            "Gaston : Non, c'est près."
+          ],
+          "pergunta": "Que palavra Léo usa para perguntar onde fica?",
+          "opcoes": [
+            "Où est… ?",
+            "Combien ?",
+            "Merci !"
+          ],
+          "correta": 0,
+          "explicacao": "Où est… ? = onde fica…?"
+        }
+      ]
+    },
+    {
+      "id": "construir",
+      "nome": "Construir",
+      "minutos": 2,
+      "intro": "Monte as frases do caminho. Où est… ? = onde fica…?",
+      "itens": [
+        {
+          "id": "b1",
+          "tipo": "ordenar",
+          "instrucao": "Monte: “Onde fica a ponte?”",
+          "palavras": [
+            "Où",
+            "est",
+            "le",
+            "pont ?"
+          ],
+          "extras": [
+            "gauche",
+            "combien"
+          ],
+          "audio": "frase-b1",
+          "explicacao": "Où est + lugar + ?"
+        },
+        {
+          "id": "b2",
+          "tipo": "lacuna",
+          "modo": "banco",
+          "instrucao": "Complete: “A ponte? É em frente.”",
+          "frase": "Le pont ? C'est ___.",
+          "banco": [
+            "tout droit",
+            "merci",
+            "un café"
+          ],
+          "respostas": [
+            "tout droit"
+          ],
+          "audio": "frase-b2",
+          "explicacao": "Tout droit = em frente."
+        },
+        {
+          "id": "b3",
+          "tipo": "lacuna",
+          "modo": "digitar",
+          "instrucao": "Escreva o lado que falta (à gauche = esquerda / à droite = direita).",
+          "frase": "La forêt ? C'est à ___.",
+          "respostas": [
+            "gauche",
+            "droite"
+          ],
+          "dica": "Esquerda ou direita: g… ou d…",
+          "audio": "frase-b3",
+          "explicacao": "Gauche e droite: os dois lados."
+        },
+        {
+          "id": "b4",
+          "tipo": "lacuna",
+          "modo": "ditado",
+          "instrucao": "Ditado: escreva o que você ouvir.",
+          "audio": "w-a-droite",
+          "respostas": [
+            "à droite"
+          ],
+          "explicacao": "À droite = à direita (o -te final soa)."
+        }
+      ]
+    },
+    {
+      "id": "interagir",
+      "nome": "Interagir",
+      "minutos": 3,
+      "intro": "Sua vez! Pergunte o caminho a Gaston e depois grave a sua pergunta.",
+      "itens": [
+        {
+          "id": "i1",
+          "tipo": "dialogo",
+          "instrucao": "Escolha o que dizer para Gaston.",
+          "inicio": "n1",
+          "nos": {
+            "n1": {
+              "fala": "Bonjour, Léo ! Ça va ?",
+              "audio": "d-n1",
+              "opcoes": [
+                {
+                  "fr": "Bonjour ! Où est le pont ?",
+                  "feedback": "Isso: Où est + lugar.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "Bonjour ! Où est la forêt ?",
+                  "feedback": "Isso: Où est + lugar.",
+                  "vai": "n2"
+                },
+                {
+                  "fr": "Un café, combien ?",
+                  "feedback": "Aqui é a estrada, não a taverna! Pergunte o caminho: Où est… ?",
+                  "erro": true,
+                  "revisao": "rv-ou"
+                }
+              ]
+            },
+            "n2": {
+              "fala": "C'est à gauche, et tout droit.",
+              "audio": "d-n2",
+              "opcoes": [
+                {
+                  "fr": "C'est loin ?",
+                  "feedback": "Boa pergunta: é longe?",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "À gauche ? Merci !",
+                  "feedback": "Isso: repetir e agradecer.",
+                  "vai": "n3"
+                },
+                {
+                  "fr": "À droite ?",
+                  "feedback": "Ele disse à gauche = à esquerda.",
+                  "erro": true,
+                  "revisao": "rv-gauche"
+                }
+              ]
+            },
+            "n3": {
+              "fala": "Non, c'est près. Bonne route !",
+              "audio": "d-n3",
+              "opcoes": [
+                {
+                  "fr": "Où est le pont ?",
+                  "feedback": "Você já sabe o caminho. Agradeça: merci, au revoir!",
+                  "erro": true
+                },
+                {
+                  "fr": "Merci ! Au revoir !",
+                  "feedback": "Perfeito: agradecer e se despedir.",
+                  "vai": "fim"
+                }
+              ]
+            }
+          },
+          "explicacao": "Où est… ? → à gauche / à droite / tout droit → c'est loin ? → merci, au revoir."
+        },
+        {
+          "id": "i2",
+          "tipo": "producao",
+          "modo": "gravar",
+          "instrucao": "Grave em voz alta (1–2 frases): cumprimente e pergunte onde fica a ponte ou a floresta.",
+          "modelo": "Bonjour ! Où est le pont ? C'est loin ?",
+          "audio_modelo": "modelo",
+          "checklist": [
+            "Bonjour",
+            "Où est… ?",
+            "le pont / la forêt",
+            "C'est loin ?"
+          ],
+          "max_segundos": 15,
+          "escrita": {
+            "instrucao": "Sem microfone agora? Escreva a sua pergunta.",
+            "palavras_chave": [
+              [
+                "où"
+              ],
+              [
+                "pont",
+                "forêt",
+                "foret"
+              ]
+            ],
+            "explicacao": "Où est + lugar + ?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "recuperar",
+      "nome": "Recuperar",
+      "minutos": 1.5,
+      "intro": "Última rodada: os itens errados voltam, uma revisão e a frase da missão.",
+      "recuperar": true,
+      "itens": [
+        {
+          "id": "r2",
+          "tipo": "audio",
+          "instrucao": "Revisão da etapa 3 (praça): ouça Gaston.",
+          "audio": "rev",
+          "pergunta": "O que você responde?",
+          "opcoes": [
+            "Je m'appelle Léo.",
+            "C'est à gauche.",
+            "Le pont."
+          ],
+          "correta": 0,
+          "explicacao": "Comment vous appelez-vous ? → Je m'appelle… (etapa 3)."
+        },
+        {
+          "id": "r1",
+          "tipo": "ordenar",
+          "instrucao": "Frase da missão: “Onde fica a floresta? É à direita.”",
+          "palavras": [
+            "Où",
+            "est",
+            "la",
+            "forêt ?",
+            "C'est",
+            "à",
+            "droite."
+          ],
+          "extras": [
+            "pont"
+          ],
+          "audio": "recap",
+          "explicacao": "Où est la forêt ? C'est à droite."
+        }
+      ]
+    }
+  ],
+  "novas": [
+    "à gauche",
+    "à droite",
+    "tout droit",
+    "le pont",
+    "la forêt",
+    "où est… ?",
+    "c'est loin",
+    "c'est près"
+  ],
+  "padroes": [
+    "Où est + lugar ?",
+    "C'est à gauche / à droite / tout droit."
+  ]
+}

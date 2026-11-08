@@ -1,0 +1,80 @@
+{
+  "origem": "GenerateImage, 18 criações independentes em 2026-11-08",
+  "pets_sem_imagens_referencia": true,
+  "pets_geradores_anteriores_reutilizados": false,
+  "herois_referencia": "Identidade/cores dos originais; corpo e pose novos. Arqueira final sem imagem de referência.",
+  "arquivos": {
+    "dragao": {
+      "arquivo": "originais/dragao.jpg",
+      "sha256": "32110e81bc7561a17b0579abe80fda4ce9fdffe75fa3cf5beeb89ab06426ceb3"
+    },
+    "lobo": {
+      "arquivo": "originais/lobo.jpg",
+      "sha256": "3df2ee3bc81db3a650648dfe24f1dc3ec54b06c4e13518af57a9a4e810a25941"
+    },
+    "raposa": {
+      "arquivo": "originais/raposa.jpg",
+      "sha256": "cd908f1bf5e3465ac87f6f51e160cf3da4ed1aa095417a295a1a7fdcd1935c46"
+    },
+    "tigre": {
+      "arquivo": "originais/tigre.jpg",
+      "sha256": "079ba1b91e977838750eb880dc923d1791b1de2bad269a2b98121a591be765ee"
+    },
+    "corvo": {
+      "arquivo": "originais/corvo.jpg",
+      "sha256": "fd87937af500b0a385a78b7a66342298b2860d4d7ca23cb508df02e8388a971a"
+    },
+    "fenix": {
+      "arquivo": "originais/fenix.jpg",
+      "sha256": "d33eb9e39608d3e333cfb4ad87213c7eca222a970bf1696db306eafa649b7245"
+    },
+    "gato": {
+      "arquivo": "originais/gato.jpg",
+      "sha256": "931353596913286ab13074de20d182fe20418ad51a810abe35f9b9818dd9a5de"
+    },
+    "cervo": {
+      "arquivo": "originais/cervo.jpg",
+      "sha256": "63ef699128335ab4dd2caef7dfa02123cbcaea5b2cc5ce048e144925ab05276f"
+    },
+    "coruja": {
+      "arquivo": "originais/coruja.jpg",
+      "sha256": "301055bc5240fc268ac2f7f7115eb601765d09ce5b59f7deddf11043a6d7d99d"
+    },
+    "coelho": {
+      "arquivo": "originais/coelho.jpg",
+      "sha256": "9a078035d64dfe0d2fad44af5423c180fdd27891fb6bc54a52f94c3b8e79aa71"
+    },
+    "cavaleiro-m": {
+      "arquivo": "originais/cavaleiro-m.jpg",
+      "sha256": "1417766469de93467a19791e853a237e6f1f82b1aa50925f8de3b357980cbb6c"
+    },
+    "cavaleiro-f": {
+      "arquivo": "originais/cavaleiro-f.jpg",
+      "sha256": "94fb3f5e51bd3dc10a5016ea0079232067c32f72cc58e2485911531ea3ee9cb1"
+    },
+    "arqueiro-m": {
+      "arquivo": "originais/arqueiro-m.jpg",
+      "sha256": "ff991e8293a34c649d1187e0a10212a5f9d8ad8be7ebb78112ced5c77e16de0a"
+    },
+    "arqueiro-f": {
+      "arquivo": "originais/arqueiro-f.jpg",
+      "sha256": "5ac241f3d5b3aab9d3013c6186790a6228518dcda47ccb2716d5d0d7470afd42"
+    },
+    "mago-m": {
+      "arquivo": "originais/mago-m.jpg",
+      "sha256": "27fa1c6557dfd79e62bfae02159f42a65e16c18fb8b327f90d77bd7ad0997097"
+    },
+    "mago-f": {
+      "arquivo": "originais/mago-f.jpg",
+      "sha256": "36f7f36133c956c662c14298d5505238daed639dd48ca92a0af21628ad7846d7"
+    },
+    "bardo-m": {
+      "arquivo": "originais/bardo-m.jpg",
+      "sha256": "807fc78afdff5b0c6a472e5985abdcc9c0ba5684b50c9d39380a2be2f0e9067d"
+    },
+    "bardo-f": {
+      "arquivo": "originais/bardo-f.jpg",
+      "sha256": "7e5f5f17399bcbf4e527f5900cfe8c0d0ef041c4b73b5951bb2f1e587615f0c2"
+    }
+  }
+}

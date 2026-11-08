@@ -1,0 +1,241 @@
+{
+  "id": "r1-p26",
+  "regiao": 1,
+  "parada": 26,
+  "etapa": 26,
+  "formato": "conversa",
+  "titulo": "O guarda do portão",
+  "titulo_fr": "Le garde de la porte",
+  "nivel": "A1",
+  "duracao_min": 4,
+  "cenario": {
+    "fundo": "parada/mapa40/cenas/cidade/cena-fundo.png",
+    "frente": "parada/mapa40/cenas/cidade/cena-frente.png",
+    "npc": {
+      "nome": "Hugo",
+      "papel": "guarda do portão",
+      "img": "parada/mapa40/npc/hugo.png",
+      "x": 52,
+      "y": 33.8,
+      "w": 11.0,
+      "voz": "hugo"
+    },
+    "brilhos": []
+  },
+  "vozes": {
+    "hugo": {
+      "voz": "fr-CA-JeanNeural",
+      "pitch": "+2Hz"
+    },
+    "leo": "fr-CA-AntoineNeural"
+  },
+  "audios": {
+    "abertura": {
+      "voz": "hugo",
+      "texto": "Halte ! Ici, c'est la porte de la ville."
+    },
+    "fecho": {
+      "voz": "hugo",
+      "texto": "Bienvenue en ville ! Bonne journée !"
+    },
+    "correcao": {
+      "voz": "hugo",
+      "texto": "Écoutez. On dit :"
+    },
+    "t1-npc": {
+      "voz": "hugo",
+      "texto": "Bonjour. Comment vous appelez-vous ?"
+    },
+    "t1-modelo": {
+      "voz": "leo",
+      "texto": "Je m'appelle Léo."
+    },
+    "t2-npc": {
+      "voz": "hugo",
+      "texto": "Vous venez d'où ?"
+    },
+    "t2-modelo": {
+      "voz": "leo",
+      "texto": "Je viens de Québec."
+    },
+    "t3-npc": {
+      "voz": "hugo",
+      "texto": "Vous allez où ?"
+    },
+    "t3-modelo": {
+      "voz": "leo",
+      "texto": "Je vais au château."
+    },
+    "t4-npc": {
+      "voz": "hugo",
+      "texto": "Le château ouvre à neuf heures."
+    },
+    "t4-modelo": {
+      "voz": "leo",
+      "texto": "Il est quelle heure ?"
+    },
+    "t5-npc": {
+      "voz": "hugo",
+      "texto": "Il est neuf heures. Entrez !"
+    },
+    "t5-modelo": {
+      "voz": "leo",
+      "texto": "Merci ! Bonne journée !"
+    },
+    "w-halte": {
+      "voz": "hugo",
+      "texto": "Halte !"
+    },
+    "w-vous-venez-d-ou": {
+      "voz": "hugo",
+      "texto": "Vous venez d'où ?"
+    },
+    "w-je-viens-de": {
+      "voz": "hugo",
+      "texto": "Je viens de…"
+    },
+    "w-ouvre": {
+      "voz": "hugo",
+      "texto": "Ouvre."
+    },
+    "w-entrez": {
+      "voz": "hugo",
+      "texto": "Entrez !"
+    },
+    "w-bonne-journee": {
+      "voz": "hugo",
+      "texto": "Bonne journée !"
+    }
+  },
+  "imagens": {},
+  "vocabulario": [
+    {
+      "fr": "halte !",
+      "pt": "alto!",
+      "audio": "w-halte"
+    },
+    {
+      "fr": "vous venez d'où ?",
+      "pt": "de onde você vem?",
+      "audio": "w-vous-venez-d-ou"
+    },
+    {
+      "fr": "je viens de…",
+      "pt": "eu venho de…",
+      "audio": "w-je-viens-de"
+    },
+    {
+      "fr": "ouvre",
+      "pt": "abre",
+      "audio": "w-ouvre"
+    },
+    {
+      "fr": "entrez !",
+      "pt": "entre!",
+      "audio": "w-entrez"
+    },
+    {
+      "fr": "bonne journée !",
+      "pt": "bom dia! (tenha um bom dia)",
+      "audio": "w-bonne-journee"
+    }
+  ],
+  "recompensa": {
+    "xp_base": 20,
+    "xp_por_estrela": 0,
+    "xp_pausado": false,
+    "estrelas": [
+      {
+        "min_erros": 0,
+        "max_erros": 1,
+        "estrelas": 3
+      },
+      {
+        "min_erros": 2,
+        "max_erros": 4,
+        "estrelas": 2
+      },
+      {
+        "min_erros": 5,
+        "max_erros": 9999,
+        "estrelas": 1
+      }
+    ],
+    "xp_versao": 6
+  },
+  "instrucao": "Hugo fala primeiro. Responda em voz alta com a frase que aparece no pergaminho.",
+  "abertura": "abertura",
+  "fecho": "fecho",
+  "correcao": "correcao",
+  "turnos": [
+    {
+      "npc": "t1-npc",
+      "npc_texto": "Bonjour. Comment vous appelez-vous ?",
+      "contexto_pt": "O guarda pede o seu nome.",
+      "modelo": "Je m'appelle Léo.",
+      "modelo_pt": "Eu me chamo Léo.",
+      "modelo_audio": "t1-modelo",
+      "chaves": [
+        "appelle"
+      ]
+    },
+    {
+      "npc": "t2-npc",
+      "npc_texto": "Vous venez d'où ?",
+      "contexto_pt": "Ele pergunta de onde você vem.",
+      "modelo": "Je viens de Québec.",
+      "modelo_pt": "Eu venho de Quebec.",
+      "modelo_audio": "t2-modelo",
+      "chaves": [
+        "viens",
+        "québec"
+      ]
+    },
+    {
+      "npc": "t3-npc",
+      "npc_texto": "Vous allez où ?",
+      "contexto_pt": "Ele pergunta aonde você vai.",
+      "modelo": "Je vais au château.",
+      "modelo_pt": "Eu vou ao castelo.",
+      "modelo_audio": "t3-modelo",
+      "chaves": [
+        "château"
+      ]
+    },
+    {
+      "npc": "t4-npc",
+      "npc_texto": "Le château ouvre à neuf heures.",
+      "contexto_pt": "O castelo abre às nove.",
+      "modelo": "Il est quelle heure ?",
+      "modelo_pt": "Que horas são?",
+      "modelo_audio": "t4-modelo",
+      "chaves": [
+        "heure"
+      ]
+    },
+    {
+      "npc": "t5-npc",
+      "npc_texto": "Il est neuf heures. Entrez !",
+      "contexto_pt": "Já são nove: pode entrar!",
+      "modelo": "Merci ! Bonne journée !",
+      "modelo_pt": "Obrigado! Bom dia!",
+      "modelo_audio": "t5-modelo",
+      "chaves": [
+        "merci"
+      ]
+    }
+  ],
+  "novas": [
+    "halte",
+    "vous venez d'où ?",
+    "je viens de…",
+    "ouvre",
+    "entrez",
+    "bonne journée",
+    "la ville"
+  ],
+  "padroes": [
+    "Je viens de + cidade.",
+    "Je vais au + lugar. (revisão)"
+  ]
+}

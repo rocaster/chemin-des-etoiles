@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block titulo %}Escolha seu avatar · NCL Simulado{% endblock %}
+
+{% block estilo %}
+<style>
+  .grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px; margin: 0 0 24px; padding: 0; border: 0; }
+  .grade legend { padding: 0; margin-bottom: 12px; font-weight: bold; }
+  .opcao { position: relative; }
+  .opcao input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+  .card {
+    display: block; text-align: center; padding: 12px 8px;
+    background: var(--fundo-card); border: 2px solid var(--borda); border-radius: 12px;
+  }
+  .opcao input:focus-visible + .card { outline: 3px solid var(--destaque); outline-offset: 2px; }
+  .opcao input:checked + .card { border-color: var(--destaque); box-shadow: 0 0 0 3px var(--destaque); }
+  .retrato { display: block; position: relative; width: 140px; height: 140px; margin: 0 auto 8px; }
+  .retrato img { position: absolute; display: block; }
+  .retrato .moldura { inset: 0; width: 100%; height: 100%; z-index: 2; }
+  .retrato .av { left: 10%; top: 12%; width: 80%; height: auto; z-index: 1; }
+  .retrato .fechado { opacity: 0; animation: piscar 5s infinite; animation-delay: var(--atraso, 0s); }
+  @keyframes piscar { 0%, 92%, 100% { opacity: 0; } 94%, 97% { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .retrato .fechado { animation: none; } }
+  .nome-classe { font-weight: bold; }
+  .genero { color: var(--texto-suave); font-size: 0.9em; }
+  .campo { margin-bottom: 20px; }
+  .campo label { display: block; font-weight: bold; margin-bottom: 6px; }
+  .campo input[type=text] {
+    width: 100%; max-width: 360px; padding: 10px 12px; font: inherit;
+    color: var(--texto); background: var(--fundo-card); border: 2px solid var(--borda); border-radius: 8px;
+  }
+  .erro { color: var(--erro); font-weight: bold; margin-bottom: 16px; }
+  button {
+    font: inherit; font-weight: bold; padding: 12px 28px; cursor: pointer;
+    color: #fff8ea; background: var(--destaque); border: 0; border-radius: 10px;
+  }
+  @media (prefers-color-scheme: dark) { button { color: #1d1812; } }
+</style>
+{% endblock %}
+
+{% block conteudo %}
+<h1>Escolha seu herói</h1>
+<p class="sub">Sua jornada rumo ao francês começa aqui.</p>
+
+{% if erro %}<p class="erro" role="alert">{{ erro }}</p>{% endif %}
+
+<form method="post" action="{{ url_for('avatar') }}">
+  <fieldset class="grade">
+    <legend>Avatar</legend>
+    {% for a in avatares %}
+    <div class="opcao">
+      <input type="radio" name="avatar" id="av-{{ a.id }}" value="{{ a.id }}" required>
+      <label class="card" for="av-{{ a.id }}">
+        <span class="retrato" style="--atraso: {{ (loop.index0 * 0.7) ~ 's' }}">
+          <img class="av pixel" src="{{ url_for('static', filename='avatars/' ~ a.id ~ '-aberto.png') }}" alt="">
+          <img class="av fechado pixel" src="{{ url_for('static', filename='avatars/' ~ a.id ~ '-fechado.png') }}" alt="">
+          <img class="moldura pixel" src="{{ url_for('static', filename='frames/' ~ moldura) }}" alt="">
+        </span>
+        <span class="nome-classe">{{ a.classe }}</span><br>
+        <span class="genero">{{ a.genero }}</span>
+      </label>
+    </div>
+    {% endfor %}
+  </fieldset>
+
+  <div class="campo">
+    <label for="nome">Nome do personagem</label>
+    <input type="text" id="nome" name="nome" maxlength="20" value="{{ nome }}" required>
+  </div>
+
+  <button type="submit">Começar a aventura</button>
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{
+  "versao": 1,
+  "cristais_por_formato": {
+    "missao": 18,
+    "conversa": 20,
+    "historia": 16,
+    "biblioteca": 16,
+    "cartas": 18,
+    "batalha": 12,
+    "simulados": 0
+  },
+  "cristais_repeticao": 0,
+  "bonus_area": 75,
+  "bonus_boss": 150,
+  "bonus_mapa": 175,
+  "bonus_sem_erros": 20,
+  "xp_proposta_nao_aplicada": {
+    "missao": 25,
+    "conversa": 20,
+    "historia": 20,
+    "biblioteca": 15,
+    "cartas": 20,
+    "batalha": 0,
+    "simulados": 0
+  }
+}

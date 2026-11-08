@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loja de cosméticos · Chemin des Étoiles</title>
+<link rel="stylesheet" href="/static/loja/loja.css">
+<link rel="stylesheet" href="/static/loja/animacoes-v5.css">
+<link rel="stylesheet" href="/static/loja/efeitos.css">
+<link rel="stylesheet" href="/static/loja/perfil-v6.css">
+
+</head>
+<body class="cosmeticos">
+<a class="pular" href="#principal">Pular para o conteúdo</a>
+<header class="cabecalho">
+<a class="placa voltar" href="/mapa">‹ Voltar ao mapa</a>
+<a class="marca" href="/heroi">Chemin des Étoiles<small>Seu refúgio entre as aventuras</small></a>
+<div class="saldo" aria-label="Saldo de cristais"><span class="cristal" aria-hidden="true">◆</span> <strong>1030</strong> cristais</div>
+</header>
+<nav class="atalhos" aria-label="Áreas do refúgio">
+<a href="/heroi" >Personagem</a>
+<a href="/loja" aria-current="page">Loja de cosméticos</a>
+<a href="/conquistas">Baú de conquistas</a>
+</nav>
+<main id="principal" tabindex="-1">
+
+
+<div class="abertura"><p class="sobretitulo">LE COMPTOIR DES ÉTOILES</p><h1>Loja de cosméticos</h1><p>Um toque de magia. A sua aventura, do seu jeito.</p></div>
+<div class="aviso">◆ Use <strong>cristais</strong>, nunca XP. Você está no modo teste: o saldo inicial de demonstração é 1.000 cristais e some ao reiniciar o servidor.</div>
+<nav class="abas" aria-label="Categorias da loja"><a href="/loja?categoria=personagem" >Personagem</a><a href="/loja?categoria=particulas" >Partículas</a><a href="/loja?categoria=titulos" >Títulos</a><a href="/loja?categoria=pets" aria-current="page">Pets</a><a href="/loja?categoria=cenarios" >Cenários</a></nav>
+<section aria-label="Pets">
+<div class="prateleira-topo"><h2>Pets</h2><form method="post" action="/loja/retirar"><input type="hidden" name="csrf" value="TOKEN_DE_TESTE_REMOVIDO"><input type="hidden" name="categoria" value="pets"><button class="botao secundario" type="submit">Restaurar padrão</button></form></div>
+<section class="perfil-resumo" aria-label="Seu visual equipado">
+
+<div class="particulas-cena" aria-hidden="true"><div class="fx fx-inverno" aria-hidden="true">
+<i style="--i:0;left:7%;--atraso:-0.0s"></i><i style="--i:1;left:44%;--atraso:-0.7s"></i><i style="--i:2;left:81%;--atraso:-1.4s"></i><i style="--i:3;left:18%;--atraso:-2.0999999999999996s"></i><i style="--i:4;left:55%;--atraso:-2.8s"></i><i style="--i:5;left:92%;--atraso:-3.5s"></i><i style="--i:6;left:29%;--atraso:-4.199999999999999s"></i><i style="--i:7;left:66%;--atraso:-4.8999999999999995s"></i><i style="--i:8;left:3%;--atraso:-5.6s"></i><i style="--i:9;left:40%;--atraso:-6.3s"></i><i style="--i:10;left:77%;--atraso:-7.0s"></i><i style="--i:11;left:14%;--atraso:-7.699999999999999s"></i><i style="--i:12;left:51%;--atraso:-8.399999999999999s"></i><i style="--i:13;left:88%;--atraso:-9.1s"></i>
+</div></div>
+<span class="heroi-pose sprite-oito" role="img" aria-label="Teste com a roupa equipada" style="background-image:url('/static/loja/herois/poses-v5/arqueiro-f-ametista.png')"></span>
+<div><strong>Teste</strong><p lang="fr">Voix du village</p><small>Seu visual equipado · comprar guarda no inventário; depois clique em Equipar.</small></div>
+<span class="perfil-pet sprite-oito" role="img" aria-label="Étoile de Feu" style="background-image:url('/static/loja/pets/fenix.png')"></span>
+</section>
+<p class="nota">Companheiros em novas poses articuladas: oito quadros leves no refúgio e na ficha do mapa; ficam parados com movimento reduzido.</p>
+<div class="produtos">
+<article class="produto pergaminho" data-item="pet-dragao">
+<div class="amostra amostra-pets">
+<span class="pet pet-idle sprite-oito" data-quadros="8" role="img" aria-label="Dragão bebê" style="background-image:url('/static/loja/pets/dragao.png')"></span>
+</div>
+<div class="produto-texto"><h3>Dragão bebê</h3><p>Escamas verdes, asinhas curtas e um nariz curioso.</p><div class="produto-rodape"><strong class="preco">◆ 400 <small>cristais</small></strong>
+<form method="post" action="/loja/comprar"><input type="hidden" name="csrf" value="TOKEN_DE_TESTE_REMOVIDO"><input type="hidden" name="item" value="pet-dragao"><button class="botao" type="submit" >Comprar</button></form>
+</div></div>
+</article>
+<article class="produto pergaminho" data-item="pet-lobo">
+<div class="amostra amostra-pets">
+<span class="pet pet-idle sprite-oito" data-quadros="8" role="img" aria-label="Lobo" style="background-image:url('/static/loja/pets/lobo.png')"></span>
+</div>
+<div class="produto-texto"><h3>Lobo</h3><p>Companheiro cinzento leal, de orelhas sempre atentas.</p><div class="produto-rodape"><strong class="preco">◆ 400 <small>cristais</small></strong>
+<form method="post" action="/loja/comprar"><input type="hidden" name="csrf" value="TOKEN_DE_TESTE_REMOVIDO"><input type="hidden" name="item" value="pet-lobo"><button class="botao" type="submit" >Comprar</button></form>
+</div></div>
+</article>
+<article class="produto pergaminho" data-item="pet-raposa">
+<div class="amostra amostra-pets">
+<span class="pet pet-idle sprite-oito" data-quadros="8" role="img" aria-label="Raposa" style="background-image:url('/static/loja/pets/raposa.png')"></span>
+</div>
+<div class="produto-texto"><h3>Raposa</h3><p>Ruiva esperta com uma cauda volumosa.</p><div class="produto-rodape"><strong class="preco">◆ 400 <small>cristais</small></strong>
+<form method="post" action="/loja/comprar"><input type="hidden" name="csrf" value="TOKEN_DE_TESTE_REMOVIDO"><input type="hidden" name="item" value="pet-raposa"><button class="botao" type="submit" >Comprar</button></form>
+</div></div>
+</article>
+<article class="produto pergaminho" data-item="pet-tigre">
+<div class="amostra amostra-pets">
+<span class="pet pet-idle sprite-oito" data-quadros="8" role="img" aria-label="Tigre" style="background-image:url('/static/loja/pets/tigre.png')"></span>
+</div>
+<div class="produto-texto"><h3>Tigre</h3><p>Filhote listrado que pisca preguiçosamente.</p><div class="produto-rodape"><strong class="preco">◆ 400 <small>cristais</small></strong>
+<form method="post" action="/loja/comprar"><input type="hidden" name="csrf" value="TOKEN_DE_TESTE_REMOVIDO"><input type="hidden" name="item" value="pet-tigre"><button class="botao" type="submit" >Comprar</button></form>
+</div></div>
+</article>
+<article class="produto pergaminho" data-item="pet-corvo">
+<div class="amostra amostra-pets">
+<span class="pet pet-idle sprite-oito" data-quadros="8" role="img" aria-label="Corvo místico" style="background-image:url('/static/loja/pets/corvo.png')"></span>
+</div>
+<div class="produto-texto"><h3>Corvo místico</h3><p>Penas escuras e olhos violeta que vigiam o caminho.</p><div class="produto-rodape"><strong class="preco">◆ 400 <small>cristais</small></strong>
+<form method="post" action="/loja/comprar"><input type="hidden" name="csrf" value="TOKEN_DE_TESTE_REMOVIDO"><input type="hidden" name="item" value="pet-corvo"><button class="botao" type="submit" >Comprar</button></form>
+</div></div>
+</article>
+<article class="produto pergaminho" data-item="pet-fenix">
+<div class="amostra amostra-pets">
+<span class="pet pet-idle sprite-oito" data-quadros="8" role="img" aria-label="Étoile de Feu" style="background-image:url('/static/loja/pets/fenix.png')"></span>
+</div>
+<div class="produto-texto"><h3>Étoile de Feu</h3><p>Pequena ave dourada com uma cauda de brasas.</p><div class="produto-rodape"><strong class="preco">◆ 400 <small>cristais</small></strong>
+<span class="em-uso">Equipado ✓</span>
+</div><p class="nota propriedade">No seu inventário · compra única</p></div>
+</article>
+<article class="produto pergaminho" data-item="pet-gato">
+<div class="amostra amostra-pets">
+<span class="pet pet-idle sprite-oito" data-quadros="8" role="img" aria-label="Gato das sombras" style="background-image:url('/static/loja/pets/gato.png')"></span>
+</div>
+<div class="produto-texto"><h3>Gato das sombras</h3><p>Um gatinho noturno de olhos brilhantes.</p><div class="produto-rodape"><strong class="preco">◆ 400 <small>cristais</small></strong>
+<form method="post" action="/loja/comprar"><input type="hidden" name="csrf" value="TOKEN_DE_TESTE_REMOVIDO"><input type="hidden" name="item" value="pet-gato"><button class="botao" type="submit" >Comprar</button></form>
+</div></div>
+</article>
+<article class="produto pergaminho" data-item="pet-cervo">
+<div class="amostra amostra-pets">
+<span class="pet pet-idle sprite-oito" data-quadros="8" role="img" aria-label="Cervo dourado" style="background-image:url('/static/loja/pets/cervo.png')"></span>
+</div>
+<div class="produto-texto"><h3>Cervo dourado</h3><p>Pelagem dourada e chifrinhos luminosos.</p><div class="produto-rodape"><strong class="preco">◆ 400 <small>cristais</small></strong>
+<form method="post" action="/loja/comprar"><input type="hidden" name="csrf" value="TOKEN_DE_TESTE_REMOVIDO"><input type="hidden" name="item" value="pet-cervo"><button class="botao" type="submit" >Comprar</button></form>
+</div></div>
+</article>
+<article class="produto pergaminho" data-item="pet-coruja">
+<div class="amostra amostra-pets">
+<span class="pet pet-idle sprite-oito" data-quadros="8" role="img" aria-label="Coruja sábia" style="background-image:url('/static/loja/pets/coruja.png')"></span>
+</div>
+<div class="produto-texto"><h3>Coruja sábia</h3><p>Guardiã dos livros, de óculos redondos.</p><div class="produto-rodape"><strong class="preco">◆ 400 <small>cristais</small></strong>
+<form method="post" action="/loja/comprar"><input type="hidden" name="csrf" value="TOKEN_DE_TESTE_REMOVIDO"><input type="hidden" name="item" value="pet-coruja"><button class="botao" type="submit" >Comprar</button></form>
+</div></div>
+</article>
+<article class="produto pergaminho" data-item="pet-coelho">
+<div class="amostra amostra-pets">
+<span class="pet pet-idle sprite-oito" data-quadros="8" role="img" aria-label="Coelho cristal" style="background-image:url('/static/loja/pets/coelho.png')"></span>
+</div>
+<div class="produto-texto"><h3>Coelho cristal</h3><p>Orelhas de cristal azul e focinho inquieto.</p><div class="produto-rodape"><strong class="preco">◆ 400 <small>cristais</small></strong>
+<form method="post" action="/loja/comprar"><input type="hidden" name="csrf" value="TOKEN_DE_TESTE_REMOVIDO"><input type="hidden" name="item" value="pet-coelho"><button class="botao" type="submit" >Comprar</button></form>
+</div></div>
+</article></div>
+</section>
+<section id="molduras" class="molduras-vitrine" aria-labelledby="titulo-molduras">
+<div class="abertura"><p class="sobretitulo">CONQUISTAS DE NÍVEL</p><h2 id="titulo-molduras">Molduras da jornada</h2><p>Conquistadas apenas por LVL, nunca por cristais. A maior desbloqueada aparece automaticamente na sua ficha do mapa.</p></div>
+<p class="nota">Seu LVL visual: <strong>6</strong>. O LVL acompanha o XP acumulado, não o nível de francês.</p>
+<div class="molduras-grade">
+<article class="moldura-premio pergaminho conquistada" data-moldura="madeira" data-nivel="1" data-estado="conquistada">
+<img src="/static/mapa/bordas/borda-madeira@2x.png" width="96" height="96" alt="Moldura de Madeira" loading="lazy">
+<h3>Madeira</h3><p class="moldura-lvl">LVL 1 · 0 XP</p><strong>Conquistada</strong>
+</article>
+<article class="moldura-premio pergaminho conquistada" data-moldura="pedra" data-nivel="2" data-estado="conquistada">
+<img src="/static/mapa/bordas/borda-pedra@2x.png" width="96" height="96" alt="Moldura de Pedra" loading="lazy">
+<h3>Pedra</h3><p class="moldura-lvl">LVL 2 · 45 XP</p><strong>Conquistada</strong>
+</article>
+<article class="moldura-premio pergaminho conquistada" data-moldura="bronze" data-nivel="3" data-estado="conquistada">
+<img src="/static/mapa/bordas/borda-bronze@2x.png" width="96" height="96" alt="Moldura de Bronze" loading="lazy">
+<h3>Bronze</h3><p class="moldura-lvl">LVL 3 · 135 XP</p><strong>Conquistada</strong>
+</article>
+<article class="moldura-premio pergaminho conquistada" data-moldura="prata" data-nivel="4" data-estado="conquistada">
+<img src="/static/mapa/bordas/borda-prata@2x.png" width="96" height="96" alt="Moldura de Prata" loading="lazy">
+<h3>Prata</h3><p class="moldura-lvl">LVL 4 · 270 XP</p><strong>Conquistada</strong>
+</article>
+<article class="moldura-premio pergaminho conquistada" data-moldura="ouro" data-nivel="5" data-estado="conquistada">
+<img src="/static/mapa/bordas/borda-ouro@2x.png" width="96" height="96" alt="Moldura de Ouro" loading="lazy">
+<h3>Ouro</h3><p class="moldura-lvl">LVL 5 · 405 XP</p><strong>Conquistada</strong>
+</article>
+<article class="moldura-premio pergaminho conquistada" data-moldura="diamante" data-nivel="6" data-estado="ativa">
+<img src="/static/mapa/bordas/borda-diamante@2x.png" width="96" height="96" alt="Moldura de Diamante" loading="lazy">
+<h3>Diamante</h3><p class="moldura-lvl">LVL 6 · 585 XP</p><strong>Em uso no mapa</strong>
+</article></div>
+</section>
+
+</main>
+<footer>Cosméticos não dão vantagens nas lições. Seu XP nunca é gasto.<br>Cristais por primeira conclusão; repetições não dão créditos de etapa. Preços provisórios.</footer>
+</body></html>

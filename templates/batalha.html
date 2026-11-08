@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Étape {{ n }} · {{ parada.titulo_fr }} · Chemin des Étoiles</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='parada/batalha.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='loja/animacoes-v5.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='loja/efeitos.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='loja/perfil-v6.css') }}">
+  <style>
+    .arena { background-image: url("{{ url_for('static', filename=dados.cenario.fundo) }}"); }
+    .heroi { background-image: url("{{ url_for('static', filename=cosmetica.batalha) }}"); }
+    .placa, .pergunta, .legenda, .mensagem, .combo, .fuga { background-image: url("{{ url_for('static', filename='nivelamento/papel-textura.png') }}"); }
+    .efeito.corte { background-image: url("{{ url_for('static', filename='batalha/efeito-corte.png') }}"); }
+    .efeito.golpe { background-image: url("{{ url_for('static', filename='batalha/efeito-golpe.png') }}"); }
+    .efeito.estrela { background-image: url("{{ url_for('static', filename='batalha/efeito-estrela.png') }}"); }
+    .efeito.dano { background-image: url("{{ url_for('static', filename='batalha/efeito-dano.png') }}"); }
+    .ic.corte { background-image: url("{{ url_for('static', filename='batalha/efeito-corte.png') }}"); }
+    .ic.golpe { background-image: url("{{ url_for('static', filename='batalha/efeito-golpe.png') }}"); }
+    {% set classe = heroi.split('-')[0] %}{% set esp = dados.especiais[classe] %}
+    .especial { background-image: url("{{ url_for('static', filename=esp.img) }}"); --cor-esp: {{ esp.cor }}; }
+    .faixa-especial { --cor-esp: {{ esp.cor }}; }
+    .efeito.escudo { background-image: url("{{ url_for('static', filename='batalha/efeito-escudo.png') }}"); }
+    .ic-escudo { background-image: url("{{ url_for('static', filename='batalha/escudo-icone.png') }}"); }
+    .ic.estrela { background-image: url("{{ url_for('static', filename='batalha/efeito-estrela.png') }}"); }
+  </style>
+</head>
+<body{% if dados.cenario.chefe %} class="chefe"{% endif %} data-parada="{{ pid }}" data-heroi="{{ heroi }}" data-classe="{{ heroi.split('-')[0] }}">
+  <h1 class="sr">Étape {{ n }} · {{ parada.titulo_fr }} — {{ parada.titulo }}</h1>
+  <div class="tela">
+    <div class="arena" id="arena">
+      <a class="fuga" id="fuga" href="{{ url_for('mapa', vista='regiao') }}" title="Fugir e voltar ao mapa (sem perder nada)">‹ Mapa</a>
+      {% if teste %}<p class="selo-teste" role="status">MODO TESTE · progresso separado</p>{% endif %}
+
+      <div class="placa placa-heroi" id="placa-heroi">
+        <span class="perfil-batalha-retrato sprite-oito" role="img" aria-label="Perfil equipado de {{ nome }}" style="background-image:url('{{ url_for('static',filename=cosmetica.sprite) }}')"></span>
+        <p class="nome" id="nome-heroi">{{ nome }}</p>
+        {% if cosmetica.titulo %}<p class="perfil-titulo-batalha">{{ cosmetica.titulo }}</p>{% endif %}
+        <div class="barra" id="barra-heroi" role="meter" aria-label="Vida de {{ nome }}" aria-valuemin="0" aria-valuemax="{{ dados.regras.vida_heroi }}" aria-valuenow="{{ dados.regras.vida_heroi }}" style="--seg: {{ dados.regras.vida_heroi }}">{% for _ in range(dados.regras.vida_heroi) %}<i></i>{% endfor %}</div>
+      </div>
+      <div class="placa placa-inimigo" id="placa-inimigo">
+        <p class="nome" id="nome-inimigo"></p>
+        <div class="barra" id="barra-inimigo" role="meter" aria-label="Vida do inimigo" aria-valuemin="0" aria-valuemax="{{ dados.regras.vida_inimigo }}" aria-valuenow="{{ dados.regras.vida_inimigo }}" style="--seg: {{ dados.regras.vida_inimigo }}">{% for _ in range(dados.regras.vida_inimigo) %}<i></i>{% endfor %}</div>
+      </div>
+
+      {% if cosmetica.efeito %}{% set efeito=cosmetica.efeito %}{% include 'loja-efeito.html' %}{% endif %}
+      {% if cosmetica.pet %}<span class="perfil-pet sprite-oito companheiro-batalha" role="img" aria-label="{{ cosmetica.pet.nome }}, companheiro decorativo" style="background-image:url('{{ url_for('static',filename=cosmetica.pet.sprite) }}')"></span>{% endif %}
+      <div class="heroi" id="heroi" aria-hidden="true"></div>
+      <div class="inimigo" id="inimigo" aria-hidden="true"></div>
+      <div class="combo" id="combo" aria-live="polite" hidden><b id="combo-n">×1</b><span id="combo-tipo">Léger</span></div>
+      <div class="efeito" id="efeito" aria-hidden="true" hidden></div>
+      <div class="efeito dano" id="efeito-heroi" aria-hidden="true" hidden></div>
+      <div class="efeito escudo" id="efeito-bloqueio" aria-hidden="true" hidden></div>
+      <p class="bloqueado" id="bloqueado" aria-hidden="true" hidden>Bloqué !</p>
+      <p class="numero" id="numero" aria-hidden="true" hidden>-1</p>
+
+      <ul class="legenda" id="legenda" aria-label="Combo: o tipo de ataque vem sozinho">
+        <li data-tipo="leger"><i class="ic corte" aria-hidden="true"></i><span>Léger</span><small>×1 · −1</small></li>
+        <li data-tipo="fort"><i class="ic golpe" aria-hidden="true"></i><span>Fort</span><small>×2 · −2</small></li>
+        <li data-tipo="special"><i class="ic estrela" aria-hidden="true"></i><span>Spécial</span><small>×3+ · −3</small></li>
+      </ul>
+      <div class="especial" id="especial" aria-hidden="true" hidden></div>
+      <p class="faixa-especial" id="faixa-especial" role="status" hidden><b id="faixa-nome"></b><span id="faixa-pt"></span></p>
+      <div class="flash" id="flash" aria-hidden="true"></div>
+      <div class="escuro" id="escuro" aria-hidden="true"></div>
+      <div class="mensagem" id="mensagem" role="dialog" aria-modal="false" aria-labelledby="msg-titulo" hidden>
+        <h2 id="msg-titulo"></h2>
+        <p class="pt" id="msg-pt"></p>
+        <p class="sub" id="msg-sub"></p>
+        <a class="botao" id="voltar-mapa" href="{{ url_for('mapa', vista='regiao') }}">Voltar ao mapa</a>
+      </div>
+    </div>
+
+    <section class="pergunta" id="pergunta" aria-live="polite">
+      <div id="conteudo"></div>
+    </section>
+  </div>
+
+  <script type="application/json" id="dados-batalha">{{ dados|tojson }}</script>
+  <script type="application/json" id="cfg-batalha">{{ {
+    "heroi": heroi, "nome": nome, "inimigo": inimigo, "tela": tela, "teste": teste,
+    "estatico": url_for('static', filename=''),
+    "audio": url_for('static', filename='audio/'),
+    "audio_batalha": url_for('static', filename='audio/batalhas/' ~ dados.id ~ '/'),
+    "mapa": url_for('mapa', vista='regiao'),
+    "mapa_vitoria": url_for('mapa', vista='regiao', de=n),
+    "pid": pid, "regiao": regiao, "n": n, "prefixo": prefixo,
+    "concluir": url_for('parada_concluir', regiao=regiao, n=n),
+    "refazer": url_for('parada', regiao=regiao, n=n),
+    "recompensa": parada.recompensa
+  }|tojson }}</script>
+  <script src="{{ url_for('static', filename='parada/voz.js') }}"></script>
+  <script src="{{ url_for('static', filename='parada/batalha.js') }}"></script>
+{% set _tb = namespace(chefe=false) %}{% for _k, _v in dados.inimigos.items() %}{% if _v.chefe %}{% set _tb.chefe = true %}{% endif %}{% endfor %}
+<script src="{{ url_for('static', filename='audio/trilha-fundo.js') }}" data-trilha="{{ url_for('static', filename='audio/trilhas/trilha-' ~ (dados.trilha or ('chefe' if _tb.chefe else 'batalha')) ~ '.ogg', v='2') }}" data-volume="0.25"></script>
+
+</body>
+</html>

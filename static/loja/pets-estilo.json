@@ -1,0 +1,26 @@
+{
+  "versao": 5,
+  "origem": "18 desenhos novos GenerateImage; nenhum sprite/contorno de pet anterior usado",
+  "quadros": 8,
+  "tamanho_quadro": [
+    48,
+    48
+  ],
+  "tamanho_heroi": [
+    96,
+    128
+  ],
+  "trabalho_pets": [
+    96,
+    96
+  ],
+  "trabalho_herois": [
+    96,
+    128
+  ],
+  "vista": "três quartos",
+  "contorno": "marrom quente sem preto puro",
+  "fundo": "transparente",
+  "linha_pes": 43,
+  "animacao": "rig por partes: corpo, cabeça, braços/asas, orelhas/cauda; não translação da imagem inteira"
+}
