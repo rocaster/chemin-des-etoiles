@@ -133,6 +133,6 @@ Future maps are design work, not playable content. XP and time spent are not lan
 
 ## Author
 
-**Alex Costa** — building practical cloud administration experience while creating tools for language learning.
+**Rokay Lancaster** — building practical cloud administration experience while creating tools for language learning.
 
 [GitHub](https://github.com/rocaster) · [Portfolio — rokay.dev](https://rokay.dev) · [LinkedIn](https://www.linkedin.com/in/alex-costa-2232b434b/)
