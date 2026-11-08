@@ -559,7 +559,7 @@ MAPA_PARADAS = 40
 
 @app.route("/mapa")
 def mapa():
-    # Prototipo visual da jornada: progresso so de demonstracao no navegador (localStorage).
+    # Jornada: etapa atual calculada no navegador (localStorage), juntando o progresso salvo no servidor (progresso_servidor).
     vista = request.args.get("vista", "mundo")
     if vista not in {"mundo", "regiao"}:
         vista = "mundo"
@@ -591,7 +591,8 @@ def mapa():
                            de=de, paradas_reais=reais, paradas_titulos=titulos, paradas_batalha=batalhas, trilha=trilha,
                            teste=modo_teste(), prefixo=prefixo_local(), avatar=avatar_mapa(perfil),
                            bordas=BORDAS_MAPA, xp_servidor=xp_do_perfil(perfil) if perfil else None,
-                           xp_por_id=__import__('xp').XP_POR_ID)
+                           xp_por_id=__import__('xp').XP_POR_ID,
+                           progresso_servidor=progresso_do_perfil(perfil) if perfil else None)
 
 
 # ---- Paradas (licoes) ----
@@ -628,6 +629,27 @@ def xp_do_perfil(perfil):
         return max(0, int((perfil or {}).get("xp") or 0))
     except (TypeError, ValueError):
         return 0
+
+
+# Campos de cada parada concluida que o mapa recebe do servidor (o resto do perfil nao vai para a pagina).
+_CAMPOS_PROGRESSO = ("concluida_em", "primeira_conclusao_em", "estrelas", "melhor_estrelas", "acertos", "erros",
+                     "fala_pendente", "duracao_s", "xp", "xp_versao", "tentativas")
+
+
+def progresso_do_perfil(perfil):
+    """Paradas concluidas salvas no Cosmos ({id: registro}), no mesmo formato do localStorage <prefixo>paradas.
+    O mapa junta isso ao localStorage: o progresso aparece em qualquer navegador/aparelho."""
+    from xp import XP_POR_ID
+    progresso = (perfil or {}).get("paradas_progresso")
+    if not isinstance(progresso, dict):
+        return {}
+    saida = {}
+    for pid, reg in progresso.items():
+        if pid in XP_POR_ID and isinstance(reg, dict) and reg.get("concluida_em"):
+            item = {k: reg[k] for k in _CAMPOS_PROGRESSO if k in reg}
+            item["xp_confirmado"] = True
+            saida[pid] = item
+    return saida
 
 
 def avatar_mapa(perfil=None):

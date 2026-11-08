@@ -414,6 +414,26 @@
        conta como feito todo conteúdo com registro em <prefixo>paradas (por id) ou que estava antes da etapa atual na ordem antiga;
        a nova etapa atual é a primeira, na ordem nova, cujo conteúdo ainda não foi feito. */
     const TRILHA = {{ trilha|tojson }};
+    /* Progresso salvo no servidor (Cosmos; teste: memória do servidor). null = perfil indisponível: vale só o localStorage.
+       Junta com o deste navegador antes de calcular a etapa atual: trocar de navegador/aparelho não perde o progresso.
+       Servidor manda nas paradas concluídas; o que só existe neste aparelho continua. */
+    const PROGRESSO_SERVIDOR = {{ progresso_servidor|tojson }};
+    (function juntarServidor() {
+      if (!PROGRESSO_SERVIDOR || typeof PROGRESSO_SERVIDOR !== "object") return;
+      try {
+        const CP = PREFIXO + "paradas";
+        let local = {};
+        try { local = JSON.parse(localStorage.getItem(CP) || "{}") || {}; } catch (_) { local = {}; }
+        if (typeof local !== "object" || Array.isArray(local)) local = {};
+        let mudou = false;
+        Object.entries(PROGRESSO_SERVIDOR).forEach(([pid, reg]) => {
+          const l = local[pid];
+          if (!l || typeof l !== "object" || !l.concluida_em) { local[pid] = Object.assign({}, l || {}, reg); mudou = true; }
+          else if (!l.xp_confirmado) { local[pid] = Object.assign({}, l, { xp: reg.xp, xp_versao: reg.xp_versao, xp_confirmado: true }); mudou = true; }
+        });
+        if (mudou) localStorage.setItem(CP, JSON.stringify(local));
+      } catch (_) {}
+    })();
     (function migrarOrdem() {
       try {
         const CV = PREFIXO + "mapa_r1_versao", v = Number(localStorage.getItem(CV)) || 1;
